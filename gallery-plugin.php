@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: Gallery
+Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
-Description: The plugin to create photo albums and upload pictures there.
+Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 2
+Version: 1.01
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
