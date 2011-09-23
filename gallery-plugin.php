@@ -56,6 +56,28 @@ if( ! function_exists( 'gllr_plugin_uninstall' ) ) {
 	}
 }
 
+if( ! function_exists( 'gllr_plugin_header' ) ) {
+	function gllr_plugin_header() {
+		global $post_type;
+		?>
+		<style>
+		#adminmenu #menu-posts-gallery div.wp-menu-image
+		{
+			background: url("<?php echo get_bloginfo('url');?>/wp-content/plugins/gallery-plugin/images/icon_16.png") no-repeat scroll center center transparent;
+		}
+		#adminmenu #menu-posts-gallery:hover div.wp-menu-image, #adminmenu #menu-posts-gallery.wp-has-current-submenu div.wp-menu-image
+		{
+			background: url("<?php echo get_bloginfo('url');?>/wp-content/plugins/gallery-plugin/images/icon_16_c.png") no-repeat scroll center center transparent;
+		}	
+		.wrap #icon-edit.icon32-posts-gallery
+		{
+			background: url("<?php echo get_bloginfo('url');?>/wp-content/plugins/gallery-plugin/images/icon_36.png") no-repeat scroll left top transparent;
+		}
+		</style>
+		<?php
+	}
+}
+
 // Create post type for Gallery
 if( ! function_exists( 'post_type_images' ) ) {
 	function post_type_images() {
@@ -484,6 +506,8 @@ if( ! function_exists( 'gllr_page_css_class' ) ) {
 
 register_activation_hook( __FILE__, 'gllr_plugin_install'); // activate plugin
 register_deactivation_hook( __FILE__, 'gllr_plugin_uninstall'); // deactivate plugin
+
+add_action( 'admin_head', 'gllr_plugin_header' );
 
 add_action( 'init', 'gllr_plugin_init' );
 
