@@ -1,0 +1,40 @@
+ul.gallery {
+	 list-style: none outside none;
+}
+
+.gallery li{
+	float: left;
+	padding-right: 10px;
+}
+
+#content .gallery_box ul
+{
+	list-style: none outside none;
+	margin:0;
+}
+
+#content .gallery_box li{
+	padding: 10px 10px 0 0;
+	clear: both;
+}
+
+#content .gallery_box li img {
+	padding: 0 10px 10px 0;
+	float:left;
+}
+
+#content .gallery_box p {
+	margin-bottom:0px;
+}
+
+#content .gallery_box .gallery_detail_box p.title {
+	color: #000000;
+    line-height: 1.5em;
+    margin: 0 0 10px;
+	font-weight: bold;
+}
+
+.clear {
+	clear:both;
+	height:0;
+}
