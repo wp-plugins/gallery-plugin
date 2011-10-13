@@ -108,7 +108,7 @@ if( ! function_exists( 'post_type_images' ) ) {
 
 		wp_enqueue_style( 'gllrStylesheet', WP_PLUGIN_URL .'/gallery-plugin/css/stylesheet.css' );
 		wp_enqueue_style( 'gllrPrettyPhotoStylesheet', WP_PLUGIN_URL .'/gallery-plugin/pretty_photo/css/prettyPhoto.css' );
-		wp_enqueue_script( 'gllrPrettyPhotoJq', WP_PLUGIN_URL .'/gallery-plugin/pretty_photo/jquery-1.6.2.min.js', array( 'jquery' ) ); 
+		//wp_enqueue_script( 'gllrPrettyPhotoJq', WP_PLUGIN_URL .'/gallery-plugin/pretty_photo/jquery-1.6.2.min.js', array( 'jquery' ) ); 
 		wp_enqueue_script( 'gllrPrettyPhotoJs', WP_PLUGIN_URL .'/gallery-plugin/pretty_photo/js/jquery.prettyPhoto.js', array( 'jquery' ) ); 
 	}
 }

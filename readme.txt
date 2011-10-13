@@ -4,7 +4,7 @@ Donate link: http://bestwebsoft.com/
 Tags: gallery, image, gallery image, album, foto, fotoalbum
 Requires at least: 3.0
 Tested up to: 3.2.1
-Stable tag: 2011.1.01
+Stable tag: 2011.1.02
 
 This plugin allows you to implement gallery page into web site.
 
@@ -51,10 +51,16 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 
 == Changelog ==
 
+= 1.02 =
+*Add noConflict for jQuery. 
+
 = 1.01 =
 *The file uploader is added to the Galleries page in the admin section. 
 
 == Upgrade Notice ==
+
+= 1.02 =
+Add noConflict for jQuery.
 
 = 1.01 =
 The file uploader is added to the Galleries page in the admin section. 

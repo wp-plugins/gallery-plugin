@@ -52,8 +52,9 @@
 	</div>
 	<?php get_sidebar(); ?>
 	<script type="text/javascript">
-		$(document).ready(function(){
-			$("a[rel^='prettyPhoto']").prettyPhoto({theme: 'dark_square'}); 
+		var $j = jQuery.noConflict();
+		$j(document).ready(function(){
+			$j("a[rel^='prettyPhoto']").prettyPhoto({theme: 'dark_square'}); 
 		});
 </script>
 <?php get_footer(); ?>
