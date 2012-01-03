@@ -3,14 +3,34 @@ Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/
 Tags: gallery, image, gallery image, album, foto, fotoalbum
 Requires at least: 3.0
-Tested up to: 3.2.1
-Stable tag: 2011.1.02
+Tested up to: 3.3
+Stable tag: 2.01
 
 This plugin allows you to implement gallery page into web site.
 
 == Description ==
 
 This plugin makes it possible to implement as many galleries as you want into your website. You can add multiple pictures and description to each gallery, show them all at one page, view each one separately. Moreover, it's possible to upload HQ pictures.
+
+<a href="http://wordpress.org/extend/plugins/gallery-plugin/faq/" target="_blank">FAQ</a>
+<a href="http://bestwebsoft.com/plugin/gallery-plugin/" target="_blank">Support</a>
+
+= Features =
+
+* Actions: Create any quantity of the albums in gallery.
+* Description: Implement the description to each album.
+* Actions: The possibility to load any quantity of photos for each album in gallery.
+* Caption: Add caption to each photo of the album.
+* Display: You can select the dimensions of the thumbnails for the cover of the album and for photos in album.
+* Display: The possibility to select a quantity of photos for the separate page of album of the gallery which will be placed in one line.
+* Slideshow: User can review all photos in album in full size and in slideshow.
+
+= Translate =
+
+* Dutch (nl_NL) (incomplete)
+* Russian (ru_RU)
+
+If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
 == Installation ==
 
@@ -46,21 +66,33 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 == Screenshots ==
 
 1. Gallery Admin page.
-2. Galleries page on frontend.
-3. Single gallery page.
+2. Galleries albums page on frontend.
+3. Gallery Options page in admin panel.
+4. Single gallery page.
+5. PrettyPhoto pop-up window with images from album.
 
 == Changelog ==
 
-= 1.02 =
+= V2.01 - 03.01.2012 =
+* NEW : Add caption to each photo of the album.
+* NEW : Add possibility to select the dimensions of the thumbnails for the cover of the album and for photos in album.
+* NEW : Add possibility to select a quantity of photos for the separate page of album of the gallery which will be placed in one line.
+* Change : PrettyPhoto library was updated up to version 3.1.3.
+* Bugfix : Button 'Sluiten' is replaced by a button 'Close'.
+
+= V1.02 - 13.10.2011 =
 *Add noConflict for jQuery. 
 
-= 1.01 =
+= V1.01 - 23.09.2011 =
 *The file uploader is added to the Galleries page in the admin section. 
 
 == Upgrade Notice ==
 
-= 1.02 =
+= V2.01 =
+Add caption to each photo of the album. Add possibility to select the dimensions of the thumbnails for the cover of the album and for photos in album. Add possibility to select a quantity of photos for the separate page of album of the gallery which will be placed in one line. PrettyPhoto library was updated. Button 'Sluiten' is replaced by a button 'Close'. Please upgrade the Gallery plugin immediately. Thank you.
+
+= V1.02 =
 Add noConflict for jQuery.
 
-= 1.01 =
+= V1.01 =
 The file uploader is added to the Galleries page in the admin section. 

@@ -50,27 +50,3 @@ ul#files li img {
     background: none repeat scroll 0 0 #99F099;
     border: 1px solid #339933;
 }
-
-.gallery li {
-    border: 1px solid #BDBDBD;
-    float: left;
-    height: 117px;
-    margin-bottom: 6px;
-    margin-right: 6px;
-    padding: 5px;
-    width: 157px;
-}
-
-.gallery li {
-    border: 1px solid #BDBDBD;
-    float: left;
-    height: 150px;
-    padding: 5px;
-	margin:15px 6px 15px 0;
-    width: 150px;
-}
-
-.gallery .delete {
-padding-top:2px;
-text-align:center;
-}
