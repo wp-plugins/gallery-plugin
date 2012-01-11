@@ -4,7 +4,7 @@ Donate link: http://bestwebsoft.com/
 Tags: gallery, image, gallery image, album, foto, fotoalbum
 Requires at least: 3.0
 Tested up to: 3.3
-Stable tag: 2.01
+Stable tag: 2.02
 
 This plugin allows you to implement gallery page into web site.
 
@@ -27,6 +27,7 @@ This plugin makes it possible to implement as many galleries as you want into yo
 
 = Translate =
 
+* Georgian (ka_GE) (thanks Vako Patashuri)
 * Dutch (nl_NL) (incomplete)
 * Russian (ru_RU)
 
@@ -73,6 +74,9 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 
 == Changelog ==
 
+= V2.02 - 11.01.2012 =
+* NEW : Added Georgian language files for plugin.
+
 = V2.01 - 03.01.2012 =
 * NEW : Add caption to each photo of the album.
 * NEW : Add possibility to select the dimensions of the thumbnails for the cover of the album and for photos in album.
@@ -87,6 +91,9 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 *The file uploader is added to the Galleries page in the admin section. 
 
 == Upgrade Notice ==
+
+= V2.02 =
+Added Georgian language files for plugin.
 
 = V2.01 =
 Add caption to each photo of the album. Add possibility to select the dimensions of the thumbnails for the cover of the album and for photos in album. Add possibility to select a quantity of photos for the separate page of album of the gallery which will be placed in one line. PrettyPhoto library was updated. Button 'Sluiten' is replaced by a button 'Close'. Please upgrade the Gallery plugin immediately. Thank you.
