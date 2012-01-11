@@ -1,0 +1,176 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gallery\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-01-03 18:36+0200\n"
+"PO-Revision-Date: 2012-01-03 18:38+0200\n"
+"Last-Translator: BWS <zos@bestwebsoft.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;esc_html__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: gallery-plugin.php:62
+#: gallery-plugin.php:72
+msgid "Galleries"
+msgstr "Галереи"
+
+#: gallery-plugin.php:63
+#: gallery-plugin.php:553
+msgid "Gallery"
+msgstr "Галерея"
+
+#: gallery-plugin.php:64
+msgid "Add New"
+msgstr "Добавить галерею"
+
+#: gallery-plugin.php:65
+msgid "Add New Gallery"
+msgstr "добавить новую галерею"
+
+#: gallery-plugin.php:66
+msgid "Edit Gallery"
+msgstr "Редактировать галерею"
+
+#: gallery-plugin.php:67
+msgid "New Gallery"
+msgstr "Новая галерея"
+
+#: gallery-plugin.php:68
+msgid "View Gallery"
+msgstr "Просмотреть галерею"
+
+#: gallery-plugin.php:69
+msgid "Search Galleries"
+msgstr "Поиск галереи"
+
+#: gallery-plugin.php:70
+msgid "No Galleries found"
+msgstr "Ни одной галереи не найдено"
+
+#: gallery-plugin.php:119
+msgid "Upload File"
+msgstr "Загрузить файлы"
+
+#: gallery-plugin.php:130
+msgid "Choose a screenshot to upload:"
+msgstr "Выбрать файлы для загрузки: "
+
+#: gallery-plugin.php:134
+msgid "Please enable JavaScript to use the file uploader."
+msgstr "Пожалуйста, включите javascript для использования загрузчика файлов."
+
+#: gallery-plugin.php:321
+msgid "Title"
+msgstr "Название"
+
+#: gallery-plugin.php:322
+msgid "Author"
+msgstr "Автор"
+
+#: gallery-plugin.php:323
+msgid "Photo's"
+msgstr "Фото"
+
+#: gallery-plugin.php:324
+msgid "Public"
+msgstr "Опубликование"
+
+#: gallery-plugin.php:325
+msgid "Date"
+msgstr "Дата"
+
+#: gallery-plugin.php:522
+msgid "Activated plugins"
+msgstr "Активированные плагины"
+
+#: gallery-plugin.php:524
+#: gallery-plugin.php:532
+#: gallery-plugin.php:540
+msgid "Read more"
+msgstr "Подробнее..."
+
+#: gallery-plugin.php:524
+msgid "Settings"
+msgstr "Настройки"
+
+#: gallery-plugin.php:530
+msgid "Installed plugins"
+msgstr "Установленные плагины"
+
+#: gallery-plugin.php:538
+msgid "Recommended plugins"
+msgstr "Рекомендованные к установке плагины"
+
+#: gallery-plugin.php:540
+msgid "Download"
+msgstr "Скачать"
+
+#: gallery-plugin.php:540
+#, php-format
+msgid "Install %s"
+msgstr "Установлено %s"
+
+#: gallery-plugin.php:540
+msgid "Install now from wordpress.org"
+msgstr "Установить с wordpress.org"
+
+#: gallery-plugin.php:542
+msgid "If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site"
+msgstr "Если у вас есть какие-то впросы, обращайтесь на plugin@bestwebsoft.com или заполните контактную форму на нашем сайте"
+
+#: gallery-plugin.php:621
+msgid "Options saved."
+msgstr "Опции сохранены"
+
+#: gallery-plugin.php:628
+msgid "Gallery Options"
+msgstr "Настройки Галереи"
+
+#: gallery-plugin.php:634
+msgid "The size of the cover album for gallery"
+msgstr "Размер изображения для обложки альбома  галереи"
+
+#: gallery-plugin.php:636
+#: gallery-plugin.php:644
+msgid "Image size name"
+msgstr "Название размера изображение"
+
+#: gallery-plugin.php:637
+#: gallery-plugin.php:645
+msgid "Width (in px)"
+msgstr "Ширина (в px)"
+
+#: gallery-plugin.php:638
+#: gallery-plugin.php:646
+msgid "Height (in px)"
+msgstr "Высота (в px)"
+
+#: gallery-plugin.php:642
+msgid "Size for gallery image"
+msgstr "Размер изображений Галереи"
+
+#: gallery-plugin.php:650
+msgid "WordPress will create a copy of the post thumbnail with the specified dimensions when you upload a new photo."
+msgstr "WordPress создаст новую миниатюру с заданными размерами при загрузке новой фотографии."
+
+#: gallery-plugin.php:653
+msgid "Count images in row"
+msgstr "Количество изображений в строке"
+
+#: gallery-plugin.php:661
+msgid "Save Changes"
+msgstr ""
+
+#: template/gallery-single-template.php:63
+msgid "Sorry - nothing to found."
+msgstr "Извините, ничего не найдено."
+
+#~ msgid "Size for gallery album cover"
+#~ msgstr "Размер для "
