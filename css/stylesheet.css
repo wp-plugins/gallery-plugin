@@ -45,6 +45,10 @@ ul.gallery {
 	float: left;
 }
 
+.gallery img {
+    border: 10px solid #F1F1F1;
+}
+
 #Upload-File .gallery .gllr_image_block {
     border: 1px solid #BDBDBD;
     float: left;
