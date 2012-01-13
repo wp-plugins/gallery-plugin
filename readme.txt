@@ -4,7 +4,7 @@ Donate link: http://bestwebsoft.com/
 Tags: gallery, image, gallery image, album, foto, fotoalbum
 Requires at least: 3.0
 Tested up to: 3.3
-Stable tag: 2.03
+Stable tag: 2.04
 
 This plugin allows you to implement gallery page into web site.
 
@@ -27,8 +27,9 @@ This plugin makes it possible to implement as many galleries as you want into yo
 
 = Translate =
 
-* Georgian (ka_GE) (thanks Vako Patashuri)
 * Dutch (nl_NL) (incomplete)
+* French (fr_FR) (thanks Didier)
+* Georgian (ka_GE) (thanks Vako Patashuri)
 * Russian (ru_RU)
 
 If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
@@ -73,7 +74,10 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 5. PrettyPhoto pop-up window with images from album.
 
 == Changelog ==
- 
+
+= V2.04 - 13.01.2012 =
+* NEW : Added French language files for plugin.
+
 = V2.03 - 12.01.2012 =
 * Bugfix : Position to display images on single page Gallery was fixed.
 
@@ -94,6 +98,9 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 *The file uploader is added to the Galleries page in the admin section. 
 
 == Upgrade Notice ==
+
+= V2.04 =
+Added French language files for plugin.
 
 = V2.03 =
 Position to display images on single page Gallery was fixed. Please upgrade the Gallery plugin. Thank you.
