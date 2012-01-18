@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gallery\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-13 18:11+0200\n"
-"PO-Revision-Date: 2012-01-13 18:11+0200\n"
+"POT-Creation-Date: 2012-01-18 12:52+0200\n"
+"PO-Revision-Date: 2012-01-18 12:52+0200\n"
 "Last-Translator: BWS <zos@bestwebsoft.com>\n"
 "Language-Team: Wolforg <contact@wolforg.eu>\n"
 "MIME-Version: 1.0\n"
@@ -97,6 +97,8 @@ msgid "Read more"
 msgstr "Lire plus..."
 
 #: gallery-plugin.php:526
+#: gallery-plugin.php:674
+#: gallery-plugin.php:689
 msgid "Settings"
 msgstr "Paramètres"
 
@@ -167,6 +169,14 @@ msgstr "Nombre d'image par ligne"
 #: gallery-plugin.php:663
 msgid "Save Changes"
 msgstr "Sauvegarder"
+
+#: gallery-plugin.php:675
+msgid "FAQ"
+msgstr "FAQ"
+
+#: gallery-plugin.php:676
+msgid "Support"
+msgstr "Soutien"
 
 #: template/gallery-single-template.php:63
 msgid "Sorry - nothing to found."

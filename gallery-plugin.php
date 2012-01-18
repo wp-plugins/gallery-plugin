@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 2.04
+Version: 2.05
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -667,8 +667,39 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 	<?php } 
 }
 
-register_activation_hook( __FILE__, 'gllr_plugin_install'); // activate plugin
-register_uninstall_hook( __FILE__, 'gllr_plugin_uninstall'); // deactivate plugin
+if( ! function_exists( 'gllr_register_plugin_links' ) ) {
+	function gllr_register_plugin_links($links, $file) {
+		$base = plugin_basename(__FILE__);
+		if ($file == $base) {
+			$links[] = '<a href="admin.php?page=gallery-plugin.php">' . __( 'Settings', 'gallery' ) . '</a>';
+			$links[] = '<a href="http://wordpress.org/extend/plugins/gallery-plugin/faq/" target="_blank">' . __( 'FAQ', 'gallery' ) . '</a>';
+			$links[] = '<a href="Mailto:plugin@bestwebsoft.com">' . __( 'Support', 'gallery' ) . '</a>';
+		}
+		return $links;
+	}
+}
+
+if( ! function_exists( 'gllr_plugin_action_links' ) ) {
+	function gllr_plugin_action_links( $links, $file ) {
+			//Static so we don't call plugin_basename on every plugin row.
+		static $this_plugin;
+		if ( ! $this_plugin ) $this_plugin = plugin_basename(__FILE__);
+
+		if ( $file == $this_plugin ){
+				 $settings_link = '<a href="admin.php?page=gallery-plugin.php">' . __( 'Settings', 'gallery' ) . '</a>';
+				 array_unshift( $links, $settings_link );
+			}
+		return $links;
+	} // end function gllr_plugin_action_links
+}
+
+register_activation_hook( __FILE__, 'gllr_plugin_install' ); // activate plugin
+register_uninstall_hook( __FILE__, 'gllr_plugin_uninstall' ); // deactivate plugin
+
+// adds "Settings" link to the plugin action page
+add_filter( 'plugin_action_links', 'gllr_plugin_action_links', 10, 2 );
+//Additional links on the plugin page
+add_filter( 'plugin_row_meta', 'gllr_register_plugin_links', 10, 2 );
 
 add_action( 'admin_menu', 'add_gllr_admin_menu' );
 add_action( 'init', 'gllr_plugin_init' );

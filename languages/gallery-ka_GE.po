@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gallery\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-11 11:05+0200\n"
-"PO-Revision-Date: 2012-01-11 11:05+0200\n"
+"POT-Creation-Date: 2012-01-18 12:52+0200\n"
+"PO-Revision-Date: 2012-01-18 12:52+0200\n"
 "Last-Translator: BWS <zos@bestwebsoft.com>\n"
 "Language-Team: Vako Patashuri <vpatashuri@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -97,6 +97,8 @@ msgid "Read more"
 msgstr "სრულად ნახვა"
 
 #: gallery-plugin.php:526
+#: gallery-plugin.php:674
+#: gallery-plugin.php:689
 msgid "Settings"
 msgstr "პარამეტრები"
 
@@ -131,34 +133,34 @@ msgstr "პარამეტრები შენახულია"
 
 #: gallery-plugin.php:630
 msgid "Gallery Options"
-msgstr "გალერეას პარამეტრები"
+msgstr "გალერეის პარამეტრები"
 
 #: gallery-plugin.php:636
 msgid "The size of the cover album for gallery"
-msgstr "ალბომის ყდის ზომა გალერეასთვის"
+msgstr "ალბომის ყდის ზომა გალერეისთვის"
 
 #: gallery-plugin.php:638
 #: gallery-plugin.php:646
 msgid "Image size name"
-msgstr "სურათის ზომის სახელი"
+msgstr "ზომის სახელი"
 
 #: gallery-plugin.php:639
 #: gallery-plugin.php:647
 msgid "Width (in px)"
-msgstr "სიგანე (პიქსელებში)"
+msgstr "სიგანე(პიქსელებში)"
 
 #: gallery-plugin.php:640
 #: gallery-plugin.php:648
 msgid "Height (in px)"
-msgstr "სიმაღლე (პიქსელებში)"
+msgstr "სიმაღლე(პიქსელებში)"
 
 #: gallery-plugin.php:644
 msgid "Size for gallery image"
-msgstr "ზომა გალერეას სურათისთვის"
+msgstr "ზომა გალერეის სურათისთვის"
 
 #: gallery-plugin.php:652
 msgid "WordPress will create a copy of the post thumbnail with the specified dimensions when you upload a new photo."
-msgstr "WordPress შექმნის ახალ მინიატურას მოცემულ ზომებში როდესაც შენ ატვირთავ ახალ სურათს."
+msgstr "ვორდპრესი შექმნის მინიატურული პოსტის კოპიას განსაზღვრულ ზომებში, როდესაც ატვირთავთ სურათს."
 
 #: gallery-plugin.php:655
 msgid "Count images in row"
@@ -167,6 +169,14 @@ msgstr "სურათების რაოდენობა მწკრი�
 #: gallery-plugin.php:663
 msgid "Save Changes"
 msgstr "ცვლილებების შენახვა"
+
+#: gallery-plugin.php:675
+msgid "FAQ"
+msgstr "FAQ"
+
+#: gallery-plugin.php:676
+msgid "Support"
+msgstr "Support"
 
 #: template/gallery-single-template.php:63
 msgid "Sorry - nothing to found."
