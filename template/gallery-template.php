@@ -58,7 +58,7 @@ Template Name: Gallery Template
 						<div class="gallery_detail_box">
 							<div><?php echo $post->post_title; ?></div>
 							<div><?php echo the_excerpt_max_charlength(100); ?></div>
-							<a href="<?php echo $permalink; echo basename( get_permalink( $post->ID ) ); ?>">See foto's &raquo;</a>
+							<a href="<?php echo $permalink; echo basename( get_permalink( $post->ID ) ); ?>"><?php echo __( 'See photo &raquo;', 'gallery' ); ?></a>
 						</div>
 						<div class="clear"></div>
 					</li>

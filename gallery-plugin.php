@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 2.05
+Version: 2.06
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -32,10 +32,10 @@ $gllr_boxes = array (
 
 if( ! function_exists( 'gllr_plugin_install' ) ) {
 	function gllr_plugin_install() {
-		if ( ! copy(WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-template.php', TEMPLATEPATH .'/gallery-template.php' ) ) {
+		if ( ! file_exists( TEMPLATEPATH .'/gallery-template.php' ) && ! copy(WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-template.php', TEMPLATEPATH .'/gallery-template.php' ) ) {
 			add_action( 'admin_notices', create_function( '',  'echo "Error copy template file";' ) );
 		}
-		if ( ! copy(WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-single-template.php', TEMPLATEPATH .'/gallery-single-template.php') ) {
+		if ( ! file_exists( TEMPLATEPATH .'/gallery-template.php' ) && ! copy(WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-single-template.php', TEMPLATEPATH .'/gallery-single-template.php') ) {
 			add_action( 'admin_notices', create_function( '',  'echo "Error copy template file";' ) );
 		}
 	}

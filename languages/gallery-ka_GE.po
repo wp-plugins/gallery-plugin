@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gallery\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-18 12:52+0200\n"
-"PO-Revision-Date: 2012-01-18 12:52+0200\n"
+"POT-Creation-Date: 2012-01-30 11:49+0200\n"
+"PO-Revision-Date: 2012-01-30 11:49+0200\n"
 "Last-Translator: BWS <zos@bestwebsoft.com>\n"
 "Language-Team: Vako Patashuri <vpatashuri@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -181,6 +181,10 @@ msgstr "Support"
 #: template/gallery-single-template.php:63
 msgid "Sorry - nothing to found."
 msgstr "მაპატიეთ - არაფერია ნაპოვნი."
+
+#: template/gallery-template.php:61
+msgid "See photo &raquo;"
+msgstr ""
 
 #~ msgid "Size for gallery album cover"
 #~ msgstr "Размер для "

@@ -4,7 +4,7 @@ Donate link: http://bestwebsoft.com/
 Tags: gallery, image, gallery image, album, foto, fotoalbum
 Requires at least: 3.0
 Tested up to: 3.3
-Stable tag: 2.05
+Stable tag: 2.06
 
 This plugin allows you to implement gallery page into web site.
 
@@ -27,7 +27,7 @@ This plugin makes it possible to implement as many galleries as you want into yo
 
 = Translate =
 
-* Dutch (nl_NL) (incomplete)
+* Dutch (nl_NL) (thanks <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>)
 * French (fr_FR) (thanks Didier)
 * Georgian (ka_GE) (thanks Vako Patashuri)
 * Russian (ru_RU)
@@ -75,6 +75,9 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 
 == Changelog ==
 
+= V2.06 - 14.02.2012 =
+* NEW : Added Dutch language files for plugin.
+
 = V2.05 - 18.01.2012 =
 * NEW : Added link on setting plugins page.
 * Change : Added revised Georgian language files for plugin.
@@ -102,6 +105,9 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 *The file uploader is added to the Galleries page in the admin section. 
 
 == Upgrade Notice ==
+
+= V2.06 =
+Added Dutch language files for plugin.
 
 = V2.05 =
 Added link on setting plugins page. Added revised Georgian language files for plugin.
