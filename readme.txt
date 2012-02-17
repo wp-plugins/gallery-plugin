@@ -4,7 +4,7 @@ Donate link: http://bestwebsoft.com/
 Tags: gallery, image, gallery image, album, foto, fotoalbum
 Requires at least: 3.0
 Tested up to: 3.3
-Stable tag: 2.06
+Stable tag: 2.07
 
 This plugin allows you to implement gallery page into web site.
 
@@ -31,6 +31,7 @@ This plugin makes it possible to implement as many galleries as you want into yo
 * French (fr_FR) (thanks Didier)
 * Georgian (ka_GE) (thanks Vako Patashuri)
 * Russian (ru_RU)
+* Ukrainian (ru_RU)(thanks VTed Mosby)
 
 If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
@@ -75,6 +76,10 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 
 == Changelog ==
 
+= V2.07 - 17.02.2012 =
+* NEW : Added Ukrainian language files for plugin.
+* Bugfix : Problem with copying files gallery-single-template.php to theme was fixed.
+
 = V2.06 - 14.02.2012 =
 * NEW : Added Dutch language files for plugin.
 
@@ -105,6 +110,9 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 *The file uploader is added to the Galleries page in the admin section. 
 
 == Upgrade Notice ==
+
+= V2.07 =
+Added Ukrainian language files for plugin. Problem with copying files gallery-single-template.php to theme was fixed.
 
 = V2.06 =
 Added Dutch language files for plugin.

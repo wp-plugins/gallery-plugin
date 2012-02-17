@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 2.06
+Version: 2.07
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -35,7 +35,7 @@ if( ! function_exists( 'gllr_plugin_install' ) ) {
 		if ( ! file_exists( TEMPLATEPATH .'/gallery-template.php' ) && ! copy(WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-template.php', TEMPLATEPATH .'/gallery-template.php' ) ) {
 			add_action( 'admin_notices', create_function( '',  'echo "Error copy template file";' ) );
 		}
-		if ( ! file_exists( TEMPLATEPATH .'/gallery-template.php' ) && ! copy(WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-single-template.php', TEMPLATEPATH .'/gallery-single-template.php') ) {
+		if ( ! file_exists( TEMPLATEPATH .'/gallery-single-template.php' ) && ! copy(WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-single-template.php', TEMPLATEPATH .'/gallery-single-template.php') ) {
 			add_action( 'admin_notices', create_function( '',  'echo "Error copy template file";' ) );
 		}
 	}
@@ -86,8 +86,8 @@ if( ! function_exists( 'post_type_images' ) ) {
 		wp_enqueue_style( 'gllrStylesheet', WP_PLUGIN_URL .'/gallery-plugin/css/stylesheet.css' );
 		wp_enqueue_style( 'gllrPrettyPhotoStylesheet', WP_PLUGIN_URL .'/gallery-plugin/pretty_photo/css/prettyPhoto.css' );
 		wp_enqueue_script( 'gllrPrettyPhotoJs', WP_PLUGIN_URL .'/gallery-plugin/pretty_photo/js/jquery.prettyPhoto.js', array( 'jquery' ) ); 
-		wp_enqueue_script( 'jquery_upload', WP_PLUGIN_URL .'/gallery-plugin/upload/fileuploader.js', array( 'jquery' ) );
-		wp_enqueue_style( 'jquery_css', WP_PLUGIN_URL .'/gallery-plugin/upload/fileuploader.css' );
+		wp_enqueue_script( 'gllrFileuploaderJs', WP_PLUGIN_URL .'/gallery-plugin/upload/fileuploader.js', array( 'jquery' ) );
+		wp_enqueue_style( 'gllrFileuploadercss', WP_PLUGIN_URL .'/gallery-plugin/upload/fileuploader.css' );
 	}
 }
 
