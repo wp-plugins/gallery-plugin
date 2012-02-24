@@ -32,11 +32,23 @@ $gllr_boxes = array (
 
 if( ! function_exists( 'gllr_plugin_install' ) ) {
 	function gllr_plugin_install() {
-		if ( ! file_exists( TEMPLATEPATH .'/gallery-template.php' ) && ! copy(WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-template.php', TEMPLATEPATH .'/gallery-template.php' ) ) {
-			add_action( 'admin_notices', create_function( '',  'echo "Error copy template file";' ) );
+		if ( ! file_exists( TEMPLATEPATH .'/gallery-template.php' ) ) {
+			if( ! copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-template.php', TEMPLATEPATH .'/gallery-template.php' ) )
+				add_action( 'admin_notices', create_function( '',  'echo "Error copy template file";' ) );
 		}
-		if ( ! file_exists( TEMPLATEPATH .'/gallery-single-template.php' ) && ! copy(WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-single-template.php', TEMPLATEPATH .'/gallery-single-template.php') ) {
-			add_action( 'admin_notices', create_function( '',  'echo "Error copy template file";' ) );
+		else {
+			copy( TEMPLATEPATH .'/gallery-template.php', TEMPLATEPATH .'/gallery-template.php.bak' );
+			if( ! copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-template.php', TEMPLATEPATH .'/gallery-template.php' ) )
+				add_action( 'admin_notices', create_function( '',  'echo "Error copy template file";' ) );
+		}
+		if ( ! file_exists( TEMPLATEPATH .'/gallery-single-template.php' ) ) {
+			if( ! copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-single-template.php', TEMPLATEPATH .'/gallery-single-template.php' ) )
+				add_action( 'admin_notices', create_function( '',  'echo "Error copy template file";' ) );
+		}
+		else {
+			copy( TEMPLATEPATH .'/gallery-single-template.php', TEMPLATEPATH .'/gallery-single-template.php.bak' );
+			if( ! copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-single-template.php', TEMPLATEPATH .'/gallery-single-template.php' ) )
+				add_action( 'admin_notices', create_function( '',  'echo "Error copy template file";' ) );
 		}
 	}
 }
@@ -60,17 +72,17 @@ if( ! function_exists( 'post_type_images' ) ) {
 	function post_type_images() {
 		register_post_type('gallery', array(
 			'labels' => array(
-				'name' => __( 'Galleries', 'gallery'),
-				'singular_name' => __( 'Gallery', 'gallery'),
-				'add_new' => __( 'Add New', 'gallery'),
-				'add_new_item' => __( 'Add New Gallery', 'gallery'),
-				'edit_item' => __( 'Edit Gallery', 'gallery'),
-				'new_item' => __( 'New Gallery', 'gallery'),
-				'view_item' => __( 'View Gallery', 'gallery'),
-				'search_items' => __( 'Search Galleries', 'gallery'),
-				'not_found' =>	__( 'No Galleries found', 'gallery'),
+				'name' => __( 'Galleries', 'gallery' ),
+				'singular_name' => __( 'Gallery', 'gallery' ),
+				'add_new' => __( 'Add New', 'gallery' ),
+				'add_new_item' => __( 'Add New Gallery', 'gallery' ),
+				'edit_item' => __( 'Edit Gallery', 'gallery' ),
+				'new_item' => __( 'New Gallery', 'gallery' ),
+				'view_item' => __( 'View Gallery', 'gallery' ),
+				'search_items' => __( 'Search Galleries', 'gallery' ),
+				'not_found' =>	__( 'No Galleries found', 'gallery' ),
 				'parent_item_colon' => '',
-				'menu_name' => __( 'Galleries', 'gallery')
+				'menu_name' => __( 'Galleries', 'gallery' )
 			),
 			'public' => true,
 			'publicly_queryable' => true,
@@ -83,11 +95,11 @@ if( ! function_exists( 'post_type_images' ) ) {
 			'register_meta_box_cb' => 'init_metaboxes_gallery'
 		));
 
-		wp_enqueue_style( 'gllrStylesheet', WP_PLUGIN_URL .'/gallery-plugin/css/stylesheet.css' );
-		wp_enqueue_style( 'gllrPrettyPhotoStylesheet', WP_PLUGIN_URL .'/gallery-plugin/pretty_photo/css/prettyPhoto.css' );
-		wp_enqueue_script( 'gllrPrettyPhotoJs', WP_PLUGIN_URL .'/gallery-plugin/pretty_photo/js/jquery.prettyPhoto.js', array( 'jquery' ) ); 
-		wp_enqueue_script( 'gllrFileuploaderJs', WP_PLUGIN_URL .'/gallery-plugin/upload/fileuploader.js', array( 'jquery' ) );
-		wp_enqueue_style( 'gllrFileuploadercss', WP_PLUGIN_URL .'/gallery-plugin/upload/fileuploader.css' );
+		wp_enqueue_style( 'gllrStylesheet', plugins_url( 'css/stylesheet.css', __FILE__ ) );
+		wp_enqueue_style( 'gllrPrettyPhotoStylesheet', plugins_url( 'pretty_photo/css/prettyPhoto.css', __FILE__ ) );
+		wp_enqueue_script( 'gllrPrettyPhotoJs', plugins_url( 'pretty_photo/js/jquery.prettyPhoto.js', __FILE__ ), array( 'jquery' ) ); 
+		wp_enqueue_style( 'gllrFileuploaderCss', plugins_url( 'upload/fileuploader.css', __FILE__ ) );
+		wp_enqueue_script( 'gllrFileuploaderJs', plugins_url( 'upload/fileuploader.js', __FILE__ ), array( 'jquery' ) );
 	}
 }
 
@@ -127,6 +139,8 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 		$key = "gllr_image_text";
 		
 		$post_types = get_post_types( array( '_builtin' => false ) );
+		if( ! is_writable ( ABSPATH ."wp-content/plugins/gallery-plugin/upload/files/" ) )
+			chmod( ABSPATH ."wp-content/plugins/gallery-plugin/upload/files/", 0777 );
 		?>
 		<div style="padding-top:10px;"><label for="uploadscreen"><?php echo __( 'Choose a screenshot to upload:', 'gallery' ); ?></label>
 			<input name="MAX_FILE_SIZE" value="1048576" type="hidden" />
@@ -143,14 +157,14 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 		{
 				var uploader = new qq.FileUploader({
 						element: document.getElementById('file-uploader-demo1'),
-						action: '<?php echo WP_PLUGIN_URL; ?>/gallery-plugin/upload/php.php',
+						action: '<?php echo plugins_url( "upload/php.php" , __FILE__ ); ?>',
 						debug: false,
 						onComplete: function(id, fileName, result) {
 							if(result.error) {
 								//
 							}
 							else {
-								jQuery('<li></li>').appendTo('#files').html('<img src="<?php echo WP_PLUGIN_URL; ?>/gallery-plugin/upload/files/'+fileName+'" alt="" /><div style="width:200px">'+fileName+'<br />' +result.width+'x'+result.height+'</div>').addClass('success');
+								jQuery('<li></li>').appendTo('#files').html('<img src="<?php echo plugins_url( "upload/files/" , __FILE__ ); ?>'+fileName+'" alt="" /><div style="width:200px">'+fileName+'<br />' +result.width+'x'+result.height+'</div>').addClass('success');
 								jQuery('<input type="hidden" name="undefined[]" id="undefined" value="'+fileName+'" />').appendTo('#hidden');
 							}
 						}
@@ -159,10 +173,10 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 
 		});
 
-			function img_delete(id) {
-				jQuery('#'+id).hide();
-				jQuery('#delete_images').append('<input type="hidden" name="delete_images[]" value="'+id+'" />');
-			}
+		function img_delete(id) {
+			jQuery('#'+id).hide();
+			jQuery('#delete_images').append('<input type="hidden" name="delete_images[]" value="'+id+'" />');
+		}
 		</script>
 		<?php
 
@@ -171,7 +185,8 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 			"what_to_show"	=> "posts",
 			"post_status"		=> "inherit",
 			"post_type"			=> "attachment",
-			"orderby"				=> "menu_order ASC, ID ASC",
+			"orderby"				=> "menu_order",
+			"order"					=> "ASC",
 			"post_mime_type"=> "image/jpeg,image/gif,image/jpg,image/png",
 			"post_parent"		=> $post->ID)); ?>
 		<ul class="gallery clearfix">
@@ -202,8 +217,9 @@ if( ! function_exists ( 'echo_gllr_nonce' ) ) {
 
 if ( ! function_exists ( 'gllr_save_postdata' ) ) {
 	function gllr_save_postdata( $post_id, $post ) {
-		global $post;
-		global $wpdb;
+		global $post, $wpdb;
+		$key = "gllr_image_text";
+
 		if( isset( $_REQUEST['undefined'] ) && ! empty( $_REQUEST['undefined'] ) ) {
 			$array_file_name = $_REQUEST['undefined'];
 			$uploadFile = array();
@@ -242,7 +258,6 @@ if ( ! function_exists ( 'gllr_save_postdata' ) ) {
 				$i++;			
 			}
 		}
-		$key = "gllr_image_text";
 		if( isset( $_REQUEST['delete_images'] ) ) {
 			foreach( $_REQUEST['delete_images'] as $delete_id ) {
 				delete_post_meta( $delete_id, $key );
@@ -255,7 +270,8 @@ if ( ! function_exists ( 'gllr_save_postdata' ) ) {
 				"what_to_show"	=> "posts",
 				"post_status"		=> "inherit",
 				"post_type"			=> "attachment",
-				"orderby"				=> "menu_order ASC, ID ASC",
+				"orderby"				=> "menu_order",
+				"order"					=> "ASC",
 				"post_mime_type"=> "image/jpeg,image/gif,image/jpg,image/png",
 				"post_parent"		=> $post->ID));
 			foreach ( $posts as $page ) {
@@ -290,8 +306,6 @@ if( ! function_exists( 'gllr_custom_permalinks' ) ) {
 		if( ! empty( $parent ) ) {
 			$wp_rewrite->add_rule( '(.+)/'.$parent.'/([^/]+)/?$', 'index.php?post_type=gallery&title=$matches[2]&posts_per_page=-1', 'top' );
 			$wp_rewrite->add_rule( ''.$parent.'/([^/]+)/?$', 'index.php?post_type=gallery&title=$matches[1]&posts_per_page=-1', 'top' );
-			$wp_rewrite->add_rule( '(.+)/'.$parent.'/page/([^/]+)/?$', 'index.php?pagename='.$parent.'&paged=$matches[2]', 'top' );
-			$wp_rewrite->add_rule( ''.$parent.'/page/([^/]+)/?$', 'index.php?pagename='.$parent.'&paged=$matches[1]', 'top' );
 		}
 
 		$wp_rewrite->flush_rules();
@@ -299,8 +313,7 @@ if( ! function_exists( 'gllr_custom_permalinks' ) ) {
 }
 
 if ( ! function_exists( 'gllr_template_redirect' ) ) {
-	function gllr_template_redirect() 
-	{ 
+	function gllr_template_redirect() { 
 		global $wp_query, $post, $posts;
 		if( 'gallery' == get_post_type() && "" == $wp_query->query_vars["s"] ) {
 			$category = get_term_by( 'slug', $wp_query->query_vars["taxonomy"], 'images_album'); 
@@ -361,7 +374,6 @@ if ( ! function_exists( 'gllr_custom_columns' ) ) {
 				echo strtolower( __( date( "F", strtotime( $post->post_date ) ), 'kerksite' ) )." ".date( "j Y", strtotime( $post->post_date ) );				
 				break;
 		}
-		$wp_query =  $old_query;
 	}
 }
 
@@ -370,65 +382,17 @@ if ( ! function_exists( 'get_ID_by_slug' ) ) {
 			$page = get_page_by_path($page_slug);
 			if ($page) {
 					return $page->ID;
-			} else {
+			} 
+			else {
 					return null;
 			}
 	}
 }
 
-if ( ! function_exists( 'getPostsAvailableToRegisteredUsers' ) ) {
-	function getPostsAvailableToRegisteredUsers()
-	{
-		$theme_location = 'menu_2';
-		$theme_locations = get_nav_menu_locations();
-		if( ! isset( $theme_locations[$theme_location] ) ) return false;
-	 
-		$menu_obj = get_term( $theme_locations[$theme_location], 'nav_menu' );
-		if( ! $menu_obj ) 
-			$menu_obj = false;
-
-		global $wpdb;
-		
-		// Menu posts
-		$menuPosts = $wpdb->get_col("
-			SELECT
-				pm.meta_value
-			FROM
-				$wpdb->terms t INNER JOIN $wpdb->term_taxonomy tt ON t.term_id = tt.term_id
-				INNER JOIN $wpdb->term_relationships tr ON tt.term_taxonomy_id = tr.term_taxonomy_id
-				INNER JOIN $wpdb->postmeta pm ON tr.object_id = pm.post_id
-			WHERE
-				t.slug = '".$menu_obj->slug."' AND
-				pm.meta_key = '_menu_item_object_id'
-		");
-			
-		if (empty($menuPosts))
-		{
-			$menuPosts = array();
-		}
-		
-		// All private posts
-		$privatePosts = array();
-		while (count($menuPosts))
-		{
-			$postId = array_shift($menuPosts);
-			array_push($privatePosts, (int) $postId);
-			
-			$childPosts = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE post_parent = %d AND post_type IN ('document', 'page', 'image')", $postId));
-			if (is_array($childPosts) && count($childPosts))
-			{
-				$menuPosts = array_merge($menuPosts, $childPosts);
-			}
-		}
-		
-		return array_unique($privatePosts);
-	}
-}
-
 if( ! function_exists( 'the_excerpt_max_charlength' ) ) {
-	function the_excerpt_max_charlength($charlength) {
+	function the_excerpt_max_charlength( $charlength ) {
 		$excerpt = get_the_excerpt();
-		$charlength++;
+		$charlength ++;
 		if( strlen( $excerpt ) > $charlength ) {
 			$subex = substr( $excerpt, 0, $charlength-5 );
 			$exwords = explode( " ", $subex );
@@ -449,22 +413,22 @@ if( ! function_exists( 'the_excerpt_max_charlength' ) ) {
 
 if( ! function_exists( 'gllr_page_css_class' ) ) {
 	function gllr_page_css_class( $classes, $item ) {
-		$post_type = get_query_var( 'post_type' );
 		global $wpdb;
+		$post_type = get_query_var( 'post_type' );
 		$parent_id = 0;
 		if( $post_type == "gallery" ) {
-			$parent_id = $wpdb->get_var("SELECT $wpdb->posts.ID FROM $wpdb->posts, $wpdb->postmeta WHERE meta_key = '_wp_page_template' AND meta_value = 'gallery-template.php' AND post_status = 'publish' AND $wpdb->posts.ID = $wpdb->postmeta.post_id");
-			while ($parent_id) {
-				$page = get_page($parent_id);
-				if($page->post_parent > 0 )
+			$parent_id = $wpdb->get_var( "SELECT $wpdb->posts.ID FROM $wpdb->posts, $wpdb->postmeta WHERE meta_key = '_wp_page_template' AND meta_value = 'gallery-template.php' AND post_status = 'publish' AND $wpdb->posts.ID = $wpdb->postmeta.post_id" );
+			while ( $parent_id ) {
+				$page = get_page( $parent_id );
+				if( $page->post_parent > 0 )
 					$parent_id  = $page->post_parent;
 				else 
 					break;
 			}
 			wp_reset_query();
 		}
-		if ($item->ID == $parent_id) {
-        array_push($classes, 'current_page_item');
+		if ( $item->ID == $parent_id ) {
+        array_push( $classes, 'current_page_item' );
     }
     return $classes;
 	}
@@ -487,27 +451,24 @@ if( ! function_exists( 'bws_add_menu_render' ) ) {
 			array( 'twitter-plugin\/twitter.php', 'Twitter Plugin', 'http://wordpress.org/extend/plugins/twitter-plugin/', 'http://bestwebsoft.com/plugin/twitter-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Twitter+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=twitter.php' ), 
 			array( 'portfolio\/portfolio.php', 'Portfolio', 'http://wordpress.org/extend/plugins/portfolio/', 'http://bestwebsoft.com/plugin/portfolio-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Portfolio+bestwebsoft&plugin-search-input=Search+Plugins', '' ),
 			array( 'gallery-plugin\/gallery-plugin.php', 'Gallery', 'http://wordpress.org/extend/plugins/gallery-plugin/', 'http://bestwebsoft.com/plugin/gallery-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Gallery+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', '' ),
-			array( 'adsense-plugin\/adsense-plugin.php', 'Google AdSense Plugin', 'http://wordpress.org/extend/plugins/adsense-plugin/', 'http://bestwebsoft.com/plugin/google-adsense-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Adsense+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=adsense-plugin.php' )
+			array( 'adsense-plugin\/adsense-plugin.php', 'Google AdSense Plugin', 'http://wordpress.org/extend/plugins/adsense-plugin/', 'http://bestwebsoft.com/plugin/google-adsense-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Adsense+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=adsense-plugin.php' ),
+			array( 'custom-search-plugin\/custom-search-plugin.php', 'Custom Search Plugin', 'http://wordpress.org/extend/plugins/custom-search-plugin/', 'http://bestwebsoft.com/plugin/custom-search-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Custom+Search+plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=custom_search.php' )
 		);
-		foreach($array_plugins as $plugins)
-		{
-			if( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) )
-			{
+		foreach($array_plugins as $plugins) {
+			if( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) ) {
 				$array_activate[$count_activate]['title'] = $plugins[1];
 				$array_activate[$count_activate]['link']	= $plugins[2];
 				$array_activate[$count_activate]['href']	= $plugins[3];
 				$array_activate[$count_activate]['url']	= $plugins[5];
 				$count_activate++;
 			}
-			else if( array_key_exists(str_replace("\\", "", $plugins[0]), $all_plugins) )
-			{
+			else if( array_key_exists(str_replace("\\", "", $plugins[0]), $all_plugins) ) {
 				$array_install[$count_install]['title'] = $plugins[1];
 				$array_install[$count_install]['link']	= $plugins[2];
 				$array_install[$count_install]['href']	= $plugins[3];
 				$count_install++;
 			}
-			else
-			{
+			else {
 				$array_recomend[$count_recomend]['title'] = $plugins[1];
 				$array_recomend[$count_recomend]['link']	= $plugins[2];
 				$array_recomend[$count_recomend]['href']	= $plugins[3];
@@ -521,27 +482,27 @@ if( ! function_exists( 'bws_add_menu_render' ) ) {
 			<h2><?php echo $title;?></h2>
 			<?php if( 0 < $count_activate ) { ?>
 			<div>
-				<h3><?php _e( 'Activated plugins', 'gallery' ); ?></h3>
+				<h3><?php _e( 'Activated plugins', 'captcha' ); ?></h3>
 				<?php foreach( $array_activate as $activate_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $activate_plugin['title']; ?></div> <p><a href="<?php echo $activate_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'gallery'); ?></a> <a href="<?php echo $activate_plugin['url']; ?>"><?php echo __( "Settings", 'gallery'); ?></a></p>
+				<div style="float:left; width:200px;"><?php echo $activate_plugin['title']; ?></div> <p><a href="<?php echo $activate_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'captcha'); ?></a> <a href="<?php echo $activate_plugin['url']; ?>"><?php echo __( "Settings", 'captcha'); ?></a></p>
 				<?php } ?>
 			</div>
 			<?php } ?>
 			<?php if( 0 < $count_install ) { ?>
 			<div>
-				<h3><?php _e( 'Installed plugins', 'gallery' ); ?></h3>
+				<h3><?php _e( 'Installed plugins', 'captcha' ); ?></h3>
 				<?php foreach($array_install as $install_plugin) { ?>
-				<div style="float:left; width:200px;"><?php echo $install_plugin['title']; ?></div> <p><a href="<?php echo $install_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'gallery'); ?></a></p>
+				<div style="float:left; width:200px;"><?php echo $install_plugin['title']; ?></div> <p><a href="<?php echo $install_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'captcha'); ?></a></p>
 				<?php } ?>
 			</div>
 			<?php } ?>
 			<?php if( 0 < $count_recomend ) { ?>
 			<div>
-				<h3><?php _e( 'Recommended plugins', 'gallery' ); ?></h3>
+				<h3><?php _e( 'Recommended plugins', 'captcha' ); ?></h3>
 				<?php foreach( $array_recomend as $recomend_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $recomend_plugin['title']; ?></div> <p><a href="<?php echo $recomend_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'gallery'); ?></a> <a href="<?php echo $recomend_plugin['href']; ?>" target="_blank"><?php echo __( "Download", 'gallery'); ?></a> <a class="install-now" href="<?php echo get_bloginfo( "url" ) . $recomend_plugin['slug']; ?>" title="<?php esc_attr( sprintf( __( 'Install %s' ), $recomend_plugin['title'] ) ) ?>" target="_blank"><?php echo __( 'Install now from wordpress.org', 'gallery' ) ?></a></p>
+				<div style="float:left; width:200px;"><?php echo $recomend_plugin['title']; ?></div> <p><a href="<?php echo $recomend_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'captcha'); ?></a> <a href="<?php echo $recomend_plugin['href']; ?>" target="_blank"><?php echo __( "Download", 'captcha'); ?></a> <a class="install-now" href="<?php echo get_bloginfo( "url" ) . $recomend_plugin['slug']; ?>" title="<?php esc_attr( sprintf( __( 'Install %s' ), $recomend_plugin['title'] ) ) ?>" target="_blank"><?php echo __( 'Install now from wordpress.org', 'captcha' ) ?></a></p>
 				<?php } ?>
-				<span style="color: rgb(136, 136, 136); font-size: 10px;"><?php _e( 'If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site', 'gallery' ); ?> <a href="http://bestwebsoft.com/contact/">http://bestwebsoft.com/contact/</a></span>
+				<span style="color: rgb(136, 136, 136); font-size: 10px;"><?php _e( 'If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site', 'captcha' ); ?> <a href="http://bestwebsoft.com/contact/">http://bestwebsoft.com/contact/</a></span>
 			</div>
 			<?php } ?>
 		</div>
@@ -573,12 +534,12 @@ if( ! function_exists( 'register_gllr_settings' ) ) {
 
 		// install the option defaults
 		if ( 1 == $wpmu ) {
-			if( !get_site_option( 'gllr_options' ) ) {
+			if( ! get_site_option( 'gllr_options' ) ) {
 				add_site_option( 'gllr_options', $gllr_option_defaults, '', 'yes' );
 			}
 		} 
 		else {
-			if( !get_option( 'gllr_options' ) )
+			if( ! get_option( 'gllr_options' ) )
 				add_option( 'gllr_options', $gllr_option_defaults, '', 'yes' );
 		}
 

@@ -24,18 +24,19 @@
 						"what_to_show"	=> "posts",
 						"post_status"		=> "inherit",
 						"post_type"			=> "attachment",
-						"orderby"				=> "menu_order ASC, ID ASC",
+						"orderby"				=> "post_date",
+						"order"					=> "ASC",
 						"post_mime_type"=> "image/jpeg,image/gif,image/jpg,image/png",
 						"post_parent"		=> $post->ID
 					));
-					if( count($posts) > 0 ) {
+					if( count( $posts ) > 0 ) {
 						$count_image_block = 0; ?>
 						<div class="gallery clearfix">
-							<?php foreach($posts as $attachment) { 
+							<?php foreach( $posts as $attachment ) { 
 								$key = "gllr_image_text";
 								$image_attributes = wp_get_attachment_image_src( $attachment->ID, 'photo-thumb' );
 								$image_attributes_large = wp_get_attachment_image_src( $attachment->ID, 'large' );
-								if($count_image_block%$gllr_options['custom_image_row_count'] == 0) { ?>
+								if( $count_image_block % $gllr_options['custom_image_row_count'] == 0 ) { ?>
 								<div class="gllr_image_row">
 								<?php } ?>
 									<div class="gllr_image_block">

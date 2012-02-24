@@ -52,10 +52,9 @@ ul.gallery {
 #Upload-File .gallery .gllr_image_block {
     border: 1px solid #BDBDBD;
     float: left;
-    height: 150px;
+    height: 170px;
     margin: 15px 6px 50px 0;
-    padding: 5px;
-    width: 150px;
+    width: 170px;
 }
 
 .gallery .delete {

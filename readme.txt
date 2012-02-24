@@ -1,10 +1,10 @@
 ﻿=== Gallery ===
 Contributors: bestwebsoft
-Donate link: http://bestwebsoft.com/
-Tags: gallery, image, gallery image, album, foto, fotoalbum
+Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=13
+Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.3
-Stable tag: 2.07
+Stable tag: 2.08
 
 This plugin allows you to implement gallery page into web site.
 
@@ -31,7 +31,7 @@ This plugin makes it possible to implement as many galleries as you want into yo
 * French (fr_FR) (thanks Didier)
 * Georgian (ka_GE) (thanks Vako Patashuri)
 * Russian (ru_RU)
-* Ukrainian (ru_RU)(thanks VTed Mosby)
+* Ukrainian (uk_UA)(thanks Ted Mosby)
 
 If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
@@ -76,6 +76,10 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 
 == Changelog ==
 
+= V2.08 - 24.02.2012 =
+* Change : Code to include styles and scripts in a plug for the correct SSL verification.
+* Bugfix : The bug with style for image block on admin page was fixed.
+
 = V2.07 - 17.02.2012 =
 * NEW : Added Ukrainian language files for plugin.
 * Bugfix : Problem with copying files gallery-single-template.php to theme was fixed.
@@ -110,6 +114,9 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 *The file uploader is added to the Galleries page in the admin section. 
 
 == Upgrade Notice ==
+
+= V2.08 =
+Changed code to include styles and scripts in a plug for the correct SSL verification. The bug with style for image block on admin page was fixed.
 
 = V2.07 =
 Added Ukrainian language files for plugin. Problem with copying files gallery-single-template.php to theme was fixed.
