@@ -316,11 +316,6 @@ if ( ! function_exists( 'gllr_template_redirect' ) ) {
 	function gllr_template_redirect() { 
 		global $wp_query, $post, $posts;
 		if( 'gallery' == get_post_type() && "" == $wp_query->query_vars["s"] ) {
-			$category = get_term_by( 'slug', $wp_query->query_vars["taxonomy"], 'images_album'); 
-			if( 'private' == get_post_meta( $category->term_id, '_gllr_public_status', true ) && ! is_user_logged_in() ) {
-				@header( "Location: ".get_bloginfo( 'url' ) );
-				exit();
-			}
 			include( TEMPLATEPATH . '/gallery-single-template.php' );
 			exit(); 
 		}
@@ -482,27 +477,27 @@ if( ! function_exists( 'bws_add_menu_render' ) ) {
 			<h2><?php echo $title;?></h2>
 			<?php if( 0 < $count_activate ) { ?>
 			<div>
-				<h3><?php _e( 'Activated plugins', 'captcha' ); ?></h3>
+				<h3><?php _e( 'Activated plugins', 'gallery' ); ?></h3>
 				<?php foreach( $array_activate as $activate_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $activate_plugin['title']; ?></div> <p><a href="<?php echo $activate_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'captcha'); ?></a> <a href="<?php echo $activate_plugin['url']; ?>"><?php echo __( "Settings", 'captcha'); ?></a></p>
+				<div style="float:left; width:200px;"><?php echo $activate_plugin['title']; ?></div> <p><a href="<?php echo $activate_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'gallery'); ?></a> <a href="<?php echo $activate_plugin['url']; ?>"><?php echo __( "Settings", 'gallery'); ?></a></p>
 				<?php } ?>
 			</div>
 			<?php } ?>
 			<?php if( 0 < $count_install ) { ?>
 			<div>
-				<h3><?php _e( 'Installed plugins', 'captcha' ); ?></h3>
+				<h3><?php _e( 'Installed plugins', 'gallery' ); ?></h3>
 				<?php foreach($array_install as $install_plugin) { ?>
-				<div style="float:left; width:200px;"><?php echo $install_plugin['title']; ?></div> <p><a href="<?php echo $install_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'captcha'); ?></a></p>
+				<div style="float:left; width:200px;"><?php echo $install_plugin['title']; ?></div> <p><a href="<?php echo $install_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'gallery'); ?></a></p>
 				<?php } ?>
 			</div>
 			<?php } ?>
 			<?php if( 0 < $count_recomend ) { ?>
 			<div>
-				<h3><?php _e( 'Recommended plugins', 'captcha' ); ?></h3>
+				<h3><?php _e( 'Recommended plugins', 'gallery' ); ?></h3>
 				<?php foreach( $array_recomend as $recomend_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $recomend_plugin['title']; ?></div> <p><a href="<?php echo $recomend_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'captcha'); ?></a> <a href="<?php echo $recomend_plugin['href']; ?>" target="_blank"><?php echo __( "Download", 'captcha'); ?></a> <a class="install-now" href="<?php echo get_bloginfo( "url" ) . $recomend_plugin['slug']; ?>" title="<?php esc_attr( sprintf( __( 'Install %s' ), $recomend_plugin['title'] ) ) ?>" target="_blank"><?php echo __( 'Install now from wordpress.org', 'captcha' ) ?></a></p>
+				<div style="float:left; width:200px;"><?php echo $recomend_plugin['title']; ?></div> <p><a href="<?php echo $recomend_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'gallery'); ?></a> <a href="<?php echo $recomend_plugin['href']; ?>" target="_blank"><?php echo __( "Download", 'gallery'); ?></a> <a class="install-now" href="<?php echo get_bloginfo( "url" ) . $recomend_plugin['slug']; ?>" title="<?php esc_attr( sprintf( __( 'Install %s' ), $recomend_plugin['title'] ) ) ?>" target="_blank"><?php echo __( 'Install now from wordpress.org', 'gallery' ) ?></a></p>
 				<?php } ?>
-				<span style="color: rgb(136, 136, 136); font-size: 10px;"><?php _e( 'If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site', 'captcha' ); ?> <a href="http://bestwebsoft.com/contact/">http://bestwebsoft.com/contact/</a></span>
+				<span style="color: rgb(136, 136, 136); font-size: 10px;"><?php _e( 'If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site', 'gallery' ); ?> <a href="http://bestwebsoft.com/contact/">http://bestwebsoft.com/contact/</a></span>
 			</div>
 			<?php } ?>
 		</div>
