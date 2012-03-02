@@ -316,11 +316,6 @@ if ( ! function_exists( 'gllr_template_redirect' ) ) {
 	function gllr_template_redirect() { 
 		global $wp_query, $post, $posts;
 		if( 'gallery' == get_post_type() && "" == $wp_query->query_vars["s"] ) {
-			$category = get_term_by( 'slug', $wp_query->query_vars["taxonomy"], 'images_album'); 
-			if( 'private' == get_post_meta( $category->term_id, '_gllr_public_status', true ) && ! is_user_logged_in() ) {
-				@header( "Location: ".get_bloginfo( 'url' ) );
-				exit();
-			}
 			include( TEMPLATEPATH . '/gallery-single-template.php' );
 			exit(); 
 		}
