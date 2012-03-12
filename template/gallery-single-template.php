@@ -1,8 +1,4 @@
 <?php get_header(); ?>
-	<?php 
-		global $post;
-		global $wpdb;
-	?>
 	<div id="container">
 		<div role="main" id="content">
 			<?php 

@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 2.07
+Version: 2.09
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -38,8 +38,8 @@ if( ! function_exists( 'gllr_plugin_install' ) ) {
 		}
 		else {
 			copy( TEMPLATEPATH .'/gallery-template.php', TEMPLATEPATH .'/gallery-template.php.bak' );
-			if( ! copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-template.php', TEMPLATEPATH .'/gallery-template.php' ) )
-				add_action( 'admin_notices', create_function( '',  'echo "Error copy template file";' ) );
+			/*if( ! copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-template.php', TEMPLATEPATH .'/gallery-template.php' ) )
+				add_action( 'admin_notices', create_function( '',  'echo "Error copy template file";' ) );*/
 		}
 		if ( ! file_exists( TEMPLATEPATH .'/gallery-single-template.php' ) ) {
 			if( ! copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-single-template.php', TEMPLATEPATH .'/gallery-single-template.php' ) )
@@ -47,8 +47,8 @@ if( ! function_exists( 'gllr_plugin_install' ) ) {
 		}
 		else {
 			copy( TEMPLATEPATH .'/gallery-single-template.php', TEMPLATEPATH .'/gallery-single-template.php.bak' );
-			if( ! copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-single-template.php', TEMPLATEPATH .'/gallery-single-template.php' ) )
-				add_action( 'admin_notices', create_function( '',  'echo "Error copy template file";' ) );
+			/*if( ! copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-single-template.php', TEMPLATEPATH .'/gallery-single-template.php' ) )
+				add_action( 'admin_notices', create_function( '',  'echo "Error copy template file";' ) );*/
 		}
 	}
 }
@@ -94,12 +94,6 @@ if( ! function_exists( 'post_type_images' ) ) {
 			'supports' => array('title', 'editor'),
 			'register_meta_box_cb' => 'init_metaboxes_gallery'
 		));
-
-		wp_enqueue_style( 'gllrStylesheet', plugins_url( 'css/stylesheet.css', __FILE__ ) );
-		wp_enqueue_style( 'gllrPrettyPhotoStylesheet', plugins_url( 'pretty_photo/css/prettyPhoto.css', __FILE__ ) );
-		wp_enqueue_script( 'gllrPrettyPhotoJs', plugins_url( 'pretty_photo/js/jquery.prettyPhoto.js', __FILE__ ), array( 'jquery' ) ); 
-		wp_enqueue_style( 'gllrFileuploaderCss', plugins_url( 'upload/fileuploader.css', __FILE__ ) );
-		wp_enqueue_script( 'gllrFileuploaderJs', plugins_url( 'upload/fileuploader.js', __FILE__ ), array( 'jquery' ) );
 	}
 }
 
@@ -447,7 +441,8 @@ if( ! function_exists( 'bws_add_menu_render' ) ) {
 			array( 'portfolio\/portfolio.php', 'Portfolio', 'http://wordpress.org/extend/plugins/portfolio/', 'http://bestwebsoft.com/plugin/portfolio-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Portfolio+bestwebsoft&plugin-search-input=Search+Plugins', '' ),
 			array( 'gallery-plugin\/gallery-plugin.php', 'Gallery', 'http://wordpress.org/extend/plugins/gallery-plugin/', 'http://bestwebsoft.com/plugin/gallery-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Gallery+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', '' ),
 			array( 'adsense-plugin\/adsense-plugin.php', 'Google AdSense Plugin', 'http://wordpress.org/extend/plugins/adsense-plugin/', 'http://bestwebsoft.com/plugin/google-adsense-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Adsense+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=adsense-plugin.php' ),
-			array( 'custom-search-plugin\/custom-search-plugin.php', 'Custom Search Plugin', 'http://wordpress.org/extend/plugins/custom-search-plugin/', 'http://bestwebsoft.com/plugin/custom-search-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Custom+Search+plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=custom_search.php' )
+			array( 'custom-search-plugin\/custom-search-plugin.php', 'Custom Search Plugin', 'http://wordpress.org/extend/plugins/custom-search-plugin/', 'http://bestwebsoft.com/plugin/custom-search-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Custom+Search+plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=custom_search.php' ),
+			array( 'quotes_and_tips\/quotes-and-tips.php', 'Quotes and Tips', 'http://wordpress.org/extend/plugins/quotes-and-tips/', 'http://bestwebsoft.com/plugin/quotes-and-tips/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Quotes+and+Tips+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=quotes-and-tips.php' )
 		);
 		foreach($array_plugins as $plugins) {
 			if( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) ) {
@@ -649,6 +644,32 @@ if( ! function_exists( 'gllr_plugin_action_links' ) ) {
 	} // end function gllr_plugin_action_links
 }
 
+if( ! function_exists( 'gllr_add_script' ) ){
+	function gllr_add_script() { ?>
+		<script type="text/javascript">
+		if ( ! window.jQuery ) {
+			document.write('<s'+'cript src="http://code.jquery.com/jquery-latest.js"></s'+'cript>');
+		}
+		</script>
+	<?php }
+}
+
+if ( ! function_exists ( 'gllr_admin_head' ) ) {
+	function gllr_admin_head() {
+		wp_enqueue_style( 'gllrStylesheet', plugins_url( 'css/stylesheet.css', __FILE__ ) );
+		wp_enqueue_style( 'gllrFileuploaderCss', plugins_url( 'upload/fileuploader.css', __FILE__ ) );
+		wp_enqueue_script( 'gllrFileuploaderJs', plugins_url( 'upload/fileuploader.js', __FILE__ ), array( 'jquery' ) );
+	}
+}
+
+if ( ! function_exists ( 'gllr_wp_head' ) ) {
+	function gllr_wp_head() {
+		wp_enqueue_style( 'gllrStylesheet', plugins_url( 'css/stylesheet.css', __FILE__ ) );
+		wp_enqueue_style( 'gllrPrettyPhotoStylesheet', plugins_url( 'pretty_photo/css/prettyPhoto.css', __FILE__ ) );
+		wp_enqueue_script( 'gllrPrettyPhotoJs', plugins_url( 'pretty_photo/js/jquery.prettyPhoto.js', __FILE__ ), array( 'jquery' ) ); 
+	}
+}
+
 register_activation_hook( __FILE__, 'gllr_plugin_install' ); // activate plugin
 register_uninstall_hook( __FILE__, 'gllr_plugin_uninstall' ); // deactivate plugin
 
@@ -672,5 +693,10 @@ add_filter( 'page_css_class', 'gllr_page_css_class', 10, 2 );
 
 add_filter( 'manage_gallery_posts_columns', 'gllr_change_columns' );
 add_action( 'manage_gallery_posts_custom_column', 'gllr_custom_columns', 10, 2 );
+
+add_action( 'wp_head', 'gllr_add_script' );
+add_action( 'admin_enqueue_scripts', 'gllr_admin_head' );
+add_action( 'wp_enqueue_scripts', 'gllr_wp_head' );
+
 
 ?>

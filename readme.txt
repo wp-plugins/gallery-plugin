@@ -4,13 +4,13 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.3
-Stable tag: 2.08
+Stable tag: 2.09
 
-This plugin allows you to implement gallery page into web site.
+This plugin allows you to implement gallery page into your web site.
 
 == Description ==
 
-This plugin makes it possible to implement as many galleries as you want into your website. You can add multiple pictures and description to each gallery, show them all at one page, view each one separately. Moreover, it's possible to upload HQ pictures.
+This plugin makes it possible to implement as many galleries as you want into your website. You can add multiple pictures and description for each gallery, show them all at one page, view each one separately. Moreover, it's possible to upload HQ pictures.
 
 <a href="http://wordpress.org/extend/plugins/gallery-plugin/faq/" target="_blank">FAQ</a>
 <a href="http://bestwebsoft.com/plugin/gallery-plugin/" target="_blank">Support</a>
@@ -18,47 +18,47 @@ This plugin makes it possible to implement as many galleries as you want into yo
 = Features =
 
 * Actions: Create any quantity of the albums in gallery.
-* Description: Implement the description to each album.
-* Actions: The possibility to load any quantity of photos for each album in gallery.
-* Caption: Add caption to each photo of the album.
-* Display: You can select the dimensions of the thumbnails for the cover of the album and for photos in album.
-* Display: The possibility to select a quantity of photos for the separate page of album of the gallery which will be placed in one line.
+* Description: Add description to each album.
+* Actions: Possibility to load any number of photos to each album in the gallery.
+* Caption: Add caption to each photo in the album.
+* Display: You can select dimensions of the thumbnails for the cover of the album as well as for photos in the album.
+* Display: A possibility to select a number of the photos for the separate page of album of the gallery which will be placed in one line.
 * Slideshow: User can review all photos in album in full size and in slideshow.
 
-= Translate =
+= Translation =
 
-* Dutch (nl_NL) (thanks <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>)
-* French (fr_FR) (thanks Didier)
-* Georgian (ka_GE) (thanks Vako Patashuri)
+* Dutch (nl_NL) (thanks to <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>)
+* French (fr_FR) (thanks to Didier)
+* Georgian (ka_GE) (thanks to Vako Patashuri)
 * Russian (ru_RU)
-* Ukrainian (uk_UA)(thanks Ted Mosby)
+* Ukrainian (uk_UA)(thanks to Ted Mosby)
 
-If you create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
+If you create your own language pack or update an existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
 == Installation ==
 
-1. Upload the folder `Gallery` to the directory `/wp-content/plugins/`.
+1. Upload `Gallery` folder to the directory `/wp-content/plugins/`.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Please check if you have the `gallery-template.php` template file and the `gallery-single-template.php` template file in your templates directory. If you are not able to find this file, then just copy it from `/wp-content/plugins/gallery/template/` directory to your templates directory.
+3. Please check if you have the `gallery-template.php` template file as well as `gallery-single-template.php` template file in your templates directory. If you are not able to find these files, then just copy it from `/wp-content/plugins/gallery/template/` directory to your templates directory.
 
 == Frequently Asked Questions ==
 
 = I cannot view my Gallery page =
 
 1. First of all, you need to create your first Gallery page and choose 'Gallery' from the list of available templates (which will be used for displaying our gallery).
-2. If you cannot find 'Gallery' from a list of available templates, then just copy it from `/wp-content/plugins/gallery/template/` directory to your templates directory.
+2. If you cannot find 'Gallery' in the list of available templates, then just copy it from `/wp-content/plugins/gallery/template/` directory to your templates directory.
 
 = How to use plugin? =
 
 1. Choose 'Add New' from the 'Galleries' menu and fill out your page.
-2. Upload pictures by using the uploader in the bottom of the page. 
+2. Upload pictures by using an uploader in the bottom of the page. 
 3. Save the page.
 
 = How to add an image? =
 
-- Choose the necessary gallery from the list on the Galleries page in the admin section (or create a new gallery - choose 'Add New' from the 'Galleries' menu). 
+- Choose the necessary gallery from the list on the Galleries page in admin section (or create a new gallery - choose 'Add New' from the 'Galleries' menu). 
 - Use the option 'Upload a file' available in the uploader, choose the necessary pictures and click 'Open'
-- The files uploading process performs.
+- The files uploading process will start.
 - Once all pictures are uploaded, please save the page.
 - If you see the message 'Please enable JavaScript to use the file uploader.', you should enable JavaScript in your browser.
 
@@ -72,75 +72,81 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 2. Galleries albums page on frontend.
 3. Gallery Options page in admin panel.
 4. Single gallery page.
-5. PrettyPhoto pop-up window with images from album.
+5. PrettyPhoto pop-up window with images from the album.
 
 == Changelog ==
 
+= V2.09 - 12.03.2012 =
+* Changed : BWS plugins section. 
+
 = V2.08 - 24.02.2012 =
-* Change : Code to include styles and scripts in a plug for the correct SSL verification.
-* Bugfix : The bug with style for image block on admin page was fixed.
+* Change : Code that is used to connect styles and scripts is added to the plugin for correct SSL verification.
+ * Bugfix : The bug with style for image block on admin page was fixed.
 
 = V2.07 - 17.02.2012 =
-* NEW : Added Ukrainian language files for plugin.
+* NEW : Ukrainian language files are added to the plugin.
 * Bugfix : Problem with copying files gallery-single-template.php to theme was fixed.
 
 = V2.06 - 14.02.2012 =
-* NEW : Added Dutch language files for plugin.
+* NEW : Dutch language files are added to the plugin.
 
 = V2.05 - 18.01.2012 =
-* NEW : Added link on setting plugins page.
-* Change : Added revised Georgian language files for plugin.
+* NEW : A link to the plugin's settings page is added.
+* Change : Revised Georgian language files are added to the plugin.
 
 = V2.04 - 13.01.2012 =
-* NEW : Added French language files for plugin.
+* NEW : French language files are added to the plugin.
 
 = V2.03 - 12.01.2012 =
-* Bugfix : Position to display images on single page Gallery was fixed.
+* Bugfix : Position to display images on a Gallery single page was fixed.
 
 = V2.02 - 11.01.2012 =
-* NEW : Added Georgian language files for plugin.
+* NEW : Georgian language files are added to the plugin.
 
 = V2.01 - 03.01.2012 =
-* NEW : Add caption to each photo of the album.
-* NEW : Add possibility to select the dimensions of the thumbnails for the cover of the album and for photos in album.
-* NEW : Add possibility to select a quantity of photos for the separate page of album of the gallery which will be placed in one line.
+* NEW : Adding of the caption to each photo in the album.
+* NEW : A possibility to select the dimensions of the thumbnails for the cover of the album and for photos in album is added.
+* NEW : A possibility to select a number of the photos for a separate page of the album in the gallery which will be placed in one line is added.
 * Change : PrettyPhoto library was updated up to version 3.1.3.
-* Bugfix : Button 'Sluiten' is replaced by a button 'Close'.
+* Bugfix : Button 'Sluiten' is replaced with a 'Close' button.
 
 = V1.02 - 13.10.2011 =
-*Add noConflict for jQuery. 
+* noConflict for jQuery is added.  
 
 = V1.01 - 23.09.2011 =
-*The file uploader is added to the Galleries page in the admin section. 
+*The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
 
+= V2.09 - 07.03.2012 =
+BWS plugins section has been changed. 
+
 = V2.08 =
-Changed code to include styles and scripts in a plug for the correct SSL verification. The bug with style for image block on admin page was fixed.
+Code that is used to connect styles and scripts is added to the plugin for correct SSL verification. The bug with a style for an image block on admin page was fixed.
 
 = V2.07 =
-Added Ukrainian language files for plugin. Problem with copying files gallery-single-template.php to theme was fixed.
+Ukrainian language files are added to the plugin. Problem with copying files gallery-single-template.php to the theme was fixed.
 
 = V2.06 =
-Added Dutch language files for plugin.
+Dutch language files are added to the plugin.
 
 = V2.05 =
-Added link on setting plugins page. Added revised Georgian language files for plugin.
+A link to the plugin's settings page is added. Revised Georgian language files are added to the plugin.
 
 = V2.04 =
-Added French language files for plugin.
+French language files are added to the plugin.
 
 = V2.03 =
-Position to display images on single page Gallery was fixed. Please upgrade the Gallery plugin. Thank you.
+Position to display images on a single page of the Gallery was fixed. Please upgrade the Gallery plugin. Thank you.
 
 = V2.02 =
-Added Georgian language files for plugin.
+Georgian language files are added to the plugin.
 
 = V2.01 =
-Add caption to each photo of the album. Add possibility to select the dimensions of the thumbnails for the cover of the album and for photos in album. Add possibility to select a quantity of photos for the separate page of album of the gallery which will be placed in one line. PrettyPhoto library was updated. Button 'Sluiten' is replaced by a button 'Close'. Please upgrade the Gallery plugin immediately. Thank you.
+A possibility to add a caption to each photo of the album is added. A possibility to select dimensions of the thumbnails for the cover of the album and for photos in album is added. A possibility to select a number of the photos for a separate page of the album in the gallery which will be placed in one line is added. PrettyPhoto library was updated. Button 'Sluiten' is replaced with a 'Close' button. Please upgrade the Gallery plugin immediately. Thank you.
 
 = V1.02 =
-Add noConflict for jQuery.
+noConflict for jQuery is added.
 
 = V1.01 =
-The file uploader is added to the Galleries page in the admin section. 
+The file uploader is added to the Galleries page in admin section.

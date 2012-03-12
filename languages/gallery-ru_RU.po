@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gallery\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-24 16:31+0200\n"
-"PO-Revision-Date: 2012-02-24 16:31+0200\n"
+"POT-Creation-Date: 2012-03-12 19:34+0200\n"
+"PO-Revision-Date: 2012-03-12 19:34+0200\n"
 "Last-Translator: BWS <zos@bestwebsoft.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgid "Galleries"
 msgstr "Галереи"
 
 #: gallery-plugin.php:76
-#: gallery-plugin.php:516
+#: gallery-plugin.php:506
 msgid "Gallery"
 msgstr "Галерея"
 
@@ -54,131 +54,131 @@ msgstr "Поиск галереи"
 msgid "No Galleries found"
 msgstr "Ни одной галереи не найдено"
 
-#: gallery-plugin.php:132
+#: gallery-plugin.php:126
 msgid "Upload File"
 msgstr "Загрузить файлы"
 
-#: gallery-plugin.php:145
+#: gallery-plugin.php:139
 msgid "Choose a screenshot to upload:"
 msgstr "Выбрать файлы для загрузки: "
 
-#: gallery-plugin.php:149
+#: gallery-plugin.php:143
 msgid "Please enable JavaScript to use the file uploader."
 msgstr "Пожалуйста, включите javascript для использования загрузчика файлов."
 
-#: gallery-plugin.php:336
+#: gallery-plugin.php:325
 msgid "Title"
 msgstr "Название"
 
-#: gallery-plugin.php:337
+#: gallery-plugin.php:326
 msgid "Author"
 msgstr "Автор"
 
-#: gallery-plugin.php:338
+#: gallery-plugin.php:327
 msgid "Photo's"
 msgstr "Фото"
 
-#: gallery-plugin.php:339
+#: gallery-plugin.php:328
 msgid "Public"
 msgstr "Опубликование"
 
-#: gallery-plugin.php:340
+#: gallery-plugin.php:329
 msgid "Date"
 msgstr "Дата"
 
-#: gallery-plugin.php:485
+#: gallery-plugin.php:475
 msgid "Activated plugins"
 msgstr "Активированные плагины"
 
-#: gallery-plugin.php:487
-#: gallery-plugin.php:495
-#: gallery-plugin.php:503
+#: gallery-plugin.php:477
+#: gallery-plugin.php:485
+#: gallery-plugin.php:493
 msgid "Read more"
 msgstr "Подробнее..."
 
-#: gallery-plugin.php:487
-#: gallery-plugin.php:635
-#: gallery-plugin.php:650
+#: gallery-plugin.php:477
+#: gallery-plugin.php:625
+#: gallery-plugin.php:640
 msgid "Settings"
 msgstr "Настройки"
 
-#: gallery-plugin.php:493
+#: gallery-plugin.php:483
 msgid "Installed plugins"
 msgstr "Установленные плагины"
 
-#: gallery-plugin.php:501
+#: gallery-plugin.php:491
 msgid "Recommended plugins"
 msgstr "Рекомендованные к установке плагины"
 
-#: gallery-plugin.php:503
+#: gallery-plugin.php:493
 msgid "Download"
 msgstr "Скачать"
 
-#: gallery-plugin.php:503
+#: gallery-plugin.php:493
 #, php-format
 msgid "Install %s"
 msgstr "Установлено %s"
 
-#: gallery-plugin.php:503
+#: gallery-plugin.php:493
 msgid "Install now from wordpress.org"
 msgstr "Установить с wordpress.org"
 
-#: gallery-plugin.php:505
+#: gallery-plugin.php:495
 msgid "If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site"
 msgstr "Если у вас есть какие-то впросы, обращайтесь на plugin@bestwebsoft.com или заполните контактную форму на нашем сайте"
 
-#: gallery-plugin.php:584
+#: gallery-plugin.php:574
 msgid "Options saved."
 msgstr "Опции сохранены"
 
-#: gallery-plugin.php:591
+#: gallery-plugin.php:581
 msgid "Gallery Options"
 msgstr "Настройки Галереи"
 
-#: gallery-plugin.php:597
+#: gallery-plugin.php:587
 msgid "The size of the cover album for gallery"
 msgstr "Размер изображения для обложки альбома  галереи"
 
-#: gallery-plugin.php:599
-#: gallery-plugin.php:607
+#: gallery-plugin.php:589
+#: gallery-plugin.php:597
 msgid "Image size name"
 msgstr "Название размера изображение"
 
-#: gallery-plugin.php:600
-#: gallery-plugin.php:608
+#: gallery-plugin.php:590
+#: gallery-plugin.php:598
 msgid "Width (in px)"
 msgstr "Ширина (в px)"
 
-#: gallery-plugin.php:601
-#: gallery-plugin.php:609
+#: gallery-plugin.php:591
+#: gallery-plugin.php:599
 msgid "Height (in px)"
 msgstr "Высота (в px)"
 
-#: gallery-plugin.php:605
+#: gallery-plugin.php:595
 msgid "Size for gallery image"
 msgstr "Размер изображений Галереи"
 
-#: gallery-plugin.php:613
+#: gallery-plugin.php:603
 msgid "WordPress will create a copy of the post thumbnail with the specified dimensions when you upload a new photo."
 msgstr "WordPress создаст новую миниатюру с заданными размерами при загрузке новой фотографии."
 
-#: gallery-plugin.php:616
+#: gallery-plugin.php:606
 msgid "Count images in row"
 msgstr "Количество изображений в строке"
 
-#: gallery-plugin.php:624
+#: gallery-plugin.php:614
 msgid "Save Changes"
 msgstr ""
 
-#: gallery-plugin.php:636
+#: gallery-plugin.php:626
 msgid "FAQ"
 msgstr "FAQ"
 
-#: gallery-plugin.php:637
+#: gallery-plugin.php:627
 msgid "Support"
 msgstr "Поддержка"
 
-#: template/gallery-single-template.php:64
+#: template/gallery-single-template.php:60
 msgid "Sorry - nothing to found."
 msgstr "Извините, ничего не найдено."
 
