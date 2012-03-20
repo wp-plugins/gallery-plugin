@@ -1,10 +1,10 @@
 ﻿=== Gallery ===
 Contributors: bestwebsoft
-Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=1&product_id=13
+Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
-Tested up to: 3.3
-Stable tag: 2.09
+Tested up to: 3.3.1
+Stable tag: 2.10
 
 This plugin allows you to implement gallery page into your web site.
 
@@ -30,6 +30,7 @@ This plugin makes it possible to implement as many galleries as you want into yo
 * Dutch (nl_NL) (thanks to <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>)
 * French (fr_FR) (thanks to Didier)
 * Georgian (ka_GE) (thanks to Vako Patashuri)
+* Polish (pl_PL) (thanks to Janusz Janczy, Bezcennyczas.pl)
 * Russian (ru_RU)
 * Ukrainian (uk_UA)(thanks to Ted Mosby)
 
@@ -76,6 +77,9 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 
 == Changelog ==
 
+= V2.10 - 20.03.2012 =
+* NEW : Polish language files are added to the plugin.
+
 = V2.09 - 12.03.2012 =
 * Changed : BWS plugins section. 
 
@@ -117,6 +121,9 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V2.10 =
+Polish language files are added to the plugin.
 
 = V2.09 - 07.03.2012 =
 BWS plugins section has been changed. 

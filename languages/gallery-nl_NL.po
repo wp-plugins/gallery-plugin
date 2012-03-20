@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gallery\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-12 19:34+0200\n"
-"PO-Revision-Date: 2012-03-12 19:34+0200\n"
+"POT-Creation-Date: 2012-03-20 20:43+0200\n"
+"PO-Revision-Date: 2012-03-20 20:43+0200\n"
 "Last-Translator: BWS <zos@bestwebsoft.com>\n"
 "Language-Team: Ronald <ronald@bhi.nl>\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgid "Galleries"
 msgstr "Fotoalbum's"
 
 #: gallery-plugin.php:76
-#: gallery-plugin.php:506
+#: gallery-plugin.php:518
 msgid "Gallery"
 msgstr "Fotoalbum"
 
@@ -58,123 +58,123 @@ msgstr "Niets gevonden"
 msgid "Upload File"
 msgstr "Foto's uploaden"
 
-#: gallery-plugin.php:139
+#: gallery-plugin.php:145
 msgid "Choose a screenshot to upload:"
 msgstr "Foto's uploaden: "
 
-#: gallery-plugin.php:143
+#: gallery-plugin.php:150
 msgid "Please enable JavaScript to use the file uploader."
 msgstr "Activeer JavaScript om foto's te kunnen uploaden."
 
-#: gallery-plugin.php:325
+#: gallery-plugin.php:337
 msgid "Title"
 msgstr "Titel"
 
-#: gallery-plugin.php:326
+#: gallery-plugin.php:338
 msgid "Author"
 msgstr "Auteur"
 
-#: gallery-plugin.php:327
+#: gallery-plugin.php:339
 msgid "Photo's"
 msgstr "Foto's"
 
-#: gallery-plugin.php:328
+#: gallery-plugin.php:340
 msgid "Public"
 msgstr "Gepubliceerd"
 
-#: gallery-plugin.php:329
+#: gallery-plugin.php:341
 msgid "Date"
 msgstr "Datum"
 
-#: gallery-plugin.php:475
+#: gallery-plugin.php:487
 msgid "Activated plugins"
 msgstr "Geactiveerde plugins"
 
-#: gallery-plugin.php:477
-#: gallery-plugin.php:485
-#: gallery-plugin.php:493
+#: gallery-plugin.php:489
+#: gallery-plugin.php:497
+#: gallery-plugin.php:505
 msgid "Read more"
 msgstr "Lees verder"
 
-#: gallery-plugin.php:477
-#: gallery-plugin.php:625
-#: gallery-plugin.php:640
+#: gallery-plugin.php:489
+#: gallery-plugin.php:637
+#: gallery-plugin.php:652
 msgid "Settings"
 msgstr "Instellingen"
 
-#: gallery-plugin.php:483
+#: gallery-plugin.php:495
 msgid "Installed plugins"
 msgstr "Geinstalleerde plugins"
 
-#: gallery-plugin.php:491
+#: gallery-plugin.php:503
 msgid "Recommended plugins"
 msgstr "Aanbevolen plugins"
 
-#: gallery-plugin.php:493
+#: gallery-plugin.php:505
 msgid "Download"
 msgstr "Download"
 
-#: gallery-plugin.php:493
+#: gallery-plugin.php:505
 #, php-format
 msgid "Install %s"
 msgstr "Install %s"
 
-#: gallery-plugin.php:493
+#: gallery-plugin.php:505
 msgid "Install now from wordpress.org"
 msgstr "Installeer nu vanaf wordpress.org"
 
-#: gallery-plugin.php:495
+#: gallery-plugin.php:507
 msgid "If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site"
 msgstr "Indien u nog vragen heeft, neem contact op via plugin@bestwebsoft.com of vul het contactformulier in op onze website"
 
-#: gallery-plugin.php:574
+#: gallery-plugin.php:586
 msgid "Options saved."
 msgstr "Opties opgeslagen"
 
-#: gallery-plugin.php:581
+#: gallery-plugin.php:593
 msgid "Gallery Options"
 msgstr "Fotoalbum opties"
 
-#: gallery-plugin.php:587
+#: gallery-plugin.php:599
 msgid "The size of the cover album for gallery"
 msgstr "De afmetingen voor de cover van het album"
 
-#: gallery-plugin.php:589
-#: gallery-plugin.php:597
+#: gallery-plugin.php:601
+#: gallery-plugin.php:609
 msgid "Image size name"
 msgstr "Afbeelding grootte"
 
-#: gallery-plugin.php:590
-#: gallery-plugin.php:598
+#: gallery-plugin.php:602
+#: gallery-plugin.php:610
 msgid "Width (in px)"
 msgstr "Breedte (in px)"
 
-#: gallery-plugin.php:591
-#: gallery-plugin.php:599
+#: gallery-plugin.php:603
+#: gallery-plugin.php:611
 msgid "Height (in px)"
 msgstr "Hoogte (in px)"
 
-#: gallery-plugin.php:595
+#: gallery-plugin.php:607
 msgid "Size for gallery image"
 msgstr "Grootte voor album afbeelding"
 
-#: gallery-plugin.php:603
+#: gallery-plugin.php:615
 msgid "WordPress will create a copy of the post thumbnail with the specified dimensions when you upload a new photo."
 msgstr "Wordpress zal een kopie maken van de thumbnail in de opgegeven afmetingen als u een nieuwe foto upload."
 
-#: gallery-plugin.php:606
+#: gallery-plugin.php:618
 msgid "Count images in row"
 msgstr "Aantal afbeeldingen op een rij"
 
-#: gallery-plugin.php:614
+#: gallery-plugin.php:626
 msgid "Save Changes"
 msgstr "Bewaar veranderingen"
 
-#: gallery-plugin.php:626
+#: gallery-plugin.php:638
 msgid "FAQ"
 msgstr "FAQ"
 
-#: gallery-plugin.php:627
+#: gallery-plugin.php:639
 msgid "Support"
 msgstr "Support"
 

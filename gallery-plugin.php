@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 2.09
+Version: 2.10
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -131,14 +131,21 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 	function gllr_post_custom_box( $obj = '', $box = '' ) {
 		global $post;
 		$key = "gllr_image_text";
+		$error = "";
+		$uploader = true;
 		
 		$post_types = get_post_types( array( '_builtin' => false ) );
 		if( ! is_writable ( ABSPATH ."wp-content/plugins/gallery-plugin/upload/files/" ) )
-			chmod( ABSPATH ."wp-content/plugins/gallery-plugin/upload/files/", 0777 );
+			@chmod( ABSPATH ."wp-content/plugins/gallery-plugin/upload/files/", 0777 );
+		if( ! is_writable ( ABSPATH ."wp-content/plugins/gallery-plugin/upload/files/" ) ) {
+			$error = "The gallery temp directory not writeable by your webserver. Пожалуйста, используйте стандартный функционал wp для загрузки изобюражений (медиа библиотеку)";
+			$uploader = false;
+		}
 		?>
 		<div style="padding-top:10px;"><label for="uploadscreen"><?php echo __( 'Choose a screenshot to upload:', 'gallery' ); ?></label>
 			<input name="MAX_FILE_SIZE" value="1048576" type="hidden" />
-			<div id="file-uploader-demo1" style="padding-top:10px;">		
+			<div id="file-uploader-demo1" style="padding-top:10px;">	
+				<?php echo $error; ?>
 				<noscript>			
 					<p><?php echo __( 'Please enable JavaScript to use the file uploader.', 'gallery' ); ?></p>
 				</noscript>         
@@ -147,6 +154,7 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 			<div id="hidden"></div>
 			<div style="clear:both;"></div></div>
 		<script type="text/javascript">
+		<?php if ($uploader === true) { ?>
 		jQuery(document).ready(function()
 		{
 				var uploader = new qq.FileUploader({
@@ -166,7 +174,7 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 				jQuery('#images_albumdiv').remove();
 
 		});
-
+		<?php } ?>
 		function img_delete(id) {
 			jQuery('#'+id).hide();
 			jQuery('#delete_images').append('<input type="hidden" name="delete_images[]" value="'+id+'" />');
@@ -300,6 +308,10 @@ if( ! function_exists( 'gllr_custom_permalinks' ) ) {
 		if( ! empty( $parent ) ) {
 			$wp_rewrite->add_rule( '(.+)/'.$parent.'/([^/]+)/?$', 'index.php?post_type=gallery&title=$matches[2]&posts_per_page=-1', 'top' );
 			$wp_rewrite->add_rule( ''.$parent.'/([^/]+)/?$', 'index.php?post_type=gallery&title=$matches[1]&posts_per_page=-1', 'top' );
+		}
+		else {
+			$wp_rewrite->add_rule( '(.+)/gallery/([^/]+)/?$', 'index.php?post_type=gallery&title=$matches[2]&posts_per_page=-1', 'top' );
+			$wp_rewrite->add_rule( 'gallery/([^/]+)/?$', 'index.php?post_type=gallery&title=$matches[1]&posts_per_page=-1', 'top' );
 		}
 
 		$wp_rewrite->flush_rules();
@@ -697,6 +709,4 @@ add_action( 'manage_gallery_posts_custom_column', 'gllr_custom_columns', 10, 2 )
 add_action( 'wp_head', 'gllr_add_script' );
 add_action( 'admin_enqueue_scripts', 'gllr_admin_head' );
 add_action( 'wp_enqueue_scripts', 'gllr_wp_head' );
-
-
 ?>
