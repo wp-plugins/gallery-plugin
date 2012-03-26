@@ -103,10 +103,24 @@ if( ! function_exists( 'addImageAncestorToMenu' ) ) {
 			global $wpdb, $post;
 			
 			if ( empty( $post->ancestors ) ) {
-				return $classes;
+				$parent_id = $wpdb->get_var( "SELECT $wpdb->posts.ID FROM $wpdb->posts, $wpdb->postmeta WHERE meta_key = '_wp_page_template' AND meta_value = 'gallery-template.php' AND post_status = 'publish' AND $wpdb->posts.ID = $wpdb->postmeta.post_id" );
+				while ( $parent_id ) {
+					$page = get_page( $parent_id );
+					if( $page->post_parent > 0 )
+						$parent_id  = $page->post_parent;
+					else 
+						break;
+				}
+				wp_reset_query();
+				if( empty( $parent_id ) ) 
+					return $classes;
+				$post_ancestors = array( $parent_id );
 			}
+			else {
+				$post_ancestors = $post->ancestors;
+			}			
 			
-			$menuQuery = "SELECT DISTINCT post_id FROM $wpdb->postmeta WHERE meta_key = '_menu_item_object_id' AND meta_value IN (" . implode(',', $post->ancestors) . ")";
+			$menuQuery = "SELECT DISTINCT post_id FROM $wpdb->postmeta WHERE meta_key = '_menu_item_object_id' AND meta_value IN (" . implode(',', $post_ancestors) . ")";
 			$menuItems = $wpdb->get_col( $menuQuery );
 			
 			if ( is_array( $menuItems ) ) {

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gallery\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-20 20:43+0200\n"
-"PO-Revision-Date: 2012-03-20 20:43+0200\n"
+"POT-Creation-Date: 2012-03-26 20:51+0200\n"
+"PO-Revision-Date: 2012-03-26 20:51+0200\n"
 "Last-Translator: BWS <zos@bestwebsoft.com>\n"
 "Language-Team: BWS <bestwebsoft.com>\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgid "Galleries"
 msgstr "Galerie zdjęć"
 
 #: gallery-plugin.php:76
-#: gallery-plugin.php:518
+#: gallery-plugin.php:532
 msgid "Gallery"
 msgstr "Galeria zdjęć"
 
@@ -54,127 +54,127 @@ msgstr "Szukaj galerii"
 msgid "No Galleries found"
 msgstr "Nie znaleziono żadnej galerii"
 
-#: gallery-plugin.php:126
+#: gallery-plugin.php:140
 msgid "Upload File"
 msgstr "Wgraj plik"
 
-#: gallery-plugin.php:145
+#: gallery-plugin.php:159
 msgid "Choose a screenshot to upload:"
 msgstr "Wybierz zrzut ekrany do wgrania na serwer"
 
-#: gallery-plugin.php:150
+#: gallery-plugin.php:164
 msgid "Please enable JavaScript to use the file uploader."
 msgstr "Proszę właczyć osbługę JavaScript by skorzystać z opcji wgrywania plików na serwer"
 
-#: gallery-plugin.php:337
+#: gallery-plugin.php:351
 msgid "Title"
 msgstr "Tytuł"
 
-#: gallery-plugin.php:338
+#: gallery-plugin.php:352
 msgid "Author"
 msgstr "Autor"
 
-#: gallery-plugin.php:339
+#: gallery-plugin.php:353
 msgid "Photo's"
 msgstr "Zdjęcie"
 
-#: gallery-plugin.php:340
+#: gallery-plugin.php:354
 msgid "Public"
 msgstr "Publiczne"
 
-#: gallery-plugin.php:341
+#: gallery-plugin.php:355
 msgid "Date"
 msgstr "Data"
 
-#: gallery-plugin.php:487
+#: gallery-plugin.php:501
 msgid "Activated plugins"
 msgstr "Aktywny plugin"
 
-#: gallery-plugin.php:489
-#: gallery-plugin.php:497
-#: gallery-plugin.php:505
+#: gallery-plugin.php:503
+#: gallery-plugin.php:511
+#: gallery-plugin.php:519
 msgid "Read more"
 msgstr "Czytaj dalej"
 
-#: gallery-plugin.php:489
-#: gallery-plugin.php:637
-#: gallery-plugin.php:652
+#: gallery-plugin.php:503
+#: gallery-plugin.php:651
+#: gallery-plugin.php:666
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: gallery-plugin.php:495
+#: gallery-plugin.php:509
 msgid "Installed plugins"
 msgstr "Zainstalowane pluginy"
 
-#: gallery-plugin.php:503
+#: gallery-plugin.php:517
 msgid "Recommended plugins"
 msgstr "Rekomendowane pluginy"
 
-#: gallery-plugin.php:505
+#: gallery-plugin.php:519
 msgid "Download"
 msgstr "Pobierz"
 
-#: gallery-plugin.php:505
+#: gallery-plugin.php:519
 #, php-format
 msgid "Install %s"
 msgstr "Zainstaluj %s"
 
-#: gallery-plugin.php:505
+#: gallery-plugin.php:519
 msgid "Install now from wordpress.org"
 msgstr "Zainstaluj teraz z wordpress.org"
 
-#: gallery-plugin.php:507
+#: gallery-plugin.php:521
 msgid "If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site"
 msgstr "Jeśli masz jakiekolwiek pytania, proszę napisz do nas na adres plugin@bestwebsoft.com albo wypełnij formularz kontaktowy na naszej stronie."
 
-#: gallery-plugin.php:586
+#: gallery-plugin.php:600
 msgid "Options saved."
 msgstr "Opcje zostały zapisane."
 
-#: gallery-plugin.php:593
+#: gallery-plugin.php:607
 msgid "Gallery Options"
 msgstr "Opcje galerii."
 
-#: gallery-plugin.php:599
+#: gallery-plugin.php:613
 msgid "The size of the cover album for gallery"
 msgstr "Rozmiar okładki albumu"
 
-#: gallery-plugin.php:601
-#: gallery-plugin.php:609
+#: gallery-plugin.php:615
+#: gallery-plugin.php:623
 msgid "Image size name"
 msgstr "Nazwa rozmiaru obrazka"
 
-#: gallery-plugin.php:602
-#: gallery-plugin.php:610
+#: gallery-plugin.php:616
+#: gallery-plugin.php:624
 msgid "Width (in px)"
 msgstr "Szerokość (w px)"
 
-#: gallery-plugin.php:603
-#: gallery-plugin.php:611
+#: gallery-plugin.php:617
+#: gallery-plugin.php:625
 msgid "Height (in px)"
 msgstr "Wysokość (w px)"
 
-#: gallery-plugin.php:607
+#: gallery-plugin.php:621
 msgid "Size for gallery image"
 msgstr "Rozmiar dla obrazka w galerii"
 
-#: gallery-plugin.php:615
+#: gallery-plugin.php:629
 msgid "WordPress will create a copy of the post thumbnail with the specified dimensions when you upload a new photo."
 msgstr "WordPress stworzy kopię miniaturki notki według podanych rozmiarów podczas wgrywania nowego zdjęcia na serwer."
 
-#: gallery-plugin.php:618
+#: gallery-plugin.php:632
 msgid "Count images in row"
 msgstr "Ilość obrazków w rzędzie"
 
-#: gallery-plugin.php:626
+#: gallery-plugin.php:640
 msgid "Save Changes"
 msgstr "Zapisz zmiany"
 
-#: gallery-plugin.php:638
+#: gallery-plugin.php:652
 msgid "FAQ"
 msgstr "FAQ "
 
-#: gallery-plugin.php:639
+#: gallery-plugin.php:653
 msgid "Support"
 msgstr "Wsparcie"
 

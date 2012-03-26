@@ -77,6 +77,9 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 
 == Changelog ==
 
+= V2.11 - 26.03.2012 =
+* Bugfix : The bug related with the indication of the menu item on the single page of the gallery was fixed.
+
 = V2.10 - 20.03.2012 =
 * NEW : Polish language files are added to the plugin.
 
@@ -85,7 +88,7 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 
 = V2.08 - 24.02.2012 =
 * Change : Code that is used to connect styles and scripts is added to the plugin for correct SSL verification.
- * Bugfix : The bug with style for image block on admin page was fixed.
+* Bugfix : The bug with style for image block on admin page was fixed.
 
 = V2.07 - 17.02.2012 =
 * NEW : Ukrainian language files are added to the plugin.
@@ -121,6 +124,9 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V2.11 =
+The bug related with the indication of the menu item on the single page of the gallery was fixed.
 
 = V2.10 =
 Polish language files are added to the plugin.
