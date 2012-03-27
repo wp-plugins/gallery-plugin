@@ -1,0 +1,190 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gallery\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-03-26 20:51+0200\n"
+"PO-Revision-Date: 2012-03-26 20:51+0200\n"
+"Last-Translator: BWS <zos@bestwebsoft.com>\n"
+"Language-Team: Wolforg <contact@wolforg.eu>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;esc_html__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: gallery-plugin.php:75
+#: gallery-plugin.php:85
+msgid "Galleries"
+msgstr "Galeries"
+
+#: gallery-plugin.php:76
+#: gallery-plugin.php:532
+msgid "Gallery"
+msgstr "Galerie"
+
+#: gallery-plugin.php:77
+msgid "Add New"
+msgstr "Ajouter"
+
+#: gallery-plugin.php:78
+msgid "Add New Gallery"
+msgstr "Ajouter nouvelle galerie"
+
+#: gallery-plugin.php:79
+msgid "Edit Gallery"
+msgstr "Modifier la galerie"
+
+#: gallery-plugin.php:80
+msgid "New Gallery"
+msgstr "Nouvelle galerie"
+
+#: gallery-plugin.php:81
+msgid "View Gallery"
+msgstr "Voir la galerie"
+
+#: gallery-plugin.php:82
+msgid "Search Galleries"
+msgstr "Rechercher une galerie"
+
+#: gallery-plugin.php:83
+msgid "No Galleries found"
+msgstr "Pas de galeries trouvées"
+
+#: gallery-plugin.php:140
+msgid "Upload File"
+msgstr "Envoi de fichier"
+
+#: gallery-plugin.php:159
+msgid "Choose a screenshot to upload:"
+msgstr "Choix de la capture d'écran à envoyer :"
+
+#: gallery-plugin.php:164
+msgid "Please enable JavaScript to use the file uploader."
+msgstr "Merci d'activer JavaScript pour utiliser l'envoi de fichiers."
+
+#: gallery-plugin.php:351
+msgid "Title"
+msgstr "Titre"
+
+#: gallery-plugin.php:352
+msgid "Author"
+msgstr "Auteur"
+
+#: gallery-plugin.php:353
+msgid "Photo's"
+msgstr "Photo's"
+
+#: gallery-plugin.php:354
+msgid "Public"
+msgstr "Public"
+
+#: gallery-plugin.php:355
+msgid "Date"
+msgstr "Date"
+
+#: gallery-plugin.php:501
+msgid "Activated plugins"
+msgstr "Extensions activées"
+
+#: gallery-plugin.php:503
+#: gallery-plugin.php:511
+#: gallery-plugin.php:519
+msgid "Read more"
+msgstr "Lire plus..."
+
+#: gallery-plugin.php:503
+#: gallery-plugin.php:651
+#: gallery-plugin.php:666
+msgid "Settings"
+msgstr "Paramètres"
+
+#: gallery-plugin.php:509
+msgid "Installed plugins"
+msgstr "Extensions installées"
+
+#: gallery-plugin.php:517
+msgid "Recommended plugins"
+msgstr "Extensions recommandées"
+
+#: gallery-plugin.php:519
+msgid "Download"
+msgstr "Télécharger"
+
+#: gallery-plugin.php:519
+#, php-format
+msgid "Install %s"
+msgstr "Installation %s"
+
+#: gallery-plugin.php:519
+msgid "Install now from wordpress.org"
+msgstr "Installation à partir via  wordpress.org"
+
+#: gallery-plugin.php:521
+msgid "If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site"
+msgstr "Si vous avez des questions, merci de nous contacter via plugin@bestwebsoft.com ou remplissez le formulaire de contact sur notre site"
+
+#: gallery-plugin.php:600
+msgid "Options saved."
+msgstr "Options sauvegardées"
+
+#: gallery-plugin.php:607
+msgid "Gallery Options"
+msgstr "Options de galerie"
+
+#: gallery-plugin.php:613
+msgid "The size of the cover album for gallery"
+msgstr "Taille de Couverture de la galerie"
+
+#: gallery-plugin.php:615
+#: gallery-plugin.php:623
+msgid "Image size name"
+msgstr "Nom de la taille"
+
+#: gallery-plugin.php:616
+#: gallery-plugin.php:624
+msgid "Width (in px)"
+msgstr "Largeur (en pixels)"
+
+#: gallery-plugin.php:617
+#: gallery-plugin.php:625
+msgid "Height (in px)"
+msgstr "Hauteur (en pixels)"
+
+#: gallery-plugin.php:621
+msgid "Size for gallery image"
+msgstr "Taille de la galerie"
+
+#: gallery-plugin.php:629
+msgid "WordPress will create a copy of the post thumbnail with the specified dimensions when you upload a new photo."
+msgstr "WordPress créera une copie de la miniature d'article avec les dimensions spécifiées quand vous envoyez une nouvelle photo."
+
+#: gallery-plugin.php:632
+msgid "Count images in row"
+msgstr "Nombre d'image par ligne"
+
+#: gallery-plugin.php:640
+msgid "Save Changes"
+msgstr "Sauvegarder"
+
+#: gallery-plugin.php:652
+msgid "FAQ"
+msgstr "FAQ"
+
+#: gallery-plugin.php:653
+msgid "Support"
+msgstr "Soutien"
+
+#: template/gallery-single-template.php:60
+msgid "Sorry - nothing to found."
+msgstr "Désolé, rien de trouvé"
+
+#: template/gallery-template.php:61
+msgid "See photo &raquo;"
+msgstr "Voir photo &raquo;"
+
+#~ msgid "Size for gallery album cover"
+#~ msgstr "Размер для "
