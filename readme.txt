@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.3.1
-Stable tag: 2.10
+Stable tag: 2.12
 
 This plugin allows you to implement gallery page into your web site.
 
@@ -30,6 +30,7 @@ This plugin makes it possible to implement as many galleries as you want into yo
 * Dutch (nl_NL) (thanks to <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>)
 * French (fr_FR) (thanks to Didier)
 * Georgian (ka_GE) (thanks to Vako Patashuri)
+* Italian (it_IT) (thanks to Stefano Ferruggiara)
 * Polish (pl_PL) (thanks to Janusz Janczy, Bezcennyczas.pl)
 * Russian (ru_RU)
 * Ukrainian (uk_UA)(thanks to Ted Mosby)
@@ -76,6 +77,9 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 5. PrettyPhoto pop-up window with images from the album.
 
 == Changelog ==
+
+= V2.12 - 27.03.2012 =
+* NEW : Italian language files are added to the plugin.
 
 = V2.11 - 26.03.2012 =
 * Bugfix : The bug related with the indication of the menu item on the single page of the gallery was fixed.
@@ -124,6 +128,9 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V2.12 =
+Italian language files are added to the plugin.
 
 = V2.11 =
 The bug related with the indication of the menu item on the single page of the gallery was fixed.
