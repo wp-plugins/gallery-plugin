@@ -71,8 +71,7 @@
 					'transitionOut'		: 'elastic',
 					'titlePosition' 	: 'inside',
 					'speedIn'					:	500, 
-					'speedOut'				:	300;
-					}
+					'speedOut'				:	300
 				});
 			});
 		})(jQuery);

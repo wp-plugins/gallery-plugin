@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.3.1
-Stable tag: 3.01
+Stable tag: 3.02
 
 This plugin allows you to implement gallery page into your web site.
 
@@ -82,6 +82,9 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 
 == Changelog ==
 
+= V3.02 - 12.04.2012 =
+* Bugfix : The bug related with the display of the photo on the single page of the gallery was fixed.
+
 = V3.01 - 12.04.2012 =
 * NEW : Czech, Hungarian and German language files are added to the plugin.
 * NEW : Possibility to set featured image as cover of the album.
@@ -138,6 +141,9 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.02 =
+The bug related with the display of the photo on the single page of the gallery was fixed.
 
 = V3.01 =
 Czech, Hungarian and German language files are added to the plugin. Possibility to set featured image as cover of the album is added. Replace prettyPhoto library to fancybox library. Code that is used to display a lightbox for images in `gallery-single-template.php` template file is changed.
