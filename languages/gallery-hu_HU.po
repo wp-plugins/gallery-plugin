@@ -5,14 +5,14 @@ msgstr ""
 "POT-Creation-Date: 2012-04-13 13:43+0200\n"
 "PO-Revision-Date: 2012-04-13 13:43+0200\n"
 "Last-Translator: BWS <zos@bestwebsoft.com>\n"
-"Language-Team: BWS <bestwebsoft.com>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-Language: Polish\n"
-"X-Poedit-Country: POLAND\n"
+"X-Poedit-Language: Ukrainian\n"
+"X-Poedit-Country: UKRAINE\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -24,172 +24,172 @@ msgstr ""
 #: gallery-plugin.php:81
 #: gallery-plugin.php:91
 msgid "Galleries"
-msgstr "Galerie zdjęć"
+msgstr "Galériák"
 
 #: gallery-plugin.php:82
 #: gallery-plugin.php:544
 msgid "Gallery"
-msgstr "Galeria zdjęć"
+msgstr "Galéria"
 
 #: gallery-plugin.php:83
 msgid "Add New"
-msgstr "Dodaj nową"
+msgstr "Új hozzáadása"
 
 #: gallery-plugin.php:84
 msgid "Add New Gallery"
-msgstr "Dodaj nową galerię"
+msgstr "Új Galéria hozzáadása"
 
 #: gallery-plugin.php:85
 msgid "Edit Gallery"
-msgstr "Edytuj galerię"
+msgstr "Galéria szerkesztése"
 
 #: gallery-plugin.php:86
 msgid "New Gallery"
-msgstr "Nowa galeria"
+msgstr "Új Galéria"
 
 #: gallery-plugin.php:87
 msgid "View Gallery"
-msgstr "Zobacz galerię"
+msgstr "Galéria megtekintése"
 
 #: gallery-plugin.php:88
 msgid "Search Galleries"
-msgstr "Szukaj galerii"
+msgstr "Galéria keresése"
 
 #: gallery-plugin.php:89
 msgid "No Galleries found"
-msgstr "Nie znaleziono żadnej galerii"
+msgstr "Galéria nem található"
 
 #: gallery-plugin.php:146
 msgid "Upload File"
-msgstr "Wgraj plik"
+msgstr "Fájl feltöltése"
 
 #: gallery-plugin.php:165
 msgid "Choose a screenshot to upload:"
-msgstr "Wybierz zrzut ekrany do wgrania na serwer"
+msgstr "Nézőkép kiválasztása a feltöltéshez"
 
 #: gallery-plugin.php:170
 msgid "Please enable JavaScript to use the file uploader."
-msgstr "Proszę właczyć osbługę JavaScript by skorzystać z opcji wgrywania plików na serwer"
+msgstr "Kérem, engedéjezze a Javascript használatát a fájl feltöltéshez."
 
 #: gallery-plugin.php:362
 msgid "Title"
-msgstr "Tytuł"
+msgstr "Cím"
 
 #: gallery-plugin.php:363
 msgid "Author"
-msgstr "Autor"
+msgstr "Szerző"
 
 #: gallery-plugin.php:364
 msgid "Photo's"
-msgstr "Zdjęcie"
+msgstr "Fotók"
 
 #: gallery-plugin.php:365
 msgid "Public"
-msgstr "Publiczne"
+msgstr "Publikus"
 
 #: gallery-plugin.php:366
 msgid "Date"
-msgstr "Data"
+msgstr "Dátum"
 
 #: gallery-plugin.php:513
 msgid "Activated plugins"
-msgstr "Aktywny plugin"
+msgstr "Aktivált bővítmények"
 
 #: gallery-plugin.php:515
 #: gallery-plugin.php:523
 #: gallery-plugin.php:531
 msgid "Read more"
-msgstr "Czytaj dalej"
+msgstr "Bővebben"
 
 #: gallery-plugin.php:515
 #: gallery-plugin.php:667
 #: gallery-plugin.php:682
 msgid "Settings"
-msgstr "Ustawienia"
+msgstr "Beállítások"
 
 #: gallery-plugin.php:521
 msgid "Installed plugins"
-msgstr "Zainstalowane pluginy"
+msgstr "Telepített bővítmények"
 
 #: gallery-plugin.php:529
 msgid "Recommended plugins"
-msgstr "Rekomendowane pluginy"
+msgstr "Javasolt bővítmények"
 
 #: gallery-plugin.php:531
 msgid "Download"
-msgstr "Pobierz"
+msgstr "Letöltés"
 
 #: gallery-plugin.php:531
 #, php-format
 msgid "Install %s"
-msgstr "Zainstaluj %s"
+msgstr "Telepítés %s"
 
 #: gallery-plugin.php:531
 msgid "Install now from wordpress.org"
-msgstr "Zainstaluj teraz z wordpress.org"
+msgstr "Telepítés a wordpress.org -ról"
 
 #: gallery-plugin.php:533
 msgid "If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site"
-msgstr "Jeśli masz jakiekolwiek pytania, proszę napisz do nas na adres plugin@bestwebsoft.com albo wypełnij formularz kontaktowy na naszej stronie."
+msgstr "Amennyiben kérdése van, kérem keressen meg minket a plugin@bestwebsoft.com e-mail címen, vagy töltse ki űrlapunkat"
 
 #: gallery-plugin.php:612
 msgid "Options saved."
-msgstr "Opcje zostały zapisane."
+msgstr "Beállítások elmentve."
 
 #: gallery-plugin.php:623
 msgid "Gallery Options"
-msgstr "Opcje galerii."
+msgstr "Galéria beállítások"
 
 #: gallery-plugin.php:629
 msgid "The size of the cover album for gallery"
-msgstr "Rozmiar okładki albumu"
+msgstr "Az Album borítójának mérete a Galériában"
 
 #: gallery-plugin.php:631
 #: gallery-plugin.php:639
 msgid "Image size name"
-msgstr "Nazwa rozmiaru obrazka"
+msgstr "Kép méret neve"
 
 #: gallery-plugin.php:632
 #: gallery-plugin.php:640
 msgid "Width (in px)"
-msgstr "Szerokość (w px)"
+msgstr "Szélesség (px-ben)"
 
 #: gallery-plugin.php:633
 #: gallery-plugin.php:641
 msgid "Height (in px)"
-msgstr "Wysokość (w px)"
+msgstr "Magasság (px-ben)"
 
 #: gallery-plugin.php:637
 msgid "Size for gallery image"
-msgstr "Rozmiar dla obrazka w galerii"
+msgstr "A Galéria képeinek mérete"
 
 #: gallery-plugin.php:645
 msgid "WordPress will create a copy of the post thumbnail with the specified dimensions when you upload a new photo."
-msgstr "WordPress stworzy kopię miniaturki notki według podanych rozmiarów podczas wgrywania nowego zdjęcia na serwer."
+msgstr "A Wordpress elkészíti a megadott dimenziókban a nézőképeket a képek feltöltésekor."
 
 #: gallery-plugin.php:648
 msgid "Count images in row"
-msgstr "Ilość obrazków w rzędzie"
+msgstr "Képek száma egy sorban"
 
 #: gallery-plugin.php:656
 msgid "Save Changes"
-msgstr "Zapisz zmiany"
+msgstr "Változások mentése"
 
 #: gallery-plugin.php:668
 msgid "FAQ"
-msgstr "FAQ "
+msgstr "Gy.I.K."
 
 #: gallery-plugin.php:669
 msgid "Support"
-msgstr "Wsparcie"
+msgstr "Támogatás"
 
 #: template/gallery-single-template.php:60
 msgid "Sorry - nothing to found."
-msgstr "Przykro nam - nic nie znaleziono."
+msgstr "Sajnáljuk - nincs megjelenítendő elem."
 
 #: template/gallery-template.php:69
 msgid "See photo &raquo;"
-msgstr "Zobacz zdjęcia &raquo;"
+msgstr "Fotó megtekintése &raquo;"
 
 #~ msgid "Size for gallery album cover"
 #~ msgstr "Размер для "

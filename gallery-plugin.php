@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 2.12
+Version: 3.01
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -32,33 +32,39 @@ $gllr_boxes = array (
 
 if( ! function_exists( 'gllr_plugin_install' ) ) {
 	function gllr_plugin_install() {
-		if ( ! file_exists( TEMPLATEPATH .'/gallery-template.php' ) ) {
-			if( ! copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-template.php', TEMPLATEPATH .'/gallery-template.php' ) )
-				add_action( 'admin_notices', create_function( '',  'echo "Error copy template file";' ) );
+		if ( ! file_exists( get_stylesheet_directory() .'/gallery-template.php' ) ) {
+			@copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-template.php', get_stylesheet_directory() .'/gallery-template.php' );
 		}
 		else {
-			copy( TEMPLATEPATH .'/gallery-template.php', TEMPLATEPATH .'/gallery-template.php.bak' );
-			/*if( ! copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-template.php', TEMPLATEPATH .'/gallery-template.php' ) )
-				add_action( 'admin_notices', create_function( '',  'echo "Error copy template file";' ) );*/
+			@copy( get_stylesheet_directory() .'/gallery-template.php', get_stylesheet_directory() .'/gallery-template.php.bak' );
+			@copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-template.php', get_stylesheet_directory() .'/gallery-template.php' );
 		}
-		if ( ! file_exists( TEMPLATEPATH .'/gallery-single-template.php' ) ) {
-			if( ! copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-single-template.php', TEMPLATEPATH .'/gallery-single-template.php' ) )
-				add_action( 'admin_notices', create_function( '',  'echo "Error copy template file";' ) );
+		if ( ! file_exists( get_stylesheet_directory() .'/gallery-single-template.php' ) ) {
+			@copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-single-template.php', get_stylesheet_directory() .'/gallery-single-template.php' );
 		}
 		else {
-			copy( TEMPLATEPATH .'/gallery-single-template.php', TEMPLATEPATH .'/gallery-single-template.php.bak' );
-			/*if( ! copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-single-template.php', TEMPLATEPATH .'/gallery-single-template.php' ) )
-				add_action( 'admin_notices', create_function( '',  'echo "Error copy template file";' ) );*/
+			@copy( get_stylesheet_directory() .'/gallery-single-template.php', get_stylesheet_directory() .'/gallery-single-template.php.bak' );
+			@copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-single-template.php', get_stylesheet_directory() .'/gallery-single-template.php' );
+		}
+	}
+}
+
+if( ! function_exists( 'gllr_admin_error' ) ) {
+	function gllr_admin_error() {
+		$post = isset( $_REQUEST['post'] ) ? $_REQUEST['post'] : "" ;
+		$post_type = isset( $_REQUEST['post_type'] ) ? $_REQUEST['post_type'] : "" ;
+		if ( ( 'gallery' == get_post_type( $post )  || 'gallery' == $post_type ) && ( ! file_exists( get_stylesheet_directory() .'/gallery-template.php' ) || ! file_exists( get_stylesheet_directory() .'/gallery-single-template.php' ) ) ) {
+			echo '<div class="error"><p><strong>'.__( 'The following files "gallery-template.php" and "gallery-single-template.php" were not found in the directory of your theme. Please copy them from the directory `/wp-content/plugins/gallery-plugin/template/` to the directory of your theme for the correct work of the Gallery plugin', 'gallery' ).'</strong></p></div>';
 		}
 	}
 }
 
 if( ! function_exists( 'gllr_plugin_uninstall' ) ) {
 	function gllr_plugin_uninstall() {
-		if ( file_exists( TEMPLATEPATH .'/gallery-template.php' ) && ! unlink(TEMPLATEPATH .'/gallery-template.php') ) {
+		if ( file_exists( get_stylesheet_directory() .'/gallery-template.php' ) && ! unlink( get_stylesheet_directory() .'/gallery-template.php' ) ) {
 			add_action( 'admin_notices', create_function( '', ' return "Error delete template file";' ) );
 		}
-		if ( file_exists( TEMPLATEPATH .'/gallery-single-template.php' ) && ! unlink(TEMPLATEPATH .'/gallery-single-template.php') ) {
+		if ( file_exists( get_stylesheet_directory() .'/gallery-single-template.php' ) && ! unlink( get_stylesheet_directory() .'/gallery-single-template.php' ) ) {
 			add_action( 'admin_notices', create_function( '', ' return "Error delete template file";' ) );
 		}
 		if( get_option( 'gllr_options' ) ) {
@@ -91,7 +97,7 @@ if( ! function_exists( 'post_type_images' ) ) {
 			'capability_type' => 'post',
 			'has_archive' => false,
 			'hierarchical' => true,
-			'supports' => array('title', 'editor'),
+			'supports' => array('title', 'editor', 'thumbnail', 'author' ),
 			'register_meta_box_cb' => 'init_metaboxes_gallery'
 		));
 	}
@@ -210,7 +216,7 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 			$image_text = get_post_meta( $page->ID, $key, FALSE );
 			echo '<li id="'.$page->ID.'" class="gllr_image_block">';
 				$image_attributes = wp_get_attachment_image_src( $page->ID, 'thumbnail' );
-				echo '<img src="'.$image_attributes[0].'" alt="'.$page->post_title.'" title="'.$page->post_title.'"/>';
+				echo '<img src="'.$image_attributes[0].'" alt="'.$page->post_title.'" title="'.$page->post_title.'" height="'.get_option( 'thumbnail_size_h' ).'" width="'.get_option( 'thumbnail_size_w' ).'" />';
 				echo '<input type="text" name="gllr_image_text['.$page->ID.']" value="'.get_post_meta( $page->ID, $key, TRUE ).'" class="gllr_image_text" />';
 				echo '<div class="delete"><a href="javascript:void(0);" onclick="img_delete('.$page->ID.');">Delete</a><div/>';
 			echo '</li>';
@@ -322,11 +328,16 @@ if( ! function_exists( 'gllr_custom_permalinks' ) ) {
 		if( ! empty( $parent ) ) {
 			$wp_rewrite->add_rule( '(.+)/'.$parent.'/([^/]+)/?$', 'index.php?post_type=gallery&title=$matches[2]&posts_per_page=-1', 'top' );
 			$wp_rewrite->add_rule( ''.$parent.'/([^/]+)/?$', 'index.php?post_type=gallery&title=$matches[1]&posts_per_page=-1', 'top' );
+			$wp_rewrite->add_rule( ''.$parent.'/page/([^/]+)/?$', 'index.php?pagename='.$parent.'&paged=$matches[1]', 'top' );
+			$wp_rewrite->add_rule( ''.$parent.'/page/([^/]+)?$', 'index.php?pagename='.$parent.'&paged=$matches[1]', 'top' );
 		}
 		else {
 			$wp_rewrite->add_rule( '(.+)/gallery/([^/]+)/?$', 'index.php?post_type=gallery&title=$matches[2]&posts_per_page=-1', 'top' );
 			$wp_rewrite->add_rule( 'gallery/([^/]+)/?$', 'index.php?post_type=gallery&title=$matches[1]&posts_per_page=-1', 'top' );
+			$wp_rewrite->add_rule( 'gallery/page/([^/]+)/?$', 'index.php?pagename=gallery&paged=$matches[1]', 'top' );
+			$wp_rewrite->add_rule( 'gallery/page/([^/]+)?$', 'index.php?pagename=gallery&paged=$matches[1]', 'top' );
 		}
+
 
 		$wp_rewrite->flush_rules();
 	}
@@ -468,7 +479,8 @@ if( ! function_exists( 'bws_add_menu_render' ) ) {
 			array( 'gallery-plugin\/gallery-plugin.php', 'Gallery', 'http://wordpress.org/extend/plugins/gallery-plugin/', 'http://bestwebsoft.com/plugin/gallery-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Gallery+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', '' ),
 			array( 'adsense-plugin\/adsense-plugin.php', 'Google AdSense Plugin', 'http://wordpress.org/extend/plugins/adsense-plugin/', 'http://bestwebsoft.com/plugin/google-adsense-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Adsense+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=adsense-plugin.php' ),
 			array( 'custom-search-plugin\/custom-search-plugin.php', 'Custom Search Plugin', 'http://wordpress.org/extend/plugins/custom-search-plugin/', 'http://bestwebsoft.com/plugin/custom-search-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Custom+Search+plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=custom_search.php' ),
-			array( 'quotes_and_tips\/quotes-and-tips.php', 'Quotes and Tips', 'http://wordpress.org/extend/plugins/quotes-and-tips/', 'http://bestwebsoft.com/plugin/quotes-and-tips/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Quotes+and+Tips+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=quotes-and-tips.php' )
+			array( 'quotes-and-tips\/quotes-and-tips.php', 'Quotes and Tips', 'http://wordpress.org/extend/plugins/quotes-and-tips/', 'http://bestwebsoft.com/plugin/quotes-and-tips/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Quotes+and+Tips+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=quotes-and-tips.php' ),
+			array( 'google-sitemap-plugin\/google-sitemap-plugin.php', 'Google sitemap plugin', 'http://wordpress.org/extend/plugins/google-sitemap-plugin/', 'http://bestwebsoft.com/plugin/google-sitemap-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Google+sitemap+plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=google-sitemap-plugin.php' )
 		);
 		foreach($array_plugins as $plugins) {
 			if( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) ) {
@@ -600,6 +612,10 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 			$message = __( "Options saved.", 'gallery' );
 		}
 
+		if ( ! file_exists( get_stylesheet_directory() .'/gallery-template.php' ) || ! file_exists( get_stylesheet_directory() .'/gallery-single-template.php' ) ) {
+			$error .= __( 'The following files "gallery-template.php" and "gallery-single-template.php" were not found in the directory of your theme. Please copy them from the directory `/wp-content/plugins/gallery-plugin/template/` to the directory of your theme for the correct work of the Gallery plugin', 'gallery' );
+		}
+
 		// Display form on the setting page
 	?>
 	<div class="wrap">
@@ -691,8 +707,9 @@ if ( ! function_exists ( 'gllr_admin_head' ) ) {
 if ( ! function_exists ( 'gllr_wp_head' ) ) {
 	function gllr_wp_head() {
 		wp_enqueue_style( 'gllrStylesheet', plugins_url( 'css/stylesheet.css', __FILE__ ) );
-		wp_enqueue_style( 'gllrPrettyPhotoStylesheet', plugins_url( 'pretty_photo/css/prettyPhoto.css', __FILE__ ) );
-		wp_enqueue_script( 'gllrPrettyPhotoJs', plugins_url( 'pretty_photo/js/jquery.prettyPhoto.js', __FILE__ ), array( 'jquery' ) ); 
+		wp_enqueue_style( 'gllrFancyboxStylesheet', plugins_url( 'fancybox/jquery.fancybox-1.3.4.css', __FILE__ ) );
+		wp_enqueue_script( 'gllrFancyboxMousewheelJs', plugins_url( 'fancybox/jquery.mousewheel-3.0.4.pack.js', __FILE__ ), array( 'jquery' ) ); 
+		wp_enqueue_script( 'gllrFancyboxJs', plugins_url( 'fancybox/jquery.fancybox-1.3.4.pack.js', __FILE__ ), array( 'jquery' ) ); 
 	}
 }
 
@@ -709,6 +726,8 @@ add_action( 'init', 'gllr_plugin_init' );
 
 add_action( 'init', 'post_type_images' ); // register post type
 add_action( 'init', 'gllr_custom_permalinks' ); // add custom permalink for gallery
+
+add_action( 'admin_init', 'gllr_admin_error' );
 
 add_action( 'template_redirect', 'gllr_template_redirect' ); // add themplate for single gallery page
 

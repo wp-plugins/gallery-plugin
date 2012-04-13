@@ -37,11 +37,11 @@
 								<?php } ?>
 									<div class="gllr_image_block">
 										<p style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]+20; ?>px;height:<?php echo $gllr_options['gllr_custom_size_px'][1][1]+20; ?>px;">
-											<a rel="prettyPhoto[gallery]" href="<?php echo $image_attributes_large[0]; ?>">
-												<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]; ?>px;height:<?php echo $gllr_options['gllr_custom_size_px'][1][1]; ?>px;" alt="" title="" src="<?php echo $image_attributes[0]; ?>" />
+											<a rel="gallery_fancybox" href="<?php echo $image_attributes_large[0]; ?>" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>">
+												<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]; ?>px;height:<?php echo $gllr_options['gllr_custom_size_px'][1][1]; ?>px;" alt="" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>" src="<?php echo $image_attributes[0]; ?>" />
 											</a>
 										</p>
-										<div  style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]+20; ?>px;" class="gllr_single_image_text"><?php echo get_post_meta( $attachment->ID, $key, TRUE ); ?>&nbsp;</div>
+										<div  style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]+20; ?>px;" class="gllr_single_image_text"><?php echo get_post_meta( $attachment->ID, $key, true ); ?>&nbsp;</div>
 									</div>
 								<?php if($count_image_block%$gllr_options['custom_image_row_count'] == $gllr_options['custom_image_row_count']-1 ) { ?>
 								</div>
@@ -64,9 +64,17 @@
 		</div>
 	<?php get_sidebar(); ?>
 	<script type="text/javascript">
-		var jQuery = jQuery.noConflict();
-		jQuery(document).ready(function(){
-			jQuery("a[rel^='prettyPhoto']").prettyPhoto({theme: 'dark_square'}); 
-		});
-</script>
+		(function($){
+			$(document).ready(function(){
+				$("a[rel=gallery_fancybox]").fancybox({
+					'transitionIn'		: 'elastic',
+					'transitionOut'		: 'elastic',
+					'titlePosition' 	: 'inside',
+					'speedIn'					:	500, 
+					'speedOut'				:	300;
+					}
+				});
+			});
+		})(jQuery);
+	</script>
 <?php get_footer(); ?>

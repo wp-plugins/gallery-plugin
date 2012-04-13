@@ -2,17 +2,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gallery\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-13 13:43+0200\n"
-"PO-Revision-Date: 2012-04-13 13:43+0200\n"
+"POT-Creation-Date: 2012-04-13 13:42+0200\n"
+"PO-Revision-Date: 2012-04-13 13:42+0200\n"
 "Last-Translator: BWS <zos@bestwebsoft.com>\n"
-"Language-Team: BWS <bestwebsoft.com>\n"
+"Language-Team: Josef Sukdol <josef.sukdol@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-Language: Polish\n"
-"X-Poedit-Country: POLAND\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -24,56 +25,56 @@ msgstr ""
 #: gallery-plugin.php:81
 #: gallery-plugin.php:91
 msgid "Galleries"
-msgstr "Galerie zdjęć"
+msgstr "Galerie"
 
 #: gallery-plugin.php:82
 #: gallery-plugin.php:544
 msgid "Gallery"
-msgstr "Galeria zdjęć"
+msgstr "Galerie"
 
 #: gallery-plugin.php:83
 msgid "Add New"
-msgstr "Dodaj nową"
+msgstr "Vložit novou"
 
 #: gallery-plugin.php:84
 msgid "Add New Gallery"
-msgstr "Dodaj nową galerię"
+msgstr "Vložit novou galerii"
 
 #: gallery-plugin.php:85
 msgid "Edit Gallery"
-msgstr "Edytuj galerię"
+msgstr "Upravit galerii"
 
 #: gallery-plugin.php:86
 msgid "New Gallery"
-msgstr "Nowa galeria"
+msgstr "Nová galerie"
 
 #: gallery-plugin.php:87
 msgid "View Gallery"
-msgstr "Zobacz galerię"
+msgstr "Zobrazit galerii"
 
 #: gallery-plugin.php:88
 msgid "Search Galleries"
-msgstr "Szukaj galerii"
+msgstr "Hledat galerii"
 
 #: gallery-plugin.php:89
 msgid "No Galleries found"
-msgstr "Nie znaleziono żadnej galerii"
+msgstr "Nebyla nalezena žádná galerie"
 
 #: gallery-plugin.php:146
 msgid "Upload File"
-msgstr "Wgraj plik"
+msgstr "Nahrát soubor"
 
 #: gallery-plugin.php:165
 msgid "Choose a screenshot to upload:"
-msgstr "Wybierz zrzut ekrany do wgrania na serwer"
+msgstr "Vyberte náhled pro nahrání:"
 
 #: gallery-plugin.php:170
 msgid "Please enable JavaScript to use the file uploader."
-msgstr "Proszę właczyć osbługę JavaScript by skorzystać z opcji wgrywania plików na serwer"
+msgstr "Prosím aktivujte JavaScript pro použití nahrávacího apletu."
 
 #: gallery-plugin.php:362
 msgid "Title"
-msgstr "Tytuł"
+msgstr "Název"
 
 #: gallery-plugin.php:363
 msgid "Author"
@@ -81,99 +82,99 @@ msgstr "Autor"
 
 #: gallery-plugin.php:364
 msgid "Photo's"
-msgstr "Zdjęcie"
+msgstr "Fotky"
 
 #: gallery-plugin.php:365
 msgid "Public"
-msgstr "Publiczne"
+msgstr "Veřejné"
 
 #: gallery-plugin.php:366
 msgid "Date"
-msgstr "Data"
+msgstr "Datum"
 
 #: gallery-plugin.php:513
 msgid "Activated plugins"
-msgstr "Aktywny plugin"
+msgstr "Aktivní pluginy"
 
 #: gallery-plugin.php:515
 #: gallery-plugin.php:523
 #: gallery-plugin.php:531
 msgid "Read more"
-msgstr "Czytaj dalej"
+msgstr "Další informace"
 
 #: gallery-plugin.php:515
 #: gallery-plugin.php:667
 #: gallery-plugin.php:682
 msgid "Settings"
-msgstr "Ustawienia"
+msgstr "Nastavení"
 
 #: gallery-plugin.php:521
 msgid "Installed plugins"
-msgstr "Zainstalowane pluginy"
+msgstr "Nainstalované pluginy"
 
 #: gallery-plugin.php:529
 msgid "Recommended plugins"
-msgstr "Rekomendowane pluginy"
+msgstr "Doporučené pluginy"
 
 #: gallery-plugin.php:531
 msgid "Download"
-msgstr "Pobierz"
+msgstr "Stáhnout"
 
 #: gallery-plugin.php:531
 #, php-format
 msgid "Install %s"
-msgstr "Zainstaluj %s"
+msgstr "Instaluj %s"
 
 #: gallery-plugin.php:531
 msgid "Install now from wordpress.org"
-msgstr "Zainstaluj teraz z wordpress.org"
+msgstr "Instaluj ihned z wordpress.org"
 
 #: gallery-plugin.php:533
 msgid "If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site"
-msgstr "Jeśli masz jakiekolwiek pytania, proszę napisz do nas na adres plugin@bestwebsoft.com albo wypełnij formularz kontaktowy na naszej stronie."
+msgstr "Pokud máte jakékoliv dotazy, prosím kontaktujte nás na plugin@bestwebsoft.com a nebo vyplňte kontaktní formulář na našich stránkách."
 
 #: gallery-plugin.php:612
 msgid "Options saved."
-msgstr "Opcje zostały zapisane."
+msgstr "Nastavení uložena."
 
 #: gallery-plugin.php:623
 msgid "Gallery Options"
-msgstr "Opcje galerii."
+msgstr "Nastavení galerie"
 
 #: gallery-plugin.php:629
 msgid "The size of the cover album for gallery"
-msgstr "Rozmiar okładki albumu"
+msgstr "Rozměry náhledu alba v galerii"
 
 #: gallery-plugin.php:631
 #: gallery-plugin.php:639
 msgid "Image size name"
-msgstr "Nazwa rozmiaru obrazka"
+msgstr "Název rozměru"
 
 #: gallery-plugin.php:632
 #: gallery-plugin.php:640
 msgid "Width (in px)"
-msgstr "Szerokość (w px)"
+msgstr "Šířka (v px)"
 
 #: gallery-plugin.php:633
 #: gallery-plugin.php:641
 msgid "Height (in px)"
-msgstr "Wysokość (w px)"
+msgstr "Výška (v px)"
 
 #: gallery-plugin.php:637
 msgid "Size for gallery image"
-msgstr "Rozmiar dla obrazka w galerii"
+msgstr "Rozměry náhledu obrázku v albu"
 
 #: gallery-plugin.php:645
 msgid "WordPress will create a copy of the post thumbnail with the specified dimensions when you upload a new photo."
-msgstr "WordPress stworzy kopię miniaturki notki według podanych rozmiarów podczas wgrywania nowego zdjęcia na serwer."
+msgstr "WordPress vytvoří kopii náhledu obrázku v zadaných rozměrech při nahrání nového obrázku."
 
 #: gallery-plugin.php:648
 msgid "Count images in row"
-msgstr "Ilość obrazków w rzędzie"
+msgstr "Počet náhledů zobrazených v jedné řádce"
 
 #: gallery-plugin.php:656
 msgid "Save Changes"
-msgstr "Zapisz zmiany"
+msgstr "Uložit změny"
 
 #: gallery-plugin.php:668
 msgid "FAQ"
@@ -181,15 +182,15 @@ msgstr "FAQ "
 
 #: gallery-plugin.php:669
 msgid "Support"
-msgstr "Wsparcie"
+msgstr "Podpora"
 
 #: template/gallery-single-template.php:60
 msgid "Sorry - nothing to found."
-msgstr "Przykro nam - nic nie znaleziono."
+msgstr "Omlouvám se - nic nenalezeno."
 
 #: template/gallery-template.php:69
 msgid "See photo &raquo;"
-msgstr "Zobacz zdjęcia &raquo;"
+msgstr "Zobrazit obsah galerie &raquo;"
 
 #~ msgid "Size for gallery album cover"
 #~ msgstr "Размер для "

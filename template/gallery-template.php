@@ -8,6 +8,7 @@ Template Name: Gallery Template
 	<div id="container">
 		<div role="main" id="content">
 			<h1 class="home_page_title"><?php the_title(); ?></h1>
+			<?php if ( function_exists( 'pdfprnt_show_buttons_for_custom_post_type' ) ) echo pdfprnt_show_buttons_for_custom_post_type( 'post_type=gallery&orderby=post_date' ); ?>
 			<div class="gallery_box">
 				<ul>
 				<?php 
@@ -34,8 +35,9 @@ Template Name: Gallery Template
 						'posts_per_page'		=> -1
 					);
 					$second_query = new WP_Query( $args );
+					if ( function_exists( 'pdfprnt_show_buttons_for_custom_post_type' ) ) echo pdfprnt_show_buttons_for_custom_post_type( $second_query );
 					$count_all_albums = count($second_query->posts);
-					$per_page = 5;
+					$per_page = $showitems = get_option( 'posts_per_page' );  
 					if( $paged != 0 )
 						$start = $per_page * ($paged - 1);
 					else
@@ -48,13 +50,19 @@ Template Name: Gallery Template
 						if( ( $count - $start ) > $per_page - 1 )
 							break;
 
-					$attachments = get_children( 'post_parent='.$post->ID.'&post_type=attachment&post_mime_type=image&numberposts=1' );
-					$id = key($attachments);
-					$image_attributes = wp_get_attachment_image_src( $id, 'album-thumb' );
+					$attachments	= get_post_thumbnail_id( $post->ID );
+					if( empty ( $attachments ) ) {
+						$attachments = get_children( 'post_parent='.$post->ID.'&post_type=attachment&post_mime_type=image&numberposts=1' );
+						$id = key($attachments);
+						$image_attributes = wp_get_attachment_image_src( $id, 'album-thumb' );
+					}
+					else {
+						$image_attributes = wp_get_attachment_image_src( $attachments, 'album-thumb' );
+					}
 					$count++;
 				?>
 					<li>
-						<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][0][0]; ?>px;" alt="<?php echo $post->post_name; ?>" title="<?php echo $post->post_name; ?>" src="<?php echo $image_attributes[0]; ?>" />
+						<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][0][0]; ?>px;" alt="<?php echo $post->post_title; ?>" title="<?php echo $post->post_title; ?>" src="<?php echo $image_attributes[0]; ?>" />
 						<div class="gallery_detail_box">
 							<div><?php echo $post->post_title; ?></div>
 							<div><?php echo the_excerpt_max_charlength(100); ?></div>
@@ -70,7 +78,6 @@ Template Name: Gallery Template
 					$pages = intval ( $count_all_albums/$per_page );
 					if( $count_all_albums % $per_page > 0 )
 						$pages +=1;
-					$showitems = 5;  
 					$range = 100;
 					if( ! $pages ) {
 						$pages = 1;

@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.3.1
-Stable tag: 2.12
+Stable tag: 3.01
 
 This plugin allows you to implement gallery page into your web site.
 
@@ -19,6 +19,7 @@ This plugin makes it possible to implement as many galleries as you want into yo
 
 * Actions: Create any quantity of the albums in gallery.
 * Description: Add description to each album.
+* Actions: Possibility to set featured image as cover of the album.
 * Actions: Possibility to load any number of photos to each album in the gallery.
 * Caption: Add caption to each photo in the album.
 * Display: You can select dimensions of the thumbnails for the cover of the album as well as for photos in the album.
@@ -27,9 +28,12 @@ This plugin makes it possible to implement as many galleries as you want into yo
 
 = Translation =
 
+* Czech (cs_CZ) (thanks to Josef Sukdol)
 * Dutch (nl_NL) (thanks to <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>)
 * French (fr_FR) (thanks to Didier)
 * Georgian (ka_GE) (thanks to Vako Patashuri)
+* German (de_DE) (thanks to Thomas Bludau)
+* Hungarian (hu_HU) (thanks to Mészöly Gábor) 
 * Italian (it_IT) (thanks to Stefano Ferruggiara)
 * Polish (pl_PL) (thanks to Janusz Janczy, Bezcennyczas.pl)
 * Russian (ru_RU)
@@ -48,7 +52,7 @@ If you create your own language pack or update an existing one, you can send <a 
 = I cannot view my Gallery page =
 
 1. First of all, you need to create your first Gallery page and choose 'Gallery' from the list of available templates (which will be used for displaying our gallery).
-2. If you cannot find 'Gallery' in the list of available templates, then just copy it from `/wp-content/plugins/gallery/template/` directory to your templates directory.
+2. If you cannot find 'Gallery' in the list of available templates, then just copy it from `/wp-content/plugins/gallery-plugin/template/` directory to your templates directory.
 
 = How to use plugin? =
 
@@ -77,6 +81,12 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 5. PrettyPhoto pop-up window with images from the album.
 
 == Changelog ==
+
+= V3.01 - 12.04.2012 =
+* NEW : Czech, Hungarian and German language files are added to the plugin.
+* NEW : Possibility to set featured image as cover of the album.
+* Change: Replace prettyPhoto library to fancybox library.
+* Change: Code that is used to display a lightbox for images in `gallery-single-template.php` template file is changed.
 
 = V2.12 - 27.03.2012 =
 * NEW : Italian language files are added to the plugin.
@@ -128,6 +138,9 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.01 =
+Czech, Hungarian and German language files are added to the plugin. Possibility to set featured image as cover of the album is added. Replace prettyPhoto library to fancybox library. Code that is used to display a lightbox for images in `gallery-single-template.php` template file is changed.
 
 = V2.12 =
 Italian language files are added to the plugin.
