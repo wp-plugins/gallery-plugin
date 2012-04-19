@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 3.02
+Version: 3.03
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -246,8 +246,9 @@ if ( ! function_exists ( 'gllr_save_postdata' ) ) {
 			$array_file_name = $_REQUEST['undefined'];
 			$uploadFile = array();
 			$newthumb = array();
+			$time = current_time('mysql');
 
-			$uploadDir =  wp_upload_dir( );
+			$uploadDir =  wp_upload_dir( $time );
 
 			while( list( $key, $val ) = each( $array_file_name ) ) {
 				$imagename = $val;
@@ -255,14 +256,13 @@ if ( ! function_exists ( 'gllr_save_postdata' ) ) {
 			}
 			reset( $array_file_name );
 			require_once( ABSPATH . 'wp-admin/includes/image.php' );
-			$i = 0;
 			while( list( $key, $val ) = each( $array_file_name ) ) {
 				$file_name = $val;
-				if ( copy ( ABSPATH ."wp-content/plugins/gallery-plugin/upload/files/".$file_name, $uploadFile[$i] ) ) {
+				if ( copy ( ABSPATH ."wp-content/plugins/gallery-plugin/upload/files/".$file_name, $uploadFile[$key] ) ) {
 					unlink( ABSPATH ."wp-content/plugins/gallery-plugin/upload/files/".$file_name );
 					$overrides = array('test_form' => false );
 				
-					$file			= str_replace( "\\", "/",$uploadDir["path"] ) ."/" .$file_name;
+					$file = $uploadFile[$key];
 					$filename = basename( $file );
 					
 					$wp_filetype	= wp_check_filetype( $filename, null );
@@ -277,7 +277,6 @@ if ( ! function_exists ( 'gllr_save_postdata' ) ) {
 					wp_update_attachment_metadata( $attach_id, $attach_data );			
 					$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET post_parent = %d WHERE ID = %d", $post->ID, $attach_id ) );
 				}
-				$i++;			
 			}
 		}
 		if( isset( $_REQUEST['delete_images'] ) ) {

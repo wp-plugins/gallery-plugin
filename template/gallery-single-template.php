@@ -20,7 +20,7 @@
 						"what_to_show"	=> "posts",
 						"post_status"		=> "inherit",
 						"post_type"			=> "attachment",
-						"orderby"				=> "post_date",
+						"orderby"				=> "menu_order",
 						"order"					=> "ASC",
 						"post_mime_type"=> "image/jpeg,image/gif,image/jpg,image/png",
 						"post_parent"		=> $post->ID
