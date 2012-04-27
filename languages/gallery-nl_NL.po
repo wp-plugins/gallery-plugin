@@ -1,0 +1,205 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gallery\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-27 11:10+0200\n"
+"PO-Revision-Date: 2012-04-27 11:10+0200\n"
+"Last-Translator: BWS <zos@bestwebsoft.com>\n"
+"Language-Team: Ronald <ronald@bhi.nl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: gallery-plugin.php:57
+#: gallery-plugin.php:623
+msgid "The following files \"gallery-template.php\" and \"gallery-single-template.php\" were not found in the directory of your theme. Please copy them from the directory `/wp-content/plugins/gallery-plugin/template/` to the directory of your theme for the correct work of the Gallery plugin"
+msgstr ""
+
+#: gallery-plugin.php:81
+#: gallery-plugin.php:91
+msgid "Galleries"
+msgstr "Fotoalbum's"
+
+#: gallery-plugin.php:82
+#: gallery-plugin.php:543
+msgid "Gallery"
+msgstr "Fotoalbum"
+
+#: gallery-plugin.php:83
+msgid "Add New"
+msgstr "Nieuw fotoalbum"
+
+#: gallery-plugin.php:84
+msgid "Add New Gallery"
+msgstr "Nieuw fotoalbum"
+
+#: gallery-plugin.php:85
+msgid "Edit Gallery"
+msgstr "Fotoalbum bewerken"
+
+#: gallery-plugin.php:86
+msgid "New Gallery"
+msgstr "Nieuwe foto"
+
+#: gallery-plugin.php:87
+msgid "View Gallery"
+msgstr "Foto bekijken"
+
+#: gallery-plugin.php:88
+msgid "Search Galleries"
+msgstr "Zoeken"
+
+#: gallery-plugin.php:89
+msgid "No Galleries found"
+msgstr "Niets gevonden"
+
+#: gallery-plugin.php:146
+msgid "Upload File"
+msgstr "Foto's uploaden"
+
+#: gallery-plugin.php:161
+msgid "The gallery temp directory (gallery-plugin/upload/files) not writeable by your webserver. Please use the standard WP functional to upload the images (media library)"
+msgstr ""
+
+#: gallery-plugin.php:165
+msgid "Choose a screenshot to upload:"
+msgstr "Foto's uploaden: "
+
+#: gallery-plugin.php:170
+msgid "Please enable JavaScript to use the file uploader."
+msgstr "Activeer JavaScript om foto's te kunnen uploaden."
+
+#: gallery-plugin.php:361
+msgid "Title"
+msgstr "Titel"
+
+#: gallery-plugin.php:362
+msgid "Author"
+msgstr "Auteur"
+
+#: gallery-plugin.php:363
+msgid "Photo's"
+msgstr "Foto's"
+
+#: gallery-plugin.php:364
+msgid "Public"
+msgstr "Gepubliceerd"
+
+#: gallery-plugin.php:365
+msgid "Date"
+msgstr "Datum"
+
+#: gallery-plugin.php:512
+msgid "Activated plugins"
+msgstr "Geactiveerde plugins"
+
+#: gallery-plugin.php:514
+#: gallery-plugin.php:522
+#: gallery-plugin.php:530
+msgid "Read more"
+msgstr "Lees verder"
+
+#: gallery-plugin.php:514
+#: gallery-plugin.php:686
+#: gallery-plugin.php:701
+msgid "Settings"
+msgstr "Instellingen"
+
+#: gallery-plugin.php:520
+msgid "Installed plugins"
+msgstr "Geinstalleerde plugins"
+
+#: gallery-plugin.php:528
+msgid "Recommended plugins"
+msgstr "Aanbevolen plugins"
+
+#: gallery-plugin.php:530
+msgid "Download"
+msgstr "Download"
+
+#: gallery-plugin.php:530
+#, php-format
+msgid "Install %s"
+msgstr "Install %s"
+
+#: gallery-plugin.php:530
+msgid "Install now from wordpress.org"
+msgstr "Installeer nu vanaf wordpress.org"
+
+#: gallery-plugin.php:532
+msgid "If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site"
+msgstr "Indien u nog vragen heeft, neem contact op via plugin@bestwebsoft.com of vul het contactformulier in op onze website"
+
+#: gallery-plugin.php:619
+msgid "Options saved."
+msgstr "Opties opgeslagen"
+
+#: gallery-plugin.php:630
+msgid "Gallery Options"
+msgstr "Fotoalbum opties"
+
+#: gallery-plugin.php:636
+msgid "The size of the cover album for gallery"
+msgstr "De afmetingen voor de cover van het album"
+
+#: gallery-plugin.php:638
+#: gallery-plugin.php:646
+msgid "Image size name"
+msgstr "Afbeelding grootte"
+
+#: gallery-plugin.php:639
+#: gallery-plugin.php:647
+msgid "Width (in px)"
+msgstr "Breedte (in px)"
+
+#: gallery-plugin.php:640
+#: gallery-plugin.php:648
+msgid "Height (in px)"
+msgstr "Hoogte (in px)"
+
+#: gallery-plugin.php:644
+msgid "Size for gallery image"
+msgstr "Grootte voor album afbeelding"
+
+#: gallery-plugin.php:652
+msgid "WordPress will create a copy of the post thumbnail with the specified dimensions when you upload a new photo."
+msgstr "Wordpress zal een kopie maken van de thumbnail in de opgegeven afmetingen als u een nieuwe foto upload."
+
+#: gallery-plugin.php:655
+msgid "Count images in row"
+msgstr "Aantal afbeeldingen op een rij"
+
+#: gallery-plugin.php:661
+msgid "Start slideshow"
+msgstr ""
+
+#: gallery-plugin.php:667
+msgid "Slideshow interval"
+msgstr ""
+
+#: gallery-plugin.php:675
+msgid "Save Changes"
+msgstr "Bewaar veranderingen"
+
+#: gallery-plugin.php:687
+msgid "FAQ"
+msgstr "FAQ"
+
+#: gallery-plugin.php:688
+msgid "Support"
+msgstr "Support"
+
+#: template/gallery-single-template.php:60
+msgid "Sorry - nothing to found."
+msgstr "Helaas - niets gevonden"
+
+#: template/gallery-template.php:69
+msgid "See photo &raquo;"
+msgstr "Bekijk foto &raquo;"
+
