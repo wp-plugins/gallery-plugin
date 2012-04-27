@@ -74,7 +74,11 @@
 					'speedOut'				:	300,
 					'titleFormat'			: function(title, currentArray, currentIndex, currentOpts) {
 						return '<span id="fancybox-title-inside">' + (title.length ? title + '<br />' : '') + 'Image ' + (currentIndex + 1) + ' / ' + currentArray.length + '</span>';
-					}
+					}<?php if( $gllr_options['start_slideshow'] == 1 ) { ?>,
+					'onComplete':	function() {
+						clearTimeout(jQuery.fancybox.slider);
+						jQuery.fancybox.slider=setTimeout("jQuery.fancybox.next()",<?php echo empty( $gllr_options['slideshow_interval'] )? 2000 : $gllr_options['slideshow_interval'] ; ?>);
+					}<?php } ?>
 				});
 			});
 		})(jQuery);

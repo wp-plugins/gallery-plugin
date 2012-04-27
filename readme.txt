@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.3.1
-Stable tag: 3.03
+Stable tag: 3.04
 
 This plugin allows you to implement gallery page into your web site.
 
@@ -86,6 +86,9 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 
 == Changelog ==
 
+= V3.04 - 27.04.2012 =
+* NEW : Added slideshow for lightbox on single gallery page.
+
 = V3.03 - 19.04.2012 =
 * Bugfix : The bug related with the upload of the photos on the multisite network was fixed.
 
@@ -148,6 +151,9 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.04 =
+Added slideshow for lightbox on single gallery page.
 
 = V3.03 =
 The bug related with the upload of the photos on the multisite network was fixed.

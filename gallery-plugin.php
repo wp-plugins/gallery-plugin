@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 3.03
+Version: 3.04
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -158,7 +158,7 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 		if( ! is_writable ( ABSPATH ."wp-content/plugins/gallery-plugin/upload/files/" ) )
 			@chmod( ABSPATH ."wp-content/plugins/gallery-plugin/upload/files/", 0777 );
 		if( ! is_writable ( ABSPATH ."wp-content/plugins/gallery-plugin/upload/files/" ) ) {
-			$error = "The gallery temp directory not writeable by your webserver. Пожалуйста, используйте стандартный функционал wp для загрузки изобюражений (медиа библиотеку)";
+			$error = __( "The gallery temp directory (gallery-plugin/upload/files) not writeable by your webserver. Please use the standard WP functional to upload the images (media library)", 'gallery' );
 			$uploader = false;
 		}
 		?>
@@ -346,7 +346,7 @@ if ( ! function_exists( 'gllr_template_redirect' ) ) {
 	function gllr_template_redirect() { 
 		global $wp_query, $post, $posts;
 		if( 'gallery' == get_post_type() && "" == $wp_query->query_vars["s"] ) {
-			include( TEMPLATEPATH . '/gallery-single-template.php' );
+			include( STYLESHEETPATH . '/gallery-single-template.php' );
 			exit(); 
 		}
 	}
@@ -556,7 +556,9 @@ if( ! function_exists( 'register_gllr_settings' ) ) {
 		$gllr_option_defaults = array(
 			'gllr_custom_size_name' => array( 'album-thumb', 'photo-thumb' ),
 			'gllr_custom_size_px' => array( array(120, 80), array(160, 120) ),
-			'custom_image_row_count' => 3
+			'custom_image_row_count' => 3,
+			'start_slideshow' => 0,
+			'slideshow_interval' => 2000
 		);
 
 		// install the option defaults
@@ -603,6 +605,12 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 			if( $gllr_request_options["custom_image_row_count"] == "" || $gllr_request_options["custom_image_row_count"] < 1 )
 				$gllr_request_options["custom_image_row_count"] = 1;
 
+			if( isset( $_REQUEST['start_slideshow'] ) )
+				$gllr_request_options["start_slideshow"] = 1;
+			else
+				$gllr_request_options["start_slideshow"] = 0;
+			$gllr_request_options["slideshow_interval"] = $_REQUEST['slideshow_interval'];
+
 			// array merge incase this version has added new options
 			$gllr_options = array_merge( $gllr_options, $gllr_request_options );
 
@@ -647,6 +655,18 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 					<th scope="row"><?php _e('Count images in row', 'gallery' ); ?> </th>
 					<td>
 						<input type="text" name="custom_image_row_count" value="<?php echo $gllr_options["custom_image_row_count"]; ?>" />
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php _e('Start slideshow', 'gallery' ); ?> </th>
+					<td>
+						<input type="checkbox" name="start_slideshow" value="1" <?php if( $gllr_options["start_slideshow"] == 1 ) echo 'checked="checked"'; ?> />
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php _e('Slideshow interval', 'gallery' ); ?> </th>
+					<td>
+						<input type="text" name="slideshow_interval" value="<?php echo $gllr_options["slideshow_interval"]; ?>" />
 					</td>
 				</tr>
 			</table>    
