@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
-Tested up to: 3.3.1
-Stable tag: 3.04
+Tested up to: 3.3.2
+Stable tag: 3.05
 
 This plugin allows you to implement gallery page into your web site.
 
@@ -21,6 +21,8 @@ This plugin makes it possible to implement as many galleries as you want into yo
 * Description: Add description to each album.
 * Actions: Possibility to set featured image as cover of the album.
 * Actions: Possibility to load any number of photos to each album in the gallery.
+* Actions: Possibility to add Single Gallery to your page or post with shortcode.
+* Actions: Option to make the sorting settings of attachments in the admin panel.
 * Caption: Add caption to each photo in the album.
 * Display: You can select dimensions of the thumbnails for the cover of the album as well as for photos in the album.
 * Display: A possibility to select a number of the photos for the separate page of album of the gallery which will be placed in one line.
@@ -37,6 +39,7 @@ This plugin makes it possible to implement as many galleries as you want into yo
 * Italian (it_IT) (thanks to Stefano Ferruggiara)
 * Polish (pl_PL) (thanks to Janusz Janczy, Bezcennyczas.pl)
 * Russian (ru_RU)
+* Spanish (es) (thanks to Victor Garcia)
 * Ukrainian (uk_UA)(thanks to Ted Mosby)
 
 If you create your own language pack or update an existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
@@ -76,6 +79,27 @@ Dear users, if you have any questions or propositions regarding our plugins (cur
 
 The multiple files upload is supported by all modern browsers except Internet Explorer. 
 
+= I'm getting the following error: Fatal error: Call to undefined function get_post_thumbnail_id(). What am I to do? ? =
+
+This error says that your theme doesn't support thumbnail option, in order to add this option please find 'functions.php' file in your theme and add the following strings to this file:
+
+`add_action( 'after_setup_theme', 'theme_setup' );
+
+function theme_setup() {
+    add_theme_support( 'post-thumbnails' );
+}`
+
+After that your theme will support thumbnail option and the error won't display again.
+
+= How to change image order on single gallery page? =
+
+Please open the menu "Galleries" and choose random gallery from the list. You should be redirected to the gallery editing page. 
+There will be one or several media upload icons between the title and content adding blocks. Please choose any icon. 
+After that you'll see a popup window with three or four tabs. 
+Choose gallery tab and there'll be displayed attached files which are related to this gallery. 
+You can change their order using drag'n'drop method. 
+Just setup a necessary order and click 'Save' button.
+
 == Screenshots ==
 
 1. Gallery Admin page.
@@ -85,6 +109,12 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 5. PrettyPhoto pop-up window with images from the album.
 
 == Changelog ==
+
+= V3.05 - 25.05.2012 =
+* NEW : Added shortcode for display Single Gallery on your page or post.
+* NEW : Added attachment order.
+* NEW : Added 'Return to all albums' link for Single Gallery page.
+* NEW : Spanish language file are added to the plugin.
 
 = V3.04 - 27.04.2012 =
 * NEW : Added slideshow for lightbox on single gallery page.
@@ -151,6 +181,9 @@ The multiple files upload is supported by all modern browsers except Internet Ex
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.05 =
+Added shortcode for display Single Gallery on your page or post. Added attachment order. Added 'Return to all albums' link for Single Gallery page. Spanish language file are added to the plugin.
 
 = V3.04 =
 Added slideshow for lightbox on single gallery page.

@@ -123,3 +123,13 @@ text-align:center;
 {
 	display:none;
 }
+#gllr_form_image_size input[type="radio"]{
+	float:left;
+	position:relative;
+	top:5px;
+	margin-right:5px;
+}
+#gllr_form_image_size .label_radio{
+	width:540px;
+	cursor: default;
+}

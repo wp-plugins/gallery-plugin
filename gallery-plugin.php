@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 3.04
+Version: 3.05
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -97,7 +97,7 @@ if( ! function_exists( 'post_type_images' ) ) {
 			'capability_type' => 'post',
 			'has_archive' => false,
 			'hierarchical' => true,
-			'supports' => array('title', 'editor', 'thumbnail', 'author' ),
+			'supports' => array('title', 'editor', 'thumbnail', 'author', 'page-attributes' ),
 			'register_meta_box_cb' => 'init_metaboxes_gallery'
 		));
 	}
@@ -150,6 +150,7 @@ function init_metaboxes_gallery() {
 if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 	function gllr_post_custom_box( $obj = '', $box = '' ) {
 		global $post;
+		$gllr_options = get_option( 'gllr_options' );
 		$key = "gllr_image_text";
 		$error = "";
 		$uploader = true;
@@ -162,7 +163,7 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 			$uploader = false;
 		}
 		?>
-		<div style="padding-top:10px;"><label for="uploadscreen"><?php echo __( 'Choose a screenshot to upload:', 'gallery' ); ?></label>
+		<div style="padding-top:10px;"><label for="uploadscreen"><?php echo __( 'Choose an image to upload:', 'gallery' ); ?></label>
 			<input name="MAX_FILE_SIZE" value="1048576" type="hidden" />
 			<div id="file-uploader-demo1" style="padding-top:10px;">	
 				<?php echo $error; ?>
@@ -207,8 +208,8 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 			"what_to_show"	=> "posts",
 			"post_status"		=> "inherit",
 			"post_type"			=> "attachment",
-			"orderby"				=> "menu_order",
-			"order"					=> "ASC",
+			"orderby"				=> $gllr_options['order_by'],
+			"order"					=> $gllr_options['order'],
 			"post_mime_type"=> "image/jpeg,image/gif,image/jpg,image/png",
 			"post_parent"		=> $post->ID)); ?>
 		<ul class="gallery clearfix">
@@ -258,6 +259,10 @@ if ( ! function_exists ( 'gllr_save_postdata' ) ) {
 			require_once( ABSPATH . 'wp-admin/includes/image.php' );
 			while( list( $key, $val ) = each( $array_file_name ) ) {
 				$file_name = $val;
+				if( file_exists( $uploadFile[$key] ) ){
+					$uploadFile[$key] = $uploadDir["path"] ."/" . pathinfo($uploadFile[$key], PATHINFO_FILENAME ).uniqid().".".pathinfo($uploadFile[$key], PATHINFO_EXTENSION );
+				}
+
 				if ( copy ( ABSPATH ."wp-content/plugins/gallery-plugin/upload/files/".$file_name, $uploadFile[$key] ) ) {
 					unlink( ABSPATH ."wp-content/plugins/gallery-plugin/upload/files/".$file_name );
 					$overrides = array('test_form' => false );
@@ -558,7 +563,12 @@ if( ! function_exists( 'register_gllr_settings' ) ) {
 			'gllr_custom_size_px' => array( array(120, 80), array(160, 120) ),
 			'custom_image_row_count' => 3,
 			'start_slideshow' => 0,
-			'slideshow_interval' => 2000
+			'slideshow_interval' => 2000,
+			'order_by' => 'menu_order',
+			'order' => 'ASC',
+			'return_link' => 0,
+			'return_link_text' => 'Return to all albums',
+			'return_link_shortcode' => 0
 		);
 
 		// install the option defaults
@@ -610,6 +620,20 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 			else
 				$gllr_request_options["start_slideshow"] = 0;
 			$gllr_request_options["slideshow_interval"] = $_REQUEST['slideshow_interval'];
+			$gllr_request_options["order_by"] = $_REQUEST['order_by'];
+			$gllr_request_options["order"] = $_REQUEST['order'];
+
+			if( isset( $_REQUEST['return_link'] ) )
+				$gllr_request_options["return_link"] = 1;
+			else
+				$gllr_request_options["return_link"] = 0;
+
+			if( isset( $_REQUEST['return_link_shortcode'] ) )
+				$gllr_request_options["return_link_shortcode"] = 1;
+			else
+				$gllr_request_options["return_link_shortcode"] = 0;
+
+			$gllr_request_options["return_link_text"] = $_REQUEST['return_link_text'];
 
 			// array merge incase this version has added new options
 			$gllr_options = array_merge( $gllr_options, $gllr_request_options );
@@ -630,6 +654,7 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 		<h2><?php _e('Gallery Options', 'gallery' ); ?></h2>
 		<div class="updated fade" <?php if( ! isset( $_REQUEST['gllr_form_submit'] ) || $error != "" ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
 		<div class="error" <?php if( "" == $error ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
+		<p><?php _e( "If you would like to add a Single Gallery to your page or post, just copy and put this shortcode onto your post or page content:", 'gallery' ); ?> [print_gllr id=Your_gallery_id]</p>
 		<form method="post" action="admin.php?page=gallery-plugin.php" id="gllr_form_image_size">
 			<table class="form-table">
 				<tr valign="top">
@@ -667,6 +692,41 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 					<th scope="row"><?php _e('Slideshow interval', 'gallery' ); ?> </th>
 					<td>
 						<input type="text" name="slideshow_interval" value="<?php echo $gllr_options["slideshow_interval"]; ?>" />
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php _e('Attachments order by', 'gallery' ); ?> </th>
+					<td>
+						<input type="radio" name="order_by" value="ID" <?php if( $gllr_options["order_by"] == 'ID' ) echo 'checked="checked"'; ?> /> <label class="label_radio" for="order_by"><?php _e( 'attachment id', 'gallery' ); ?></label><br />
+						<input type="radio" name="order_by" value="title" <?php if( $gllr_options["order_by"] == 'title' ) echo 'checked="checked"'; ?> /> <label class="label_radio" for="order_by"><?php _e( 'attachment title', 'gallery' ); ?></label><br />
+						<input type="radio" name="order_by" value="date" <?php if( $gllr_options["order_by"] == 'date' ) echo 'checked="checked"'; ?> /> <label class="label_radio" for="order_by"><?php _e( 'date', 'gallery' ); ?></label><br />
+						<input type="radio" name="order_by" value="menu_order" <?php if( $gllr_options["order_by"] == 'menu_order' ) echo 'checked="checked"'; ?> /> <label class="label_radio" for="order_by"><?php _e( 'attachments order (the integer fields in the Insert / Upload Media Gallery dialog )', 'gallery' ); ?></label><br />
+						<input type="radio" name="order_by" value="rand" <?php if( $gllr_options["order_by"] == 'rand' ) echo 'checked="checked"'; ?> /> <label class="label_radio" for="order_by"><?php _e( 'random', 'gallery' ); ?></label>
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php _e('Attachments order', 'gallery' ); ?> </th>
+					<td>
+						<input type="radio" name="order" value="ASC" <?php if( $gllr_options["order"] == 'ASC' ) echo 'checked="checked"'; ?> /> <label class="label_radio" for="order"><?php _e( 'ASC (ascending order from lowest to highest values - 1, 2, 3; a, b, c)', 'gallery' ); ?></label><br />
+						<input type="radio" name="order" value="DESC" <?php if( $gllr_options["order"] == 'DESC' ) echo 'checked="checked"'; ?> /> <label class="label_radio" for="order"><?php _e( 'DESC (descending order from highest to lowest values - 3, 2, 1; c, b, a)', 'gallery' ); ?></label>
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php _e('Display Return link', 'gallery' ); ?> </th>
+					<td>
+						<input type="checkbox" name="return_link" value="1" <?php if( $gllr_options["return_link"] == 1 ) echo 'checked="checked"'; ?> />
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php _e('Display Return link in shortcode', 'gallery' ); ?> </th>
+					<td>
+						<input type="checkbox" name="return_link_shortcode" value="1" <?php if( $gllr_options["return_link_shortcode"] == 1 ) echo 'checked="checked"'; ?> />
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php _e('Label for Return link', 'gallery' ); ?> </th>
+					<td>
+						<input type="text" name="return_link_text" value="<?php echo $gllr_options["return_link_text"]; ?>" style="width:200px;" />
 					</td>
 				</tr>
 			</table>    
@@ -732,6 +792,102 @@ if ( ! function_exists ( 'gllr_wp_head' ) ) {
 	}
 }
 
+if ( ! function_exists ( 'gllr_shortcode' ) ) {
+	function gllr_shortcode( $atts ) {
+		extract( shortcode_atts( array(
+				'id'	=> ''
+			), $attr ) 
+		);
+		$args = array(
+			'post_type'					=> 'gallery',
+			'post_status'				=> 'publish',
+			'p'									=> $id,
+			'posts_per_page'		=> 1
+		);	
+		$second_query = new WP_Query( $args ); 
+		$gllr_options = get_option( 'gllr_options' );
+		if ($second_query->have_posts()) : 
+			while ($second_query->have_posts()) : 
+				global $post;
+				$second_query->the_post(); ?>
+				<div class="gallery_box_single">
+					<?php the_content(); 
+					$posts = get_posts(array(
+						"showposts"			=> -1,
+						"what_to_show"	=> "posts",
+						"post_status"		=> "inherit",
+						"post_type"			=> "attachment",
+						"orderby"				=> $gllr_options['order_by'],
+						"order"					=> $gllr_options['order'],
+						"post_mime_type"=> "image/jpeg,image/gif,image/jpg,image/png",
+						"post_parent"		=> $post->ID
+					));
+					if( count( $posts ) > 0 ) {
+						$count_image_block = 0; ?>
+						<div class="gallery clearfix">
+							<?php foreach( $posts as $attachment ) { 
+								$key = "gllr_image_text";
+								$image_attributes = wp_get_attachment_image_src( $attachment->ID, 'photo-thumb' );
+								$image_attributes_large = wp_get_attachment_image_src( $attachment->ID, 'large' );
+								if( $count_image_block % $gllr_options['custom_image_row_count'] == 0 ) { ?>
+								<div class="gllr_image_row">
+								<?php } ?>
+									<div class="gllr_image_block">
+										<p style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]+20; ?>px;height:<?php echo $gllr_options['gllr_custom_size_px'][1][1]+20; ?>px;">
+											<a rel="gallery_fancybox" href="<?php echo $image_attributes_large[0]; ?>" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>">
+												<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]; ?>px;height:<?php echo $gllr_options['gllr_custom_size_px'][1][1]; ?>px;" alt="" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>" src="<?php echo $image_attributes[0]; ?>" />
+											</a>
+										</p>
+										<div  style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]+20; ?>px;" class="gllr_single_image_text"><?php echo get_post_meta( $attachment->ID, $key, true ); ?>&nbsp;</div>
+									</div>
+								<?php if($count_image_block%$gllr_options['custom_image_row_count'] == $gllr_options['custom_image_row_count']-1 ) { ?>
+								</div>
+								<?php } 
+								$count_image_block++; 
+							} 
+							if($count_image_block > 0 && $count_image_block%$gllr_options['custom_image_row_count'] != 0) { ?>
+								</div>
+							<?php } ?>
+							</div>
+						<?php } ?>
+					</div>
+					<div class="clear"></div>
+			<?php endwhile; 
+		else: ?>
+			<div class="gallery_box_single">
+				<p class="not_found"><?php _e('Sorry - nothing to found.', 'gallery'); ?></p>
+			</div>
+		<?php endif; ?>
+		<?php if( $gllr_options['return_link_shortcode'] == 1 ) {
+			global $wpdb;
+			$parent = $wpdb->get_var("SELECT $wpdb->posts.ID FROM $wpdb->posts, $wpdb->postmeta WHERE meta_key = '_wp_page_template' AND meta_value = 'gallery-template.php' AND (post_status = 'publish' OR post_status = 'private') AND $wpdb->posts.ID = $wpdb->postmeta.post_id");	
+		?>
+		<div class="return_link"><a href="<?php echo ( !empty( $parent ) ? get_permalink( $parent ) : '' ); ?>"><?php echo $gllr_options['return_link_text']; ?></a></div>
+		<?php } ?>
+		<script type="text/javascript">
+		(function($){
+			$(document).ready(function(){
+				$("a[rel=gallery_fancybox]").fancybox({
+					'transitionIn'		: 'elastic',
+					'transitionOut'		: 'elastic',
+					'titlePosition' 	: 'inside',
+					'speedIn'					:	500, 
+					'speedOut'				:	300,
+					'titleFormat'			: function(title, currentArray, currentIndex, currentOpts) {
+						return '<span id="fancybox-title-inside">' + (title.length ? title + '<br />' : '') + 'Image ' + (currentIndex + 1) + ' / ' + currentArray.length + '</span>';
+					}<?php if( $gllr_options['start_slideshow'] == 1 ) { ?>,
+					'onComplete':	function() {
+						clearTimeout(jQuery.fancybox.slider);
+						jQuery.fancybox.slider=setTimeout("jQuery.fancybox.next()",<?php echo empty( $gllr_options['slideshow_interval'] )? 2000 : $gllr_options['slideshow_interval'] ; ?>);
+					}<?php } ?>
+				});
+			});
+		})(jQuery);
+		</script>
+	<?php
+	}
+}
+
 register_activation_hook( __FILE__, 'gllr_plugin_install' ); // activate plugin
 register_uninstall_hook( __FILE__, 'gllr_plugin_uninstall' ); // deactivate plugin
 
@@ -761,4 +917,6 @@ add_action( 'manage_gallery_posts_custom_column', 'gllr_custom_columns', 10, 2 )
 add_action( 'wp_head', 'gllr_add_script' );
 add_action( 'admin_enqueue_scripts', 'gllr_admin_head' );
 add_action( 'wp_enqueue_scripts', 'gllr_wp_head' );
+
+add_shortcode( 'print_gllr', 'gllr_shortcode' );
 ?>

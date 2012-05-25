@@ -20,8 +20,8 @@
 						"what_to_show"	=> "posts",
 						"post_status"		=> "inherit",
 						"post_type"			=> "attachment",
-						"orderby"				=> "menu_order",
-						"order"					=> "ASC",
+						"orderby"				=> $gllr_options['order_by'],
+						"order"					=> $gllr_options['order'],
 						"post_mime_type"=> "image/jpeg,image/gif,image/jpg,image/png",
 						"post_parent"		=> $post->ID
 					));
@@ -60,6 +60,12 @@
 					<p class="not_found"><?php _e('Sorry - nothing to found.', 'gallery'); ?></p>
 				</div>
 				<?php endif; ?>
+				<?php if( $gllr_options['return_link'] == 1 ) {
+					global $wpdb;
+					$parent = $wpdb->get_var("SELECT $wpdb->posts.ID FROM $wpdb->posts, $wpdb->postmeta WHERE meta_key = '_wp_page_template' AND meta_value = 'gallery-template.php' AND (post_status = 'publish' OR post_status = 'private') AND $wpdb->posts.ID = $wpdb->postmeta.post_id");	
+				?>
+				<div class="return_link"><a href="<?php echo ( !empty( $parent ) ? get_permalink( $parent ) : '' ); ?>"><?php echo $gllr_options['return_link_text']; ?></a></div>
+				<?php } ?>
 			</div>
 		</div>
 	<?php get_sidebar(); ?>
