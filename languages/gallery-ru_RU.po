@@ -1,0 +1,263 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gallery\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-25 18:36+0200\n"
+"PO-Revision-Date: 2012-05-25 18:36+0200\n"
+"Last-Translator: BWS <zos@bestwebsoft.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;esc_html__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: gallery-plugin.php:57
+#: gallery-plugin.php:647
+msgid "The following files \"gallery-template.php\" and \"gallery-single-template.php\" were not found in the directory of your theme. Please copy them from the directory `/wp-content/plugins/gallery-plugin/template/` to the directory of your theme for the correct work of the Gallery plugin"
+msgstr ""
+
+#: gallery-plugin.php:81
+#: gallery-plugin.php:91
+msgid "Galleries"
+msgstr "Галереи"
+
+#: gallery-plugin.php:82
+#: gallery-plugin.php:548
+msgid "Gallery"
+msgstr "Галерея"
+
+#: gallery-plugin.php:83
+msgid "Add New"
+msgstr "Добавить галерею"
+
+#: gallery-plugin.php:84
+msgid "Add New Gallery"
+msgstr "добавить новую галерею"
+
+#: gallery-plugin.php:85
+msgid "Edit Gallery"
+msgstr "Редактировать галерею"
+
+#: gallery-plugin.php:86
+msgid "New Gallery"
+msgstr "Новая галерея"
+
+#: gallery-plugin.php:87
+msgid "View Gallery"
+msgstr "Просмотреть галерею"
+
+#: gallery-plugin.php:88
+msgid "Search Galleries"
+msgstr "Поиск галереи"
+
+#: gallery-plugin.php:89
+msgid "No Galleries found"
+msgstr "Ни одной галереи не найдено"
+
+#: gallery-plugin.php:146
+msgid "Upload File"
+msgstr "Загрузить файлы"
+
+#: gallery-plugin.php:162
+msgid "The gallery temp directory (gallery-plugin/upload/files) not writeable by your webserver. Please use the standard WP functional to upload the images (media library)"
+msgstr ""
+
+#: gallery-plugin.php:166
+msgid "Choose an image to upload:"
+msgstr "Выбрать файлы для загрузки:"
+
+#: gallery-plugin.php:171
+msgid "Please enable JavaScript to use the file uploader."
+msgstr "Пожалуйста, включите javascript для использования загрузчика файлов."
+
+#: gallery-plugin.php:366
+msgid "Title"
+msgstr "Название"
+
+#: gallery-plugin.php:367
+msgid "Author"
+msgstr "Автор"
+
+#: gallery-plugin.php:368
+msgid "Photo's"
+msgstr "Фото"
+
+#: gallery-plugin.php:369
+msgid "Public"
+msgstr "Опубликование"
+
+#: gallery-plugin.php:370
+msgid "Date"
+msgstr "Дата"
+
+#: gallery-plugin.php:517
+msgid "Activated plugins"
+msgstr "Активированные плагины"
+
+#: gallery-plugin.php:519
+#: gallery-plugin.php:527
+#: gallery-plugin.php:535
+msgid "Read more"
+msgstr "Подробнее..."
+
+#: gallery-plugin.php:519
+#: gallery-plugin.php:746
+#: gallery-plugin.php:761
+msgid "Settings"
+msgstr "Настройки"
+
+#: gallery-plugin.php:525
+msgid "Installed plugins"
+msgstr "Установленные плагины"
+
+#: gallery-plugin.php:533
+msgid "Recommended plugins"
+msgstr "Рекомендованные к установке плагины"
+
+#: gallery-plugin.php:535
+msgid "Download"
+msgstr "Скачать"
+
+#: gallery-plugin.php:535
+#, php-format
+msgid "Install %s"
+msgstr "Установлено %s"
+
+#: gallery-plugin.php:535
+msgid "Install now from wordpress.org"
+msgstr "Установить с wordpress.org"
+
+#: gallery-plugin.php:537
+msgid "If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site"
+msgstr "Если у вас есть какие-то впросы, обращайтесь на plugin@bestwebsoft.com или заполните контактную форму на нашем сайте"
+
+#: gallery-plugin.php:643
+msgid "Options saved."
+msgstr "Опции сохранены"
+
+#: gallery-plugin.php:654
+msgid "Gallery Options"
+msgstr "Настройки Галереи"
+
+#: gallery-plugin.php:657
+msgid "If you would like to add a Single Gallery to your page or post, just copy and put this shortcode onto your post or page content:"
+msgstr "Если вы хотели бы добавить Галерея на вашу страницу или пост, просто скопируйте и поместить этот шорткод в контент поста или страницы:"
+
+#: gallery-plugin.php:661
+msgid "The size of the cover album for gallery"
+msgstr "Размер изображения для обложки альбома  галереи"
+
+#: gallery-plugin.php:663
+#: gallery-plugin.php:671
+msgid "Image size name"
+msgstr "Название размера изображение"
+
+#: gallery-plugin.php:664
+#: gallery-plugin.php:672
+msgid "Width (in px)"
+msgstr "Ширина (в px)"
+
+#: gallery-plugin.php:665
+#: gallery-plugin.php:673
+msgid "Height (in px)"
+msgstr "Высота (в px)"
+
+#: gallery-plugin.php:669
+msgid "Size for gallery image"
+msgstr "Размер изображений Галереи"
+
+#: gallery-plugin.php:677
+msgid "WordPress will create a copy of the post thumbnail with the specified dimensions when you upload a new photo."
+msgstr "WordPress создаст новую миниатюру с заданными размерами при загрузке новой фотографии."
+
+#: gallery-plugin.php:680
+msgid "Count images in row"
+msgstr "Количество изображений в строке"
+
+#: gallery-plugin.php:686
+msgid "Start slideshow"
+msgstr "Начать слайдшоу"
+
+#: gallery-plugin.php:692
+msgid "Slideshow interval"
+msgstr "Интервал времени при показе слайдшоу"
+
+#: gallery-plugin.php:698
+msgid "Attachments order by"
+msgstr "Изображения сортируются по"
+
+#: gallery-plugin.php:700
+msgid "attachment id"
+msgstr "id изображения"
+
+#: gallery-plugin.php:701
+msgid "attachment title"
+msgstr "названию изображения"
+
+#: gallery-plugin.php:702
+msgid "date"
+msgstr "дате"
+
+#: gallery-plugin.php:703
+msgid "attachments order (the integer fields in the Insert / Upload Media Gallery dialog )"
+msgstr "сортировка по порядку (поле для ввода порядка сортировки в диалоге Insert / Upload Media Gallery)"
+
+#: gallery-plugin.php:704
+msgid "random"
+msgstr "произвольно"
+
+#: gallery-plugin.php:708
+msgid "Attachments order"
+msgstr "Сортировать изображения"
+
+#: gallery-plugin.php:710
+msgid "ASC (ascending order from lowest to highest values - 1, 2, 3; a, b, c)"
+msgstr ""
+
+#: gallery-plugin.php:711
+msgid "DESC (descending order from highest to lowest values - 3, 2, 1; c, b, a)"
+msgstr ""
+
+#: gallery-plugin.php:715
+msgid "Display Return link"
+msgstr "Отображать ссылку Вернуться"
+
+#: gallery-plugin.php:721
+msgid "Display Return link in shortcode"
+msgstr "Отображаться ссылку Вернуться в шорткоде"
+
+#: gallery-plugin.php:727
+msgid "Label for Return link"
+msgstr "Текст для ссылки Вернуться"
+
+#: gallery-plugin.php:735
+msgid "Save Changes"
+msgstr ""
+
+#: gallery-plugin.php:747
+msgid "FAQ"
+msgstr "FAQ"
+
+#: gallery-plugin.php:748
+msgid "Support"
+msgstr "Поддержка"
+
+#: gallery-plugin.php:858
+#: template/gallery-single-template.php:60
+msgid "Sorry - nothing to found."
+msgstr "Извините, ничего не найдено."
+
+#: template/gallery-template.php:69
+msgid "See photo &raquo;"
+msgstr "Смотреть фотографии &raquo;"
+
+#~ msgid "Random order"
+#~ msgstr "Произвольная сортировка"
+
+#~ msgid "Size for gallery album cover"
+#~ msgstr "Размер для "

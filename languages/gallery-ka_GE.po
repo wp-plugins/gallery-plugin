@@ -1,0 +1,262 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gallery\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-25 18:36+0200\n"
+"PO-Revision-Date: 2012-05-25 18:36+0200\n"
+"Last-Translator: BWS <zos@bestwebsoft.com>\n"
+"Language-Team: Vako Patashuri <vpatashuri@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_x;esc_html__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Language: Georgian\n"
+"X-Poedit-Country: GEORGIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: gallery-plugin.php:57
+#: gallery-plugin.php:647
+msgid "The following files \"gallery-template.php\" and \"gallery-single-template.php\" were not found in the directory of your theme. Please copy them from the directory `/wp-content/plugins/gallery-plugin/template/` to the directory of your theme for the correct work of the Gallery plugin"
+msgstr ""
+
+#: gallery-plugin.php:81
+#: gallery-plugin.php:91
+msgid "Galleries"
+msgstr "გალერეა"
+
+#: gallery-plugin.php:82
+#: gallery-plugin.php:548
+msgid "Gallery"
+msgstr "გალერეა"
+
+#: gallery-plugin.php:83
+msgid "Add New"
+msgstr "ახლის დამატება"
+
+#: gallery-plugin.php:84
+msgid "Add New Gallery"
+msgstr "ახალი გალერეას დამატება"
+
+#: gallery-plugin.php:85
+msgid "Edit Gallery"
+msgstr "გალერეას შესწორება"
+
+#: gallery-plugin.php:86
+msgid "New Gallery"
+msgstr "ახალი გალერეა"
+
+#: gallery-plugin.php:87
+msgid "View Gallery"
+msgstr "გალერეას ნახვა"
+
+#: gallery-plugin.php:88
+msgid "Search Galleries"
+msgstr "გალერეას ძებნა"
+
+#: gallery-plugin.php:89
+msgid "No Galleries found"
+msgstr "გალერეა არ მოძებნა"
+
+#: gallery-plugin.php:146
+msgid "Upload File"
+msgstr "ფაილის ატვირთვა"
+
+#: gallery-plugin.php:162
+msgid "The gallery temp directory (gallery-plugin/upload/files) not writeable by your webserver. Please use the standard WP functional to upload the images (media library)"
+msgstr ""
+
+#: gallery-plugin.php:166
+#, fuzzy
+msgid "Choose an image to upload:"
+msgstr "აირჩიეთ სურათი ასატვირთად:"
+
+#: gallery-plugin.php:171
+msgid "Please enable JavaScript to use the file uploader."
+msgstr "გთხოვთ ჩართეთ JavaScript რომ გამოიყენოთ ფაილების ამტვირთავი."
+
+#: gallery-plugin.php:366
+msgid "Title"
+msgstr "სათაური"
+
+#: gallery-plugin.php:367
+msgid "Author"
+msgstr "ავტორი"
+
+#: gallery-plugin.php:368
+msgid "Photo's"
+msgstr "ფოტო"
+
+#: gallery-plugin.php:369
+msgid "Public"
+msgstr "საჯარო"
+
+#: gallery-plugin.php:370
+msgid "Date"
+msgstr "თარიღი"
+
+#: gallery-plugin.php:517
+msgid "Activated plugins"
+msgstr "გააქტიურებული დანამატები:"
+
+#: gallery-plugin.php:519
+#: gallery-plugin.php:527
+#: gallery-plugin.php:535
+msgid "Read more"
+msgstr "სრულად ნახვა"
+
+#: gallery-plugin.php:519
+#: gallery-plugin.php:746
+#: gallery-plugin.php:761
+msgid "Settings"
+msgstr "პარამეტრები"
+
+#: gallery-plugin.php:525
+msgid "Installed plugins"
+msgstr "დაყენებული დანამატები"
+
+#: gallery-plugin.php:533
+msgid "Recommended plugins"
+msgstr "რეკომენდირებული დანამატები"
+
+#: gallery-plugin.php:535
+msgid "Download"
+msgstr "გადმოტვირთვა"
+
+#: gallery-plugin.php:535
+#, php-format
+msgid "Install %s"
+msgstr "დაყენებულია %s"
+
+#: gallery-plugin.php:535
+msgid "Install now from wordpress.org"
+msgstr "დააყენეთ wordpress.org-იდან"
+
+#: gallery-plugin.php:537
+msgid "If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site"
+msgstr "თუ თქვენ გაქვთ რაიმე შეკითხვა, გთხოვთ მოგვწერეთ ელფოსტაზე plugin@bestwebsoft.com ან შეავსეთ საკონტაქტო ფორმა გამოსაგზავნად"
+
+#: gallery-plugin.php:643
+msgid "Options saved."
+msgstr "პარამეტრები შენახულია"
+
+#: gallery-plugin.php:654
+msgid "Gallery Options"
+msgstr "გალერეის პარამეტრები"
+
+#: gallery-plugin.php:657
+msgid "If you would like to add a Single Gallery to your page or post, just copy and put this shortcode onto your post or page content:"
+msgstr ""
+
+#: gallery-plugin.php:661
+msgid "The size of the cover album for gallery"
+msgstr "ალბომის ყდის ზომა გალერეისთვის"
+
+#: gallery-plugin.php:663
+#: gallery-plugin.php:671
+msgid "Image size name"
+msgstr "ზომის სახელი"
+
+#: gallery-plugin.php:664
+#: gallery-plugin.php:672
+msgid "Width (in px)"
+msgstr "სიგანე(პიქსელებში)"
+
+#: gallery-plugin.php:665
+#: gallery-plugin.php:673
+msgid "Height (in px)"
+msgstr "სიმაღლე(პიქსელებში)"
+
+#: gallery-plugin.php:669
+msgid "Size for gallery image"
+msgstr "ზომა გალერეის სურათისთვის"
+
+#: gallery-plugin.php:677
+msgid "WordPress will create a copy of the post thumbnail with the specified dimensions when you upload a new photo."
+msgstr "ვორდპრესი შექმნის მინიატურული პოსტის კოპიას განსაზღვრულ ზომებში, როდესაც ატვირთავთ სურათს."
+
+#: gallery-plugin.php:680
+msgid "Count images in row"
+msgstr "სურათების რაოდენობა მწკრივში"
+
+#: gallery-plugin.php:686
+msgid "Start slideshow"
+msgstr ""
+
+#: gallery-plugin.php:692
+msgid "Slideshow interval"
+msgstr ""
+
+#: gallery-plugin.php:698
+msgid "Attachments order by"
+msgstr ""
+
+#: gallery-plugin.php:700
+msgid "attachment id"
+msgstr ""
+
+#: gallery-plugin.php:701
+msgid "attachment title"
+msgstr ""
+
+#: gallery-plugin.php:702
+#, fuzzy
+msgid "date"
+msgstr "თარიღი"
+
+#: gallery-plugin.php:703
+msgid "attachments order (the integer fields in the Insert / Upload Media Gallery dialog )"
+msgstr ""
+
+#: gallery-plugin.php:704
+msgid "random"
+msgstr ""
+
+#: gallery-plugin.php:708
+msgid "Attachments order"
+msgstr ""
+
+#: gallery-plugin.php:710
+msgid "ASC (ascending order from lowest to highest values - 1, 2, 3; a, b, c)"
+msgstr ""
+
+#: gallery-plugin.php:711
+msgid "DESC (descending order from highest to lowest values - 3, 2, 1; c, b, a)"
+msgstr ""
+
+#: gallery-plugin.php:715
+msgid "Display Return link"
+msgstr ""
+
+#: gallery-plugin.php:721
+msgid "Display Return link in shortcode"
+msgstr ""
+
+#: gallery-plugin.php:727
+msgid "Label for Return link"
+msgstr ""
+
+#: gallery-plugin.php:735
+msgid "Save Changes"
+msgstr "ცვლილებების შენახვა"
+
+#: gallery-plugin.php:747
+msgid "FAQ"
+msgstr "FAQ"
+
+#: gallery-plugin.php:748
+msgid "Support"
+msgstr "Support"
+
+#: gallery-plugin.php:858
+#: template/gallery-single-template.php:60
+msgid "Sorry - nothing to found."
+msgstr "მაპატიეთ - არაფერია ნაპოვნი."
+
+#: template/gallery-template.php:69
+msgid "See photo &raquo;"
+msgstr ""
+
+#~ msgid "Size for gallery album cover"
+#~ msgstr "Размер для "
