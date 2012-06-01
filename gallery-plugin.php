@@ -793,7 +793,7 @@ if ( ! function_exists ( 'gllr_wp_head' ) ) {
 }
 
 if ( ! function_exists ( 'gllr_shortcode' ) ) {
-	function gllr_shortcode( $atts ) {
+	function gllr_shortcode( $attr ) {
 		extract( shortcode_atts( array(
 				'id'	=> ''
 			), $attr ) 
