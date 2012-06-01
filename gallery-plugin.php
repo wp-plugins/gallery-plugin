@@ -799,11 +799,12 @@ if ( ! function_exists ( 'gllr_shortcode' ) ) {
 			), $attr ) 
 		);
 		$args = array(
-			'post_type'					=> 'gallery',
+			'post_type'						=> 'gallery',
 			'post_status'				=> 'publish',
-			'p'									=> $id,
-			'posts_per_page'		=> 1
+			'p'														=> $id,
+			'posts_per_page'	=> 1
 		);	
+		ob_start();
 		$second_query = new WP_Query( $args ); 
 		$gllr_options = get_option( 'gllr_options' );
 		if ($second_query->have_posts()) : 
@@ -885,6 +886,8 @@ if ( ! function_exists ( 'gllr_shortcode' ) ) {
 		})(jQuery);
 		</script>
 	<?php
+		$gllr_output = ob_get_clean();
+		return $gllr_output;
 	}
 }
 

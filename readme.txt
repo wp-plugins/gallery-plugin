@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.3.2
-Stable tag: 3.05
+Stable tag: 3.06
 
 This plugin allows you to implement gallery page into your web site.
 
@@ -110,6 +110,9 @@ Just setup a necessary order and click 'Save' button.
 
 == Changelog ==
 
+= V3.06 - 01.06.2012 =
+* Bugfix : The bug with gallery appears above text content was fixed.
+
 = V3.05 - 25.05.2012 =
 * NEW : Added shortcode for display Single Gallery on your page or post.
 * NEW : Added attachment order.
@@ -181,6 +184,9 @@ Just setup a necessary order and click 'Save' button.
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.06 =
+The bug with gallery appears above text content was fixed.
 
 = V3.05 =
 Added shortcode for display Single Gallery on your page or post. Added attachment order. Added 'Return to all albums' link for Single Gallery page. Spanish language file are added to the plugin.
