@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 3.05
+Version: 3.1
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -24,11 +24,6 @@ License: GPLv2 or later
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-$gllr_boxes = array (
-	'Upload-File' => array (
-		array( '_gllr_uploadedFile', '', '', '', '' ),
-		)
-);
 
 if( ! function_exists( 'gllr_plugin_install' ) ) {
 	function gllr_plugin_install() {
@@ -36,15 +31,15 @@ if( ! function_exists( 'gllr_plugin_install' ) ) {
 			@copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-template.php', get_stylesheet_directory() .'/gallery-template.php' );
 		}
 		else {
-			@copy( get_stylesheet_directory() .'/gallery-template.php', get_stylesheet_directory() .'/gallery-template.php.bak' );
-			@copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-template.php', get_stylesheet_directory() .'/gallery-template.php' );
+			//@copy( get_stylesheet_directory() .'/gallery-template.php', get_stylesheet_directory() .'/gallery-template.php.bak' );
+			//@copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-template.php', get_stylesheet_directory() .'/gallery-template.php' );
 		}
 		if ( ! file_exists( get_stylesheet_directory() .'/gallery-single-template.php' ) ) {
 			@copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-single-template.php', get_stylesheet_directory() .'/gallery-single-template.php' );
 		}
 		else {
-			@copy( get_stylesheet_directory() .'/gallery-single-template.php', get_stylesheet_directory() .'/gallery-single-template.php.bak' );
-			@copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-single-template.php', get_stylesheet_directory() .'/gallery-single-template.php' );
+			//@copy( get_stylesheet_directory() .'/gallery-single-template.php', get_stylesheet_directory() .'/gallery-single-template.php.bak' );
+			//@copy( WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-single-template.php', get_stylesheet_directory() .'/gallery-single-template.php' );
 		}
 	}
 }
@@ -144,6 +139,7 @@ if( ! function_exists( 'addImageAncestorToMenu' ) ) {
 
 function init_metaboxes_gallery() {
 		add_meta_box( 'Upload-File', __( 'Upload File', 'gallery' ), 'gllr_post_custom_box', 'gallery', 'normal', 'high' ); 
+		add_meta_box( 'Gallery-Shortcode', __( 'Gallery Shortcode', 'gallery' ), 'gllr_post_shortcode_box', 'gallery', 'side', 'high' ); 
 }
 
 // Create custom meta box for portfolio post type
@@ -225,6 +221,16 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 		</ul><div style="clear:both;"></div>
 		<div id="delete_images"></div>	 
 	<?php }
+}
+
+// Create shortcode meta box for portfolio post type
+if ( ! function_exists( 'gllr_post_shortcode_box' ) ) {
+	function gllr_post_shortcode_box( $obj = '', $box = '' ) {
+		global $post;
+		?>
+		<p><?php _e( 'You can add the Single Gallery on the page or in the post by inserting this shortcode in the content', 'gallery' ); ?>:</p>
+		<p><code>[print_gllr id=<?php echo $post->ID; ?>]</code></p>
+		<?php }
 }
 
 // Use nonce for verification ...
@@ -887,6 +893,7 @@ if ( ! function_exists ( 'gllr_shortcode' ) ) {
 		</script>
 	<?php
 		$gllr_output = ob_get_clean();
+		wp_reset_query();
 		return $gllr_output;
 	}
 }

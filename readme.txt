@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.3.2
-Stable tag: 3.06
+Stable tag: 3.1
 
 This plugin allows you to implement gallery page into your web site.
 
@@ -47,6 +47,8 @@ If you create your own language pack or update an existing one, you can send <a 
 = Technical support =
 
 Dear users, if you have any questions or propositions regarding our plugins (current options, new options, current issues) please feel free to contact us. Please note that we accept requests in English only. All messages on another languages wouldn't be accepted. 
+
+Also, emails which are reporting about plugin's bugs are accepted for investigation and fixing. Your request must contain URL of the website, issues description and WordPress admin panel access. Plugin customization based on your Wordpress theme is a paid service (standard price is $10, but it could be higer and depends on the complexity of requested changes). We will analize existing issue and make necessary changes after 100% pre-payment.All these paid changes and modifications could be included to the next version of plugin and will be shared for all users like an integral part of the plugin. Free fixing services will be provided for user who send translation on their native language (this should be a new translation of a certain plugin, and you can check available translations on the official plugin page).
 
 == Installation ==
 
@@ -109,6 +111,10 @@ Just setup a necessary order and click 'Save' button.
 5. PrettyPhoto pop-up window with images from the album.
 
 == Changelog ==
+
+= V3.1 - 11.06.2012 =
+* New : Metabox with shortcode has been added on Edit Gallery Page to add it on your page or post.
+* Bugfix : The bug with gallery shortcode was fixed.
 
 = V3.06 - 01.06.2012 =
 * Bugfix : The bug with gallery appears above text content was fixed.
@@ -184,6 +190,9 @@ Just setup a necessary order and click 'Save' button.
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.1 =
+Metabox with shortcode has been added on Edit Gallery Page to add it on your page or post. The bug with gallery shortcode was fixed.
 
 = V3.06 =
 The bug with gallery appears above text content was fixed.
