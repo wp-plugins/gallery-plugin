@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.3.2
-Stable tag: 3.1
+Stable tag: 3.1.1
 
 This plugin allows you to implement gallery page into your web site.
 
@@ -112,6 +112,9 @@ Just setup a necessary order and click 'Save' button.
 
 == Changelog ==
 
+= V3.1.1 - 13.06.2012 =
+* Bugfix : The bug with gallery uploader was fixed.
+
 = V3.1 - 11.06.2012 =
 * New : Metabox with shortcode has been added on Edit Gallery Page to add it on your page or post.
 * Bugfix : The bug with gallery shortcode was fixed.
@@ -190,6 +193,9 @@ Just setup a necessary order and click 'Save' button.
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.1.1 =
+The bug with gallery uploader was fixed.
 
 = V3.1 =
 Metabox with shortcode has been added on Edit Gallery Page to add it on your page or post. The bug with gallery shortcode was fixed.
