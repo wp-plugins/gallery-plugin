@@ -1,0 +1,270 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gallery\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-13 19:09+0300\n"
+"PO-Revision-Date: 2012-06-13 19:09+0300\n"
+"Last-Translator: zos <zos@bestwebsoft.com>\n"
+"Language-Team: Ronald <ronald@bhi.nl>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: gallery-plugin.php:52
+#: gallery-plugin.php:651
+msgid "The following files \"gallery-template.php\" and \"gallery-single-template.php\" were not found in the directory of your theme. Please copy them from the directory `/wp-content/plugins/gallery-plugin/template/` to the directory of your theme for the correct work of the Gallery plugin"
+msgstr ""
+
+#: gallery-plugin.php:76
+#: gallery-plugin.php:86
+msgid "Galleries"
+msgstr "Fotoalbum's"
+
+#: gallery-plugin.php:77
+#: gallery-plugin.php:552
+msgid "Gallery"
+msgstr "Fotoalbum"
+
+#: gallery-plugin.php:78
+msgid "Add New"
+msgstr "Nieuw fotoalbum"
+
+#: gallery-plugin.php:79
+msgid "Add New Gallery"
+msgstr "Nieuw fotoalbum"
+
+#: gallery-plugin.php:80
+msgid "Edit Gallery"
+msgstr "Fotoalbum bewerken"
+
+#: gallery-plugin.php:81
+msgid "New Gallery"
+msgstr "Nieuwe foto"
+
+#: gallery-plugin.php:82
+msgid "View Gallery"
+msgstr "Foto bekijken"
+
+#: gallery-plugin.php:83
+msgid "Search Galleries"
+msgstr "Zoeken"
+
+#: gallery-plugin.php:84
+msgid "No Galleries found"
+msgstr "Niets gevonden"
+
+#: gallery-plugin.php:141
+msgid "Upload File"
+msgstr "Foto's uploaden"
+
+#: gallery-plugin.php:142
+#, fuzzy
+msgid "Gallery Shortcode"
+msgstr "Fotoalbum opties"
+
+#: gallery-plugin.php:156
+msgid "The gallery temp directory (gallery-plugin/upload/files) not writeable by your webserver. Please use the standard WP functional to upload the images (media library)"
+msgstr ""
+
+#: gallery-plugin.php:160
+#, fuzzy
+msgid "Choose an image to upload:"
+msgstr "Foto's uploaden: "
+
+#: gallery-plugin.php:165
+msgid "Please enable JavaScript to use the file uploader."
+msgstr "Activeer JavaScript om foto's te kunnen uploaden."
+
+#: gallery-plugin.php:229
+msgid "You can add the Single Gallery on the page or in the post by inserting this shortcode in the content"
+msgstr ""
+
+#: gallery-plugin.php:370
+msgid "Title"
+msgstr "Titel"
+
+#: gallery-plugin.php:371
+msgid "Author"
+msgstr "Auteur"
+
+#: gallery-plugin.php:372
+msgid "Photo's"
+msgstr "Foto's"
+
+#: gallery-plugin.php:373
+msgid "Public"
+msgstr "Gepubliceerd"
+
+#: gallery-plugin.php:374
+msgid "Date"
+msgstr "Datum"
+
+#: gallery-plugin.php:521
+msgid "Activated plugins"
+msgstr "Geactiveerde plugins"
+
+#: gallery-plugin.php:523
+#: gallery-plugin.php:531
+#: gallery-plugin.php:539
+msgid "Read more"
+msgstr "Lees verder"
+
+#: gallery-plugin.php:523
+#: gallery-plugin.php:750
+#: gallery-plugin.php:765
+msgid "Settings"
+msgstr "Instellingen"
+
+#: gallery-plugin.php:529
+msgid "Installed plugins"
+msgstr "Geinstalleerde plugins"
+
+#: gallery-plugin.php:537
+msgid "Recommended plugins"
+msgstr "Aanbevolen plugins"
+
+#: gallery-plugin.php:539
+msgid "Download"
+msgstr "Download"
+
+#: gallery-plugin.php:539
+#, php-format
+msgid "Install %s"
+msgstr "Install %s"
+
+#: gallery-plugin.php:539
+msgid "Install now from wordpress.org"
+msgstr "Installeer nu vanaf wordpress.org"
+
+#: gallery-plugin.php:541
+msgid "If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site"
+msgstr "Indien u nog vragen heeft, neem contact op via plugin@bestwebsoft.com of vul het contactformulier in op onze website"
+
+#: gallery-plugin.php:647
+msgid "Options saved."
+msgstr "Opties opgeslagen"
+
+#: gallery-plugin.php:658
+msgid "Gallery Options"
+msgstr "Fotoalbum opties"
+
+#: gallery-plugin.php:661
+msgid "If you would like to add a Single Gallery to your page or post, just copy and put this shortcode onto your post or page content:"
+msgstr ""
+
+#: gallery-plugin.php:665
+msgid "The size of the cover album for gallery"
+msgstr "De afmetingen voor de cover van het album"
+
+#: gallery-plugin.php:667
+#: gallery-plugin.php:675
+msgid "Image size name"
+msgstr "Afbeelding grootte"
+
+#: gallery-plugin.php:668
+#: gallery-plugin.php:676
+msgid "Width (in px)"
+msgstr "Breedte (in px)"
+
+#: gallery-plugin.php:669
+#: gallery-plugin.php:677
+msgid "Height (in px)"
+msgstr "Hoogte (in px)"
+
+#: gallery-plugin.php:673
+msgid "Size for gallery image"
+msgstr "Grootte voor album afbeelding"
+
+#: gallery-plugin.php:681
+msgid "WordPress will create a copy of the post thumbnail with the specified dimensions when you upload a new photo."
+msgstr "Wordpress zal een kopie maken van de thumbnail in de opgegeven afmetingen als u een nieuwe foto upload."
+
+#: gallery-plugin.php:684
+msgid "Count images in row"
+msgstr "Aantal afbeeldingen op een rij"
+
+#: gallery-plugin.php:690
+msgid "Start slideshow"
+msgstr ""
+
+#: gallery-plugin.php:696
+msgid "Slideshow interval"
+msgstr ""
+
+#: gallery-plugin.php:702
+msgid "Attachments order by"
+msgstr ""
+
+#: gallery-plugin.php:704
+msgid "attachment id"
+msgstr ""
+
+#: gallery-plugin.php:705
+msgid "attachment title"
+msgstr ""
+
+#: gallery-plugin.php:706
+#, fuzzy
+msgid "date"
+msgstr "Datum"
+
+#: gallery-plugin.php:707
+msgid "attachments order (the integer fields in the Insert / Upload Media Gallery dialog )"
+msgstr ""
+
+#: gallery-plugin.php:708
+msgid "random"
+msgstr ""
+
+#: gallery-plugin.php:712
+msgid "Attachments order"
+msgstr ""
+
+#: gallery-plugin.php:714
+msgid "ASC (ascending order from lowest to highest values - 1, 2, 3; a, b, c)"
+msgstr ""
+
+#: gallery-plugin.php:715
+msgid "DESC (descending order from highest to lowest values - 3, 2, 1; c, b, a)"
+msgstr ""
+
+#: gallery-plugin.php:719
+msgid "Display Return link"
+msgstr ""
+
+#: gallery-plugin.php:725
+msgid "Display Return link in shortcode"
+msgstr ""
+
+#: gallery-plugin.php:731
+msgid "Label for Return link"
+msgstr ""
+
+#: gallery-plugin.php:739
+msgid "Save Changes"
+msgstr "Bewaar veranderingen"
+
+#: gallery-plugin.php:751
+msgid "FAQ"
+msgstr "FAQ"
+
+#: gallery-plugin.php:752
+msgid "Support"
+msgstr "Support"
+
+#: gallery-plugin.php:863
+#: template/gallery-single-template.php:60
+msgid "Sorry - nothing to found."
+msgstr "Helaas - niets gevonden"
+
+#: template/gallery-template.php:69
+msgid "See photo &raquo;"
+msgstr "Bekijk foto &raquo;"
+
