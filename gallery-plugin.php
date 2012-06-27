@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 3.1.2
+Version: 3.2
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -48,6 +48,9 @@ if( ! function_exists( 'gllr_admin_error' ) ) {
 	function gllr_admin_error() {
 		$post = isset( $_REQUEST['post'] ) ? $_REQUEST['post'] : "" ;
 		$post_type = isset( $_REQUEST['post_type'] ) ? $_REQUEST['post_type'] : "" ;
+		if ( ( 'gallery' == get_post_type( $post )  || 'gallery' == $post_type ) && ( ! file_exists( get_stylesheet_directory() .'/gallery-template.php' ) || ! file_exists( get_stylesheet_directory() .'/gallery-single-template.php' ) ) ) {
+				gllr_plugin_install();
+		}
 		if ( ( 'gallery' == get_post_type( $post )  || 'gallery' == $post_type ) && ( ! file_exists( get_stylesheet_directory() .'/gallery-template.php' ) || ! file_exists( get_stylesheet_directory() .'/gallery-single-template.php' ) ) ) {
 			echo '<div class="error"><p><strong>'.__( 'The following files "gallery-template.php" and "gallery-single-template.php" were not found in the directory of your theme. Please copy them from the directory `/wp-content/plugins/gallery-plugin/template/` to the directory of your theme for the correct work of the Gallery plugin', 'gallery' ).'</strong></p></div>';
 		}
@@ -307,7 +310,7 @@ if ( ! function_exists ( 'gllr_save_postdata' ) ) {
 			foreach ( $posts as $page ) {
 				if( isset( $_REQUEST['gllr_image_text'][$page->ID] ) ) {
 					$value = $_REQUEST['gllr_image_text'][$page->ID];
-					if( get_post_meta( $page->ID, $key, FALSE ) && $value ) {
+					if( get_post_meta( $page->ID, $key, FALSE ) ) {
 						// Custom field has a value and this custom field exists in database
 						update_post_meta( $page->ID, $key, $value );
 					} 
@@ -648,6 +651,9 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 		}
 
 		if ( ! file_exists( get_stylesheet_directory() .'/gallery-template.php' ) || ! file_exists( get_stylesheet_directory() .'/gallery-single-template.php' ) ) {
+				gllr_plugin_install();
+		}
+		if ( ! file_exists( get_stylesheet_directory() .'/gallery-template.php' ) || ! file_exists( get_stylesheet_directory() .'/gallery-single-template.php' ) ) {
 			$error .= __( 'The following files "gallery-template.php" and "gallery-single-template.php" were not found in the directory of your theme. Please copy them from the directory `/wp-content/plugins/gallery-plugin/template/` to the directory of your theme for the correct work of the Gallery plugin', 'gallery' );
 		}
 
@@ -658,7 +664,7 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 		<h2><?php _e('Gallery Options', 'gallery' ); ?></h2>
 		<div class="updated fade" <?php if( ! isset( $_REQUEST['gllr_form_submit'] ) || $error != "" ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
 		<div class="error" <?php if( "" == $error ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
-		<p><?php _e( "If you would like to add a Single Gallery to your page or post, just copy and put this shortcode onto your post or page content:", 'gallery' ); ?> [print_gllr id=Your_gallery_id]</p>
+		<p><?php _e( "If you would like to add a Single Gallery to your page or post, just copy and put this shortcode onto your post or page content:", 'gallery' ); ?> [print_gllr id=Your_gallery_post_id]</p>
 		<form method="post" action="admin.php?page=gallery-plugin.php" id="gllr_form_image_size">
 			<table class="form-table">
 				<tr valign="top">

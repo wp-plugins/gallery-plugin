@@ -65,6 +65,7 @@ ul.gallery {
 #content .gallery_box_single .gallery .gllr_image_block p {
 	border: 1px solid #BDBDBD;
     margin:5px 6px 0 0;
+	padding: 0;
 }
 
 .gllr_single_image_text {

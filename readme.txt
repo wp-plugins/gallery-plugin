@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.4
-Stable tag: 3.1.2
+Stable tag: 3.2
 
 This plugin allows you to implement gallery page into your web site.
 
@@ -112,6 +112,9 @@ Just setup a necessary order and click 'Save' button.
 
 == Changelog ==
 
+= V3.2 - 27.06.2012 =
+* Update : We updated all functionality for wordpress 3.4.
+
 = V3.1.2 - 15.06.2012 =
 * Bugfix : The bug with gallery uploader (undefined x undefined) was fixed.
 
@@ -196,6 +199,9 @@ Just setup a necessary order and click 'Save' button.
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.2 =
+We updated all functionality for wordpress 3.4.
 
 = V3.1.2 =
 The bug with gallery uploader (undefined x undefined) was fixed.

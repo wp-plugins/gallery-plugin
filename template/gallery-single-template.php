@@ -79,7 +79,7 @@
 					'speedIn'					:	500, 
 					'speedOut'				:	300,
 					'titleFormat'			: function(title, currentArray, currentIndex, currentOpts) {
-						return '<span id="fancybox-title-inside">' + (title.length ? title + '<br />' : '') + 'Image ' + (currentIndex + 1) + ' / ' + currentArray.length + '</span>';
+						return '<span id="fancybox-title-inside">' + (title.length ? title + '<br />' : '') + '<?php _e( "Image ", "gallery"); ?>' + (currentIndex + 1) + ' / ' + currentArray.length + '</span>';
 					}<?php if( $gllr_options['start_slideshow'] == 1 ) { ?>,
 					'onComplete':	function() {
 						clearTimeout(jQuery.fancybox.slider);
