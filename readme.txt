@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
-Tested up to: 3.4
-Stable tag: 3.2
+Tested up to: 3.4.1
+Stable tag: 3.3
 
 This plugin allows you to implement gallery page into your web site.
 
@@ -30,17 +30,20 @@ This plugin makes it possible to implement as many galleries as you want into yo
 
 = Translation =
 
+* Brazilian Portuguese (pt_BR) (thanks to DJIO, www.djio.com.br)
 * Czech (cs_CZ) (thanks to Josef Sukdol)
 * Dutch (nl_NL) (thanks to <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>)
 * French (fr_FR) (thanks to Didier)
 * Georgian (ka_GE) (thanks to Vako Patashuri)
 * German (de_DE) (thanks to Thomas Bludau)
+* Hebrew (he_IL) (thanks to Sagive SEO)
 * Hungarian (hu_HU) (thanks to Mészöly Gábor) 
 * Italian (it_IT) (thanks to Stefano Ferruggiara)
 * Polish (pl_PL) (thanks to Janusz Janczy, Bezcennyczas.pl)
 * Russian (ru_RU)
 * Spanish (es) (thanks to Victor Garcia)
 * Ukrainian (uk_UA)(thanks to Ted Mosby)
+
 
 If you create your own language pack or update an existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
@@ -111,6 +114,11 @@ Just setup a necessary order and click 'Save' button.
 5. PrettyPhoto pop-up window with images from the album.
 
 == Changelog ==
+
+= V3.3 - 12.07.2012 =
+* NEW : Brazilian Portuguese and Hebrew language files are added to the plugin.
+* Update : We updated Italian language file.
+* Update : We updated all functionality for wordpress 3.4.1.
 
 = V3.2 - 27.06.2012 =
 * Update : We updated all functionality for wordpress 3.4.
@@ -199,6 +207,9 @@ Just setup a necessary order and click 'Save' button.
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.3 =
+Brazilian Portuguese and Hebrew language files are added to the plugin. We updated Italian language file. We updated all functionality for wordpress 3.4.1.
 
 = V3.2 =
 We updated all functionality for wordpress 3.4.
