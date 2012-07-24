@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 3.3
+Version: 3.4
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -221,7 +221,8 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
     endforeach; ?>
 		</ul><div style="clear:both;"></div>
 		<div id="delete_images"></div>	 
-	<?php }
+	<?php
+	}
 }
 
 // Create shortcode meta box for portfolio post type
@@ -232,17 +233,6 @@ if ( ! function_exists( 'gllr_post_shortcode_box' ) ) {
 		<p><?php _e( 'You can add the Single Gallery on the page or in the post by inserting this shortcode in the content', 'gallery' ); ?>:</p>
 		<p><code>[print_gllr id=<?php echo $post->ID; ?>]</code></p>
 		<?php }
-}
-
-// Use nonce for verification ...
-if( ! function_exists ( 'echo_gllr_nonce' ) ) {
-	function echo_gllr_nonce () {
-		echo sprintf(
-			'<input type="hidden" name="%1$s" id="%1$s" value="%2$s" />',
-			'gllr_nonce_name',
-			wp_create_nonce( plugin_basename(__FILE__) )
-		);
-	}
 }
 
 if ( ! function_exists ( 'gllr_save_postdata' ) ) {
@@ -332,26 +322,44 @@ if ( ! function_exists ( 'gllr_plugin_init' ) ) {
 }
 
 if( ! function_exists( 'gllr_custom_permalinks' ) ) {
-	function gllr_custom_permalinks() {
-		global $wp_rewrite;
+	function gllr_custom_permalinks( $rules ) {
 		global $wpdb;
 		$parent = $wpdb->get_var("SELECT $wpdb->posts.post_name FROM $wpdb->posts, $wpdb->postmeta WHERE meta_key = '_wp_page_template' AND meta_value = 'gallery-template.php' AND (post_status = 'publish' OR post_status = 'private') AND $wpdb->posts.ID = $wpdb->postmeta.post_id");	
+		$newrules = array();
 		if( ! empty( $parent ) ) {
-			$wp_rewrite->add_rule( '(.+)/'.$parent.'/([^/]+)/?$', 'index.php?post_type=gallery&title=$matches[2]&posts_per_page=-1', 'top' );
+			$newrules['(.+)/'.$parent.'/([^/]+)/?$']= 'index.php?post_type=gallery&title=$matches[2]&posts_per_page=-1';
+			$newrules[''.$parent.'/([^/]+)/?$']= 'index.php?post_type=gallery&title=$matches[1]&posts_per_page=-1';
+			$newrules[''.$parent.'/page/([^/]+)/?$']= 'index.php?pagename='.$parent.'&paged=$matches[1]';
+			$newrules[''.$parent.'/page/([^/]+)?$']= 'index.php?pagename='.$parent.'&paged=$matches[1]';
+			/*$wp_rewrite->add_rule( '(.+)/'.$parent.'/([^/]+)/?$', 'index.php?post_type=gallery&title=$matches[2]&posts_per_page=-1', 'top' );
 			$wp_rewrite->add_rule( ''.$parent.'/([^/]+)/?$', 'index.php?post_type=gallery&title=$matches[1]&posts_per_page=-1', 'top' );
 			$wp_rewrite->add_rule( ''.$parent.'/page/([^/]+)/?$', 'index.php?pagename='.$parent.'&paged=$matches[1]', 'top' );
-			$wp_rewrite->add_rule( ''.$parent.'/page/([^/]+)?$', 'index.php?pagename='.$parent.'&paged=$matches[1]', 'top' );
+			$wp_rewrite->add_rule( ''.$parent.'/page/([^/]+)?$', 'index.php?pagename='.$parent.'&paged=$matches[1]', 'top' );*/
 		}
 		else {
-			$wp_rewrite->add_rule( '(.+)/gallery/([^/]+)/?$', 'index.php?post_type=gallery&title=$matches[2]&posts_per_page=-1', 'top' );
+			$newrules['(.+)/gallery/([^/]+)/?$']= 'index.php?post_type=gallery&title=$matches[2]&posts_per_page=-1';
+			$newrules['gallery/([^/]+)/?$']= 'index.php?post_type=gallery&title=$matches[1]&posts_per_page=-1';
+			$newrules['gallery/page/([^/]+)/?$']= 'index.php?pagename=gallery&paged=$matches[1]';
+			$newrules['gallery/page/([^/]+)?$']= 'index.php?pagename=gallery&paged=$matches[1]';
+			/*$wp_rewrite->add_rule( '(.+)/gallery/([^/]+)/?$', 'index.php?post_type=gallery&title=$matches[2]&posts_per_page=-1', 'top' );
 			$wp_rewrite->add_rule( 'gallery/([^/]+)/?$', 'index.php?post_type=gallery&title=$matches[1]&posts_per_page=-1', 'top' );
 			$wp_rewrite->add_rule( 'gallery/page/([^/]+)/?$', 'index.php?pagename=gallery&paged=$matches[1]', 'top' );
-			$wp_rewrite->add_rule( 'gallery/page/([^/]+)?$', 'index.php?pagename=gallery&paged=$matches[1]', 'top' );
+			$wp_rewrite->add_rule( 'gallery/page/([^/]+)?$', 'index.php?pagename=gallery&paged=$matches[1]', 'top' );*/
 		}
-
-
-		$wp_rewrite->flush_rules();
+		return $newrules + $rules;
 	}
+}
+
+// flush_rules() if our rules are not yet included
+if ( ! function_exists( 'gllr_flush_rules' ) ) {
+		function gllr_flush_rules(){
+				$rules = get_option( 'rewrite_rules' );
+
+				if ( ! isset( $rules['(.+)/gallery/([^/]+)/?$'] ) ) {
+						global $wp_rewrite;
+						$wp_rewrite->flush_rules();
+				}
+		}
 }
 
 if ( ! function_exists( 'gllr_template_redirect' ) ) {
@@ -610,7 +618,7 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 		$error = "";
 		
 		// Save data for settings page
-		if( isset( $_REQUEST['gllr_form_submit'] ) ) {
+		if( isset( $_REQUEST['gllr_form_submit'] ) && check_admin_referer( plugin_basename(__FILE__), 'gllr_nonce_name' ) ) {
 			$gllr_request_options = array();
 			$gllr_request_options["gllr_custom_size_name"] = $gllr_options["gllr_custom_size_name"];
 
@@ -684,7 +692,7 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 					</td>
 				</tr>
 				<tr valign="top">
-					<td colspan="2"><span style="color: #888888;font-size: 10px;"><?php _e( 'WordPress will create a copy of the post thumbnail with the specified dimensions when you upload a new photo.', 'gallery' ); ?></span></th>
+					<td colspan="2"><span style="color: #888888;font-size: 10px;"><?php _e( 'WordPress will create a copy of the post thumbnail with the specified dimensions when you upload a new photo.', 'gallery' ); ?></span></td>
 				</tr>
 				<tr valign="top">
 					<th scope="row"><?php _e('Count images in row', 'gallery' ); ?> </th>
@@ -744,6 +752,7 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 			<p class="submit">
 				<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
 			</p>
+			<?php wp_nonce_field( plugin_basename(__FILE__), 'gllr_nonce_name' ); ?>
 		</form>
 	</div>
 	<?php } 
@@ -1079,7 +1088,9 @@ add_action( 'admin_menu', 'add_gllr_admin_menu' );
 add_action( 'init', 'gllr_plugin_init' );
 
 add_action( 'init', 'post_type_images' ); // register post type
-add_action( 'init', 'gllr_custom_permalinks' ); // add custom permalink for gallery
+
+add_filter( 'rewrite_rules_array', 'gllr_custom_permalinks' ); // add custom permalink for gallery
+add_action( 'wp_loaded', 'gllr_flush_rules' );
 
 add_action( 'admin_init', 'gllr_admin_error' );
 
