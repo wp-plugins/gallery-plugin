@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gallery\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-24 19:41+0300\n"
-"PO-Revision-Date: 2012-07-24 19:41+0300\n"
+"POT-Creation-Date: 2012-07-27 14:57+0300\n"
+"PO-Revision-Date: 2012-07-27 14:58+0300\n"
 "Last-Translator: zos <zos@bestwebsoft.com>\n"
 "Language-Team: BWS <bestwebsoft.com>\n"
 "Language: \n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: gallery-plugin.php:55
-#: gallery-plugin.php:665
+#: gallery-plugin.php:683
 msgid "The following files \"gallery-template.php\" and \"gallery-single-template.php\" were not found in the directory of your theme. Please copy them from the directory `/wp-content/plugins/gallery-plugin/template/` to the directory of your theme for the correct work of the Gallery plugin"
 msgstr ""
 
@@ -28,7 +28,7 @@ msgid "Galleries"
 msgstr "Galerie zdjęć"
 
 #: gallery-plugin.php:80
-#: gallery-plugin.php:563
+#: gallery-plugin.php:576
 msgid "Gallery"
 msgstr "Galeria zdjęć"
 
@@ -82,184 +82,213 @@ msgstr "Wybierz zrzut ekrany do wgrania na serwer"
 msgid "Please enable JavaScript to use the file uploader."
 msgstr "Proszę właczyć osbługę JavaScript by skorzystać z opcji wgrywania plików na serwer"
 
-#: gallery-plugin.php:233
+#: gallery-plugin.php:175
+msgid "Please use drag and drop function to change the order of the output of images and do not forget to save post."
+msgstr ""
+
+#: gallery-plugin.php:177
+msgid "Please do not forget to select "
+msgstr ""
+
+#: gallery-plugin.php:177
+#: gallery-plugin.php:734
+msgid "Attachments order by"
+msgstr ""
+
+#: gallery-plugin.php:177
+msgid "attachments order"
+msgstr ""
+
+#: gallery-plugin.php:177
+msgid "in the settings of the plugin (page "
+msgstr ""
+
+#: gallery-plugin.php:239
 msgid "You can add the Single Gallery on the page or in the post by inserting this shortcode in the content"
 msgstr ""
 
-#: gallery-plugin.php:381
+#: gallery-plugin.php:241
+msgid "If you want to take a brief display of the gallery with a link to a Single Sallery Page"
+msgstr ""
+
+#: gallery-plugin.php:394
 msgid "Title"
 msgstr "Tytuł"
 
-#: gallery-plugin.php:382
+#: gallery-plugin.php:395
 msgid "Author"
 msgstr "Autor"
 
-#: gallery-plugin.php:383
+#: gallery-plugin.php:396
 msgid "Photo's"
 msgstr "Zdjęcie"
 
-#: gallery-plugin.php:384
+#: gallery-plugin.php:397
 msgid "Public"
 msgstr "Publiczne"
 
-#: gallery-plugin.php:385
+#: gallery-plugin.php:398
 msgid "Date"
 msgstr "Data"
 
-#: gallery-plugin.php:532
+#: gallery-plugin.php:545
 msgid "Activated plugins"
 msgstr "Aktywny plugin"
 
-#: gallery-plugin.php:534
-#: gallery-plugin.php:542
-#: gallery-plugin.php:550
+#: gallery-plugin.php:547
+#: gallery-plugin.php:555
+#: gallery-plugin.php:563
 msgid "Read more"
 msgstr "Czytaj dalej"
 
-#: gallery-plugin.php:534
-#: gallery-plugin.php:765
-#: gallery-plugin.php:780
+#: gallery-plugin.php:547
+#: gallery-plugin.php:789
+#: gallery-plugin.php:804
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: gallery-plugin.php:540
+#: gallery-plugin.php:553
 msgid "Installed plugins"
 msgstr "Zainstalowane pluginy"
 
-#: gallery-plugin.php:548
+#: gallery-plugin.php:561
 msgid "Recommended plugins"
 msgstr "Rekomendowane pluginy"
 
-#: gallery-plugin.php:550
+#: gallery-plugin.php:563
 msgid "Download"
 msgstr "Pobierz"
 
-#: gallery-plugin.php:550
+#: gallery-plugin.php:563
 #, php-format
 msgid "Install %s"
 msgstr "Zainstaluj %s"
 
-#: gallery-plugin.php:550
+#: gallery-plugin.php:563
 msgid "Install now from wordpress.org"
 msgstr "Zainstaluj teraz z wordpress.org"
 
-#: gallery-plugin.php:552
+#: gallery-plugin.php:565
 msgid "If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site"
 msgstr "Jeśli masz jakiekolwiek pytania, proszę napisz do nas na adres plugin@bestwebsoft.com albo wypełnij formularz kontaktowy na naszej stronie."
 
-#: gallery-plugin.php:658
+#: gallery-plugin.php:597
+msgid "See photo &raquo;"
+msgstr "Zobacz zdjęcia &raquo;"
+
+#: gallery-plugin.php:676
 msgid "Options saved."
 msgstr "Opcje zostały zapisane."
 
-#: gallery-plugin.php:672
+#: gallery-plugin.php:690
 msgid "Gallery Options"
 msgstr "Opcje galerii."
 
-#: gallery-plugin.php:675
+#: gallery-plugin.php:693
 msgid "If you would like to add a Single Gallery to your page or post, just copy and put this shortcode onto your post or page content:"
 msgstr ""
 
-#: gallery-plugin.php:679
+#: gallery-plugin.php:697
 msgid "The size of the cover album for gallery"
 msgstr "Rozmiar okładki albumu"
 
-#: gallery-plugin.php:681
-#: gallery-plugin.php:689
+#: gallery-plugin.php:699
+#: gallery-plugin.php:707
 msgid "Image size name"
 msgstr "Nazwa rozmiaru obrazka"
 
-#: gallery-plugin.php:682
-#: gallery-plugin.php:690
+#: gallery-plugin.php:700
+#: gallery-plugin.php:708
 msgid "Width (in px)"
 msgstr "Szerokość (w px)"
 
-#: gallery-plugin.php:683
-#: gallery-plugin.php:691
+#: gallery-plugin.php:701
+#: gallery-plugin.php:709
 msgid "Height (in px)"
 msgstr "Wysokość (w px)"
 
-#: gallery-plugin.php:687
+#: gallery-plugin.php:705
 msgid "Size for gallery image"
 msgstr "Rozmiar dla obrazka w galerii"
 
-#: gallery-plugin.php:695
+#: gallery-plugin.php:713
 msgid "WordPress will create a copy of the post thumbnail with the specified dimensions when you upload a new photo."
 msgstr "WordPress stworzy kopię miniaturki notki według podanych rozmiarów podczas wgrywania nowego zdjęcia na serwer."
 
-#: gallery-plugin.php:698
+#: gallery-plugin.php:716
 msgid "Count images in row"
 msgstr "Ilość obrazków w rzędzie"
 
-#: gallery-plugin.php:704
+#: gallery-plugin.php:722
 msgid "Start slideshow"
 msgstr ""
 
-#: gallery-plugin.php:710
+#: gallery-plugin.php:728
 msgid "Slideshow interval"
 msgstr ""
 
-#: gallery-plugin.php:716
-msgid "Attachments order by"
-msgstr ""
-
-#: gallery-plugin.php:718
+#: gallery-plugin.php:736
 msgid "attachment id"
 msgstr ""
 
-#: gallery-plugin.php:719
+#: gallery-plugin.php:737
 msgid "attachment title"
 msgstr ""
 
-#: gallery-plugin.php:720
+#: gallery-plugin.php:738
 #, fuzzy
 msgid "date"
 msgstr "Data"
 
-#: gallery-plugin.php:721
+#: gallery-plugin.php:739
 msgid "attachments order (the integer fields in the Insert / Upload Media Gallery dialog )"
 msgstr ""
 
-#: gallery-plugin.php:722
+#: gallery-plugin.php:740
 msgid "random"
 msgstr ""
 
-#: gallery-plugin.php:726
+#: gallery-plugin.php:744
 msgid "Attachments order"
 msgstr ""
 
-#: gallery-plugin.php:728
+#: gallery-plugin.php:746
 msgid "ASC (ascending order from lowest to highest values - 1, 2, 3; a, b, c)"
 msgstr ""
 
-#: gallery-plugin.php:729
+#: gallery-plugin.php:747
 msgid "DESC (descending order from highest to lowest values - 3, 2, 1; c, b, a)"
 msgstr ""
 
-#: gallery-plugin.php:733
+#: gallery-plugin.php:751
 msgid "Display Return link"
 msgstr ""
 
-#: gallery-plugin.php:739
+#: gallery-plugin.php:757
 msgid "Display Return link in shortcode"
 msgstr ""
 
-#: gallery-plugin.php:745
+#: gallery-plugin.php:763
 msgid "Label for Return link"
 msgstr ""
 
-#: gallery-plugin.php:753
+#: gallery-plugin.php:769
+msgid "Label for Read More link"
+msgstr ""
+
+#: gallery-plugin.php:777
 msgid "Save Changes"
 msgstr "Zapisz zmiany"
 
-#: gallery-plugin.php:766
+#: gallery-plugin.php:790
 msgid "FAQ"
 msgstr "FAQ "
 
-#: gallery-plugin.php:767
+#: gallery-plugin.php:791
 msgid "Support"
 msgstr "Wsparcie"
 
-#: gallery-plugin.php:878
+#: gallery-plugin.php:953
 #: template/gallery-single-template.php:60
 msgid "Sorry - nothing to found."
 msgstr "Przykro nam - nic nie znaleziono."
@@ -267,10 +296,6 @@ msgstr "Przykro nam - nic nie znaleziono."
 #: template/gallery-single-template.php:82
 msgid "Image "
 msgstr ""
-
-#: template/gallery-template.php:69
-msgid "See photo &raquo;"
-msgstr "Zobacz zdjęcia &raquo;"
 
 #~ msgid "Size for gallery album cover"
 #~ msgstr "Размер для "

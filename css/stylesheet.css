@@ -41,6 +41,10 @@ ul.gallery {
 	width:150px;
 }
 
+.gllr_order_text {
+	width:20px;
+}
+
 .gallery .gllr_image_block {
 	float: left;
 }
@@ -49,11 +53,17 @@ ul.gallery {
     border: 10px solid #F1F1F1;
 }
 
+#Upload-File .gllr_order_message{
+	padding-bottom:10px;
+}
+
 #Upload-File .gallery .gllr_image_block {
-    border: 1px solid #BDBDBD;
     float: left;
+}
+
+#Upload-File .gallery .gllr_border_image{
+    border: 1px solid #BDBDBD;
     height: 170px;
-    margin: 15px 6px 50px 0;
     width: 170px;
 }
 

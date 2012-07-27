@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.4.1
-Stable tag: 3.4
+Stable tag: 3.5
 
 This plugin allows you to implement gallery page into your web site.
 
@@ -39,6 +39,7 @@ This plugin makes it possible to implement as many galleries as you want into yo
 * Hebrew (he_IL) (thanks to Sagive SEO)
 * Hungarian (hu_HU) (thanks to Mészöly Gábor) 
 * Italian (it_IT) (thanks to Stefano Ferruggiara)
+* Lituanian (lt_LT) (thanks to Naglis Jonaitis)
 * Polish (pl_PL) (thanks to Janusz Janczy, Bezcennyczas.pl)
 * Russian (ru_RU)
 * Spanish (es) (thanks to Victor Garcia)
@@ -98,7 +99,11 @@ After that your theme will support thumbnail option and the error won't display 
 
 = How to change image order on single gallery page? =
 
-Please open the menu "Galleries" and choose random gallery from the list. You should be redirected to the gallery editing page. 
+1. Please open the menu "Galleries" and choose random gallery from the list. You should be redirected to the gallery editing page. 
+Please use drag and drop function to change the order of the output of images and do not forget to save post.
+Please do not forget to select `Attachments order by` -> `attachments order` in the settings of the plugin (page http://your_domain/wp-admin/admin.php?page=gallery-plugin.php) 
+
+2. Please open the menu "Galleries" and choose random gallery from the list. You should be redirected to the gallery editing page. 
 There will be one or several media upload icons between the title and content adding blocks. Please choose any icon. 
 After that you'll see a popup window with three or four tabs. 
 Choose gallery tab and there'll be displayed attached files which are related to this gallery. 
@@ -114,6 +119,11 @@ Just setup a necessary order and click 'Save' button.
 5. PrettyPhoto pop-up window with images from the album.
 
 == Changelog ==
+
+= V3.5 - 27.07.2012 =
+* NEW : Lituanian language file is added to the plugin.
+* NEW : Added drag and drop function to change the order of the output of images
+* NEW : Added a shortcode for displaying short gallery type (like [print_gllr id=211 display=short])
 
 = V3.4 - 24.07.2012 =
 * Bugfix : Cross Site Request Forgery bug was fixed. 
@@ -210,6 +220,9 @@ Just setup a necessary order and click 'Save' button.
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.5 =
+Lituanian language file is added to the plugin. Added drag and drop function to change the order of the output of images. Added a shortcode for displaying short gallery type (like [print_gllr id=211 display=short])
 
 = V3.4 =
 Cross Site Request Forgery bug was fixed. 
