@@ -2,11 +2,11 @@
 	<div id="container">
 		<div role="main" id="content">
 			<?php 
-			global $post;
+			global $post, $wp_query;
 			$args = array(
 				'post_type'					=> 'gallery',
 				'post_status'				=> 'publish',
-				'name'							=> substr(basename( $_SERVER['REQUEST_URI'] ), strpos( basename( $_SERVER['REQUEST_URI'] ), "=")),
+				'name'							=> $wp_query->query_vars['name'],
 				'posts_per_page'		=> 1
 			);	
 			$second_query = new WP_Query( $args ); 
@@ -32,13 +32,14 @@
 								$key = "gllr_image_text";
 								$image_attributes = wp_get_attachment_image_src( $attachment->ID, 'photo-thumb' );
 								$image_attributes_large = wp_get_attachment_image_src( $attachment->ID, 'large' );
+								$image_attributes_full = wp_get_attachment_image_src( $attachment->ID, 'full' );
 								if( $count_image_block % $gllr_options['custom_image_row_count'] == 0 ) { ?>
 								<div class="gllr_image_row">
 								<?php } ?>
 									<div class="gllr_image_block">
 										<p style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]+20; ?>px;height:<?php echo $gllr_options['gllr_custom_size_px'][1][1]+20; ?>px;">
-											<a rel="gallery_fancybox" href="<?php echo $image_attributes_large[0]; ?>" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>">
-												<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]; ?>px;height:<?php echo $gllr_options['gllr_custom_size_px'][1][1]; ?>px;" alt="" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>" src="<?php echo $image_attributes[0]; ?>" />
+											<a rel="gallery_fancybox" href="<?php echo $image_attributes_large[0]; ?>" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>" >
+												<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]; ?>px;height:<?php echo $gllr_options['gllr_custom_size_px'][1][1]; ?>px;" alt="" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>" src="<?php echo $image_attributes[0]; ?>" rel="<?php echo $image_attributes_full[0]; ?>" />
 											</a>
 										</p>
 										<div  style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]+20; ?>px;" class="gllr_single_image_text"><?php echo get_post_meta( $attachment->ID, $key, true ); ?>&nbsp;</div>
@@ -79,7 +80,7 @@
 					'speedIn'					:	500, 
 					'speedOut'				:	300,
 					'titleFormat'			: function(title, currentArray, currentIndex, currentOpts) {
-						return '<span id="fancybox-title-inside">' + (title.length ? title + '<br />' : '') + '<?php _e( "Image ", "gallery"); ?>' + (currentIndex + 1) + ' / ' + currentArray.length + '</span>';
+						return '<span id="fancybox-title-inside">' + (title.length ? title + '<br />' : '') + '<?php _e( "Image ", "gallery"); ?>' + (currentIndex + 1) + ' / ' + currentArray.length + '</span><?php if( get_post_meta( $post->ID, 'gllr_download_link', true ) != '' ){?><br /><a href="'+$(currentOpts.orig).attr('rel')+'" target="_blank"><?php echo __('Download High resolution image', 'gallery'); ?> </a><?php } ?>';
 					}<?php if( $gllr_options['start_slideshow'] == 1 ) { ?>,
 					'onComplete':	function() {
 						clearTimeout(jQuery.fancybox.slider);

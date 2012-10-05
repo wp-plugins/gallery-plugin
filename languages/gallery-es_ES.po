@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gallery\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-05 17:40+0200\n"
-"PO-Revision-Date: 2012-10-05 17:40+0200\n"
-"Last-Translator: zos <zos@bestwebsoft.com>\n"
-"Language-Team: BWS <bestwebsoft.com>\n"
-"Language: pl_PL\n"
+"POT-Creation-Date: 2012-10-05 17:39+0200\n"
+"PO-Revision-Date: 2012-10-05 17:39+0200\n"
+"Last-Translator: BWS <zos@bestwebsoft.com>\n"
+"Language-Team: Victor Garcia <\\tvgarcias@gmail.com>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,51 +22,55 @@ msgid ""
 "the directory `/wp-content/plugins/gallery-plugin/template/` to the "
 "directory of your theme for the correct work of the Gallery plugin"
 msgstr ""
+"Los siguientes archivos /gallery-template.php / y /gallery-single-template."
+"php/ no se encuentra en el directorio de tu tema. Por favor, copiarlos desde "
+"el directorio  /wp-content/plugins/gallery-plugin/template/ en el directorio "
+"de su tema para el correcto funcionamiento del plugin de la Galería"
 
 #: gallery-plugin.php:127 gallery-plugin.php:137
 msgid "Galleries"
-msgstr "Galerie zdjęć"
+msgstr "Galerías"
 
 #: gallery-plugin.php:128 gallery-plugin.php:630
 msgid "Gallery"
-msgstr "Galeria zdjęć"
+msgstr "Galería"
 
 #: gallery-plugin.php:129
 msgid "Add New"
-msgstr "Dodaj nową"
+msgstr "Agrega Nueva"
 
 #: gallery-plugin.php:130
 msgid "Add New Gallery"
-msgstr "Dodaj nową galerię"
+msgstr "Agregar Nueva Galería"
 
 #: gallery-plugin.php:131
 msgid "Edit Gallery"
-msgstr "Edytuj galerię"
+msgstr "Editar Galería"
 
 #: gallery-plugin.php:132
 msgid "New Gallery"
-msgstr "Nowa galeria"
+msgstr "Nueva Galería"
 
 #: gallery-plugin.php:133
 msgid "View Gallery"
-msgstr "Zobacz galerię"
+msgstr "Ver Galería"
 
 #: gallery-plugin.php:134
 msgid "Search Galleries"
-msgstr "Szukaj galerii"
+msgstr "Buscar Galerías"
 
 #: gallery-plugin.php:135
 msgid "No Galleries found"
-msgstr "Nie znaleziono żadnej galerii"
+msgstr "No se encontraron Galerías"
 
 #: gallery-plugin.php:192
 msgid "Upload File"
-msgstr "Wgraj plik"
+msgstr "Subir Archivo"
 
 #: gallery-plugin.php:193
 #, fuzzy
 msgid "Gallery Shortcode"
-msgstr "Opcje galerii."
+msgstr "Opciones de Galería"
 
 #: gallery-plugin.php:208
 msgid ""
@@ -74,17 +78,18 @@ msgid ""
 "your webserver. Please use the standard WP functional to upload the images "
 "(media library)"
 msgstr ""
+"El directorio temporal galería (gallery-plugin/upload/files) no puede ser "
+"escrito por su servidor web. Por favor, use la forma estandár de WP para "
+"subir las imágenes (librería multimedia)"
 
 #: gallery-plugin.php:212
 #, fuzzy
 msgid "Choose an image to upload:"
-msgstr "Wybierz zrzut ekrany do wgrania na serwer"
+msgstr "Escoger una imagen para subir:"
 
 #: gallery-plugin.php:217
 msgid "Please enable JavaScript to use the file uploader."
-msgstr ""
-"Proszę właczyć osbługę JavaScript by skorzystać z opcji wgrywania plików na "
-"serwer"
+msgstr "Favor de habilitar JavaScript para usar el cargador de archivos"
 
 #: gallery-plugin.php:224
 msgid "Allow download link for images in this gallery"
@@ -126,7 +131,7 @@ msgstr ""
 
 #: gallery-plugin.php:448
 msgid "Title"
-msgstr "Tytuł"
+msgstr "Título"
 
 #: gallery-plugin.php:449
 msgid "Author"
@@ -134,68 +139,69 @@ msgstr "Autor"
 
 #: gallery-plugin.php:450
 msgid "Photo's"
-msgstr "Zdjęcie"
+msgstr "Foto de"
 
 #: gallery-plugin.php:451
 msgid "Public"
-msgstr "Publiczne"
+msgstr "Pública"
 
 #: gallery-plugin.php:452
 msgid "Date"
-msgstr "Data"
+msgstr "Fecha"
 
 #: gallery-plugin.php:599
 msgid "Activated plugins"
-msgstr "Aktywny plugin"
+msgstr "Plugins Activados"
 
 #: gallery-plugin.php:601 gallery-plugin.php:609 gallery-plugin.php:617
 msgid "Read more"
-msgstr "Czytaj dalej"
+msgstr "Leer más"
 
 #: gallery-plugin.php:601 gallery-plugin.php:846 gallery-plugin.php:861
 msgid "Settings"
-msgstr "Ustawienia"
+msgstr "Configuración"
 
 #: gallery-plugin.php:607
 msgid "Installed plugins"
-msgstr "Zainstalowane pluginy"
+msgstr "Plugins instalados"
 
 #: gallery-plugin.php:615
 msgid "Recommended plugins"
-msgstr "Rekomendowane pluginy"
+msgstr "Plugins recomendados"
 
 #: gallery-plugin.php:617
 msgid "Download"
-msgstr "Pobierz"
+msgstr "Descargar"
 
 #: gallery-plugin.php:617
 #, php-format
 msgid "Install %s"
-msgstr "Zainstaluj %s"
+msgstr "Instalar %s"
 
 #: gallery-plugin.php:617
 msgid "Install now from wordpress.org"
-msgstr "Zainstaluj teraz z wordpress.org"
+msgstr "Instalar ahora desde wordpress.org"
 
 #: gallery-plugin.php:619
 msgid ""
 "If you have any questions, please contact us via plugin@bestwebsoft.com or "
 "fill in our contact form on our site"
 msgstr ""
-"Jeśli masz jakiekolwiek pytania, proszę napisz do nas na adres "
-"plugin@bestwebsoft.com albo wypełnij formularz kontaktowy na naszej stronie."
+"Si usted tiene alguna pregunta, póngase en contacto con nosotros a través de "
+"plugin@bestwebsoft.com o rellenar nuestro formulario de contacto en nuestro "
+"sitio"
 
 #: gallery-plugin.php:654
 msgid "See photo &raquo;"
-msgstr "Zobacz zdjęcia &raquo;"
+msgstr "Ver foto &raquo;"
 
 #: gallery-plugin.php:733
 msgid "Options saved."
-msgstr "Opcje zostały zapisane."
+msgstr "Opciones guardadas."
 
 #: gallery-plugin.php:747
 msgid "Gallery Options"
-msgstr "Opcje galerii."
+msgstr "Opciones de Galería"
 
 #: gallery-plugin.php:750
 msgid ""
@@ -205,43 +211,43 @@ msgstr ""
 
 #: gallery-plugin.php:754
 msgid "The size of the cover album for gallery"
-msgstr "Rozmiar okładki albumu"
+msgstr "El tamaño de la cubierta del álbum de la galería"
 
 #: gallery-plugin.php:756 gallery-plugin.php:764
 msgid "Image size name"
-msgstr "Nazwa rozmiaru obrazka"
+msgstr "Nombre del tamaño de la imagen"
 
 #: gallery-plugin.php:757 gallery-plugin.php:765
 msgid "Width (in px)"
-msgstr "Szerokość (w px)"
+msgstr "Ancho (en px)"
 
 #: gallery-plugin.php:758 gallery-plugin.php:766
 msgid "Height (in px)"
-msgstr "Wysokość (w px)"
+msgstr "Alto (en px)"
 
 #: gallery-plugin.php:762
 msgid "Size for gallery image"
-msgstr "Rozmiar dla obrazka w galerii"
+msgstr "Tamaño de la galería de imágenes"
 
 #: gallery-plugin.php:770
 msgid ""
 "WordPress will create a copy of the post thumbnail with the specified "
 "dimensions when you upload a new photo."
 msgstr ""
-"WordPress stworzy kopię miniaturki notki według podanych rozmiarów podczas "
-"wgrywania nowego zdjęcia na serwer."
+"WordPress creará una copia de la miniatura de la entrada con las dimensiones "
+"especificadas, cuando se suba una foto nueva."
 
 #: gallery-plugin.php:773
 msgid "Count images in row"
-msgstr "Ilość obrazków w rzędzie"
+msgstr "Contar las imágenes en la fila"
 
 #: gallery-plugin.php:779
 msgid "Start slideshow"
-msgstr ""
+msgstr "Comenzar presentación diapositivas"
 
 #: gallery-plugin.php:785
 msgid "Slideshow interval"
-msgstr ""
+msgstr "Intervalo de presentación diapositivas"
 
 #: gallery-plugin.php:793
 msgid "attachment id"
@@ -252,9 +258,8 @@ msgid "attachment title"
 msgstr ""
 
 #: gallery-plugin.php:795
-#, fuzzy
 msgid "date"
-msgstr "Data"
+msgstr ""
 
 #: gallery-plugin.php:796
 msgid ""
@@ -297,7 +302,7 @@ msgstr ""
 
 #: gallery-plugin.php:834
 msgid "Save Changes"
-msgstr "Zapisz zmiany"
+msgstr "Guardar Cambios"
 
 #: gallery-plugin.php:847
 msgid "FAQ"
@@ -305,11 +310,11 @@ msgstr "FAQ "
 
 #: gallery-plugin.php:848
 msgid "Support"
-msgstr "Wsparcie"
+msgstr "Soporte"
 
 #: gallery-plugin.php:1011 template/gallery-single-template.php:61
 msgid "Sorry - nothing to found."
-msgstr "Przykro nam - nic nie znaleziono."
+msgstr "Lo sentimos - nada que encontrar."
 
 #: gallery-plugin.php:1030 template/gallery-single-template.php:83
 msgid "Download High resolution image"

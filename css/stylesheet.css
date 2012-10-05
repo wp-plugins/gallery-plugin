@@ -49,8 +49,9 @@ ul.gallery {
 	float: left;
 }
 
-.gallery img {
+#content .gallery .gllr_image_block a img {
     border: 10px solid #F1F1F1;
+	margin-top: 0;
 }
 
 #Upload-File .gllr_order_message{

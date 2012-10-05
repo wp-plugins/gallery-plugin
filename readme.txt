@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
-Tested up to: 3.4.1
-Stable tag: 3.5
+Tested up to: 3.4.2
+Stable tag: 3.6
 
 This plugin allows you to implement gallery page into your web site.
 
@@ -44,7 +44,6 @@ This plugin makes it possible to implement as many galleries as you want into yo
 * Russian (ru_RU)
 * Spanish (es) (thanks to Victor Garcia)
 * Ukrainian (uk_UA)(thanks to Ted Mosby)
-
 
 If you create your own language pack or update an existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
@@ -119,6 +118,10 @@ Just setup a necessary order and click 'Save' button.
 5. PrettyPhoto pop-up window with images from the album.
 
 == Changelog ==
+
+= V3.6 - 03.10.2012 =
+* NEW : Added function to display 'Download High resolution image' link in lightbox on gallery page
+* NEW : Added setting for 'Download High resolution image' link
 
 = V3.5 - 27.07.2012 =
 * NEW : Lituanian language file is added to the plugin.
@@ -220,6 +223,9 @@ Just setup a necessary order and click 'Save' button.
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.6 =
+Added function to display 'Download High resolution image' link in lightbox on gallery page. Added setting for 'Download High resolution image' link.
 
 = V3.5 =
 Lituanian language file is added to the plugin. Added drag and drop function to change the order of the output of images. Added a shortcode for displaying short gallery type (like [print_gllr id=211 display=short])
