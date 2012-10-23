@@ -200,6 +200,7 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 		$gllr_options = get_option( 'gllr_options' );
 		$key = "gllr_image_text";
 		$gllr_download_link = get_post_meta( $post->ID, 'gllr_download_link', true );
+		$link_key = "gllr_link_url";
 		$error = "";
 		$uploader = true;
 		
@@ -272,7 +273,8 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 				echo '<div class="gllr_border_image"><img src="'.$image_attributes[0].'" alt="'.$page->post_title.'" title="'.$page->post_title.'" height="'.get_option( 'thumbnail_size_h' ).'" width="'.get_option( 'thumbnail_size_w' ).'" /></div>';
 				echo '<input type="text" name="gllr_image_text['.$page->ID.']" value="'.get_post_meta( $page->ID, $key, TRUE ).'" class="gllr_image_text" />';
 				echo '<input type="text" name="gllr_order_text['.$page->ID.']" value="'.$page->menu_order.'" class="gllr_order_text '.( $page->menu_order == 0 ? "hidden" : '' ).'" />';
-				echo '<div class="delete"><a href="javascript:void(0);" onclick="img_delete('.$page->ID.');">Delete</a><div/>';
+				echo '<br />'.__("Link URL", "gallery").'<br /><input type="text" name="gllr_link_url['.$page->ID.']" value="'.get_post_meta( $page->ID, $link_key, TRUE ).'" class="gllr_link_text" /><br /><span class="small_text">'.__("(clicking on image <br /> open the link in new window)", "gallery").'</span>';
+				echo '<div class="delete"><a href="javascript:void(0);" onclick="img_delete('.$page->ID.');">'.__("Delete", "gallery").'</a><div/>';
 			echo '</div></li>';
     endforeach; ?>
 		</ul><div style="clear:both;"></div>
@@ -297,6 +299,7 @@ if ( ! function_exists ( 'gllr_save_postdata' ) ) {
 	function gllr_save_postdata( $post_id, $post ) {
 		global $post, $wpdb;
 		$key = "gllr_image_text";
+		$link_key = "gllr_link_url";
 
 		if( isset( $_REQUEST['undefined'] ) && ! empty( $_REQUEST['undefined'] ) ) {
 			$array_file_name = $_REQUEST['undefined'];
@@ -372,6 +375,30 @@ if ( ! function_exists ( 'gllr_save_postdata' ) ) {
 		if( isset( $_REQUEST['gllr_order_text'] ) ) {
 			foreach( $_REQUEST['gllr_order_text'] as $key=>$val ){
 				wp_update_post( array( 'ID'=>$key, 'menu_order'=>$val ) );
+			}
+		}
+		if( isset( $_REQUEST['gllr_link_url'] ) ) {
+			$posts = get_posts(array(
+				"showposts"			=> -1,
+				"what_to_show"	=> "posts",
+				"post_status"		=> "inherit",
+				"post_type"			=> "attachment",
+				"orderby"				=> "menu_order",
+				"order"					=> "ASC",
+				"post_mime_type"=> "image/jpeg,image/gif,image/jpg,image/png",
+				"post_parent"		=> $post->ID));
+			foreach ( $posts as $page ) {
+				if( isset( $_REQUEST['gllr_link_url'][$page->ID] ) ) {
+					$value = $_REQUEST['gllr_link_url'][$page->ID];
+					if( get_post_meta( $page->ID, $link_key, FALSE ) ) {
+						// Custom field has a value and this custom field exists in database
+						update_post_meta( $page->ID, $link_key, $value );
+					} 
+					elseif($value) {
+						// Custom field has a value, but this custom field does not exist in database
+						add_post_meta( $page->ID, $link_key, $value );
+					}
+				}
 			}
 		}
 		if( isset( $_REQUEST['gllr_download_link'] ) ){
@@ -979,6 +1006,7 @@ if ( ! function_exists ( 'gllr_shortcode' ) ) {
 						<div class="gallery clearfix">
 							<?php foreach( $posts as $attachment ) { 
 								$key = "gllr_image_text";
+								$link_key = "gllr_link_url";
 								$image_attributes = wp_get_attachment_image_src( $attachment->ID, 'photo-thumb' );
 								$image_attributes_large = wp_get_attachment_image_src( $attachment->ID, 'large' );
 								$image_attributes_full = wp_get_attachment_image_src( $attachment->ID, 'full' );
@@ -987,9 +1015,15 @@ if ( ! function_exists ( 'gllr_shortcode' ) ) {
 								<?php } ?>
 									<div class="gllr_image_block">
 										<p style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]+20; ?>px;height:<?php echo $gllr_options['gllr_custom_size_px'][1][1]+20; ?>px;">
+											<?php if( ( $url_for_link = get_post_meta( $attachment->ID, $link_key, true ) ) != "" ) { ?>
+													<a href="<?php echo $url_for_link; ?>" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>" target="_blank">
+														<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]; ?>px;height:<?php echo $gllr_options['gllr_custom_size_px'][1][1]; ?>px;" alt="" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>" src="<?php echo $image_attributes[0]; ?>" />
+													</a>
+												<?php } else { ?>
 											<a rel="gallery_fancybox" href="<?php echo $image_attributes_large[0]; ?>" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>">
 												<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]; ?>px;height:<?php echo $gllr_options['gllr_custom_size_px'][1][1]; ?>px;" alt="" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>" src="<?php echo $image_attributes[0]; ?>" rel="<?php echo $image_attributes_full[0]; ?>" />
 											</a>
+												<?php } ?>
 										</p>
 										<div  style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]+20; ?>px;" class="gllr_single_image_text"><?php echo get_post_meta( $attachment->ID, $key, true ); ?>&nbsp;</div>
 									</div>

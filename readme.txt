@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.4.2
-Stable tag: 3.6
+Stable tag: 3.7
 
 This plugin allows you to implement gallery page into your web site.
 
@@ -119,6 +119,9 @@ Just setup a necessary order and click 'Save' button.
 
 == Changelog ==
 
+= V3.7 - 23.10.2012 =
+* NEW : Added link url field - clicking on image open the link in new window.
+
 = V3.6 - 03.10.2012 =
 * NEW : Added function to display 'Download High resolution image' link in lightbox on gallery page
 * NEW : Added setting for 'Download High resolution image' link
@@ -223,6 +226,9 @@ Just setup a necessary order and click 'Save' button.
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.7 =
+Added link url field - clicking on image open the link in new window.
 
 = V3.6 =
 Added function to display 'Download High resolution image' link in lightbox on gallery page. Added setting for 'Download High resolution image' link.
