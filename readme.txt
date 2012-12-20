@@ -236,7 +236,7 @@ Just setup a necessary order and click 'Save' button.
 == Upgrade Notice ==
 
 = V3.8 =
-Slovak and Persian language files is added to the plugin. We updated all functionality for wordpress 3.5.
+Slovak and Persian language files is added to the plugin. Added setting for Border for image on gallery page - display, width, color. Added setting for URL for Return link - Gallery Template page or Custom page. We updated all functionality for wordpress 3.5.
 
 = V3.7 =
 Added link url field - clicking on image open the link in new window.
