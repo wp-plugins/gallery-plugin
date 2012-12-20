@@ -59,10 +59,18 @@ Template Name: Gallery Template
 					else {
 						$image_attributes = wp_get_attachment_image_src( $attachments, 'album-thumb' );
 					}
+					if( 1 == $gllr_options['border_images'] ){
+						$gllr_border = 'border-width: '.$gllr_options['border_images_width'].'px; border-color:'.$gllr_options['border_images_color'].'; padding:0;';
+						$gllr_border_images = $gllr_options['border_images_width'] * 2;
+					}
+					else{
+						$gllr_border = 'padding:0;';
+						$gllr_border_images = 0;
+					}
 					$count++;
 				?>
 					<li>
-						<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][0][0]; ?>px;" alt="<?php echo $post->post_title; ?>" title="<?php echo $post->post_title; ?>" src="<?php echo $image_attributes[0]; ?>" />
+						<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][0][0]; ?>px; <?php echo $gllr_border; ?>" alt="<?php echo $post->post_title; ?>" title="<?php echo $post->post_title; ?>" src="<?php echo $image_attributes[0]; ?>" />
 						<div class="gallery_detail_box">
 							<div><?php echo $post->post_title; ?></div>
 							<div><?php echo the_excerpt_max_charlength(100); ?></div>

@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
-Tested up to: 3.4.2
-Stable tag: 3.7
+Tested up to: 3.5
+Stable tag: 3.8
 
 This plugin allows you to implement gallery page into your web site.
 
@@ -40,8 +40,10 @@ This plugin makes it possible to implement as many galleries as you want into yo
 * Hungarian (hu_HU) (thanks to Mészöly Gábor) 
 * Italian (it_IT) (thanks to Stefano Ferruggiara)
 * Lituanian (lt_LT) (thanks to Naglis Jonaitis)
+* Persian (fa_IR) (thanks to Einolah Kiamehr and Meisam)
 * Polish (pl_PL) (thanks to Janusz Janczy, Bezcennyczas.pl)
 * Russian (ru_RU)
+* Slovak (sk_SK) (thanks to Branco Radenovich)
 * Spanish (es) (thanks to Victor Garcia)
 * Ukrainian (uk_UA)(thanks to Ted Mosby)
 
@@ -118,6 +120,12 @@ Just setup a necessary order and click 'Save' button.
 5. PrettyPhoto pop-up window with images from the album.
 
 == Changelog ==
+
+= V3.8 - 20.12.2012 =
+* NEW : Slovak and Persian language files is added to the plugin.
+* NEW : Added setting for Border for image on gallery page - display, width, color.
+* NEW : Added setting for URL for Return link - Gallery Template page or Custom page.
+* Update : We updated all functionality for wordpress 3.5.
 
 = V3.7 - 23.10.2012 =
 * NEW : Added link url field - clicking on image open the link in new window.
@@ -226,6 +234,9 @@ Just setup a necessary order and click 'Save' button.
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.8 =
+Slovak and Persian language files is added to the plugin. We updated all functionality for wordpress 3.5.
 
 = V3.7 =
 Added link url field - clicking on image open the link in new window.

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gallery Plugin v3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-23 16:11+0200\n"
-"PO-Revision-Date: 2012-10-23 16:11+0200\n"
+"POT-Creation-Date: 2012-12-20 18:47+0200\n"
+"PO-Revision-Date: 2012-12-20 18:47+0200\n"
 "Last-Translator: zos <zos@bestwebsoft.com>\n"
 "Language-Team: \n"
 "Language: he_IL\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 # @ gallery
-#: gallery-plugin.php:103 gallery-plugin.php:767
+#: gallery-plugin.php:103 gallery-plugin.php:789
 msgid ""
 "The following files \"gallery-template.php\" and \"gallery-single-template."
 "php\" were not found in the directory of your theme. Please copy them from "
@@ -37,7 +37,7 @@ msgid "Galleries"
 msgstr "גלריות"
 
 # @ gallery
-#: gallery-plugin.php:128 gallery-plugin.php:657
+#: gallery-plugin.php:128 gallery-plugin.php:656
 msgid "Gallery"
 msgstr "גלריה"
 
@@ -121,7 +121,7 @@ msgid "Please do not forget to select "
 msgstr ""
 
 # @ gallery
-#: gallery-plugin.php:228 gallery-plugin.php:818
+#: gallery-plugin.php:228 gallery-plugin.php:853
 msgid "Attachments order by"
 msgstr "סדר הקבצים המצורפים"
 
@@ -134,20 +134,20 @@ msgstr ""
 msgid "in the settings of the plugin (page "
 msgstr ""
 
-#: gallery-plugin.php:276
+#: gallery-plugin.php:275
 msgid "Link URL"
 msgstr ""
 
-#: gallery-plugin.php:276
+#: gallery-plugin.php:275
 msgid "(clicking on image <br /> open the link in new window)"
 msgstr ""
 
-#: gallery-plugin.php:277
+#: gallery-plugin.php:276
 msgid "Delete"
 msgstr ""
 
 # @ gallery
-#: gallery-plugin.php:291
+#: gallery-plugin.php:290
 msgid ""
 "You can add the Single Gallery on the page or in the post by inserting this "
 "shortcode in the content"
@@ -155,80 +155,80 @@ msgstr ""
 "אתה יכול להעלות את הגלריה הבודדת בבגוף הדף או הפוסט על ידי הוספת קיצור הקוד "
 "בתוכן"
 
-#: gallery-plugin.php:293
+#: gallery-plugin.php:292
 msgid ""
 "If you want to take a brief display of the gallery with a link to a Single "
 "Sallery Page"
 msgstr ""
 
 # @ gallery
-#: gallery-plugin.php:475
+#: gallery-plugin.php:474
 msgid "Title"
 msgstr "כותרת"
 
 # @ gallery
-#: gallery-plugin.php:476
+#: gallery-plugin.php:475
 msgid "Author"
 msgstr "מחבר"
 
 # @ gallery
-#: gallery-plugin.php:477
+#: gallery-plugin.php:476
 msgid "Photo's"
 msgstr "של התמונה"
 
 # @ gallery
-#: gallery-plugin.php:478
+#: gallery-plugin.php:477
 msgid "Public"
 msgstr "ציבורי"
 
 # @ gallery
-#: gallery-plugin.php:479
+#: gallery-plugin.php:478
 msgid "Date"
 msgstr "תאריך"
 
 # @ gallery
-#: gallery-plugin.php:626
+#: gallery-plugin.php:625
 msgid "Activated plugins"
 msgstr "תוספים פעילים"
 
 # @ gallery
-#: gallery-plugin.php:628 gallery-plugin.php:636 gallery-plugin.php:644
+#: gallery-plugin.php:627 gallery-plugin.php:635 gallery-plugin.php:643
 msgid "Read more"
 msgstr "קרא עוד"
 
 # @ gallery
-#: gallery-plugin.php:628 gallery-plugin.php:873 gallery-plugin.php:888
+#: gallery-plugin.php:627 gallery-plugin.php:922 gallery-plugin.php:937
 msgid "Settings"
 msgstr "הגדרות"
 
 # @ gallery
-#: gallery-plugin.php:634
+#: gallery-plugin.php:633
 msgid "Installed plugins"
 msgstr "תוספים מותקנים"
 
 # @ gallery
-#: gallery-plugin.php:642
+#: gallery-plugin.php:641
 msgid "Recommended plugins"
 msgstr "תוספים מומלצים"
 
 # @ gallery
-#: gallery-plugin.php:644
+#: gallery-plugin.php:643
 msgid "Download"
 msgstr "הורד"
 
 # @ default
-#: gallery-plugin.php:644
+#: gallery-plugin.php:643
 #, php-format
 msgid "Install %s"
 msgstr "התקן %s"
 
 # @ gallery
-#: gallery-plugin.php:644
+#: gallery-plugin.php:643
 msgid "Install now from wordpress.org"
 msgstr "הורד כעת מ wordpress.org"
 
 # @ gallery
-#: gallery-plugin.php:646
+#: gallery-plugin.php:645
 msgid ""
 "If you have any questions, please contact us via plugin@bestwebsoft.com or "
 "fill in our contact form on our site"
@@ -237,22 +237,22 @@ msgstr ""
 "את טופס יצירת הקשר באתר שלנו"
 
 # @ gallery
-#: gallery-plugin.php:681
+#: gallery-plugin.php:683
 msgid "See photo &raquo;"
 msgstr "ראו תמונה »"
 
 # @ gallery
-#: gallery-plugin.php:760
+#: gallery-plugin.php:782
 msgid "Options saved."
 msgstr "האפשרויות נשמרו."
 
 # @ gallery
-#: gallery-plugin.php:774
+#: gallery-plugin.php:796
 msgid "Gallery Options"
 msgstr "אפשרויות גלריה"
 
 # @ gallery
-#: gallery-plugin.php:777
+#: gallery-plugin.php:799
 msgid ""
 "If you would like to add a Single Gallery to your page or post, just copy "
 "and put this shortcode onto your post or page content:"
@@ -261,32 +261,32 @@ msgstr ""
 "הקוד הזה בתוך תוכן הפוסט או הדף שלך:"
 
 # @ gallery
-#: gallery-plugin.php:781
+#: gallery-plugin.php:803
 msgid "The size of the cover album for gallery"
 msgstr "גודל הכריכה של האלבום של הגלריה"
 
 # @ gallery
-#: gallery-plugin.php:783 gallery-plugin.php:791
+#: gallery-plugin.php:805 gallery-plugin.php:813
 msgid "Image size name"
 msgstr "שם גודל תמונה"
 
 # @ gallery
-#: gallery-plugin.php:784 gallery-plugin.php:792
+#: gallery-plugin.php:806 gallery-plugin.php:814
 msgid "Width (in px)"
 msgstr "רוחב (בפיקסלים)"
 
 # @ gallery
-#: gallery-plugin.php:785 gallery-plugin.php:793
+#: gallery-plugin.php:807 gallery-plugin.php:815
 msgid "Height (in px)"
 msgstr "גובה (בפיקסלים)"
 
 # @ gallery
-#: gallery-plugin.php:789
+#: gallery-plugin.php:811
 msgid "Size for gallery image"
 msgstr "גודל תמונת גלריה"
 
 # @ gallery
-#: gallery-plugin.php:797
+#: gallery-plugin.php:819
 msgid ""
 "WordPress will create a copy of the post thumbnail with the specified "
 "dimensions when you upload a new photo."
@@ -294,38 +294,50 @@ msgstr ""
 "וורדפרס ייצור העתק של תמונה ממוזערת של הפוסט עם המידות שצוינו כאשר אתה מעלה "
 "תמונה חדשה."
 
+#: gallery-plugin.php:822
+msgid "Images with border"
+msgstr ""
+
+#: gallery-plugin.php:825
+msgid "Border width in px, just numbers"
+msgstr ""
+
+#: gallery-plugin.php:827 gallery-plugin.php:829
+msgid "Select color for border"
+msgstr ""
+
 # @ gallery
-#: gallery-plugin.php:800
+#: gallery-plugin.php:835
 msgid "Count images in row"
 msgstr "מספר תמונות בשורה"
 
 # @ gallery
-#: gallery-plugin.php:806
+#: gallery-plugin.php:841
 msgid "Start slideshow"
 msgstr "התחל מצגת"
 
 # @ gallery
-#: gallery-plugin.php:812
+#: gallery-plugin.php:847
 msgid "Slideshow interval"
 msgstr "מרווח מצגת"
 
 # @ gallery
-#: gallery-plugin.php:820
+#: gallery-plugin.php:855
 msgid "attachment id"
 msgstr "מזהה קובץ מצורף"
 
 # @ gallery
-#: gallery-plugin.php:821
+#: gallery-plugin.php:856
 msgid "attachment title"
 msgstr "כותרת קובץ מצורף"
 
 # @ gallery
-#: gallery-plugin.php:822
+#: gallery-plugin.php:857
 msgid "date"
 msgstr "תאריך"
 
 # @ gallery
-#: gallery-plugin.php:823
+#: gallery-plugin.php:858
 msgid ""
 "attachments order (the integer fields in the Insert / Upload Media Gallery "
 "dialog )"
@@ -333,71 +345,93 @@ msgstr ""
 "סדר קבצים מצורפים (המספר השלם של השדות בהוספה \\ דיאלוג העלאת גלריית מדיה)"
 
 # @ gallery
-#: gallery-plugin.php:824
+#: gallery-plugin.php:859
 msgid "random"
 msgstr "אקראי"
 
 # @ gallery
-#: gallery-plugin.php:828
+#: gallery-plugin.php:863
 msgid "Attachments order"
 msgstr "סדר קבצים מצורפים"
 
 # @ gallery
-#: gallery-plugin.php:830
+#: gallery-plugin.php:865
 msgid "ASC (ascending order from lowest to highest values - 1, 2, 3; a, b, c)"
 msgstr "סדר עולה (מן הערך הנמוך ביותר לערך הגבוה ביותר)"
 
 # @ gallery
-#: gallery-plugin.php:831
+#: gallery-plugin.php:866
 msgid ""
 "DESC (descending order from highest to lowest values - 3, 2, 1; c, b, a)"
 msgstr "סדר יורד (מן הערך הגבוה ביותר לערך הנמוך ביותר)"
 
+#: gallery-plugin.php:870
+msgid "Display text above image"
+msgstr ""
+
+#: gallery-plugin.php:872
+msgid "If you want to display text just in a lightbox"
+msgstr ""
+
 # @ gallery
-#: gallery-plugin.php:835
+#: gallery-plugin.php:876
 msgid "Display Return link"
 msgstr "הצג קישור חזרה"
 
 # @ gallery
-#: gallery-plugin.php:841
+#: gallery-plugin.php:882
 msgid "Display Return link in shortcode"
 msgstr "הצג קישור חזרה בקיצור הקוד"
 
 # @ gallery
-#: gallery-plugin.php:847
+#: gallery-plugin.php:888
 msgid "Label for Return link"
 msgstr "תוית לקישור חזרה"
 
 # @ gallery
-#: gallery-plugin.php:853
+#: gallery-plugin.php:894
+#, fuzzy
+msgid "URL for Return link"
+msgstr "תוית לקישור חזרה"
+
+#: gallery-plugin.php:896
+msgid "Gallery page (Page with Gallery Template)"
+msgstr ""
+
+#: gallery-plugin.php:898
+msgid "(Full URL to custom page)"
+msgstr ""
+
+# @ gallery
+#: gallery-plugin.php:902
 msgid "Label for Read More link"
 msgstr ""
 
 # @ default
-#: gallery-plugin.php:861
+#: gallery-plugin.php:910
 msgid "Save Changes"
 msgstr "שמור שינויים"
 
 # @ gallery
-#: gallery-plugin.php:874
+#: gallery-plugin.php:923
 msgid "FAQ"
 msgstr "שאלות ותשובות"
 
 # @ gallery
-#: gallery-plugin.php:875
+#: gallery-plugin.php:924
 msgid "Support"
 msgstr "תמיכה"
 
 # @ gallery
-#: gallery-plugin.php:1045 template/gallery-single-template.php:68
+#: gallery-plugin.php:1131 template/gallery-single-template.php:76
 msgid "Sorry - nothing to found."
 msgstr "מצטערים, אין מה למצוא."
 
-#: gallery-plugin.php:1064 template/gallery-single-template.php:90
+#: gallery-plugin.php:1153 template/gallery-single-template.php:101
 msgid "Download High resolution image"
 msgstr ""
 
 # @ gallery
-#: template/gallery-single-template.php:90
+#: template/gallery-single-template.php:101
 msgid "Image "
 msgstr "תמונה "
