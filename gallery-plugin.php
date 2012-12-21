@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 3.8
+Version: 3.8.1
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
