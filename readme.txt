@@ -43,7 +43,7 @@ This plugin makes it possible to implement as many galleries as you want into yo
 * Persian (fa_IR) (thanks to Einolah Kiamehr and Meisam)
 * Polish (pl_PL) (thanks to Janusz Janczy, Bezcennyczas.pl)
 * Russian (ru_RU)
-* Slovak (sk_SK) (thanks to Branco Radenovich)
+* Serbian (sr_RS) (thanks to Radovan Georgijevich)
 * Spanish (es) (thanks to Victor Garcia)
 * Ukrainian (uk_UA)(thanks to Ted Mosby)
 
@@ -122,7 +122,7 @@ Just setup a necessary order and click 'Save' button.
 == Changelog ==
 
 = V3.8 - 20.12.2012 =
-* NEW : Slovak and Persian language files is added to the plugin.
+* NEW : Serbian and Persian language files is added to the plugin.
 * NEW : Added setting for Border for image on gallery page - display, width, color.
 * NEW : Added setting for URL for Return link - Gallery Template page or Custom page.
 * Update : We updated all functionality for wordpress 3.5.
@@ -236,7 +236,7 @@ Just setup a necessary order and click 'Save' button.
 == Upgrade Notice ==
 
 = V3.8 =
-Slovak and Persian language files is added to the plugin. We updated all functionality for wordpress 3.5.
+Serbian and Persian language files is added to the plugin. Added setting for Border for image on gallery page - display, width, color. Added setting for URL for Return link - Gallery Template page or Custom page. We updated all functionality for wordpress 3.5.
 
 = V3.7 =
 Added link url field - clicking on image open the link in new window.

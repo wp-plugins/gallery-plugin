@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gallery\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-20 18:47+0200\n"
-"PO-Revision-Date: 2012-12-20 18:47+0200\n"
+"POT-Creation-Date: 2012-07-27 14:56+0300\n"
+"PO-Revision-Date: 2012-12-20 18:50+0200\n"
 "Last-Translator: ekia <ertavaa@gmail.com>\n"
-"Language-Team: EУinolah Kiamehr <einkia@gmail.com>\n"
+"Language-Team: Einolah Kiamehr <einkia@gmail.com>\n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: gallery-plugin.php:103 gallery-plugin.php:789
+#: gallery-plugin.php:55 gallery-plugin.php:683
 msgid ""
 "The following files \"gallery-template.php\" and \"gallery-single-template."
 "php\" were not found in the directory of your theme. Please copy them from "
@@ -25,70 +25,66 @@ msgid ""
 "directory of your theme for the correct work of the Gallery plugin"
 msgstr ""
 
-#: gallery-plugin.php:127 gallery-plugin.php:137
+#: gallery-plugin.php:79 gallery-plugin.php:89
 msgid "Galleries"
 msgstr "گالری ها"
 
-#: gallery-plugin.php:128 gallery-plugin.php:656
+#: gallery-plugin.php:80 gallery-plugin.php:576
 msgid "Gallery"
 msgstr "گالری"
 
-#: gallery-plugin.php:129
+#: gallery-plugin.php:81
 msgid "Add New"
 msgstr "اضافه کردن"
 
-#: gallery-plugin.php:130
+#: gallery-plugin.php:82
 msgid "Add New Gallery"
 msgstr "اضافه کردن گالری"
 
-#: gallery-plugin.php:131
+#: gallery-plugin.php:83
 msgid "Edit Gallery"
 msgstr "ویرایش گالری"
 
-#: gallery-plugin.php:132
+#: gallery-plugin.php:84
 msgid "New Gallery"
 msgstr "گالری جدید"
 
-#: gallery-plugin.php:133
+#: gallery-plugin.php:85
 msgid "View Gallery"
 msgstr "مشاهده گالری"
 
-#: gallery-plugin.php:134
+#: gallery-plugin.php:86
 msgid "Search Galleries"
 msgstr "جستجودر گالریها"
 
-#: gallery-plugin.php:135
+#: gallery-plugin.php:87
 msgid "No Galleries found"
 msgstr "هیچ گالری پیدا نشد"
 
-#: gallery-plugin.php:192
+#: gallery-plugin.php:144
 msgid "Upload File"
 msgstr "آپلود فایل"
 
-#: gallery-plugin.php:193
+#: gallery-plugin.php:145
 msgid "Gallery Shortcode"
 msgstr "کد نمایش گالری"
 
-#: gallery-plugin.php:209
+#: gallery-plugin.php:159
 msgid ""
 "The gallery temp directory (gallery-plugin/upload/files) not writeable by "
 "your webserver. Please use the standard WP functional to upload the images "
 "(media library)"
 msgstr ""
 
-#: gallery-plugin.php:213
+#: gallery-plugin.php:163
 msgid "Choose an image to upload:"
 msgstr "انتخاب یک عکس برای آپلود "
 
-#: gallery-plugin.php:218
+#: gallery-plugin.php:168
 msgid "Please enable JavaScript to use the file uploader."
 msgstr "برای استفاده از آپلودر فایل ، لطفا جاوا اسکریپت را فعال کنید."
 
-#: gallery-plugin.php:225
-msgid "Allow download link for images in this gallery"
-msgstr ""
-
-#: gallery-plugin.php:226
+#: gallery-plugin.php:175
 msgid ""
 "Please use drag and drop function to change the order of the output of "
 "images and do not forget to save post."
@@ -96,35 +92,23 @@ msgstr ""
 "لطفا از گرفتن و رها کردن توابع برای سفارشی ساختن عکسهای خروجی استفاده کنید و "
 "فراموش نکنید که پست را ذخیره کنید."
 
-#: gallery-plugin.php:228
+#: gallery-plugin.php:177
 msgid "Please do not forget to select "
 msgstr "لطفا انتخاب را فراموش نکنید."
 
-#: gallery-plugin.php:228 gallery-plugin.php:853
+#: gallery-plugin.php:177 gallery-plugin.php:734
 msgid "Attachments order by"
 msgstr "الصاق(Attachments ) به سفارش"
 
-#: gallery-plugin.php:228
+#: gallery-plugin.php:177
 msgid "attachments order"
 msgstr ""
 
-#: gallery-plugin.php:228
+#: gallery-plugin.php:177
 msgid "in the settings of the plugin (page "
 msgstr "صفحه تنظیمات افزونه"
 
-#: gallery-plugin.php:275
-msgid "Link URL"
-msgstr ""
-
-#: gallery-plugin.php:275
-msgid "(clicking on image <br /> open the link in new window)"
-msgstr ""
-
-#: gallery-plugin.php:276
-msgid "Delete"
-msgstr ""
-
-#: gallery-plugin.php:290
+#: gallery-plugin.php:239
 msgid ""
 "You can add the Single Gallery on the page or in the post by inserting this "
 "shortcode in the content"
@@ -132,66 +116,66 @@ msgstr ""
 "شما میتوانید به برگه یا پست با افزودن shortcode  به محتوا  یک گالری اضافه "
 "کنید. "
 
-#: gallery-plugin.php:292
+#: gallery-plugin.php:241
 msgid ""
 "If you want to take a brief display of the gallery with a link to a Single "
 "Sallery Page"
 msgstr ""
 
-#: gallery-plugin.php:474
+#: gallery-plugin.php:394
 msgid "Title"
 msgstr "عنوان"
 
-#: gallery-plugin.php:475
+#: gallery-plugin.php:395
 msgid "Author"
 msgstr "سازنده"
 
-#: gallery-plugin.php:476
+#: gallery-plugin.php:396
 msgid "Photo's"
 msgstr "عکسِ"
 
-#: gallery-plugin.php:477
+#: gallery-plugin.php:397
 msgid "Public"
 msgstr "عمومی"
 
-#: gallery-plugin.php:478
+#: gallery-plugin.php:398
 msgid "Date"
 msgstr "تاریخ"
 
-#: gallery-plugin.php:625
+#: gallery-plugin.php:545
 msgid "Activated plugins"
 msgstr "فعالسازی افزونه"
 
-#: gallery-plugin.php:627 gallery-plugin.php:635 gallery-plugin.php:643
+#: gallery-plugin.php:547 gallery-plugin.php:555 gallery-plugin.php:563
 msgid "Read more"
 msgstr "بیشتر..."
 
-#: gallery-plugin.php:627 gallery-plugin.php:922 gallery-plugin.php:937
+#: gallery-plugin.php:547 gallery-plugin.php:789 gallery-plugin.php:804
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: gallery-plugin.php:633
+#: gallery-plugin.php:553
 msgid "Installed plugins"
 msgstr "نصب افزونه"
 
-#: gallery-plugin.php:641
+#: gallery-plugin.php:561
 msgid "Recommended plugins"
 msgstr ""
 
-#: gallery-plugin.php:643
+#: gallery-plugin.php:563
 msgid "Download"
 msgstr "دانلود"
 
-#: gallery-plugin.php:643
+#: gallery-plugin.php:563
 #, php-format
 msgid "Install %s"
 msgstr "نصب %s"
 
-#: gallery-plugin.php:643
+#: gallery-plugin.php:563
 msgid "Install now from wordpress.org"
 msgstr "در حال نصب از سایت وردپرس"
 
-#: gallery-plugin.php:645
+#: gallery-plugin.php:565
 msgid ""
 "If you have any questions, please contact us via plugin@bestwebsoft.com or "
 "fill in our contact form on our site"
@@ -199,19 +183,19 @@ msgstr ""
 "اگر شما سوالی دارید؛لطفا با ما با آدرس  plugin@bestwebsoft.com تماس بگیرید "
 "یا فرم تماس مارا در سایتمان پر کنید و سوال خود را آنجا بنویسید."
 
-#: gallery-plugin.php:683
+#: gallery-plugin.php:597
 msgid "See photo &raquo;"
 msgstr "&raquoدیدن عکس;"
 
-#: gallery-plugin.php:782
+#: gallery-plugin.php:676
 msgid "Options saved."
 msgstr "تنظیمات ذخیره شد."
 
-#: gallery-plugin.php:796
+#: gallery-plugin.php:690
 msgid "Gallery Options"
 msgstr "تنظیمات گالری"
 
-#: gallery-plugin.php:799
+#: gallery-plugin.php:693
 msgid ""
 "If you would like to add a Single Gallery to your page or post, just copy "
 "and put this shortcode onto your post or page content:"
@@ -219,27 +203,27 @@ msgstr ""
 "اگر میخواهید یک گالری جدید اضافه کنید ، کافیه shortcode را در نوشته یا برگه "
 "خود کپی کنید"
 
-#: gallery-plugin.php:803
+#: gallery-plugin.php:697
 msgid "The size of the cover album for gallery"
 msgstr "اندازه دوره آلبوم گالری"
 
-#: gallery-plugin.php:805 gallery-plugin.php:813
+#: gallery-plugin.php:699 gallery-plugin.php:707
 msgid "Image size name"
 msgstr " اندازه عکس"
 
-#: gallery-plugin.php:806 gallery-plugin.php:814
+#: gallery-plugin.php:700 gallery-plugin.php:708
 msgid "Width (in px)"
 msgstr "عرض (به pixels)"
 
-#: gallery-plugin.php:807 gallery-plugin.php:815
+#: gallery-plugin.php:701 gallery-plugin.php:709
 msgid "Height (in px)"
 msgstr "ارتفاع (به pixels)"
 
-#: gallery-plugin.php:811
+#: gallery-plugin.php:705
 msgid "Size for gallery image"
 msgstr "اندازه عکسهای گالری"
 
-#: gallery-plugin.php:819
+#: gallery-plugin.php:713
 msgid ""
 "WordPress will create a copy of the post thumbnail with the specified "
 "dimensions when you upload a new photo."
@@ -247,122 +231,85 @@ msgstr ""
 "وردپرس میتواند یک کپی از عکسهای بند انگشتی نوشته ها را با اندازه دلخواه "
 "بسازد وقتی شما یک عکس جدید را بار گذاری میکنید."
 
-#: gallery-plugin.php:822
-msgid "Images with border"
-msgstr ""
-
-#: gallery-plugin.php:825
-msgid "Border width in px, just numbers"
-msgstr ""
-
-#: gallery-plugin.php:827 gallery-plugin.php:829
-msgid "Select color for border"
-msgstr ""
-
-#: gallery-plugin.php:835
+#: gallery-plugin.php:716
 msgid "Count images in row"
 msgstr "تعداد عکسها در سطر"
 
-#: gallery-plugin.php:841
+#: gallery-plugin.php:722
 msgid "Start slideshow"
 msgstr "نمایش اسلایدشو"
 
-#: gallery-plugin.php:847
+#: gallery-plugin.php:728
 msgid "Slideshow interval"
 msgstr "فاصله بین اسلایدشو"
 
-#: gallery-plugin.php:855
+#: gallery-plugin.php:736
 msgid "attachment id"
 msgstr "ای دی سنجاق شده "
 
-#: gallery-plugin.php:856
+#: gallery-plugin.php:737
 msgid "attachment title"
 msgstr "عنوان سنجاق شده"
 
-#: gallery-plugin.php:857
+#: gallery-plugin.php:738
 msgid "date"
 msgstr "تاریخ"
 
-#: gallery-plugin.php:858
+#: gallery-plugin.php:739
 msgid ""
 "attachments order (the integer fields in the Insert / Upload Media Gallery "
 "dialog )"
 msgstr ""
 
-#: gallery-plugin.php:859
+#: gallery-plugin.php:740
 msgid "random"
 msgstr "تصادفی"
 
-#: gallery-plugin.php:863
+#: gallery-plugin.php:744
 msgid "Attachments order"
 msgstr ""
 
-#: gallery-plugin.php:865
+#: gallery-plugin.php:746
 msgid "ASC (ascending order from lowest to highest values - 1, 2, 3; a, b, c)"
 msgstr ""
 
-#: gallery-plugin.php:866
+#: gallery-plugin.php:747
 msgid ""
 "DESC (descending order from highest to lowest values - 3, 2, 1; c, b, a)"
 msgstr ""
 
-#: gallery-plugin.php:870
-msgid "Display text above image"
-msgstr ""
-
-#: gallery-plugin.php:872
-msgid "If you want to display text just in a lightbox"
-msgstr ""
-
-#: gallery-plugin.php:876
+#: gallery-plugin.php:751
 msgid "Display Return link"
 msgstr "نشان دادن لینک برگشت"
 
-#: gallery-plugin.php:882
+#: gallery-plugin.php:757
 msgid "Display Return link in shortcode"
 msgstr "نشان دادن لینک برگشت در شرت کد"
 
-#: gallery-plugin.php:888
+#: gallery-plugin.php:763
 msgid "Label for Return link"
 msgstr "برپسبهای لینگ برگشتی"
 
-#: gallery-plugin.php:894
-#, fuzzy
-msgid "URL for Return link"
-msgstr "برپسبهای لینگ برگشتی"
-
-#: gallery-plugin.php:896
-msgid "Gallery page (Page with Gallery Template)"
-msgstr ""
-
-#: gallery-plugin.php:898
-msgid "(Full URL to custom page)"
-msgstr ""
-
-#: gallery-plugin.php:902
+#: gallery-plugin.php:769
 msgid "Label for Read More link"
 msgstr "برچسب برای لینک بیشتر..."
 
-#: gallery-plugin.php:910
+#: gallery-plugin.php:777
 msgid "Save Changes"
 msgstr "ذخیره تنظیمات"
 
-#: gallery-plugin.php:923
+#: gallery-plugin.php:790
 msgid "FAQ"
 msgstr "FAQ"
 
-#: gallery-plugin.php:924
+#: gallery-plugin.php:791
 msgid "Support"
 msgstr "پشتیبانی"
 
-#: gallery-plugin.php:1131 template/gallery-single-template.php:76
+#: gallery-plugin.php:953 template/gallery-single-template.php:60
 msgid "Sorry - nothing to found."
 msgstr "متاسفم؛چیزی یافت نشد"
 
-#: gallery-plugin.php:1153 template/gallery-single-template.php:101
-msgid "Download High resolution image"
-msgstr ""
-
-#: template/gallery-single-template.php:101
+#: template/gallery-single-template.php:82
 msgid "Image "
 msgstr "عکس "
