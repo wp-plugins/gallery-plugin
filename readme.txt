@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 3.8.1
+Stable tag: 3.8.2
 
 This plugin allows you to implement gallery page into your web site.
 
@@ -120,6 +120,9 @@ Just setup a necessary order and click 'Save' button.
 5. PrettyPhoto pop-up window with images from the album.
 
 == Changelog ==
+
+= V3.8.2 - 03.01.2013 =
+* Bugfix : The bug with drag'n drop and left admin's panel menu animations when hovered was fixed.
 
 = V3.8.1 - 21.12.2012 =
 * Update : We deleted all p,a,c,k,e,r code.
@@ -237,6 +240,9 @@ Just setup a necessary order and click 'Save' button.
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.8.2 =
+The bug with drag'n drop and left admin's panel menu animations when hovered was fixed.
 
 = V3.8.1 =
 We deleted all p,a,c,k,e,r code.

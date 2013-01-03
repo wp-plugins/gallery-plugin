@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 3.8.1
+Version: 3.8.2
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -945,53 +945,55 @@ if ( ! function_exists ( 'gllr_add_admin_script' ) ) {
 	function gllr_add_admin_script() { 
 		global $wp_version;
 
-		if( $wp_version >= 3.5 ) { ?>
+		if( $wp_version >= 3.5 && $_REQUEST['page'] == 'gallery-plugin.php' ) { ?>
 			<link rel="stylesheet" media="screen" type="text/css" href="<?php echo plugins_url( 'minicolors/jquery.miniColors.css', __FILE__ ); ?>" />
 			<script type="text/javascript" src="<?php echo plugins_url( 'minicolors/jquery.miniColors.js', __FILE__ ); ?>"></script>
-		<?php } ?>
-		<script>
-		(function($) {
-			$(document).ready(function(){
-				$('.gllr_image_block img').css('cursor', 'all-scroll' );
-				$('.gllr_order_message').removeClass('hidden');
-				var d=false;
-				$( '#Upload-File .gallery' ).sortable({
-					stop: function(event, ui) { 
-						$('.gllr_order_text').removeClass('hidden');
-						var g=$('#Upload-File .gallery').sortable('toArray');
-						var f=g.length;
-						$.each(		g,
-							function( k,l ){
-									var j=d?(f-k):(1+k);
-									$('.gllr_order_text[name^="gllr_order_text['+l+']"]').val(j);
-							}
-						)
-					}
-				});
-				<?php if( $wp_version < 3.5 ) { ?>
-				var gllr_farbtastic = $.farbtastic('#colorPickerDiv', function(color) {
-					gllr_farbtastic.setColor(color);
-					$('#gllr_border_images_color').val(color);
-					$('#gllr_border_images_color_small').css('background-color', color);
-				});
-				$('#gllr_border_images_color').click(function(){
-					$('#colorPickerDiv').show();				
-				});
-				$('#gllr_border_images_color_small').click(function(){
-					$('#colorPickerDiv').show();				
-				});
-				$(document).mousedown(function(){
-					$('#colorPickerDiv').each(function(){
-						var display = $(this).css('display');
-						if ( display == 'block' )
-							jQuery(this).fadeOut(2);
+		<?php } 
+		if( $_REQUEST['page'] == 'gallery-plugin.php' ) { ?>
+			<script type="text/javascript">
+			(function($) {
+				$(document).ready(function(){
+					$('.gllr_image_block img').css('cursor', 'all-scroll' );
+					$('.gllr_order_message').removeClass('hidden');
+					var d=false;
+					$( '#Upload-File .gallery' ).sortable({
+						stop: function(event, ui) { 
+							$('.gllr_order_text').removeClass('hidden');
+							var g=$('#Upload-File .gallery').sortable('toArray');
+							var f=g.length;
+							$.each(		g,
+								function( k,l ){
+										var j=d?(f-k):(1+k);
+										$('.gllr_order_text[name^="gllr_order_text['+l+']"]').val(j);
+								}
+							)
+						}
 					});
+					<?php if( $wp_version < 3.5 ) { ?>
+					var gllr_farbtastic = $.farbtastic('#colorPickerDiv', function(color) {
+						gllr_farbtastic.setColor(color);
+						$('#gllr_border_images_color').val(color);
+						$('#gllr_border_images_color_small').css('background-color', color);
+					});
+					$('#gllr_border_images_color').click(function(){
+						$('#colorPickerDiv').show();				
+					});
+					$('#gllr_border_images_color_small').click(function(){
+						$('#colorPickerDiv').show();				
+					});
+					$(document).mousedown(function(){
+						$('#colorPickerDiv').each(function(){
+							var display = $(this).css('display');
+							if ( display == 'block' )
+								jQuery(this).fadeOut(2);
+						});
+					});
+					<?php } ?>
 				});
-				<?php } ?>
-			});
-		})(jQuery);
-		</script>
-	<?php }
+			})(jQuery);
+			</script>
+		<?php }
+	}
 }
 
 if ( ! function_exists ( 'gllr_admin_head' ) ) {
