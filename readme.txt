@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 3.8.3
+Stable tag: 3.8.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,7 +35,7 @@ This plugin makes it possible to implement as many galleries as you want into yo
 * Brazilian Portuguese (pt_BR) (thanks to DJIO, www.djio.com.br)
 * Czech (cs_CZ) (thanks to Josef Sukdol)
 * Dutch (nl_NL) (thanks to <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>)
-* French (fr_FR) (thanks to Didier)
+* French (fr_FR) (thanks to Didier, <a href="lcapronnier@yahoo.com">L Capronnier</a>)
 * Georgian (ka_GE) (thanks to Vako Patashuri)
 * German (de_DE) (thanks to Thomas Bludau)
 * Hebrew (he_IL) (thanks to Sagive SEO)
@@ -122,6 +122,9 @@ Just setup a necessary order and click 'Save' button.
 5. PrettyPhoto pop-up window with images from the album.
 
 == Changelog ==
+
+= V3.8.4 - 25.01.2013 =
+* Update : French language file was updated.
 
 = V3.8.3 - 04.01.2013 =
 * Bugfix : The bug with the ability to order images in a single gallery page was fixed.
@@ -245,6 +248,9 @@ Just setup a necessary order and click 'Save' button.
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.8.4 =
+French language file was updated.
 
 = V3.8.3 =
 The bug with the ability to order images in a single gallery page was fixed.
