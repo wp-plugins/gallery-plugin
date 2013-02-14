@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
-Tested up to: 3.5
-Stable tag: 3.8.4
+Tested up to: 3.5.1
+Stable tag: 3.8.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -122,6 +122,10 @@ Just setup a necessary order and click 'Save' button.
 5. PrettyPhoto pop-up window with images from the album.
 
 == Changelog ==
+
+= V3.8.5 - 14.02.2013 =
+* Update : We updated displaying fancybox for iPhone and iPad.
+* Update : We updated all functionality for wordpress 3.5.1.
 
 = V3.8.4 - 25.01.2013 =
 * Update : French language file was updated.
@@ -248,6 +252,9 @@ Just setup a necessary order and click 'Save' button.
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.8.5 =
+We updated displaying fancybox for iPhone and iPad. We updated all functionality for wordpress 3.5.1.
 
 = V3.8.4 =
 French language file was updated.

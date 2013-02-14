@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 3.8.4
+Version: 3.8.5
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -1112,7 +1112,7 @@ if ( ! function_exists ( 'gllr_shortcode' ) ) {
 											</a>
 												<?php } ?>
 										</p>
-										<div style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]+$gllr_border_images; ?>px; <?php if( 0 == $gllr_options["image_text"] ) echo "visibility:hidden;"; ?>" class="gllr_single_image_text"><?php echo get_post_meta( $attachment->ID, $key, true ); ?>&nbsp;</div>
+										<div style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]+$gllr_border_images; ?>px; <?php if( 0 == $gllr_options["image_text"] ) echo "visibility:hidden;"; ?>" display="none important!" class="gllr_single_image_text"><?php echo get_post_meta( $attachment->ID, $key, true ); ?>&nbsp;</div>
 									</div>
 								<?php if( $count_image_block%$gllr_options['custom_image_row_count'] == $gllr_options['custom_image_row_count']-1 ) { ?>
 								</div>
@@ -1332,6 +1332,24 @@ if( ! function_exists( 'upload_gallery_image' ) ){
 		}
 }
 
+if( ! function_exists( 'gllr_add_for_ios' ) ) {
+	function gllr_add_for_ios() {
+		echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"; ?>
+		<!-- Start ios -->
+		<script type="text/javascript">
+			(function($){
+				$(document).ready(function(){
+					$('#fancybox-overlay').css({
+						'width' : $(document).width()
+					});	
+				});	
+			})(jQuery);
+		</script>
+		<!-- End ios -->
+	<?php
+	}
+}
+
 register_activation_hook( __FILE__, 'gllr_plugin_install' ); // activate plugin
 register_uninstall_hook( __FILE__, 'gllr_plugin_uninstall' ); // deactivate plugin
 
@@ -1367,4 +1385,6 @@ add_action( 'wp_enqueue_scripts', 'gllr_wp_head' );
 add_shortcode( 'print_gllr', 'gllr_shortcode' );
 
 add_action( 'wp_ajax_upload_gallery_image', 'upload_gallery_image' );
+
+add_action( 'wp_head', 'gllr_add_for_ios' );
 ?>
