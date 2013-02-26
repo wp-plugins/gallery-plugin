@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 3.8.5
+Version: 3.8.6
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -1333,8 +1333,7 @@ if( ! function_exists( 'upload_gallery_image' ) ){
 }
 
 if( ! function_exists( 'gllr_add_for_ios' ) ) {
-	function gllr_add_for_ios() {
-		echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"; ?>
+	function gllr_add_for_ios() { ?>
 		<!-- Start ios -->
 		<script type="text/javascript">
 			(function($){

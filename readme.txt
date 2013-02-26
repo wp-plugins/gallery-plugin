@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 3.8.5
+Stable tag: 3.8.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,6 +33,7 @@ This plugin makes it possible to implement as many galleries as you want into yo
 = Translation =
 
 * Brazilian Portuguese (pt_BR) (thanks to DJIO, www.djio.com.br)
+* Chinese (zh_CN) (thanks to <a herf="mailto:mibcxb@gmail.com">Xiaobo Chen</a>)
 * Czech (cs_CZ) (thanks to Josef Sukdol)
 * Dutch (nl_NL) (thanks to <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>)
 * French (fr_FR) (thanks to Didier, <a href="lcapronnier@yahoo.com">L Capronnier</a>)
@@ -122,6 +123,9 @@ Just setup a necessary order and click 'Save' button.
 5. PrettyPhoto pop-up window with images from the album.
 
 == Changelog ==
+
+= V3.8.6 - 26.02.2013 =
+* NEW : Chinese language file is added to the plugin.
 
 = V3.8.5 - 14.02.2013 =
 * Update : We updated displaying fancybox for iPhone and iPad.
@@ -252,6 +256,9 @@ Just setup a necessary order and click 'Save' button.
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.8.6 =
+Chinese language file is added to the plugin.
 
 = V3.8.5 =
 We updated displaying fancybox for iPhone and iPad. We updated all functionality for wordpress 3.5.1.
