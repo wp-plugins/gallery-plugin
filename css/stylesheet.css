@@ -121,9 +121,10 @@ text-align:center;
 	display:none;
 }
 
-#gllr_form_image_size label {
-	width:115px;
-	float:left;
+.gllr_width_labels label {
+	min-width: 115px;
+	float: left;
+	margin-right: 5px;
 }
 
 #adminmenu #toplevel_page_bws_plugins div.wp-menu-image

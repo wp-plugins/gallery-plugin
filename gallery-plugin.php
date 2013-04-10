@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 3.8.6
+Version: 3.8.7
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -126,13 +126,13 @@ if( ! function_exists( 'post_type_images' ) ) {
 			'labels' => array(
 				'name' => __( 'Galleries', 'gallery' ),
 				'singular_name' => __( 'Gallery', 'gallery' ),
-				'add_new' => __( 'Add New', 'gallery' ),
+				'add_new' => __( 'Add a Gallery', 'gallery' ),
 				'add_new_item' => __( 'Add New Gallery', 'gallery' ),
 				'edit_item' => __( 'Edit Gallery', 'gallery' ),
 				'new_item' => __( 'New Gallery', 'gallery' ),
 				'view_item' => __( 'View Gallery', 'gallery' ),
-				'search_items' => __( 'Search Galleries', 'gallery' ),
-				'not_found' =>	__( 'No Galleries found', 'gallery' ),
+				'search_items' => __( 'Find a Gallery', 'gallery' ),
+				'not_found' =>	__( 'No Gallery found', 'gallery' ),
 				'parent_item_colon' => '',
 				'menu_name' => __( 'Galleries', 'gallery' )
 			),
@@ -206,11 +206,11 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 		
 		$post_types = get_post_types( array( '_builtin' => false ) );
 		if( ! is_writable ( ABSPATH ."wp-content/plugins/gallery-plugin/upload/files/" ) ) {
-			$error = __( "The gallery temp directory (gallery-plugin/upload/files) not writeable by your webserver. Please use the standard WP functional to upload the images (media library)", 'gallery' );
+			$error = __( "The gallery temp directory (gallery-plugin/upload/files) is not available for record on your webserver. Please use the standard WP functionality to upload images (media library)", 'gallery' );
 			$uploader = false;
 		}
 		?>
-		<div style="padding-top:10px;"><label for="uploadscreen"><?php echo __( 'Choose an image to upload:', 'gallery' ); ?></label>
+		<div style="padding-top:10px;"><label for="uploadscreen"><?php echo __( 'Choose an image for upload:', 'gallery' ); ?></label>
 			<input name="MAX_FILE_SIZE" value="1048576" type="hidden" />
 			<div id="file-uploader-demo1" style="padding-top:10px;">	
 				<?php echo $error; ?>
@@ -222,10 +222,10 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 			<div id="hidden"></div>
 			<div style="clear:both;"></div></div>
 			<div class="gllr_order_message hidden">
-				<input type="checkbox" name="gllr_download_link" value="1" <?php if( $gllr_download_link != '' ) echo "checked='checked'"; ?> style="position:relative; top:-2px " /> <?php _e( 'Allow download link for images in this gallery', 'gallery' ); ?><br /><br />
-				<?php _e( 'Please use drag and drop function to change the order of the output of images and do not forget to save post.', 'gallery'); ?>
+				<input type="checkbox" name="gllr_download_link" value="1" <?php if( $gllr_download_link != '' ) echo "checked='checked'"; ?> style="position:relative; top:-2px " /> <?php _e( 'Allow the download link for all images in this gallery', 'gallery' ); ?><br /><br />
+				<?php _e( 'Please use the drag and drop function to change an order of the images displaying and do not forget to save the post.', 'gallery'); ?>
 				<br />
-				<?php _e( 'Please do not forget to select ', 'gallery'); echo ' `'; _e( 'Attachments order by', 'gallery' ); echo '` -> `'; _e( 'attachments order', 'gallery' ); echo '` '; _e( 'in the settings of the plugin (page ', 'gallery' ); ?><a href="<?php echo admin_url( 'admin.php?page=gallery-plugin.php', 'http' ); ?>" target="_blank"><?php echo admin_url( 'admin.php?page=gallery-plugin.php', 'http' ); ?></a>)
+				<?php _e( 'Please make a choice', 'gallery'); echo ' `'; _e( 'Sort images by', 'gallery' ); echo '` -> `'; _e( 'sort images', 'gallery' ); echo '` '; _e( 'on the plugin settings page (', 'gallery' ); ?> <a href="<?php echo admin_url( 'admin.php?page=gallery-plugin.php', 'http' ); ?>" target="_blank"><?php echo admin_url( 'admin.php?page=gallery-plugin.php', 'http' ); ?></a>)
 			</div>
 		<script type="text/javascript">
 		<?php if ( $uploader === true ) { ?>
@@ -272,7 +272,7 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 				echo '<div class="gllr_border_image"><img src="'.$image_attributes[0].'" alt="'.$page->post_title.'" title="'.$page->post_title.'" height="'.get_option( 'thumbnail_size_h' ).'" width="'.get_option( 'thumbnail_size_w' ).'" /></div>';
 				echo '<input type="text" name="gllr_image_text['.$page->ID.']" value="'.get_post_meta( $page->ID, $key, TRUE ).'" class="gllr_image_text" />';
 				echo '<input type="text" name="gllr_order_text['.$page->ID.']" value="'.$page->menu_order.'" class="gllr_order_text '.( $page->menu_order == 0 ? "hidden" : '' ).'" />';
-				echo '<br />'.__( "Link URL", "gallery" ).'<br /><input type="text" name="gllr_link_url['.$page->ID.']" value="'.get_post_meta( $page->ID, $link_key, TRUE ).'" class="gllr_link_text" /><br /><span class="small_text">'.__( "(clicking on image <br /> open the link in new window)", "gallery" ).'</span>';
+				echo '<br />'.__( "URL", "gallery" ).'<br /><input type="text" name="gllr_link_url['.$page->ID.']" value="'.get_post_meta( $page->ID, $link_key, TRUE ).'" class="gllr_link_text" /><br /><span class="small_text">'.__( "(by click on image <br /> opens a link in a new window)", "gallery" ).'</span>';
 				echo '<div class="delete"><a href="javascript:void(0);" onclick="img_delete('.$page->ID.');">'.__( "Delete", "gallery" ).'</a><div/>';
 			echo '</div></li>';
     endforeach; ?>
@@ -287,9 +287,9 @@ if ( ! function_exists( 'gllr_post_shortcode_box' ) ) {
 	function gllr_post_shortcode_box( $obj = '', $box = '' ) {
 		global $post;
 		?>
-		<p><?php _e( 'You can add the Single Gallery on the page or in the post by inserting this shortcode in the content', 'gallery' ); ?>:</p>
+		<p><?php _e( 'You can add a Single Gallery to the page or post by inserting this shortcode into the content', 'gallery' ); ?>:</p>
 		<p><code>[print_gllr id=<?php echo $post->ID; ?>]</code></p>
-		<p><?php _e( 'If you want to take a brief display of the gallery with a link to a Single Sallery Page', 'gallery' ); ?>:</p>
+		<p><?php _e( 'If you want to display a short description containing a screenshot and the link to the Single Gallery Page', 'gallery' ); ?>:</p>
 		<p><code>[print_gllr id=<?php echo $post->ID; ?> display=short]</code></p>
 		<?php }
 }
@@ -345,6 +345,8 @@ if ( ! function_exists ( 'gllr_save_postdata' ) ) {
 			foreach( $_REQUEST['delete_images'] as $delete_id ) {
 				delete_post_meta( $delete_id, $key );
 				wp_delete_attachment( $delete_id );
+				if( isset( $_REQUEST['gllr_order_text'][ $delete_id ] ) )
+					unset( $_REQUEST['gllr_order_text'][ $delete_id ] );
 			}
 		}
 		if( isset( $_REQUEST['gllr_image_text'] ) ) {
@@ -473,8 +475,8 @@ if ( ! function_exists( 'gllr_change_columns' ) ) {
 			'cb'				=> '<input type="checkbox" />',
 			'title'			=> __( 'Title', 'gallery' ),
 			'autor'			=> __( 'Author', 'gallery' ),
-			'gallery'			=> __( 'Photo\'s', 'gallery' ),
-			'status'		=> __( 'Public', 'gallery' ),
+			'gallery'			=> __( 'Photo', 'gallery' ),
+			'status'		=> __( 'Publishing', 'gallery' ),
 			'dates'			=> __( 'Date', 'gallery' )
 		);
 		return $cols;
@@ -643,7 +645,7 @@ if( ! function_exists( 'bws_add_menu_render' ) ) {
 				<?php foreach( $array_recomend as $recomend_plugin ) { ?>
 				<div style="float:left; width:200px;"><?php echo $recomend_plugin['title']; ?></div> <p><a href="<?php echo $recomend_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'gallery'); ?></a> <a href="<?php echo $recomend_plugin['href']; ?>" target="_blank"><?php echo __( "Download", 'gallery'); ?></a> <a class="install-now" href="<?php echo get_bloginfo( "url" ) . $recomend_plugin['slug']; ?>" title="<?php esc_attr( sprintf( __( 'Install %s' ), $recomend_plugin['title'] ) ) ?>" target="_blank"><?php echo __( 'Install now from wordpress.org', 'gallery' ) ?></a></p>
 				<?php } ?>
-				<span style="color: rgb(136, 136, 136); font-size: 10px;"><?php _e( 'If you have any questions, please contact us via plugin@bestwebsoft.com or fill in our contact form on our site', 'gallery' ); ?> <a href="http://bestwebsoft.com/contact/">http://bestwebsoft.com/contact/</a></span>
+				<span style="color: rgb(136, 136, 136); font-size: 10px;"><?php _e( 'If you have any questions, please feel free to contact us via plugin@bestwebsoft.com or fill out the contact form on our website', 'gallery' ); ?> <a href="http://bestwebsoft.com/contact/">http://bestwebsoft.com/contact/</a></span>
 			</div>
 			<?php } ?>
 		</div>
@@ -681,7 +683,7 @@ if( ! function_exists( 'register_gllr_settings' ) ) {
 			'slideshow_interval'			=> 2000,
 			'order_by'								=> 'menu_order',
 			'order'										=> 'ASC',
-			'read_more_link_text'			=> __( 'See photo &raquo;', 'gallery' ),
+			'read_more_link_text'			=> __( 'See images &raquo;', 'gallery' ),
 			'image_text'							=> 1,
 			'return_link'							=> 0,
 			'return_link_text'				=> 'Return to all albums',
@@ -780,7 +782,7 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 
 			// Check select one point in the blocks Arithmetic actions and Difficulty on settings page
 			update_option( 'gllr_options', $gllr_options, '', 'yes' );
-			$message = __( "Options saved.", 'gallery' );
+			$message = __( "Settings are saved", 'gallery' );
 		}
 
 		if ( ! file_exists( get_stylesheet_directory() .'/gallery-template.php' ) || ! file_exists( get_stylesheet_directory() .'/gallery-single-template.php' ) ) {
@@ -794,30 +796,30 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 	?>
 	<div class="wrap">
 		<div class="icon32 icon32-bws" id="icon-options-general"></div>
-		<h2><?php _e( 'Gallery Options', 'gallery' ); ?></h2>
+		<h2><?php _e( 'Gallery Settings', 'gallery' ); ?></h2>
 		<div class="updated fade" <?php if( ! isset( $_REQUEST['gllr_form_submit'] ) || $error != "" ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
 		<div class="error" <?php if( "" == $error ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
-		<p><?php _e( "If you would like to add a Single Gallery to your page or post, just copy and put this shortcode onto your post or page content:", 'gallery' ); ?> [print_gllr id=Your_gallery_post_id]</p>
+		<p><?php _e( "If you would like to add a Single Gallery to your page or post, just copy and paste this shortcode into your post or page:", 'gallery' ); ?> [print_gllr id=Your_gallery_post_id]</p>
 		<form method="post" action="admin.php?page=gallery-plugin.php" id="gllr_form_image_size">
 			<table class="form-table">
-				<tr valign="top">
-					<th scope="row"><?php _e( 'The size of the cover album for gallery', 'gallery' ); ?> </th>
+				<tr valign="top" class="gllr_width_labels">
+					<th scope="row"><?php _e( 'Image size for the album cover', 'gallery' ); ?> </th>
 					<td>
-						<label for="custom_image_size_name"><?php _e( 'Image size name', 'gallery' ); ?></label> <?php echo $gllr_options["gllr_custom_size_name"][0]; ?><br />
+						<label for="custom_image_size_name"><?php _e( 'Image size', 'gallery' ); ?></label> <?php echo $gllr_options["gllr_custom_size_name"][0]; ?><br />
 						<label for="custom_image_size_w"><?php _e( 'Width (in px)', 'gallery' ); ?></label> <input type="text" name="gllr_custom_image_size_w_album" value="<?php echo $gllr_options["gllr_custom_size_px"][0][0]; ?>" /><br />
 						<label for="custom_image_size_h"><?php _e( 'Height (in px)', 'gallery' ); ?></label> <input type="text" name="gllr_custom_image_size_h_album" value="<?php echo $gllr_options["gllr_custom_size_px"][0][1]; ?>" />
 					</td>
 				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e( 'Size for gallery image', 'gallery' ); ?> </th>
+				<tr valign="top" class="gllr_width_labels">
+					<th scope="row"><?php _e( 'Gallery image size', 'gallery' ); ?> </th>
 					<td>
-						<label for="custom_image_size_name"><?php _e( 'Image size name', 'gallery' ); ?></label> <?php echo $gllr_options["gllr_custom_size_name"][1]; ?><br />
+						<label for="custom_image_size_name"><?php _e( 'Image size', 'gallery' ); ?></label> <?php echo $gllr_options["gllr_custom_size_name"][1]; ?><br />
 						<label for="custom_image_size_w"><?php _e( 'Width (in px)', 'gallery' ); ?></label> <input type="text" name="gllr_custom_image_size_w_photo" value="<?php echo $gllr_options["gllr_custom_size_px"][1][0]; ?>" /><br />
 						<label for="custom_image_size_h"><?php _e( 'Height (in px)', 'gallery' ); ?></label> <input type="text" name="gllr_custom_image_size_h_photo" value="<?php echo $gllr_options["gllr_custom_size_px"][1][1]; ?>" />
 					</td>
 				</tr>
 				<tr valign="top">
-					<td colspan="2"><span style="color: #888888;font-size: 10px;"><?php _e( 'WordPress will create a copy of the post thumbnail with the specified dimensions when you upload a new photo.', 'gallery' ); ?></span></td>
+					<td colspan="2"><span style="color: #888888;font-size: 10px;"><?php _e( 'WordPress will create a new thumbnail with the specified dimensions when you upload a new photo.', 'gallery' ); ?></span></td>
 				</tr>
 				<tr valign="top">
 					<th scope="row"><?php _e( 'Images with border', 'gallery' ); ?> </th>
@@ -825,15 +827,15 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 						<input type="checkbox" name="gllr_border_images" value="1" <?php if( $gllr_options["border_images"] == 1 ) echo 'checked="checked"'; ?> /> <br />
 						<input type="text" value="<?php echo $gllr_options["border_images_width"]; ?>" name="gllr_border_images_width" /> <?php _e( 'Border width in px, just numbers', 'gallery' ); ?><br />
 						<?php if( $wp_version >= 3.5 ) { ?>
-							<input type="minicolors" name="gllr_border_images_color" value="<?php echo $gllr_options["border_images_color"]; ?>" id="gllr_border_images_color" /> <?php _e( 'Select color for border', 'gallery' ); ?>
+							<input type="minicolors" name="gllr_border_images_color" value="<?php echo $gllr_options["border_images_color"]; ?>" id="gllr_border_images_color" /> <?php _e( 'Select a border color', 'gallery' ); ?>
 						<?php } else { ?>
-							<input type="text" name="gllr_border_images_color" value="<?php echo $gllr_options["border_images_color"]; ?>" id="gllr_border_images_color" /><span id="gllr_border_images_color_small" style="background-color:<?php echo $gllr_options["border_images_color"]; ?>"></span> <?php _e( 'Select color for border', 'gallery' ); ?>
+							<input type="text" name="gllr_border_images_color" value="<?php echo $gllr_options["border_images_color"]; ?>" id="gllr_border_images_color" /><span id="gllr_border_images_color_small" style="background-color:<?php echo $gllr_options["border_images_color"]; ?>"></span> <?php _e( 'Select a border color', 'gallery' ); ?>
 							<div id="colorPickerDiv" style="z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;"></div>
 						<?php } ?>
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php _e( 'Count images in row', 'gallery' ); ?> </th>
+					<th scope="row"><?php _e( 'Number of images in the row', 'gallery' ); ?> </th>
 					<td>
 						<input type="text" name="gllr_custom_image_row_count" value="<?php echo $gllr_options["custom_image_row_count"]; ?>" />
 					</td>
@@ -851,48 +853,48 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php _e( 'Attachments order by', 'gallery' ); ?> </th>
+					<th scope="row"><?php _e( 'Sort images by', 'gallery' ); ?> </th>
 					<td>
-						<input type="radio" name="gllr_order_by" value="ID" <?php if( $gllr_options["order_by"] == 'ID' ) echo 'checked="checked"'; ?> /> <label class="label_radio" for="order_by"><?php _e( 'attachment id', 'gallery' ); ?></label><br />
-						<input type="radio" name="gllr_order_by" value="title" <?php if( $gllr_options["order_by"] == 'title' ) echo 'checked="checked"'; ?> /> <label class="label_radio" for="order_by"><?php _e( 'attachment title', 'gallery' ); ?></label><br />
-						<input type="radio" name="gllr_order_by" value="date" <?php if( $gllr_options["order_by"] == 'date' ) echo 'checked="checked"'; ?> /> <label class="label_radio" for="order_by"><?php _e( 'date', 'gallery' ); ?></label><br />
-						<input type="radio" name="gllr_order_by" value="menu_order" <?php if( $gllr_options["order_by"] == 'menu_order' ) echo 'checked="checked"'; ?> /> <label class="label_radio" for="order_by"><?php _e( 'attachments order (the integer fields in the Insert / Upload Media Gallery dialog )', 'gallery' ); ?></label><br />
-						<input type="radio" name="gllr_order_by" value="rand" <?php if( $gllr_options["order_by"] == 'rand' ) echo 'checked="checked"'; ?> /> <label class="label_radio" for="order_by"><?php _e( 'random', 'gallery' ); ?></label>
+						<input type="radio" name="gllr_order_by" value="ID" <?php if( $gllr_options["order_by"] == 'ID' ) echo 'checked="checked"'; ?> /> <label class="label_radio" for="order_by"><?php _e( 'Attachment ID', 'gallery' ); ?></label><br />
+						<input type="radio" name="gllr_order_by" value="title" <?php if( $gllr_options["order_by"] == 'title' ) echo 'checked="checked"'; ?> /> <label class="label_radio" for="order_by"><?php _e( 'Image Name', 'gallery' ); ?></label><br />
+						<input type="radio" name="gllr_order_by" value="date" <?php if( $gllr_options["order_by"] == 'date' ) echo 'checked="checked"'; ?> /> <label class="label_radio" for="order_by"><?php _e( 'Date', 'gallery' ); ?></label><br />
+						<input type="radio" name="gllr_order_by" value="menu_order" <?php if( $gllr_options["order_by"] == 'menu_order' ) echo 'checked="checked"'; ?> /> <label class="label_radio" for="order_by"><?php _e( 'Sorting order (the input field for sorting order in the Insert / Upload Media Gallery dialog)', 'gallery' ); ?></label><br />
+						<input type="radio" name="gllr_order_by" value="rand" <?php if( $gllr_options["order_by"] == 'rand' ) echo 'checked="checked"'; ?> /> <label class="label_radio" for="order_by"><?php _e( 'Random', 'gallery' ); ?></label>
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php _e( 'Attachments order', 'gallery' ); ?> </th>
+					<th scope="row"><?php _e( 'Sort images', 'gallery' ); ?> </th>
 					<td>
 						<input type="radio" name="gllr_order" value="ASC" <?php if( $gllr_options["order"] == 'ASC' ) echo 'checked="checked"'; ?> /> <label class="label_radio" for="order"><?php _e( 'ASC (ascending order from lowest to highest values - 1, 2, 3; a, b, c)', 'gallery' ); ?></label><br />
 						<input type="radio" name="gllr_order" value="DESC" <?php if( $gllr_options["order"] == 'DESC' ) echo 'checked="checked"'; ?> /> <label class="label_radio" for="order"><?php _e( 'DESC (descending order from highest to lowest values - 3, 2, 1; c, b, a)', 'gallery' ); ?></label>
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php _e( 'Display text above image', 'gallery' ); ?> </th>
+					<th scope="row"><?php _e( 'Display text above the image', 'gallery' ); ?> </th>
 					<td>
 						<input type="checkbox" name="gllr_image_text" value="1" <?php if( $gllr_options["image_text"] == 1 ) echo 'checked="checked"'; ?> /> <?php _e( 'If you want to display text just in a lightbox', 'gallery' ); ?>
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php _e( 'Display Return link', 'gallery' ); ?> </th>
+					<th scope="row"><?php _e( 'Display the Back link', 'gallery' ); ?> </th>
 					<td>
 						<input type="checkbox" name="gllr_return_link" value="1" <?php if( $gllr_options["return_link"] == 1 ) echo 'checked="checked"'; ?> />
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php _e( 'Display Return link in shortcode', 'gallery' ); ?> </th>
+					<th scope="row"><?php _e( 'Display the Back link in the shortcode', 'gallery' ); ?> </th>
 					<td>
 						<input type="checkbox" name="gllr_return_link_shortcode" value="1" <?php if( $gllr_options["return_link_shortcode"] == 1 ) echo 'checked="checked"'; ?> />
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php _e( 'Label for Return link', 'gallery' ); ?> </th>
+					<th scope="row"><?php _e( 'The Back link text', 'gallery' ); ?> </th>
 					<td>
 						<input type="text" name="gllr_return_link_text" value="<?php echo $gllr_options["return_link_text"]; ?>" style="width:200px;" />
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php _e( 'URL for Return link', 'gallery' ); ?> </th>
+					<th scope="row"><?php _e( 'The Back link URL', 'gallery' ); ?> </th>
 					<td>
 						<input type="radio" value="gallery_template_url" name="gllr_return_link_page" <?php if( $gllr_options["return_link_page"] == 'gallery_template_url' ) echo 'checked="checked"'; ?> /><?php _e( 'Gallery page (Page with Gallery Template)', 'gallery'); ?><br>
 						<input type="radio" value="custom_url" name="gllr_return_link_page" id="gllr_return_link_url" <?php if( $gllr_options["return_link_page"] == 'custom_url' ) echo 'checked="checked"'; ?> /> <input type="text" onfocus="document.getElementById('gllr_return_link_url').checked = true;" value="<?php echo $gllr_options["return_link_url"]; ?>" name="gllr_return_link_url">
@@ -900,7 +902,7 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><?php _e( 'Label for Read More link', 'gallery' ); ?> </th>
+					<th scope="row"><?php _e( 'The Read More link text', 'gallery' ); ?> </th>
 					<td>
 						<input type="text" name="gllr_read_more_link_text" value="<?php echo $gllr_options["read_more_link_text"]; ?>" style="width:200px;" />
 					</td>
@@ -1112,7 +1114,7 @@ if ( ! function_exists ( 'gllr_shortcode' ) ) {
 											</a>
 												<?php } ?>
 										</p>
-										<div style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]+$gllr_border_images; ?>px; <?php if( 0 == $gllr_options["image_text"] ) echo "visibility:hidden;"; ?>" display="none important!" class="gllr_single_image_text"><?php echo get_post_meta( $attachment->ID, $key, true ); ?>&nbsp;</div>
+										<div style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]+$gllr_border_images; ?>px; <?php if( 0 == $gllr_options["image_text"] ) echo "visibility:hidden;"; ?>" class="gllr_single_image_text"><?php echo get_post_meta( $attachment->ID, $key, true ); ?>&nbsp;</div>
 									</div>
 								<?php if( $count_image_block%$gllr_options['custom_image_row_count'] == $gllr_options['custom_image_row_count']-1 ) { ?>
 								</div>
@@ -1129,13 +1131,13 @@ if ( ! function_exists ( 'gllr_shortcode' ) ) {
 			<?php endwhile; 
 		else: ?>
 			<div class="gallery_box_single">
-				<p class="not_found"><?php _e( 'Sorry - nothing to found.', 'gallery' ); ?></p>
+				<p class="not_found"><?php _e( 'Sorry, nothing found.', 'gallery' ); ?></p>
 			</div>
 		<?php endif; ?>
 		<?php if( 1 == $gllr_options['return_link_shortcode'] ) {
 			if( 'gallery_template_url' == $gllr_options["return_link_page"] ){
 				global $wpdb;
-				$parent = $wpdb->get_var( "SELECT $wpdb->posts.ID FROM $wpdb->posts, $wpdb->postmeta WHERE meta_key = '_wp_page_template' AND meta_value = 'gallery-template.php' AND (post_status = 'publish' OR post_status = 'private') AND $wpdb->posts.ID = $wpdb->postmeta.post_id" );	?>
+				$parent = $wpdb->get_var( "SELECT $wpdb->posts.ID FROM $wpdb->posts, $wpdb->postmeta WHERE meta_key = '_wp_page_template' AND meta_value = 'gallery-template.php' AND (post_status = 'publish' OR post_status = 'private') AND $wpdb->posts.ID = $wpdb->postmeta.post_id" ); ?>
 				<div class="return_link"><a href="<?php echo ( !empty( $parent ) ? get_permalink( $parent ) : '' ); ?>"><?php echo $gllr_options['return_link_text']; ?></a></div>
 			<?php } else { ?>
 				<div class="return_link"><a href="<?php echo $gllr_options["return_link_url"]; ?>"><?php echo $gllr_options['return_link_text']; ?></a></div>
@@ -1151,7 +1153,7 @@ if ( ! function_exists ( 'gllr_shortcode' ) ) {
 					'speedIn'					:	500, 
 					'speedOut'				:	300,
 					'titleFormat'			: function(title, currentArray, currentIndex, currentOpts) {
-						return '<span id="fancybox-title-inside">' + (title.length ? title + '<br />' : '') + 'Image ' + (currentIndex + 1) + ' / ' + currentArray.length + '</span><?php if( get_post_meta( $post->ID, 'gllr_download_link', true ) != '' ){?><br /><a href="'+$(currentOpts.orig).attr('rel')+'" target="_blank"><?php echo __('Download High resolution image', 'gallery'); ?> </a><?php } ?>';
+						return '<span id="fancybox-title-inside">' + (title.length ? title + '<br />' : '') + 'Image ' + (currentIndex + 1) + ' / ' + currentArray.length + '</span><?php if( get_post_meta( $post->ID, 'gllr_download_link', true ) != '' ){?><br /><a href="'+$(currentOpts.orig).attr('rel')+'" target="_blank"><?php echo __('Download high resolution image', 'gallery'); ?> </a><?php } ?>';
 					}<?php if( $gllr_options['start_slideshow'] == 1 ) { ?>,
 					'onComplete':	function() {
 						clearTimeout(jQuery.fancybox.slider);

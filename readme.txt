@@ -4,36 +4,36 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 3.8.6
+Stable tag: 3.8.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin allows you to implement gallery page into your web site.
+This plugin allows you to implement a gallery page into your website.
 
 == Description ==
 
-This plugin makes it possible to implement as many galleries as you want into your website. You can add multiple pictures and description for each gallery, show them all at one page, view each one separately. Moreover, it's possible to upload HQ pictures.
+This plugin makes it possible to implement as many galleries as you want into your website. You can add multiple pictures and description for each gallery, show them all at one page, view each one separately. Moreover, you can upload HQ images.
 
 <a href="http://wordpress.org/extend/plugins/gallery-plugin/faq/" target="_blank">FAQ</a>
 <a href="http://bestwebsoft.com/plugin/gallery-plugin/" target="_blank">Support</a>
 
 = Features =
 
-* Actions: Create any quantity of the albums in gallery.
+* Actions: Create any amount of albums in the gallery.
 * Description: Add description to each album.
-* Actions: Possibility to set featured image as cover of the album.
-* Actions: Possibility to load any number of photos to each album in the gallery.
-* Actions: Possibility to add Single Gallery to your page or post with shortcode.
-* Actions: Option to make the sorting settings of attachments in the admin panel.
-* Caption: Add caption to each photo in the album.
-* Display: You can select dimensions of the thumbnails for the cover of the album as well as for photos in the album.
-* Display: A possibility to select a number of the photos for the separate page of album of the gallery which will be placed in one line.
-* Slideshow: User can review all photos in album in full size and in slideshow.
+* Actions: Set a featured image as an album cover.
+* Actions: Upoad any number of photos to each album in the gallery.
+* Actions: Add Single Gallery to your page or post using a shortcode.
+* Actions: Attachment sorting settings in the admin panel.
+* Caption: Add a caption to each photo in the album.
+* Display: Change the size of album cover thumbnails and photos in the album. 
+* Display: Choose a number of pictures to display in one row in the gallery album.
+* Slideshow: View pictures as a slide show and in a full size.
 
 = Translation =
 
 * Brazilian Portuguese (pt_BR) (thanks to DJIO, www.djio.com.br)
-* Chinese (zh_CN) (thanks to <a herf="mailto:mibcxb@gmail.com">Xiaobo Chen</a>)
+* Chinese (zh_CN) (thanks to <a href="mailto:mibcxb@gmail.com">Xiaobo Chen</a>)
 * Czech (cs_CZ) (thanks to Josef Sukdol)
 * Dutch (nl_NL) (thanks to <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>)
 * French (fr_FR) (thanks to Didier, <a href="lcapronnier@yahoo.com">L Capronnier</a>)
@@ -50,48 +50,51 @@ This plugin makes it possible to implement as many galleries as you want into yo
 * Spanish (es) (thanks to Victor Garcia)
 * Ukrainian (uk_UA)(thanks to Ted Mosby)
 
-If you create your own language pack or update an existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text in PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
+If you would like to create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
 = Technical support =
 
-Dear users, if you have any questions or propositions regarding our plugins (current options, new options, current issues) please feel free to contact us. Please note that we accept requests in English only. All messages on another languages wouldn't be accepted. 
+Dear users, our plugins are available for free download. If you have any questions or recommendations regarding the functionality of our plugins (existing options, new options, current issues), please feel free to contact us. Please note that we accept requests in English only. All messages in another languages won't be accepted.
 
-Also, emails which are reporting about plugin's bugs are accepted for investigation and fixing. Your request must contain URL of the website, issues description and WordPress admin panel access. Plugin customization based on your Wordpress theme is a paid service (standard price is $10, but it could be higer and depends on the complexity of requested changes). We will analize existing issue and make necessary changes after 100% pre-payment.All these paid changes and modifications could be included to the next version of plugin and will be shared for all users like an integral part of the plugin. Free fixing services will be provided for user who send translation on their native language (this should be a new translation of a certain plugin, and you can check available translations on the official plugin page).
+If you notice any bugs in the plugins, you can notify us about it and we'll investigate and fix the issue then. Your request should contain URL of the website, issues description and WordPress admin panel credentials.
+Moreover we can customize the plugin according to your requirements. It's a paid service (as a rule it costs $40, but the price can vary depending on the amount of the necessary changes and their complexity). Please note that we could also include this or that feature (developed for you) in the next release and share with the other users then. 
+We can fix some things for free for the users who provide translation of our plugin into their native language (this should be a new translation of a certain plugin, you can check available translations on the official plugin page).
+
 
 == Installation ==
 
-1. Upload `Gallery` folder to the directory `/wp-content/plugins/`.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Please check if you have the `gallery-template.php` template file as well as `gallery-single-template.php` template file in your templates directory. If you are not able to find these files, then just copy it from `/wp-content/plugins/gallery/template/` directory to your templates directory.
+1. Upload the `Gallery` folder to the directory `/wp-content/plugins/`.
+2. Activate the plugin using the 'Plugins' menu in WordPress.
+3. Please check if you have the template file `gallery-template.php` as well as the template `gallery-single-template.php` in the templates directory. If you are can't find these files, then just copy them from the directory  `/wp-content/plugins/gallery/template/` to your templates directory.
 
 == Frequently Asked Questions ==
 
 = I cannot view my Gallery page =
 
-1. First of all, you need to create your first Gallery page and choose 'Gallery' from the list of available templates (which will be used for displaying our gallery).
-2. If you cannot find 'Gallery' in the list of available templates, then just copy it from `/wp-content/plugins/gallery-plugin/template/` directory to your templates directory.
+1. First of all, you should create your first Gallery page and select 'Gallery' in the list of available templates (it will be used for displaying the Gallery).
+2. If you cannot find 'Gallery' in the list of available templates, then just copy it from the directory `/wp-content/plugins/gallery-plugin/template/` to your templates directory.
 
-= How to use plugin? =
+= How to use the plugin? =
 
-1. Choose 'Add New' from the 'Galleries' menu and fill out your page.
-2. Upload pictures by using an uploader in the bottom of the page. 
+1. Click 'Add New' in the 'Galleries' menu and fill out your page.
+2. Upload pictures via the uploader at the bottom of the page. 
 3. Save the page.
 
 = How to add an image? =
 
-- Choose the necessary gallery from the list on the Galleries page in admin section (or create a new gallery - choose 'Add New' from the 'Galleries' menu). 
-- Use the option 'Upload a file' available in the uploader, choose the necessary pictures and click 'Open'
+- Choose the necessary gallery in the list on the Galleries page in the admin section (or create a new gallery by clicking 'Add New' in the 'Galleries' menu). 
+- Use the option 'Upload a file' in the uploader, choose the necessary pictures and click 'Open'
 - The files uploading process will start.
 - Once all pictures are uploaded, please save the page.
 - If you see the message 'Please enable JavaScript to use the file uploader.', you should enable JavaScript in your browser.
 
-= How to add many image? =
+= How to add many images? =
 
-The multiple files upload is supported by all modern browsers except Internet Explorer. 
+Multiple files upload is supported by all modern browsers except Internet Explorer. 
 
-= I'm getting the following error: Fatal error: Call to undefined function get_post_thumbnail_id(). What am I to do? ? =
+= I'm getting the following error: "Fatal error: Call to undefined function get_post_thumbnail_id()". What should I do? =
 
-This error says that your theme doesn't support thumbnail option, in order to add this option please find 'functions.php' file in your theme and add the following strings to this file:
+This error means that your theme doesn't support thumbnail option, in order to add this option please find the file 'functions.php' in your theme and add the following strings to this file:
 
 `add_action( 'after_setup_theme', 'theme_setup' );
 
@@ -99,43 +102,47 @@ function theme_setup() {
     add_theme_support( 'post-thumbnails' );
 }`
 
-After that your theme will support thumbnail option and the error won't display again.
+After that your theme will support thumbnail option and the error will disappear.
 
-= How to change image order on single gallery page? =
+= How to change image order on the single gallery page? =
 
-1. Please open the menu "Galleries" and choose random gallery from the list. You should be redirected to the gallery editing page. 
-Please use drag and drop function to change the order of the output of images and do not forget to save post.
-Please do not forget to select `Attachments order by` -> `attachments order` in the settings of the plugin (page http://your_domain/wp-admin/admin.php?page=gallery-plugin.php) 
+1. Please open the menu "Galleries" and choose random gallery from the list. It will take you to the gallery editing page. 
+Please use the drag and drop function to change the order of the images and do not forget to save the post.
+Please do not forget to select `Attachments order by` -> `attachments order` in the plugin settings (http://your_domain/wp-admin/admin.php?page=gallery-plugin.php) 
 
-2. Please open the menu "Galleries" and choose random gallery from the list. You should be redirected to the gallery editing page. 
-There will be one or several media upload icons between the title and content adding blocks. Please choose any icon. 
-After that you'll see a popup window with three or four tabs. 
-Choose gallery tab and there'll be displayed attached files which are related to this gallery. 
-You can change their order using drag'n'drop method. 
-Just setup a necessary order and click 'Save' button.
+2. Please go to the "Galleries" menu and select random gallery in the list. It will take you to the gallery editing page. 
+There will be one or several media upload icons between the title and the content blocks. Please choose any icon. 
+After that you'll see a popup window containing three or four tabs. 
+Go to the Gallery tab and you will see attachments related to this gallery. 
+You can change their order using the drag and drop option. 
+Just set an order and click the 'Save' button.
 
 == Screenshots ==
 
 1. Gallery Admin page.
-2. Galleries albums page on frontend.
-3. Gallery Options page in admin panel.
-4. Single gallery page.
-5. PrettyPhoto pop-up window with images from the album.
+2. Gallery albums page in the front-end.
+3. Gallery Options page in the admin panel.
+4. Single Gallery page.
+5. PrettyPhoto pop-up window containing the album images.
 
 == Changelog ==
+
+= V3.8.7 - 10.04.2013 =
+* NEW : English language file is updated in the plugin.
+* Bugfix : We fixed the bug of deleting images.
 
 = V3.8.6 - 26.02.2013 =
 * NEW : Chinese language file is added to the plugin.
 
 = V3.8.5 - 14.02.2013 =
-* Update : We updated displaying fancybox for iPhone and iPad.
+* Update : We updated th fancybox displaying for iPhone and iPad.
 * Update : We updated all functionality for wordpress 3.5.1.
 
 = V3.8.4 - 25.01.2013 =
-* Update : French language file was updated.
+* Update : French language file is updated.
 
 = V3.8.3 - 04.01.2013 =
-* Bugfix : The bug with the ability to order images in a single gallery page was fixed.
+* Bugfix : We fixed the bug of image order on the Signle Gallery page.
 
 = V3.8.2 - 03.01.2013 =
 * Bugfix : The bug with drag'n drop and left admin's panel menu animations when hovered was fixed.
@@ -256,6 +263,9 @@ Just setup a necessary order and click 'Save' button.
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.8.7 =
+English language file is updated in the plugin. We fixed the bug of deleting images.
 
 = V3.8.6 =
 Chinese language file is added to the plugin.

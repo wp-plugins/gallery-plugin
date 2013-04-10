@@ -73,7 +73,7 @@
 					<div class="clear"></div>
 				<?php endwhile; else: ?>
 				<div class="gallery_box_single">
-					<p class="not_found"><?php _e('Sorry - nothing to found.', 'gallery'); ?></p>
+					<p class="not_found"><?php _e('Sorry, nothing found.', 'gallery'); ?></p>
 				</div>
 				<?php endif; ?>
 				<?php if( 1 == $gllr_options['return_link'] ) {
@@ -98,7 +98,7 @@
 					'speedIn'					:	500, 
 					'speedOut'				:	300,
 					'titleFormat'			: function(title, currentArray, currentIndex, currentOpts) {
-						return '<span id="fancybox-title-inside">' + (title.length ? title + '<br />' : '') + '<?php _e( "Image ", "gallery"); ?>' + (currentIndex + 1) + ' / ' + currentArray.length + '</span><?php if( get_post_meta( $post->ID, 'gllr_download_link', true ) != '' ){?><br /><a href="'+$(currentOpts.orig).attr('rel')+'" target="_blank"><?php echo __('Download High resolution image', 'gallery'); ?> </a><?php } ?>';
+						return '<span id="fancybox-title-inside">' + (title.length ? title + '<br />' : '') + '<?php _e( "Image", "gallery"); ?> ' + (currentIndex + 1) + ' / ' + currentArray.length + '</span><?php if( get_post_meta( $post->ID, 'gllr_download_link', true ) != '' ){?><br /><a href="'+$(currentOpts.orig).attr('rel')+'" target="_blank"><?php echo __('Download high resolution image', 'gallery'); ?> </a><?php } ?>';
 					}<?php if( $gllr_options['start_slideshow'] == 1 ) { ?>,
 					'onComplete':	function() {
 						clearTimeout(jQuery.fancybox.slider);
