@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 3.8.7
+Version: 3.8.8
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -273,6 +273,8 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 				echo '<input type="text" name="gllr_image_text['.$page->ID.']" value="'.get_post_meta( $page->ID, $key, TRUE ).'" class="gllr_image_text" />';
 				echo '<input type="text" name="gllr_order_text['.$page->ID.']" value="'.$page->menu_order.'" class="gllr_order_text '.( $page->menu_order == 0 ? "hidden" : '' ).'" />';
 				echo '<br />'.__( "URL", "gallery" ).'<br /><input type="text" name="gllr_link_url['.$page->ID.']" value="'.get_post_meta( $page->ID, $link_key, TRUE ).'" class="gllr_link_text" /><br /><span class="small_text">'.__( "(by click on image <br /> opens a link in a new window)", "gallery" ).'</span>';
+				echo '<a class="gllr_pro_version" href="http://bestwebsoft.com/plugin/gallery-pro/" target="_blank" title="'. __( 'This setting is available in Pro version', 'gallery' ).'"><br />'.
+					'<div class="gllr_pro_version">'.__( "Open the link", "gallery" ).'<br/><input disabled type="radio" value="_self" > '.__( "Current window", "gallery" ).'<br/><input disabled type="radio" value="_blank" > '.__( "New window", "gallery" ).'</div></a>';
 				echo '<div class="delete"><a href="javascript:void(0);" onclick="img_delete('.$page->ID.');">'.__( "Delete", "gallery" ).'</a><div/>';
 			echo '</div></li>';
     endforeach; ?>
@@ -821,6 +823,56 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 				<tr valign="top">
 					<td colspan="2"><span style="color: #888888;font-size: 10px;"><?php _e( 'WordPress will create a new thumbnail with the specified dimensions when you upload a new photo.', 'gallery' ); ?></span></td>
 				</tr>
+			</table>
+			<table class="form-table gllr_pro_version" style="float: left;">
+				<tr valign="top" class="gllr_width_labels">
+					<th scope="row"><?php _e( 'Gallery image size in the lightbox', 'gallery' ); ?> </th>
+					<td>
+						<label for="custom_image_size_name"><?php _e( 'Image size', 'gallery' ); ?></label> <?php echo $gllrprfssnl_options["gllrprfssnl_custom_size_name"][2]; ?><br />
+						<label for="custom_image_size_w"><?php _e( 'Max width (in px)', 'gallery' ); ?></label> <input disabled class="gllrprfssnl_size_photo_full" type="text" name="gllrprfssnl_custom_image_size_w_full" value="<?php echo $gllrprfssnl_options["gllrprfssnl_custom_size_px"][2][0]; ?>"/><br />
+						<label for="custom_image_size_h"><?php _e( 'Max height (in px)', 'gallery' ); ?></label> <input disabled class="gllrprfssnl_size_photo_full" type="text" name="gllrprfssnl_custom_image_size_h_full" value="<?php echo $gllrprfssnl_options["gllrprfssnl_custom_size_px"][2][1]; ?>"/><br />
+						<input disabled type="checkbox" name="gllrprfssnl_size_photo_full" value="1" /> <?php _e( 'Display a full size image in the lightbox', 'gallery' ); ?>
+					</td>
+				</tr>
+				<tr valign="top" class="gllr_pro_version gllr_width_labels">
+					<th scope="row"><?php _e( 'Crop position', 'gallery' ); ?></th>
+					<td>
+						<label><?php _e( 'Horizontal', 'gallery' ); ?></label> 
+						<select disabled>
+							<option value="left"><?php _e( 'left', 'gallery' ); ?></option>
+							<option value="center"><?php _e( 'center', 'gallery' ); ?></option>
+							<option value="right"><?php _e( 'right', 'gallery' ); ?></option>
+						</select>
+						<br />
+						<label><?php _e( 'Vertical', 'gallery' ); ?></label> 
+						<select disabled>							
+							<option value="top"><?php _e( 'top', 'gallery' ); ?></option>
+							<option value="center"><?php _e( 'center', 'gallery' ); ?></option>
+							<option value="bottom"><?php _e( 'bottom', 'gallery' ); ?></option>
+						</select>
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row"><?php _e( 'Lightbox background', 'gallery' ); ?> </th>	
+					<td>					
+						<input disabled class="button button-small gllrprfssnl_lightbox_default" type="button" value="<?php _e( 'Default', 'gallery' ); ?>"> <br />
+						<input disabled type="text" size="8" value="<?php echo $gllrprfssnl_options["background_lightbox_opacity"]; ?>" name="gllrprfssnl_background_lightbox_opacity" /> <?php _e( 'Background transparency (from 0 to 1)', 'gallery' ); ?><br />
+						<?php if( $wp_version >= 3.5 ) { ?>
+							<input disabled id="gllrprfssnl_background_lightbox_color" type="minicolors" name="gllrprfssnl_background_lightbox_color" value="<?php echo $gllrprfssnl_options["background_lightbox_color"]; ?>" id="gllrprfssnl_background_lightbox_color" /> <?php _e( 'Select a background color', 'gallery' ); ?>
+						<?php } else { ?>
+							<input disabled id="gllrprfssnl_background_lightbox_color" type="text" name="gllrprfssnl_background_lightbox_color" value="<?php echo $gllrprfssnl_options["background_lightbox_color"]; ?>" id="gllrprfssnl_background_lightbox_color" /><span id="gllrprfssnl_background_lightbox_color_small" style="background-color:<?php echo $gllrprfssnl_options["background_lightbox_color"]; ?>"></span> <?php _e( 'Background color', 'gallery' ); ?>
+							<div id="colorPickerDiv_backgraund" style="z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;"></div>
+						<?php } ?>
+					</td>
+				</tr>		
+			</table>					
+			<div class="gllr_pro_version_tooltip">				
+				<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'gallery' ); ?> 
+				<a href="http://bestwebsoft.com/plugin/gallery-pro/" target="_blank" title="Gallery Pro Plugin">
+					Gallery Pro Plugin
+				</a>	
+			</div>
+			<table class="form-table">
 				<tr valign="top">
 					<th scope="row"><?php _e( 'Images with border', 'gallery' ); ?> </th>
 					<td>

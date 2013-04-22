@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 3.8.7
+Stable tag: 3.8.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,7 +65,7 @@ We can fix some things for free for the users who provide translation of our plu
 
 1. Upload the `Gallery` folder to the directory `/wp-content/plugins/`.
 2. Activate the plugin using the 'Plugins' menu in WordPress.
-3. Please check if you have the template file `gallery-template.php` as well as the template `gallery-single-template.php` in the templates directory. If you are can't find these files, then just copy them from the directory  `/wp-content/plugins/gallery/template/` to your templates directory.
+3. Please check if you have the template file `gallery-template.php` as well as the template `gallery-single-template.php` in the templates directory. If you can't find these files, then just copy them from the directory  `/wp-content/plugins/gallery/template/` to your templates directory.
 
 == Frequently Asked Questions ==
 
@@ -86,7 +86,7 @@ We can fix some things for free for the users who provide translation of our plu
 - Use the option 'Upload a file' in the uploader, choose the necessary pictures and click 'Open'
 - The files uploading process will start.
 - Once all pictures are uploaded, please save the page.
-- If you see the message 'Please enable JavaScript to use the file uploader.', you should enable JavaScript in your browser.
+- If you see the message 'Please enable JavaScript to use the file uploader', you should enable JavaScript in your browser.
 
 = How to add many images? =
 
@@ -108,7 +108,7 @@ After that your theme will support thumbnail option and the error will disappear
 
 1. Please open the menu "Galleries" and choose random gallery from the list. It will take you to the gallery editing page. 
 Please use the drag and drop function to change the order of the images and do not forget to save the post.
-Please do not forget to select `Attachments order by` -> `attachments order` in the plugin settings (http://your_domain/wp-admin/admin.php?page=gallery-plugin.php) 
+Please do not forget to select `Sort images by` -> `sort images` in the plugin settings (http://your_domain/wp-admin/admin.php?page=gallery-plugin.php) 
 
 2. Please go to the "Galleries" menu and select random gallery in the list. It will take you to the gallery editing page. 
 There will be one or several media upload icons between the title and the content blocks. Please choose any icon. 
@@ -127,19 +127,23 @@ Just set an order and click the 'Save' button.
 
 == Changelog ==
 
+= V3.8.8 - 22.04.2013 =
+* NEW : Added html blocks.
+* Update : The French language file is updated.
+
 = V3.8.7 - 10.04.2013 =
-* NEW : English language file is updated in the plugin.
+* NEW : The English language file is updated in the plugin.
 * Bugfix : We fixed the bug of deleting images.
 
 = V3.8.6 - 26.02.2013 =
-* NEW : Chinese language file is added to the plugin.
+* NEW : The Chinese language file is added to the plugin.
 
 = V3.8.5 - 14.02.2013 =
 * Update : We updated th fancybox displaying for iPhone and iPad.
 * Update : We updated all functionality for wordpress 3.5.1.
 
 = V3.8.4 - 25.01.2013 =
-* Update : French language file is updated.
+* Update : The French language file is updated.
 
 = V3.8.3 - 04.01.2013 =
 * Bugfix : We fixed the bug of image order on the Signle Gallery page.
@@ -264,8 +268,11 @@ Just set an order and click the 'Save' button.
 
 == Upgrade Notice ==
 
+= V3.8.8 =
+Added html blocks. The French language file is updated.
+
 = V3.8.7 =
-English language file is updated in the plugin. We fixed the bug of deleting images.
+The English language file is updated in the plugin. We fixed the bug of deleting images.
 
 = V3.8.6 =
 Chinese language file is added to the plugin.
@@ -274,7 +281,7 @@ Chinese language file is added to the plugin.
 We updated displaying fancybox for iPhone and iPad. We updated all functionality for wordpress 3.5.1.
 
 = V3.8.4 =
-French language file was updated.
+The French language file is updated.
 
 = V3.8.3 =
 The bug with the ability to order images in a single gallery page was fixed.
