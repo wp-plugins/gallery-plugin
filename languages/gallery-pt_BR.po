@@ -1,0 +1,559 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gallery Plugin v3.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-22 16:12+0300\n"
+"PO-Revision-Date: 2013-04-22 16:12+0300\n"
+"Last-Translator: \n"
+"Language-Team: DJIO | www.djio.com.br <wordpress@djio.com.br>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ gallery
+#: gallery-plugin.php:103
+#: gallery-plugin.php:794
+msgid "The following files \"gallery-template.php\" and \"gallery-single-template.php\" were not found in the directory of your theme. Please copy them from the directory `/wp-content/plugins/gallery-plugin/template/` to the directory of your theme for the correct work of the Gallery plugin"
+msgstr "Os seguintes arquivos \"gallery-template.php\" e \"gallery-single-template.php\" não foram encontrados no diretório do seu tema. Por favor, copie-os a partir do diretório `/wp-content/plugins/gallery-plugin/template/` para o diretório do seu tema para que o plugin Galeria funcione corretamente"
+
+# @ gallery
+#: gallery-plugin.php:127
+#: gallery-plugin.php:137
+msgid "Galleries"
+msgstr "Galerias"
+
+# @ gallery
+#: gallery-plugin.php:128
+#: gallery-plugin.php:661
+msgid "Gallery"
+msgstr "Galeria"
+
+# @ gallery
+#: gallery-plugin.php:129
+#, fuzzy
+msgid "Add a Gallery"
+msgstr "Adicionar Nova Galeria"
+
+# @ gallery
+#: gallery-plugin.php:130
+msgid "Add New Gallery"
+msgstr "Adicionar Nova Galeria"
+
+# @ gallery
+#: gallery-plugin.php:131
+msgid "Edit Gallery"
+msgstr "Editar Galeria"
+
+# @ gallery
+#: gallery-plugin.php:132
+msgid "New Gallery"
+msgstr "Nova Galeria"
+
+# @ gallery
+#: gallery-plugin.php:133
+msgid "View Gallery"
+msgstr "Ver Galeria"
+
+# @ gallery
+#: gallery-plugin.php:134
+#, fuzzy
+msgid "Find a Gallery"
+msgstr "Editar Galeria"
+
+# @ gallery
+#: gallery-plugin.php:135
+#, fuzzy
+msgid "No Gallery found"
+msgstr "Nenhuma Galeria Encontrada"
+
+# @ gallery
+#: gallery-plugin.php:192
+msgid "Upload File"
+msgstr "Enviar Arquivo"
+
+# @ gallery
+#: gallery-plugin.php:193
+msgid "Gallery Shortcode"
+msgstr "Shortcode da Galeria"
+
+# @ gallery
+#: gallery-plugin.php:209
+#, fuzzy
+msgid "The gallery temp directory (gallery-plugin/upload/files) is not available for record on your webserver. Please use the standard WP functionality to upload images (media library)"
+msgstr "O diretório temporário da Galeria (gallery-plugin/upload/files) não pode ser gravado pelo seu servidor web. Por favor, use o diretório padrão de imagens do WP (media library)"
+
+# @ gallery
+#: gallery-plugin.php:213
+#, fuzzy
+msgid "Choose an image for upload:"
+msgstr "Escolha uma imagem para enviar:"
+
+# @ gallery
+#: gallery-plugin.php:218
+msgid "Please enable JavaScript to use the file uploader."
+msgstr "Favor havilitar o Javascript para usar o envio de arquivos."
+
+#: gallery-plugin.php:225
+msgid "Allow the download link for all images in this gallery"
+msgstr ""
+
+#: gallery-plugin.php:226
+msgid "Please use the drag and drop function to change an order of the images displaying and do not forget to save the post."
+msgstr ""
+
+#: gallery-plugin.php:228
+msgid "Please make a choice"
+msgstr ""
+
+# @ gallery
+#: gallery-plugin.php:228
+#: gallery-plugin.php:908
+#, fuzzy
+msgid "Sort images by"
+msgstr "Quantidade de imagens por linha"
+
+# @ gallery
+#: gallery-plugin.php:228
+#, fuzzy
+msgid "sort images"
+msgstr "Quantidade de imagens por linha"
+
+#: gallery-plugin.php:228
+msgid "on the plugin settings page ("
+msgstr ""
+
+#: gallery-plugin.php:275
+msgid "URL"
+msgstr ""
+
+#: gallery-plugin.php:275
+msgid "(by click on image <br /> opens a link in a new window)"
+msgstr ""
+
+#: gallery-plugin.php:276
+msgid "This setting is available in Pro version"
+msgstr ""
+
+#: gallery-plugin.php:277
+msgid "Open the link"
+msgstr ""
+
+#: gallery-plugin.php:277
+msgid "Current window"
+msgstr ""
+
+#: gallery-plugin.php:277
+msgid "New window"
+msgstr ""
+
+#: gallery-plugin.php:278
+msgid "Delete"
+msgstr ""
+
+# @ gallery
+#: gallery-plugin.php:292
+#, fuzzy
+msgid "You can add a Single Gallery to the page or post by inserting this shortcode into the content"
+msgstr "Você pode adicionar a Galeria Única na página ou post inserindo este shortcode no conteúdo"
+
+#: gallery-plugin.php:294
+msgid "If you want to display a short description containing a screenshot and the link to the Single Gallery Page"
+msgstr ""
+
+# @ gallery
+#: gallery-plugin.php:478
+msgid "Title"
+msgstr "Título"
+
+# @ gallery
+#: gallery-plugin.php:479
+msgid "Author"
+msgstr "Autor"
+
+# @ gallery
+#: gallery-plugin.php:480
+#, fuzzy
+msgid "Photo"
+msgstr "Fotos"
+
+# @ gallery
+#: gallery-plugin.php:481
+#, fuzzy
+msgid "Publishing"
+msgstr "Público"
+
+# @ gallery
+#: gallery-plugin.php:482
+#: gallery-plugin.php:912
+msgid "Date"
+msgstr "Data"
+
+# @ gallery
+#: gallery-plugin.php:630
+msgid "Activated plugins"
+msgstr "Plugins ativados"
+
+# @ gallery
+#: gallery-plugin.php:632
+#: gallery-plugin.php:640
+#: gallery-plugin.php:648
+msgid "Read more"
+msgstr "Leia mais"
+
+# @ gallery
+#: gallery-plugin.php:632
+#: gallery-plugin.php:977
+#: gallery-plugin.php:992
+msgid "Settings"
+msgstr "Configurações"
+
+# @ gallery
+#: gallery-plugin.php:638
+msgid "Installed plugins"
+msgstr "Plugins instalados"
+
+# @ gallery
+#: gallery-plugin.php:646
+msgid "Recommended plugins"
+msgstr "Plugins recomendados"
+
+# @ gallery
+#: gallery-plugin.php:648
+msgid "Download"
+msgstr "Download"
+
+# @ default
+#: gallery-plugin.php:648
+#, php-format
+msgid "Install %s"
+msgstr "Instalar %s"
+
+# @ gallery
+#: gallery-plugin.php:648
+msgid "Install now from wordpress.org"
+msgstr "Instale agora via wordpres.org"
+
+# @ gallery
+#: gallery-plugin.php:650
+#, fuzzy
+msgid "If you have any questions, please feel free to contact us via plugin@bestwebsoft.com or fill out the contact form on our website"
+msgstr "Se você tiver dúvidas, favor entrar em contato com plugin@bestwebsoft.com ou preencha o formulário de contar em nosso website."
+
+# @ gallery
+#: gallery-plugin.php:688
+#, fuzzy
+msgid "See images &raquo;"
+msgstr "Ver foto &raquo;"
+
+# @ gallery
+#: gallery-plugin.php:787
+#, fuzzy
+msgid "Settings are saved"
+msgstr "Opções salvas."
+
+# @ gallery
+#: gallery-plugin.php:801
+#, fuzzy
+msgid "Gallery Settings"
+msgstr "Opções da Galeria"
+
+# @ gallery
+#: gallery-plugin.php:804
+#, fuzzy
+msgid "If you would like to add a Single Gallery to your page or post, just copy and paste this shortcode into your post or page:"
+msgstr "Se você quiser adicionar uma Galeria Única em sua página ou post, basta copiar e colocar este shortcode no conteúde de sua página ou post:"
+
+# @ gallery
+#: gallery-plugin.php:808
+#, fuzzy
+msgid "Image size for the album cover"
+msgstr "Tamanho da imagem de capa do álbum para as galerias"
+
+# @ gallery
+#: gallery-plugin.php:810
+#: gallery-plugin.php:818
+#: gallery-plugin.php:831
+#, fuzzy
+msgid "Image size"
+msgstr "Nome do tamanho"
+
+# @ gallery
+#: gallery-plugin.php:811
+#: gallery-plugin.php:819
+msgid "Width (in px)"
+msgstr "Largura (em px)"
+
+# @ gallery
+#: gallery-plugin.php:812
+#: gallery-plugin.php:820
+msgid "Height (in px)"
+msgstr "Altura (em px)"
+
+# @ gallery
+#: gallery-plugin.php:816
+#, fuzzy
+msgid "Gallery image size"
+msgstr "Galerias"
+
+# @ gallery
+#: gallery-plugin.php:824
+#, fuzzy
+msgid "WordPress will create a new thumbnail with the specified dimensions when you upload a new photo."
+msgstr "WordPress irá criar uma cópia da imagem destacada com os tamanhos especificados quando você enviar uma nova foto."
+
+#: gallery-plugin.php:829
+msgid "Gallery image size in the lightbox"
+msgstr ""
+
+# @ gallery
+#: gallery-plugin.php:832
+#, fuzzy
+msgid "Max width (in px)"
+msgstr "Largura (em px)"
+
+# @ gallery
+#: gallery-plugin.php:833
+#, fuzzy
+msgid "Max height (in px)"
+msgstr "Altura (em px)"
+
+#: gallery-plugin.php:834
+msgid "Display a full size image in the lightbox"
+msgstr ""
+
+#: gallery-plugin.php:838
+msgid "Crop position"
+msgstr ""
+
+#: gallery-plugin.php:840
+msgid "Horizontal"
+msgstr ""
+
+#: gallery-plugin.php:842
+msgid "left"
+msgstr ""
+
+#: gallery-plugin.php:843
+#: gallery-plugin.php:850
+msgid "center"
+msgstr ""
+
+#: gallery-plugin.php:844
+msgid "right"
+msgstr ""
+
+#: gallery-plugin.php:847
+msgid "Vertical"
+msgstr ""
+
+#: gallery-plugin.php:849
+msgid "top"
+msgstr ""
+
+#: gallery-plugin.php:851
+msgid "bottom"
+msgstr ""
+
+#: gallery-plugin.php:856
+msgid "Lightbox background"
+msgstr ""
+
+#: gallery-plugin.php:858
+msgid "Default"
+msgstr ""
+
+#: gallery-plugin.php:859
+msgid "Background transparency (from 0 to 1)"
+msgstr ""
+
+#: gallery-plugin.php:861
+msgid "Select a background color"
+msgstr ""
+
+#: gallery-plugin.php:863
+msgid "Background color"
+msgstr ""
+
+#: gallery-plugin.php:870
+msgid "This functionality is available in the Pro version of the plugin. For more details, please follow the link"
+msgstr ""
+
+#: gallery-plugin.php:877
+msgid "Images with border"
+msgstr ""
+
+#: gallery-plugin.php:880
+msgid "Border width in px, just numbers"
+msgstr ""
+
+#: gallery-plugin.php:882
+#: gallery-plugin.php:884
+msgid "Select a border color"
+msgstr ""
+
+# @ gallery
+#: gallery-plugin.php:890
+#, fuzzy
+msgid "Number of images in the row"
+msgstr "Quantidade de imagens por linha"
+
+# @ gallery
+#: gallery-plugin.php:896
+msgid "Start slideshow"
+msgstr "Iniciar Apresentação de Slides"
+
+# @ gallery
+#: gallery-plugin.php:902
+msgid "Slideshow interval"
+msgstr "Intervalo de tempo entre cada Slide"
+
+# @ gallery
+#: gallery-plugin.php:910
+#, fuzzy
+msgid "Attachment ID"
+msgstr "id do anexo"
+
+# @ gallery
+#: gallery-plugin.php:911
+#, fuzzy
+msgid "Image Name"
+msgstr "Imagem "
+
+# @ gallery
+#: gallery-plugin.php:913
+#, fuzzy
+msgid "Sorting order (the input field for sorting order in the Insert / Upload Media Gallery dialog)"
+msgstr "ordem de anexos (os campos com número inteiro na caixa de diálogo Inserir / Upload na Galeria de Mídia)"
+
+# @ gallery
+#: gallery-plugin.php:914
+#, fuzzy
+msgid "Random"
+msgstr "aleatório"
+
+# @ gallery
+#: gallery-plugin.php:918
+#, fuzzy
+msgid "Sort images"
+msgstr "Quantidade de imagens por linha"
+
+# @ gallery
+#: gallery-plugin.php:920
+msgid "ASC (ascending order from lowest to highest values - 1, 2, 3; a, b, c)"
+msgstr "ASC (ordem crescente dos valores mais baixos para os mais altos - 1, 2, 3; a, b, c)"
+
+# @ gallery
+#: gallery-plugin.php:921
+msgid "DESC (descending order from highest to lowest values - 3, 2, 1; c, b, a)"
+msgstr "DESC (ordem decrescente dos valores mais altos para os mais baixos - 3, 2, 1; c, b, a)"
+
+#: gallery-plugin.php:925
+msgid "Display text above the image"
+msgstr ""
+
+#: gallery-plugin.php:927
+msgid "If you want to display text just in a lightbox"
+msgstr ""
+
+# @ gallery
+#: gallery-plugin.php:931
+#, fuzzy
+msgid "Display the Back link"
+msgstr "Mostrar link de Retorno"
+
+# @ gallery
+#: gallery-plugin.php:937
+#, fuzzy
+msgid "Display the Back link in the shortcode"
+msgstr "Mostrar link de Retorno no shortcode"
+
+#: gallery-plugin.php:943
+msgid "The Back link text"
+msgstr ""
+
+#: gallery-plugin.php:949
+msgid "The Back link URL"
+msgstr ""
+
+#: gallery-plugin.php:951
+msgid "Gallery page (Page with Gallery Template)"
+msgstr ""
+
+#: gallery-plugin.php:953
+msgid "(Full URL to custom page)"
+msgstr ""
+
+#: gallery-plugin.php:957
+msgid "The Read More link text"
+msgstr ""
+
+# @ default
+#: gallery-plugin.php:965
+msgid "Save Changes"
+msgstr "Salvar Alterações"
+
+# @ gallery
+#: gallery-plugin.php:978
+msgid "FAQ"
+msgstr "FAQ"
+
+# @ gallery
+#: gallery-plugin.php:979
+msgid "Support"
+msgstr "Suporte"
+
+# @ gallery
+#: gallery-plugin.php:1186
+#: template/gallery-single-template.php:76
+#, fuzzy
+msgid "Sorry, nothing found."
+msgstr "Desculpe - nada foi encontrado."
+
+#: gallery-plugin.php:1208
+#: template/gallery-single-template.php:101
+msgid "Download high resolution image"
+msgstr ""
+
+# @ gallery
+#: template/gallery-single-template.php:101
+#, fuzzy
+msgid "Image"
+msgstr "Imagem "
+
+# @ gallery
+#~ msgid "Add New"
+#~ msgstr "Adicionar Nova"
+# @ gallery
+#~ msgid "Search Galleries"
+#~ msgstr "Pesquisar Galerias"
+# @ gallery
+#~ msgid "Attachments order by"
+#~ msgstr "Ordem dos anexos por"
+# @ gallery
+#~ msgid "Size for gallery image"
+#~ msgstr "Tamanho da imagem da galeria"
+# @ gallery
+#~ msgid "attachment title"
+#~ msgstr "título do anexo"
+# @ gallery
+#~ msgid "date"
+#~ msgstr "data"
+# @ gallery
+#~ msgid "Attachments order"
+#~ msgstr "ordem dos Anexos"
+# @ gallery
+#~ msgid "Label for Return link"
+#~ msgstr "Etiqueta para o link de Retorno"
+# @ gallery
+#, fuzzy
+#~ msgid "URL for Return link"
+#~ msgstr "Etiqueta para o link de Retorno"
+

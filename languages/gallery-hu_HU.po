@@ -1,0 +1,472 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gallery\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-22 16:11+0300\n"
+"PO-Revision-Date: 2013-04-22 16:11+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uk_UA\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: gallery-plugin.php:103
+#: gallery-plugin.php:794
+msgid "The following files \"gallery-template.php\" and \"gallery-single-template.php\" were not found in the directory of your theme. Please copy them from the directory `/wp-content/plugins/gallery-plugin/template/` to the directory of your theme for the correct work of the Gallery plugin"
+msgstr ""
+
+#: gallery-plugin.php:127
+#: gallery-plugin.php:137
+msgid "Galleries"
+msgstr "Galériák"
+
+#: gallery-plugin.php:128
+#: gallery-plugin.php:661
+msgid "Gallery"
+msgstr "Galéria"
+
+#: gallery-plugin.php:129
+#, fuzzy
+msgid "Add a Gallery"
+msgstr "Új Galéria hozzáadása"
+
+#: gallery-plugin.php:130
+msgid "Add New Gallery"
+msgstr "Új Galéria hozzáadása"
+
+#: gallery-plugin.php:131
+msgid "Edit Gallery"
+msgstr "Galéria szerkesztése"
+
+#: gallery-plugin.php:132
+msgid "New Gallery"
+msgstr "Új Galéria"
+
+#: gallery-plugin.php:133
+msgid "View Gallery"
+msgstr "Galéria megtekintése"
+
+#: gallery-plugin.php:134
+#, fuzzy
+msgid "Find a Gallery"
+msgstr "Galéria szerkesztése"
+
+#: gallery-plugin.php:135
+#, fuzzy
+msgid "No Gallery found"
+msgstr "Galéria nem található"
+
+#: gallery-plugin.php:192
+msgid "Upload File"
+msgstr "Fájl feltöltése"
+
+#: gallery-plugin.php:193
+#, fuzzy
+msgid "Gallery Shortcode"
+msgstr "Galéria beállítások"
+
+#: gallery-plugin.php:209
+msgid "The gallery temp directory (gallery-plugin/upload/files) is not available for record on your webserver. Please use the standard WP functionality to upload images (media library)"
+msgstr ""
+
+#: gallery-plugin.php:213
+#, fuzzy
+msgid "Choose an image for upload:"
+msgstr "Nézőkép kiválasztása a feltöltéshez"
+
+#: gallery-plugin.php:218
+msgid "Please enable JavaScript to use the file uploader."
+msgstr "Kérem, engedéjezze a Javascript használatát a fájl feltöltéshez."
+
+#: gallery-plugin.php:225
+msgid "Allow the download link for all images in this gallery"
+msgstr ""
+
+#: gallery-plugin.php:226
+msgid "Please use the drag and drop function to change an order of the images displaying and do not forget to save the post."
+msgstr ""
+
+#: gallery-plugin.php:228
+msgid "Please make a choice"
+msgstr ""
+
+#: gallery-plugin.php:228
+#: gallery-plugin.php:908
+#, fuzzy
+msgid "Sort images by"
+msgstr "Képek száma egy sorban"
+
+#: gallery-plugin.php:228
+#, fuzzy
+msgid "sort images"
+msgstr "Képek száma egy sorban"
+
+#: gallery-plugin.php:228
+msgid "on the plugin settings page ("
+msgstr ""
+
+#: gallery-plugin.php:275
+msgid "URL"
+msgstr ""
+
+#: gallery-plugin.php:275
+msgid "(by click on image <br /> opens a link in a new window)"
+msgstr ""
+
+#: gallery-plugin.php:276
+msgid "This setting is available in Pro version"
+msgstr ""
+
+#: gallery-plugin.php:277
+msgid "Open the link"
+msgstr ""
+
+#: gallery-plugin.php:277
+msgid "Current window"
+msgstr ""
+
+#: gallery-plugin.php:277
+msgid "New window"
+msgstr ""
+
+#: gallery-plugin.php:278
+msgid "Delete"
+msgstr ""
+
+#: gallery-plugin.php:292
+msgid "You can add a Single Gallery to the page or post by inserting this shortcode into the content"
+msgstr ""
+
+#: gallery-plugin.php:294
+msgid "If you want to display a short description containing a screenshot and the link to the Single Gallery Page"
+msgstr ""
+
+#: gallery-plugin.php:478
+msgid "Title"
+msgstr "Cím"
+
+#: gallery-plugin.php:479
+msgid "Author"
+msgstr "Szerző"
+
+#: gallery-plugin.php:480
+#, fuzzy
+msgid "Photo"
+msgstr "Fotók"
+
+#: gallery-plugin.php:481
+#, fuzzy
+msgid "Publishing"
+msgstr "Publikus"
+
+#: gallery-plugin.php:482
+#: gallery-plugin.php:912
+msgid "Date"
+msgstr "Dátum"
+
+#: gallery-plugin.php:630
+msgid "Activated plugins"
+msgstr "Aktivált bővítmények"
+
+#: gallery-plugin.php:632
+#: gallery-plugin.php:640
+#: gallery-plugin.php:648
+msgid "Read more"
+msgstr "Bővebben"
+
+#: gallery-plugin.php:632
+#: gallery-plugin.php:977
+#: gallery-plugin.php:992
+msgid "Settings"
+msgstr "Beállítások"
+
+#: gallery-plugin.php:638
+msgid "Installed plugins"
+msgstr "Telepített bővítmények"
+
+#: gallery-plugin.php:646
+msgid "Recommended plugins"
+msgstr "Javasolt bővítmények"
+
+#: gallery-plugin.php:648
+msgid "Download"
+msgstr "Letöltés"
+
+#: gallery-plugin.php:648
+#, php-format
+msgid "Install %s"
+msgstr "Telepítés %s"
+
+#: gallery-plugin.php:648
+msgid "Install now from wordpress.org"
+msgstr "Telepítés a wordpress.org -ról"
+
+#: gallery-plugin.php:650
+#, fuzzy
+msgid "If you have any questions, please feel free to contact us via plugin@bestwebsoft.com or fill out the contact form on our website"
+msgstr "Amennyiben kérdése van, kérem keressen meg minket a plugin@bestwebsoft.com e-mail címen, vagy töltse ki űrlapunkat"
+
+#: gallery-plugin.php:688
+#, fuzzy
+msgid "See images &raquo;"
+msgstr "Fotó megtekintése &raquo;"
+
+#: gallery-plugin.php:787
+#, fuzzy
+msgid "Settings are saved"
+msgstr "Beállítások elmentve."
+
+#: gallery-plugin.php:801
+#, fuzzy
+msgid "Gallery Settings"
+msgstr "Galéria beállítások"
+
+#: gallery-plugin.php:804
+msgid "If you would like to add a Single Gallery to your page or post, just copy and paste this shortcode into your post or page:"
+msgstr ""
+
+#: gallery-plugin.php:808
+#, fuzzy
+msgid "Image size for the album cover"
+msgstr "Размер для "
+
+#: gallery-plugin.php:810
+#: gallery-plugin.php:818
+#: gallery-plugin.php:831
+#, fuzzy
+msgid "Image size"
+msgstr "Kép méret neve"
+
+#: gallery-plugin.php:811
+#: gallery-plugin.php:819
+msgid "Width (in px)"
+msgstr "Szélesség (px-ben)"
+
+#: gallery-plugin.php:812
+#: gallery-plugin.php:820
+msgid "Height (in px)"
+msgstr "Magasság (px-ben)"
+
+#: gallery-plugin.php:816
+#, fuzzy
+msgid "Gallery image size"
+msgstr "Galériák"
+
+#: gallery-plugin.php:824
+#, fuzzy
+msgid "WordPress will create a new thumbnail with the specified dimensions when you upload a new photo."
+msgstr "A Wordpress elkészíti a megadott dimenziókban a nézőképeket a képek feltöltésekor."
+
+#: gallery-plugin.php:829
+msgid "Gallery image size in the lightbox"
+msgstr ""
+
+#: gallery-plugin.php:832
+#, fuzzy
+msgid "Max width (in px)"
+msgstr "Szélesség (px-ben)"
+
+#: gallery-plugin.php:833
+#, fuzzy
+msgid "Max height (in px)"
+msgstr "Magasság (px-ben)"
+
+#: gallery-plugin.php:834
+msgid "Display a full size image in the lightbox"
+msgstr ""
+
+#: gallery-plugin.php:838
+msgid "Crop position"
+msgstr ""
+
+#: gallery-plugin.php:840
+msgid "Horizontal"
+msgstr ""
+
+#: gallery-plugin.php:842
+msgid "left"
+msgstr ""
+
+#: gallery-plugin.php:843
+#: gallery-plugin.php:850
+msgid "center"
+msgstr ""
+
+#: gallery-plugin.php:844
+msgid "right"
+msgstr ""
+
+#: gallery-plugin.php:847
+msgid "Vertical"
+msgstr ""
+
+#: gallery-plugin.php:849
+msgid "top"
+msgstr ""
+
+#: gallery-plugin.php:851
+msgid "bottom"
+msgstr ""
+
+#: gallery-plugin.php:856
+msgid "Lightbox background"
+msgstr ""
+
+#: gallery-plugin.php:858
+msgid "Default"
+msgstr ""
+
+#: gallery-plugin.php:859
+msgid "Background transparency (from 0 to 1)"
+msgstr ""
+
+#: gallery-plugin.php:861
+msgid "Select a background color"
+msgstr ""
+
+#: gallery-plugin.php:863
+msgid "Background color"
+msgstr ""
+
+#: gallery-plugin.php:870
+msgid "This functionality is available in the Pro version of the plugin. For more details, please follow the link"
+msgstr ""
+
+#: gallery-plugin.php:877
+msgid "Images with border"
+msgstr ""
+
+#: gallery-plugin.php:880
+msgid "Border width in px, just numbers"
+msgstr ""
+
+#: gallery-plugin.php:882
+#: gallery-plugin.php:884
+msgid "Select a border color"
+msgstr ""
+
+#: gallery-plugin.php:890
+#, fuzzy
+msgid "Number of images in the row"
+msgstr "Képek száma egy sorban"
+
+#: gallery-plugin.php:896
+msgid "Start slideshow"
+msgstr ""
+
+#: gallery-plugin.php:902
+msgid "Slideshow interval"
+msgstr ""
+
+#: gallery-plugin.php:910
+msgid "Attachment ID"
+msgstr ""
+
+#: gallery-plugin.php:911
+#, fuzzy
+msgid "Image Name"
+msgstr "Kép méret neve"
+
+#: gallery-plugin.php:913
+msgid "Sorting order (the input field for sorting order in the Insert / Upload Media Gallery dialog)"
+msgstr ""
+
+#: gallery-plugin.php:914
+msgid "Random"
+msgstr ""
+
+#: gallery-plugin.php:918
+#, fuzzy
+msgid "Sort images"
+msgstr "Képek száma egy sorban"
+
+#: gallery-plugin.php:920
+msgid "ASC (ascending order from lowest to highest values - 1, 2, 3; a, b, c)"
+msgstr ""
+
+#: gallery-plugin.php:921
+msgid "DESC (descending order from highest to lowest values - 3, 2, 1; c, b, a)"
+msgstr ""
+
+#: gallery-plugin.php:925
+msgid "Display text above the image"
+msgstr ""
+
+#: gallery-plugin.php:927
+msgid "If you want to display text just in a lightbox"
+msgstr ""
+
+#: gallery-plugin.php:931
+msgid "Display the Back link"
+msgstr ""
+
+#: gallery-plugin.php:937
+msgid "Display the Back link in the shortcode"
+msgstr ""
+
+#: gallery-plugin.php:943
+msgid "The Back link text"
+msgstr ""
+
+#: gallery-plugin.php:949
+msgid "The Back link URL"
+msgstr ""
+
+#: gallery-plugin.php:951
+msgid "Gallery page (Page with Gallery Template)"
+msgstr ""
+
+#: gallery-plugin.php:953
+msgid "(Full URL to custom page)"
+msgstr ""
+
+#: gallery-plugin.php:957
+msgid "The Read More link text"
+msgstr ""
+
+#: gallery-plugin.php:965
+msgid "Save Changes"
+msgstr "Változások mentése"
+
+#: gallery-plugin.php:978
+msgid "FAQ"
+msgstr "Gy.I.K."
+
+#: gallery-plugin.php:979
+msgid "Support"
+msgstr "Támogatás"
+
+#: gallery-plugin.php:1186
+#: template/gallery-single-template.php:76
+#, fuzzy
+msgid "Sorry, nothing found."
+msgstr "Sajnáljuk - nincs megjelenítendő elem."
+
+#: gallery-plugin.php:1208
+#: template/gallery-single-template.php:101
+msgid "Download high resolution image"
+msgstr ""
+
+#: template/gallery-single-template.php:101
+msgid "Image"
+msgstr ""
+
+#~ msgid "Add New"
+#~ msgstr "Új hozzáadása"
+#~ msgid "Search Galleries"
+#~ msgstr "Galéria keresése"
+#~ msgid "The size of the cover album for gallery"
+#~ msgstr "Az Album borítójának mérete a Galériában"
+#~ msgid "Size for gallery image"
+#~ msgstr "A Galéria képeinek mérete"
+
+#, fuzzy
+#~ msgid "date"
+#~ msgstr "Dátum"
+
