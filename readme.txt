@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 3.8.8
+Stable tag: 3.8.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,7 @@ This plugin allows you to implement a gallery page into your website.
 This plugin makes it possible to implement as many galleries as you want into your website. You can add multiple pictures and description for each gallery, show them all at one page, view each one separately. Moreover, you can upload HQ images.
 
 <a href="http://wordpress.org/extend/plugins/gallery-plugin/faq/" target="_blank">FAQ</a>
-<a href="http://bestwebsoft.com/plugin/gallery-plugin/" target="_blank">Support</a>
+<a href="http://support.bestwebsoft.com" target="_blank">Support</a>
 
 = Features =
 
@@ -50,7 +50,7 @@ This plugin makes it possible to implement as many galleries as you want into yo
 * Spanish (es) (thanks to Victor Garcia)
 * Ukrainian (uk_UA)(thanks to Ted Mosby)
 
-If you would like to create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://bestwebsoft.com/" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
+If you would like to create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://support.bestwebsoft.com" target="_blank">BWS</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
 = Technical support =
 
@@ -126,6 +126,9 @@ Just set an order and click the 'Save' button.
 5. PrettyPhoto pop-up window containing the album images.
 
 == Changelog ==
+
+= V3.8.9 - 16.05.2013 =
+* Bugfix : We fixed the bug of SQL queries.
 
 = V3.8.8 - 22.04.2013 =
 * NEW : Added html blocks.
@@ -267,6 +270,9 @@ Just set an order and click the 'Save' button.
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.8.9 =
+We fixed the bug of SQL queries.
 
 = V3.8.8 =
 Added html blocks. The French language file is updated.

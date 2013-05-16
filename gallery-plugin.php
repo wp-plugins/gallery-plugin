@@ -4,12 +4,12 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 3.8.8
+Version: 3.8.9
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
 
-/*  © Copyright 2011  BestWebSoft  ( admin@bestwebsoft.com )
+/*  © Copyright 2011  BestWebSoft  ( http://support.bestwebsoft.com )
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -428,24 +428,26 @@ if ( ! function_exists ( 'gllr_plugin_init' ) ) {
 }
 
 if( ! function_exists( 'gllr_custom_permalinks' ) ) {
-	function gllr_custom_permalinks( $rules ) {
-		global $wpdb;
-		$parent = $wpdb->get_var( "SELECT $wpdb->posts.post_name FROM $wpdb->posts, $wpdb->postmeta WHERE meta_key = '_wp_page_template' AND meta_value = 'gallery-template.php' AND (post_status = 'publish' OR post_status = 'private') AND $wpdb->posts.ID = $wpdb->postmeta.post_id" );	
-		$newrules = array();
-		if( ! empty( $parent ) ) {
-			$newrules['(.+)/'.$parent.'/([^/]+)/?$']= 'index.php?post_type=gallery&name=$matches[2]&posts_per_page=-1';
-			$newrules[''.$parent.'/([^/]+)/?$']= 'index.php?post_type=gallery&name=$matches[1]&posts_per_page=-1';
-			$newrules[''.$parent.'/page/([^/]+)/?$']= 'index.php?pagename='.$parent.'&paged=$matches[1]';
-			$newrules[''.$parent.'/page/([^/]+)?$']= 'index.php?pagename='.$parent.'&paged=$matches[1]';
-		}
-		else {
-			$newrules['(.+)/gallery/([^/]+)/?$']= 'index.php?post_type=gallery&name=$matches[2]&posts_per_page=-1';
-			$newrules['gallery/([^/]+)/?$']= 'index.php?post_type=gallery&name=$matches[1]&posts_per_page=-1';
-			$newrules['gallery/page/([^/]+)/?$']= 'index.php?pagename=gallery&paged=$matches[1]';
-			$newrules['gallery/page/([^/]+)?$']= 'index.php?pagename=gallery&paged=$matches[1]';
-		}
-		return $newrules + $rules;
-	}
+    function gllr_custom_permalinks( $rules ) {
+        $newrules = array();
+        if ( ! isset( $rules['(.+)/gallery/([^/]+)/?$'] ) || ! isset( $rules['/gallery/([^/]+)/?$'] ) ) {
+            global $wpdb;
+            $parent = $wpdb->get_var( "SELECT $wpdb->posts.post_name FROM $wpdb->posts, $wpdb->postmeta WHERE meta_key = '_wp_page_template' AND meta_value = 'gallery-template.php' AND (post_status = 'publish' OR post_status = 'private') AND $wpdb->posts.ID = $wpdb->postmeta.post_id" );   
+            if( ! empty( $parent ) ) {
+                $newrules['(.+)/'.$parent.'/([^/]+)/?$']= 'index.php?post_type=gallery&name=$matches[2]&posts_per_page=-1';
+                $newrules[''.$parent.'/([^/]+)/?$']= 'index.php?post_type=gallery&name=$matches[1]&posts_per_page=-1';
+                $newrules[''.$parent.'/page/([^/]+)/?$']= 'index.php?pagename='.$parent.'&paged=$matches[1]';
+                $newrules[''.$parent.'/page/([^/]+)?$']= 'index.php?pagename='.$parent.'&paged=$matches[1]';
+            }
+            else {
+                $newrules['(.+)/gallery/([^/]+)/?$']= 'index.php?post_type=gallery&name=$matches[2]&posts_per_page=-1';
+                $newrules['gallery/([^/]+)/?$']= 'index.php?post_type=gallery&name=$matches[1]&posts_per_page=-1';
+                $newrules['gallery/page/([^/]+)/?$']= 'index.php?pagename=gallery&paged=$matches[1]';
+                $newrules['gallery/page/([^/]+)?$']= 'index.php?pagename=gallery&paged=$matches[1]';
+            }
+        }
+        return $newrules + $rules;
+    }
 }
 
 // flush_rules() if our rules are not yet included
@@ -468,7 +470,6 @@ if ( ! function_exists( 'gllr_template_redirect' ) ) {
 		}
 	}
 }
-
 
 // Change the columns for the edit CPT screen
 if ( ! function_exists( 'gllr_change_columns' ) ) {
@@ -647,7 +648,7 @@ if( ! function_exists( 'bws_add_menu_render' ) ) {
 				<?php foreach( $array_recomend as $recomend_plugin ) { ?>
 				<div style="float:left; width:200px;"><?php echo $recomend_plugin['title']; ?></div> <p><a href="<?php echo $recomend_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'gallery'); ?></a> <a href="<?php echo $recomend_plugin['href']; ?>" target="_blank"><?php echo __( "Download", 'gallery'); ?></a> <a class="install-now" href="<?php echo get_bloginfo( "url" ) . $recomend_plugin['slug']; ?>" title="<?php esc_attr( sprintf( __( 'Install %s' ), $recomend_plugin['title'] ) ) ?>" target="_blank"><?php echo __( 'Install now from wordpress.org', 'gallery' ) ?></a></p>
 				<?php } ?>
-				<span style="color: rgb(136, 136, 136); font-size: 10px;"><?php _e( 'If you have any questions, please feel free to contact us via plugin@bestwebsoft.com or fill out the contact form on our website', 'gallery' ); ?> <a href="http://bestwebsoft.com/contact/">http://bestwebsoft.com/contact/</a></span>
+				<span style="color: rgb(136, 136, 136); font-size: 10px;"><?php _e( 'If you have any questions, please feel free to contact us via', 'gallery' ); ?> <a href="http://support.bestwebsoft.com">http://support.bestwebsoft.com</a></span>
 			</div>
 			<?php } ?>
 		</div>
@@ -976,7 +977,7 @@ if( ! function_exists( 'gllr_register_plugin_links' ) ) {
 		if ( $file == $base ) {
 			$links[] = '<a href="admin.php?page=gallery-plugin.php">' . __( 'Settings', 'gallery' ) . '</a>';
 			$links[] = '<a href="http://wordpress.org/extend/plugins/gallery-plugin/faq/" target="_blank">' . __( 'FAQ', 'gallery' ) . '</a>';
-			$links[] = '<a href="Mailto:plugin@bestwebsoft.com">' . __( 'Support', 'gallery' ) . '</a>';
+			$links[] = '<a href="http://support.bestwebsoft.com">' . __( 'Support', 'gallery' ) . '</a>';
 		}
 		return $links;
 	}
