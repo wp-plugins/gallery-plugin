@@ -829,9 +829,9 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 				<tr valign="top" class="gllr_width_labels">
 					<th scope="row"><?php _e( 'Gallery image size in the lightbox', 'gallery' ); ?> </th>
 					<td>
-						<label for="custom_image_size_name"><?php _e( 'Image size', 'gallery' ); ?></label> <?php echo $gllrprfssnl_options["gllrprfssnl_custom_size_name"][2]; ?><br />
-						<label for="custom_image_size_w"><?php _e( 'Max width (in px)', 'gallery' ); ?></label> <input disabled class="gllrprfssnl_size_photo_full" type="text" name="gllrprfssnl_custom_image_size_w_full" value="<?php echo $gllrprfssnl_options["gllrprfssnl_custom_size_px"][2][0]; ?>"/><br />
-						<label for="custom_image_size_h"><?php _e( 'Max height (in px)', 'gallery' ); ?></label> <input disabled class="gllrprfssnl_size_photo_full" type="text" name="gllrprfssnl_custom_image_size_h_full" value="<?php echo $gllrprfssnl_options["gllrprfssnl_custom_size_px"][2][1]; ?>"/><br />
+						<label for="custom_image_size_name"><?php _e( 'Image size', 'gallery' ); ?></label> full-photo<br />
+						<label for="custom_image_size_w"><?php _e( 'Max width (in px)', 'gallery' ); ?></label> <input disabled class="gllrprfssnl_size_photo_full" type="text" name="gllrprfssnl_custom_image_size_w_full" value="1024"/><br />
+						<label for="custom_image_size_h"><?php _e( 'Max height (in px)', 'gallery' ); ?></label> <input disabled class="gllrprfssnl_size_photo_full" type="text" name="gllrprfssnl_custom_image_size_h_full" value="1024"/><br />
 						<input disabled type="checkbox" name="gllrprfssnl_size_photo_full" value="1" /> <?php _e( 'Display a full size image in the lightbox', 'gallery' ); ?>
 					</td>
 				</tr>
@@ -857,11 +857,11 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 					<th scope="row"><?php _e( 'Lightbox background', 'gallery' ); ?> </th>	
 					<td>					
 						<input disabled class="button button-small gllrprfssnl_lightbox_default" type="button" value="<?php _e( 'Default', 'gallery' ); ?>"> <br />
-						<input disabled type="text" size="8" value="<?php echo $gllrprfssnl_options["background_lightbox_opacity"]; ?>" name="gllrprfssnl_background_lightbox_opacity" /> <?php _e( 'Background transparency (from 0 to 1)', 'gallery' ); ?><br />
+						<input disabled type="text" size="8" value="0.7" name="gllrprfssnl_background_lightbox_opacity" /> <?php _e( 'Background transparency (from 0 to 1)', 'gallery' ); ?><br />
 						<?php if( $wp_version >= 3.5 ) { ?>
-							<input disabled id="gllrprfssnl_background_lightbox_color" type="minicolors" name="gllrprfssnl_background_lightbox_color" value="<?php echo $gllrprfssnl_options["background_lightbox_color"]; ?>" id="gllrprfssnl_background_lightbox_color" /> <?php _e( 'Select a background color', 'gallery' ); ?>
+							<input disabled id="gllrprfssnl_background_lightbox_color" type="minicolors" name="gllrprfssnl_background_lightbox_color" value="#777777" id="gllrprfssnl_background_lightbox_color" /> <?php _e( 'Select a background color', 'gallery' ); ?>
 						<?php } else { ?>
-							<input disabled id="gllrprfssnl_background_lightbox_color" type="text" name="gllrprfssnl_background_lightbox_color" value="<?php echo $gllrprfssnl_options["background_lightbox_color"]; ?>" id="gllrprfssnl_background_lightbox_color" /><span id="gllrprfssnl_background_lightbox_color_small" style="background-color:<?php echo $gllrprfssnl_options["background_lightbox_color"]; ?>"></span> <?php _e( 'Background color', 'gallery' ); ?>
+							<input disabled id="gllrprfssnl_background_lightbox_color" type="text" name="gllrprfssnl_background_lightbox_color" value="#777777" id="gllrprfssnl_background_lightbox_color" /><span id="gllrprfssnl_background_lightbox_color_small" style="background-color:#777777"></span> <?php _e( 'Background color', 'gallery' ); ?>
 							<div id="colorPickerDiv_backgraund" style="z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;"></div>
 						<?php } ?>
 					</td>
@@ -1001,7 +1001,7 @@ if ( ! function_exists ( 'gllr_add_admin_script' ) ) {
 	function gllr_add_admin_script() { 
 		global $wp_version;
 
-		if( $wp_version >= 3.5 && $_REQUEST['page'] == 'gallery-plugin.php' ) { ?>
+		if( $wp_version >= 3.5 && isset( $_REQUEST['page'] ) && $_REQUEST['page'] == 'gallery-plugin.php' ) { ?>
 			<link rel="stylesheet" media="screen" type="text/css" href="<?php echo plugins_url( 'minicolors/jquery.miniColors.css', __FILE__ ); ?>" />
 			<script type="text/javascript" src="<?php echo plugins_url( 'minicolors/jquery.miniColors.js', __FILE__ ); ?>"></script>
 		<?php } ?>
