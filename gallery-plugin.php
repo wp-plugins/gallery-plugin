@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 3.8.9
+Version: 3.9
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -205,7 +205,7 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 		$uploader = true;
 		
 		$post_types = get_post_types( array( '_builtin' => false ) );
-		if( ! is_writable ( ABSPATH ."wp-content/plugins/gallery-plugin/upload/files/" ) ) {
+		if( ! is_writable ( plugin_dir_path( __FILE__ ) ."upload/files/" ) ) {
 			$error = __( "The gallery temp directory (gallery-plugin/upload/files) is not available for record on your webserver. Please use the standard WP functionality to upload images (media library)", 'gallery' );
 			$uploader = false;
 		}
@@ -322,8 +322,8 @@ if ( ! function_exists ( 'gllr_save_postdata' ) ) {
 					$uploadFile[$key] = $uploadDir["path"] ."/" . pathinfo( $uploadFile[$key], PATHINFO_FILENAME ).uniqid().".".pathinfo( $uploadFile[$key], PATHINFO_EXTENSION );
 				}
 
-				if ( copy ( ABSPATH ."wp-content/plugins/gallery-plugin/upload/files/".$file_name, $uploadFile[$key] ) ) {
-					unlink( ABSPATH ."wp-content/plugins/gallery-plugin/upload/files/".$file_name );
+				if ( copy ( plugin_dir_path( __FILE__ ) ."upload/files/".$file_name, $uploadFile[$key] ) ) {
+					unlink( plugin_dir_path( __FILE__ ) ."upload/files/".$file_name );
 					$overrides = array( 'test_form' => false );
 				
 					$file = $uploadFile[$key];
@@ -577,83 +577,133 @@ if( ! function_exists( 'gllr_page_css_class' ) ) {
 	}
 }
 
-if( ! function_exists( 'bws_add_menu_render' ) ) {
+if ( ! function_exists( 'bws_add_menu_render' ) ) {
 	function bws_add_menu_render() {
 		global $title;
-		$active_plugins = get_option( 'active_plugins' );
-		$all_plugins		= get_plugins();
+		$active_plugins = get_option('active_plugins');
+		$all_plugins = get_plugins();
 
 		$array_activate = array();
 		$array_install	= array();
 		$array_recomend = array();
 		$count_activate = $count_install = $count_recomend = 0;
 		$array_plugins	= array(
-			array( 'captcha\/captcha.php', 'Captcha', 'http://wordpress.org/extend/plugins/captcha/', 'http://bestwebsoft.com/plugin/captcha-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Captcha+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=captcha.php' ), 
-			array( 'contact-form-plugin\/contact_form.php', 'Contact Form', 'http://wordpress.org/extend/plugins/contact-form-plugin/', 'http://bestwebsoft.com/plugin/contact-form/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Contact+Form+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=contact_form.php' ), 
-			array( 'facebook-button-plugin\/facebook-button-plugin.php', 'Facebook Like Button Plugin', 'http://wordpress.org/extend/plugins/facebook-button-plugin/', 'http://bestwebsoft.com/plugin/facebook-like-button-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Facebook+Like+Button+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=facebook-button-plugin.php' ), 
-			array( 'twitter-plugin\/twitter.php', 'Twitter Plugin', 'http://wordpress.org/extend/plugins/twitter-plugin/', 'http://bestwebsoft.com/plugin/twitter-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Twitter+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=twitter.php' ), 
-			array( 'portfolio\/portfolio.php', 'Portfolio', 'http://wordpress.org/extend/plugins/portfolio/', 'http://bestwebsoft.com/plugin/portfolio-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Portfolio+bestwebsoft&plugin-search-input=Search+Plugins', '' ),
-			array( 'gallery-plugin\/gallery-plugin.php', 'Gallery', 'http://wordpress.org/extend/plugins/gallery-plugin/', 'http://bestwebsoft.com/plugin/gallery-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Gallery+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', '' ),
-			array( 'adsense-plugin\/adsense-plugin.php', 'Google AdSense Plugin', 'http://wordpress.org/extend/plugins/adsense-plugin/', 'http://bestwebsoft.com/plugin/google-adsense-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Adsense+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=adsense-plugin.php' ),
-			array( 'custom-search-plugin\/custom-search-plugin.php', 'Custom Search Plugin', 'http://wordpress.org/extend/plugins/custom-search-plugin/', 'http://bestwebsoft.com/plugin/custom-search-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Custom+Search+plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=custom_search.php' ),
-			array( 'quotes-and-tips\/quotes-and-tips.php', 'Quotes and Tips', 'http://wordpress.org/extend/plugins/quotes-and-tips/', 'http://bestwebsoft.com/plugin/quotes-and-tips/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Quotes+and+Tips+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=quotes-and-tips.php' ),
-			array( 'google-sitemap-plugin\/google-sitemap-plugin.php', 'Google sitemap plugin', 'http://wordpress.org/extend/plugins/google-sitemap-plugin/', 'http://bestwebsoft.com/plugin/google-sitemap-plugin/', '/wp-admin/plugin-install.php?tab=search&type=term&s=Google+sitemap+plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=google-sitemap-plugin.php' ),
-			array( 'updater\/updater.php', 'Updater', 'http://wordpress.org/extend/plugins/updater/', 'http://bestwebsoft.com/plugin/updater/', '/wp-admin/plugin-install.php?tab=search&s=updater+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=updater-options' )
+			array( 'captcha\/captcha.php', 'Captcha', 'http://bestwebsoft.com/plugin/captcha-plugin/', 'http://bestwebsoft.com/plugin/captcha-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Captcha+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=captcha.php' ), 
+			array( 'contact-form-plugin\/contact_form.php', 'Contact Form', 'http://bestwebsoft.com/plugin/contact-form/', 'http://bestwebsoft.com/plugin/contact-form/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Contact+Form+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=contact_form.php' ), 
+			array( 'facebook-button-plugin\/facebook-button-plugin.php', 'Facebook Like Button Plugin', 'http://bestwebsoft.com/plugin/facebook-like-button-plugin/', 'http://bestwebsoft.com/plugin/facebook-like-button-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Facebook+Like+Button+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=facebook-button-plugin.php' ), 
+			array( 'twitter-plugin\/twitter.php', 'Twitter Plugin', 'http://bestwebsoft.com/plugin/twitter-plugin/', 'http://bestwebsoft.com/plugin/twitter-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Twitter+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=twitter.php' ), 
+			array( 'portfolio\/portfolio.php', 'Portfolio', 'http://bestwebsoft.com/plugin/portfolio-plugin/', 'http://bestwebsoft.com/plugin/portfolio-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Portfolio+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=portfolio.php' ),
+			array( 'gallery-plugin\/gallery-plugin.php', 'Gallery', 'http://bestwebsoft.com/plugin/gallery-plugin/', 'http://bestwebsoft.com/plugin/gallery-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Gallery+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=gallery-plugin.php' ),
+			array( 'adsense-plugin\/adsense-plugin.php', 'Google AdSense Plugin', 'http://bestwebsoft.com/plugin/google-adsense-plugin/', 'http://bestwebsoft.com/plugin/google-adsense-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Adsense+Plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=adsense-plugin.php' ),
+			array( 'custom-search-plugin\/custom-search-plugin.php', 'Custom Search Plugin', 'http://bestwebsoft.com/plugin/custom-search-plugin/', 'http://bestwebsoft.com/plugin/custom-search-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Custom+Search+plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=custom_search.php' ),
+			array( 'quotes-and-tips\/quotes-and-tips.php', 'Quotes and Tips', 'http://bestwebsoft.com/plugin/quotes-and-tips/', 'http://bestwebsoft.com/plugin/quotes-and-tips/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Quotes+and+Tips+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=quotes-and-tips.php' ),
+			array( 'google-sitemap-plugin\/google-sitemap-plugin.php', 'Google sitemap plugin', 'http://bestwebsoft.com/plugin/google-sitemap-plugin/', 'http://bestwebsoft.com/plugin/google-sitemap-plugin/#download', '/wp-admin/plugin-install.php?tab=search&type=term&s=Google+sitemap+plugin+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=google-sitemap-plugin.php' ),
+			array( 'updater\/updater.php', 'Updater', 'http://bestwebsoft.com/plugin/updater-plugin/', 'http://bestwebsoft.com/plugin/updater-plugin/#download', '/wp-admin/plugin-install.php?tab=search&s=updater+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=updater-options' )
 		);
-		foreach( $array_plugins as $plugins ) {
+		foreach ( $array_plugins as $plugins ) {
 			if( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) ) {
-				$array_activate[$count_activate]['title'] = $plugins[1];
-				$array_activate[$count_activate]['link']	= $plugins[2];
-				$array_activate[$count_activate]['href']	= $plugins[3];
-				$array_activate[$count_activate]['url']	= $plugins[5];
+				$array_activate[$count_activate]["title"] = $plugins[1];
+				$array_activate[$count_activate]["link"] = $plugins[2];
+				$array_activate[$count_activate]["href"] = $plugins[3];
+				$array_activate[$count_activate]["url"]	= $plugins[5];
 				$count_activate++;
-			}
-			else if( array_key_exists( str_replace( "\\", "", $plugins[0] ), $all_plugins ) ) {
-				$array_install[$count_install]['title'] = $plugins[1];
-				$array_install[$count_install]['link']	= $plugins[2];
-				$array_install[$count_install]['href']	= $plugins[3];
+			} else if ( array_key_exists(str_replace( "\\", "", $plugins[0]), $all_plugins ) ) {
+				$array_install[$count_install]["title"] = $plugins[1];
+				$array_install[$count_install]["link"]	= $plugins[2];
+				$array_install[$count_install]["href"]	= $plugins[3];
 				$count_install++;
-			}
-			else {
-				$array_recomend[$count_recomend]['title'] = $plugins[1];
-				$array_recomend[$count_recomend]['link']	= $plugins[2];
-				$array_recomend[$count_recomend]['href']	= $plugins[3];
-				$array_recomend[$count_recomend]['slug']	= $plugins[4];
+			} else {
+				$array_recomend[$count_recomend]["title"] = $plugins[1];
+				$array_recomend[$count_recomend]["link"] = $plugins[2];
+				$array_recomend[$count_recomend]["href"] = $plugins[3];
+				$array_recomend[$count_recomend]["slug"] = $plugins[4];
 				$count_recomend++;
 			}
 		}
-		?>
+		$array_activate_pro = array();
+		$array_install_pro	= array();
+		$array_recomend_pro = array();
+		$count_activate_pro = $count_install_pro = $count_recomend_pro = 0;
+		$array_plugins_pro	= array(
+			array( 'gallery-plugin-pro\/gallery-plugin-pro.php', 'Gallery Pro', 'http://bestwebsoft.com/plugin/gallery-pro/', 'http://bestwebsoft.com/plugin/gallery-pro/#purchase', 'admin.php?page=gallery-plugin-pro.php' )
+		);
+		foreach ( $array_plugins_pro as $plugins ) {
+			if( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) ) {
+				$array_activate_pro[$count_activate_pro]["title"] = $plugins[1];
+				$array_activate_pro[$count_activate_pro]["link"] = $plugins[2];
+				$array_activate_pro[$count_activate_pro]["href"] = $plugins[3];
+				$array_activate_pro[$count_activate_pro]["url"]	= $plugins[4];
+				$count_activate_pro++;
+			} else if( array_key_exists(str_replace( "\\", "", $plugins[0]), $all_plugins ) ) {
+				$array_install_pro[$count_install_pro]["title"] = $plugins[1];
+				$array_install_pro[$count_install_pro]["link"]	= $plugins[2];
+				$array_install_pro[$count_install_pro]["href"]	= $plugins[3];
+				$count_install_pro++;
+			} else {
+				$array_recomend_pro[$count_recomend_pro]["title"] = $plugins[1];
+				$array_recomend_pro[$count_recomend_pro]["link"] = $plugins[2];
+				$array_recomend_pro[$count_recomend_pro]["href"] = $plugins[3];
+				$count_recomend_pro++;
+			}
+		} ?>
 		<div class="wrap">
 			<div class="icon32 icon32-bws" id="icon-options-general"></div>
 			<h2><?php echo $title;?></h2>
+			<h3 style="color: blue;"><?php _e( 'Pro plugins', 'custom-searc' ); ?></h3>
+			<?php if( 0 < $count_activate_pro ) { ?>
+			<div style="padding-left:15px;">
+				<h4><?php _e( 'Activated plugins', 'custom-searc' ); ?></h4>
+				<?php foreach ( $array_activate_pro as $activate_plugin ) { ?>
+				<div style="float:left; width:200px;"><?php echo $activate_plugin["title"]; ?></div> <p><a href="<?php echo $activate_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'custom-searc' ); ?></a> <a href="<?php echo $activate_plugin["url"]; ?>"><?php echo __( "Settings", 'custom-searc' ); ?></a></p>
+				<?php } ?>
+			</div>
+			<?php } ?>
+			<?php if( 0 < $count_install_pro ) { ?>
+			<div style="padding-left:15px;">
+				<h4><?php _e( 'Installed plugins', 'custom-searc' ); ?></h4>
+				<?php foreach ( $array_install_pro as $install_plugin) { ?>
+				<div style="float:left; width:200px;"><?php echo $install_plugin["title"]; ?></div> <p><a href="<?php echo $install_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'custom-searc' ); ?></a></p>
+				<?php } ?>
+			</div>
+			<?php } ?>
+			<?php if( 0 < $count_recomend_pro ) { ?>
+			<div style="padding-left:15px;">
+				<h4><?php _e( 'Recommended plugins', 'custom-searc' ); ?></h4>
+				<?php foreach ( $array_recomend_pro as $recomend_plugin ) { ?>
+				<div style="float:left; width:200px;"><?php echo $recomend_plugin["title"]; ?></div> <p><a href="<?php echo $recomend_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'custom-searc' ); ?></a> <a href="<?php echo $recomend_plugin["href"]; ?>" target="_blank"><?php echo __( "Purchase", 'custom-searc' ); ?></a></p>
+				<?php } ?>
+			</div>
+			<?php } ?>
+			<br />
+			<h3 style="color: green"><?php _e( 'Free plugins', 'custom-searc' ); ?></h3>
 			<?php if( 0 < $count_activate ) { ?>
-			<div>
-				<h3><?php _e( 'Activated plugins', 'gallery' ); ?></h3>
+			<div style="padding-left:15px;">
+				<h4><?php _e( 'Activated plugins', 'custom-searc' ); ?></h4>
 				<?php foreach( $array_activate as $activate_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $activate_plugin['title']; ?></div> <p><a href="<?php echo $activate_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'gallery'); ?></a> <a href="<?php echo $activate_plugin['url']; ?>"><?php echo __( "Settings", 'gallery'); ?></a></p>
+				<div style="float:left; width:200px;"><?php echo $activate_plugin["title"]; ?></div> <p><a href="<?php echo $activate_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'custom-searc' ); ?></a> <a href="<?php echo $activate_plugin["url"]; ?>"><?php echo __( "Settings", 'custom-searc' ); ?></a></p>
 				<?php } ?>
 			</div>
 			<?php } ?>
 			<?php if( 0 < $count_install ) { ?>
-			<div>
-				<h3><?php _e( 'Installed plugins', 'gallery' ); ?></h3>
-				<?php foreach( $array_install as $install_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $install_plugin['title']; ?></div> <p><a href="<?php echo $install_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'gallery'); ?></a></p>
+			<div style="padding-left:15px;">
+				<h4><?php _e( 'Installed plugins', 'custom-searc' ); ?></h4>
+				<?php foreach ( $array_install as $install_plugin ) { ?>
+				<div style="float:left; width:200px;"><?php echo $install_plugin["title"]; ?></div> <p><a href="<?php echo $install_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'custom-searc' ); ?></a></p>
 				<?php } ?>
 			</div>
 			<?php } ?>
 			<?php if( 0 < $count_recomend ) { ?>
-			<div>
-				<h3><?php _e( 'Recommended plugins', 'gallery' ); ?></h3>
-				<?php foreach( $array_recomend as $recomend_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $recomend_plugin['title']; ?></div> <p><a href="<?php echo $recomend_plugin['link']; ?>" target="_blank"><?php echo __( "Read more", 'gallery'); ?></a> <a href="<?php echo $recomend_plugin['href']; ?>" target="_blank"><?php echo __( "Download", 'gallery'); ?></a> <a class="install-now" href="<?php echo get_bloginfo( "url" ) . $recomend_plugin['slug']; ?>" title="<?php esc_attr( sprintf( __( 'Install %s' ), $recomend_plugin['title'] ) ) ?>" target="_blank"><?php echo __( 'Install now from wordpress.org', 'gallery' ) ?></a></p>
+			<div style="padding-left:15px;">
+				<h4><?php _e( 'Recommended plugins', 'custom-searc' ); ?></h4>
+				<?php foreach ( $array_recomend as $recomend_plugin ) { ?>
+				<div style="float:left; width:200px;"><?php echo $recomend_plugin["title"]; ?></div> <p><a href="<?php echo $recomend_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'custom-searc' ); ?></a> <a href="<?php echo $recomend_plugin["href"]; ?>" target="_blank"><?php echo __( "Download", 'custom-searc' ); ?></a> <a class="install-now" href="<?php echo get_bloginfo( "url" ) . $recomend_plugin["slug"]; ?>" title="<?php esc_attr( sprintf( __( 'Install %s' ), $recomend_plugin["title"] ) ) ?>" target="_blank"><?php echo __( 'Install now from wordpress.org', 'custom-searc' ) ?></a></p>
 				<?php } ?>
-				<span style="color: rgb(136, 136, 136); font-size: 10px;"><?php _e( 'If you have any questions, please feel free to contact us via', 'gallery' ); ?> <a href="http://support.bestwebsoft.com">http://support.bestwebsoft.com</a></span>
 			</div>
-			<?php } ?>
+			<?php } ?>	
+			<br />		
+			<span style="color: rgb(136, 136, 136); font-size: 10px;"><?php _e( 'If you have any questions, please contact us via', 'custom-searc' ); ?> <a href="http://support.bestwebsoft.com">http://support.bestwebsoft.com</a></span>
 		</div>
-		<?php
-	}
+	<?php }
 }
 
 if( ! function_exists( 'add_gllr_admin_menu' ) ) {

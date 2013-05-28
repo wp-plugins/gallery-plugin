@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 3.8.9
+Stable tag: 3.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,6 +16,8 @@ This plugin makes it possible to implement as many galleries as you want into yo
 
 <a href="http://wordpress.org/extend/plugins/gallery-plugin/faq/" target="_blank">FAQ</a>
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
+
+<a href="http://bestwebsoft.com/plugin/gallery-pro/" target="_blank">Upgrade to Pro Version</a>
 
 = Features =
 
@@ -35,8 +37,8 @@ This plugin makes it possible to implement as many galleries as you want into yo
 * Brazilian Portuguese (pt_BR) (thanks to DJIO, www.djio.com.br)
 * Chinese (zh_CN) (thanks to <a href="mailto:mibcxb@gmail.com">Xiaobo Chen</a>)
 * Czech (cs_CZ) (thanks to Josef Sukdol)
-* Dutch (nl_NL) (thanks to <a href="ronald@hostingu.nl">HostingU, Ronald Verheul</a>)
-* French (fr_FR) (thanks to Didier, <a href="lcapronnier@yahoo.com">L Capronnier</a>)
+* Dutch (nl_NL) (thanks to <a href="mailto:ronald@hostingu.nl">HostingU, Ronald Verheul</a>)
+* French (fr_FR) (thanks to Didier, <a href="mailto:lcapronnier@yahoo.com">L Capronnier</a>)
 * Georgian (ka_GE) (thanks to Vako Patashuri)
 * German (de_DE) (thanks to Thomas Bludau)
 * Hebrew (he_IL) (thanks to Sagive SEO)
@@ -117,6 +119,21 @@ Go to the Gallery tab and you will see attachments related to this gallery.
 You can change their order using the drag and drop option. 
 Just set an order and click the 'Save' button.
 
+= I am using WP with rtl language and I have a problem with the lightbox displaying on iPad/iPhone. =
+
+1. In the file header.php you should substitute
+<html <?php language_attributes(); ?>>
+with
+<html>
+2. Removed the "direction:rtl" from the css of the body, and moved it to the main wrapper. For example, in your theme CSS file (usually it's rtl.css) remove the following lines:
+body {
+    direction:rtl;
+}
+and add (for the themes Twenty Eleven or Twenty Ten):
+.hfeed {
+    direction:rtl;
+}
+
 == Screenshots ==
 
 1. Gallery Admin page.
@@ -126,6 +143,11 @@ Just set an order and click the 'Save' button.
 5. PrettyPhoto pop-up window containing the album images.
 
 == Changelog ==
+
+= V3.9 - 28.05.2013 =
+* Update : BWS plugins section is updated.
+* Update : The French language file is updated.
+* Bugfix : We changed using the abspath to plugin_dir_path().
 
 = V3.8.9 - 16.05.2013 =
 * Bugfix : We fixed the bug of SQL queries.
@@ -270,6 +292,9 @@ Just set an order and click the 'Save' button.
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.9 =
+BWS plugins section is updated. The French language file is updated. We changed using the abspath to plugin_dir_path().
 
 = V3.8.9 =
 We fixed the bug of SQL queries.
