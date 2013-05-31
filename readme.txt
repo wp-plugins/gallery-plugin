@@ -145,9 +145,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 == Changelog ==
 
 = V3.9 - 28.05.2013 =
-* Update : BWS plugins section is updated.
-* Update : The French language file is updated.
-* Bugfix : We changed using the abspath to plugin_dir_path().
+* Update : BWS plugins section is updated. 
+* Update : The French language file is updated. 
+* Bugfix : We changed using the abspath to plugin_dir_path(). 
 
 = V3.8.9 - 16.05.2013 =
 * Bugfix : We fixed the bug of SQL queries.
