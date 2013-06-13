@@ -649,59 +649,59 @@ if ( ! function_exists( 'bws_add_menu_render' ) ) {
 		<div class="wrap">
 			<div class="icon32 icon32-bws" id="icon-options-general"></div>
 			<h2><?php echo $title;?></h2>
-			<h3 style="color: blue;"><?php _e( 'Pro plugins', 'custom-searc' ); ?></h3>
+			<h3 style="color: blue;"><?php _e( 'Pro plugins', 'gallery' ); ?></h3>
 			<?php if( 0 < $count_activate_pro ) { ?>
 			<div style="padding-left:15px;">
-				<h4><?php _e( 'Activated plugins', 'custom-searc' ); ?></h4>
+				<h4><?php _e( 'Activated plugins', 'gallery' ); ?></h4>
 				<?php foreach ( $array_activate_pro as $activate_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $activate_plugin["title"]; ?></div> <p><a href="<?php echo $activate_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'custom-searc' ); ?></a> <a href="<?php echo $activate_plugin["url"]; ?>"><?php echo __( "Settings", 'custom-searc' ); ?></a></p>
+				<div style="float:left; width:200px;"><?php echo $activate_plugin["title"]; ?></div> <p><a href="<?php echo $activate_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'gallery' ); ?></a> <a href="<?php echo $activate_plugin["url"]; ?>"><?php echo __( "Settings", 'gallery' ); ?></a></p>
 				<?php } ?>
 			</div>
 			<?php } ?>
 			<?php if( 0 < $count_install_pro ) { ?>
 			<div style="padding-left:15px;">
-				<h4><?php _e( 'Installed plugins', 'custom-searc' ); ?></h4>
+				<h4><?php _e( 'Installed plugins', 'gallery' ); ?></h4>
 				<?php foreach ( $array_install_pro as $install_plugin) { ?>
-				<div style="float:left; width:200px;"><?php echo $install_plugin["title"]; ?></div> <p><a href="<?php echo $install_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'custom-searc' ); ?></a></p>
+				<div style="float:left; width:200px;"><?php echo $install_plugin["title"]; ?></div> <p><a href="<?php echo $install_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'gallery' ); ?></a></p>
 				<?php } ?>
 			</div>
 			<?php } ?>
 			<?php if( 0 < $count_recomend_pro ) { ?>
 			<div style="padding-left:15px;">
-				<h4><?php _e( 'Recommended plugins', 'custom-searc' ); ?></h4>
+				<h4><?php _e( 'Recommended plugins', 'gallery' ); ?></h4>
 				<?php foreach ( $array_recomend_pro as $recomend_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $recomend_plugin["title"]; ?></div> <p><a href="<?php echo $recomend_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'custom-searc' ); ?></a> <a href="<?php echo $recomend_plugin["href"]; ?>" target="_blank"><?php echo __( "Purchase", 'custom-searc' ); ?></a></p>
+				<div style="float:left; width:200px;"><?php echo $recomend_plugin["title"]; ?></div> <p><a href="<?php echo $recomend_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'gallery' ); ?></a> <a href="<?php echo $recomend_plugin["href"]; ?>" target="_blank"><?php echo __( "Purchase", 'gallery' ); ?></a></p>
 				<?php } ?>
 			</div>
 			<?php } ?>
 			<br />
-			<h3 style="color: green"><?php _e( 'Free plugins', 'custom-searc' ); ?></h3>
+			<h3 style="color: green"><?php _e( 'Free plugins', 'gallery' ); ?></h3>
 			<?php if( 0 < $count_activate ) { ?>
 			<div style="padding-left:15px;">
-				<h4><?php _e( 'Activated plugins', 'custom-searc' ); ?></h4>
+				<h4><?php _e( 'Activated plugins', 'gallery' ); ?></h4>
 				<?php foreach( $array_activate as $activate_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $activate_plugin["title"]; ?></div> <p><a href="<?php echo $activate_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'custom-searc' ); ?></a> <a href="<?php echo $activate_plugin["url"]; ?>"><?php echo __( "Settings", 'custom-searc' ); ?></a></p>
+				<div style="float:left; width:200px;"><?php echo $activate_plugin["title"]; ?></div> <p><a href="<?php echo $activate_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'gallery' ); ?></a> <a href="<?php echo $activate_plugin["url"]; ?>"><?php echo __( "Settings", 'gallery' ); ?></a></p>
 				<?php } ?>
 			</div>
 			<?php } ?>
 			<?php if( 0 < $count_install ) { ?>
 			<div style="padding-left:15px;">
-				<h4><?php _e( 'Installed plugins', 'custom-searc' ); ?></h4>
+				<h4><?php _e( 'Installed plugins', 'gallery' ); ?></h4>
 				<?php foreach ( $array_install as $install_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $install_plugin["title"]; ?></div> <p><a href="<?php echo $install_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'custom-searc' ); ?></a></p>
+				<div style="float:left; width:200px;"><?php echo $install_plugin["title"]; ?></div> <p><a href="<?php echo $install_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'gallery' ); ?></a></p>
 				<?php } ?>
 			</div>
 			<?php } ?>
 			<?php if( 0 < $count_recomend ) { ?>
 			<div style="padding-left:15px;">
-				<h4><?php _e( 'Recommended plugins', 'custom-searc' ); ?></h4>
+				<h4><?php _e( 'Recommended plugins', 'gallery' ); ?></h4>
 				<?php foreach ( $array_recomend as $recomend_plugin ) { ?>
-				<div style="float:left; width:200px;"><?php echo $recomend_plugin["title"]; ?></div> <p><a href="<?php echo $recomend_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'custom-searc' ); ?></a> <a href="<?php echo $recomend_plugin["href"]; ?>" target="_blank"><?php echo __( "Download", 'custom-searc' ); ?></a> <a class="install-now" href="<?php echo get_bloginfo( "url" ) . $recomend_plugin["slug"]; ?>" title="<?php esc_attr( sprintf( __( 'Install %s' ), $recomend_plugin["title"] ) ) ?>" target="_blank"><?php echo __( 'Install now from wordpress.org', 'custom-searc' ) ?></a></p>
+				<div style="float:left; width:200px;"><?php echo $recomend_plugin["title"]; ?></div> <p><a href="<?php echo $recomend_plugin["link"]; ?>" target="_blank"><?php echo __( "Read more", 'gallery' ); ?></a> <a href="<?php echo $recomend_plugin["href"]; ?>" target="_blank"><?php echo __( "Download", 'gallery' ); ?></a> <a class="install-now" href="<?php echo get_bloginfo( "url" ) . $recomend_plugin["slug"]; ?>" title="<?php esc_attr( sprintf( __( 'Install %s' ), $recomend_plugin["title"] ) ) ?>" target="_blank"><?php echo __( 'Install now from wordpress.org', 'gallery' ) ?></a></p>
 				<?php } ?>
 			</div>
 			<?php } ?>	
 			<br />		
-			<span style="color: rgb(136, 136, 136); font-size: 10px;"><?php _e( 'If you have any questions, please contact us via', 'custom-searc' ); ?> <a href="http://support.bestwebsoft.com">http://support.bestwebsoft.com</a></span>
+			<span style="color: rgb(136, 136, 136); font-size: 10px;"><?php _e( 'If you have any questions, please contact us via', 'gallery' ); ?> <a href="http://support.bestwebsoft.com">http://support.bestwebsoft.com</a></span>
 		</div>
 	<?php }
 }
