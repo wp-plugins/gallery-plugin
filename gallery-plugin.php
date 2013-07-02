@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 3.9
+Version: 3.9.1
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -189,8 +189,8 @@ if( ! function_exists( 'addImageAncestorToMenu' ) ) {
 }
 
 function init_metaboxes_gallery() {
-		add_meta_box( 'Upload-File', __( 'Upload File', 'gallery' ), 'gllr_post_custom_box', 'gallery', 'normal', 'high' ); 
-		add_meta_box( 'Gallery-Shortcode', __( 'Gallery Shortcode', 'gallery' ), 'gllr_post_shortcode_box', 'gallery', 'side', 'high' ); 
+	add_meta_box( 'Upload-File', __( 'Upload File', 'gallery' ), 'gllr_post_custom_box', 'gallery', 'normal', 'high' ); 
+	add_meta_box( 'Gallery-Shortcode', __( 'Gallery Shortcode', 'gallery' ), 'gllr_post_shortcode_box', 'gallery', 'side', 'high' ); 
 }
 
 // Create custom meta box for portfolio post type
@@ -273,7 +273,7 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 				echo '<input type="text" name="gllr_image_text['.$page->ID.']" value="'.get_post_meta( $page->ID, $key, TRUE ).'" class="gllr_image_text" />';
 				echo '<input type="text" name="gllr_order_text['.$page->ID.']" value="'.$page->menu_order.'" class="gllr_order_text '.( $page->menu_order == 0 ? "hidden" : '' ).'" />';
 				echo '<br />'.__( "URL", "gallery" ).'<br /><input type="text" name="gllr_link_url['.$page->ID.']" value="'.get_post_meta( $page->ID, $link_key, TRUE ).'" class="gllr_link_text" /><br /><span class="small_text">'.__( "(by click on image <br /> opens a link in a new window)", "gallery" ).'</span>';
-				echo '<a class="gllr_pro_version" href="http://bestwebsoft.com/plugin/gallery-pro/" target="_blank" title="'. __( 'This setting is available in Pro version', 'gallery' ).'"><br />'.
+				echo '<a class="gllr_pro_version" href="http://bestwebsoft.com/plugin/gallery-pro/?k='.md5('banner_wp_admin/plugin_settings_gallery' ).'" target="_blank" title="'. __( 'This setting is available in Pro version', 'gallery' ).'"><br />'.
 					'<div class="gllr_pro_version">'.__( "Open the link", "gallery" ).'<br/><input disabled type="radio" value="_self" > '.__( "Current window", "gallery" ).'<br/><input disabled type="radio" value="_blank" > '.__( "New window", "gallery" ).'</div></a>';
 				echo '<div class="delete"><a href="javascript:void(0);" onclick="img_delete('.$page->ID.');">'.__( "Delete", "gallery" ).'</a><div/>';
 			echo '</div></li>';
@@ -625,7 +625,8 @@ if ( ! function_exists( 'bws_add_menu_render' ) ) {
 		$array_recomend_pro = array();
 		$count_activate_pro = $count_install_pro = $count_recomend_pro = 0;
 		$array_plugins_pro	= array(
-			array( 'gallery-plugin-pro\/gallery-plugin-pro.php', 'Gallery Pro', 'http://bestwebsoft.com/plugin/gallery-pro/', 'http://bestwebsoft.com/plugin/gallery-pro/#purchase', 'admin.php?page=gallery-plugin-pro.php' )
+			array( 'gallery-plugin-pro\/gallery-plugin-pro.php', 'Gallery Pro', 'http://bestwebsoft.com/plugin/gallery-pro/', 'http://bestwebsoft.com/plugin/gallery-pro/#purchase', 'admin.php?page=gallery-plugin-pro.php' ),
+			array( 'contact-form-pro\/contact_form_pro.php', 'Contact Form Pro', 'http://bestwebsoft.com/plugin/contact-form-pro/', 'http://bestwebsoft.com/plugin/contact-form-pro/#purchase', 'admin.php?page=contact_form_pro.php' )				
 		);
 		foreach ( $array_plugins_pro as $plugins ) {
 			if( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) ) {
@@ -919,7 +920,7 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 			</table>					
 			<div class="gllr_pro_version_tooltip">				
 				<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'gallery' ); ?> 
-				<a href="http://bestwebsoft.com/plugin/gallery-pro/" target="_blank" title="Gallery Pro Plugin">
+				<a href="http://bestwebsoft.com/plugin/gallery-pro/?k=<?php echo md5('banner_wp_admin/plugin_settings_gallery' ); ?>" target="_blank" title="Gallery Pro Plugin">
 					Gallery Pro Plugin
 				</a>	
 			</div>
@@ -1010,7 +1011,25 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 						<input type="text" name="gllr_read_more_link_text" value="<?php echo $gllr_options["read_more_link_text"]; ?>" style="width:200px;" />
 					</td>
 				</tr>
-			</table>    
+			</table> 
+			<table class="form-table gllr_pro_version" style="float: left;">
+				<tr valign="top" class="gllr_width_labels">
+					<th scope="row"><?php _e( 'Display Like buttons in the lightbox', 'gallery' ); ?> </th>
+					<td>
+						<input disabled type="checkbox" name="gllrprfssnl_like_button_fb" value="1" /> <?php _e( 'FaceBook', 'gallery' ); ?><br />
+						<input disabled type="checkbox" name="gllrprfssnl_like_button_twit" value="1" /> <?php _e( 'Twitter', 'gallery' ); ?><br />
+						<input disabled type="checkbox" name="gllrprfssnl_like_button_pint" value="1" /> <?php _e( 'Pinterest', 'gallery' ); ?><br />
+						<input disabled type="checkbox" name="gllrprfssnl_like_button_g_plusone" value="1" /> <?php _e( 'Google +1', 'gallery' ); ?>		
+					</td>
+				</tr>						
+			</table>					
+			<div class="gllr_pro_version_tooltip">				
+				<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'gallery' ); ?> 
+				<a href="http://bestwebsoft.com/plugin/gallery-pro/?k=<?php echo md5('banner_wp_admin/plugin_settings_gallery' ); ?>" target="_blank" title="Gallery Pro Plugin">
+					Gallery Pro Plugin
+				</a>	
+			</div> 
+			<div style="clear:both;"></div>
 			<input type="hidden" name="gllr_form_submit" value="submit" />
 			<p class="submit">
 				<input type="submit" class="button-primary" value="<?php _e( 'Save Changes' ) ?>" />
@@ -1454,6 +1473,40 @@ if( ! function_exists( 'gllr_add_for_ios' ) ) {
 	}
 }
 
+if ( ! function_exists ( 'gllr_plugin_banner' ) ) {
+	function gllr_plugin_banner() {
+		global $hook_suffix;			
+		if ( $hook_suffix == 'plugins.php' ) {              
+	       	echo '<div class="updated" style="padding: 0; margin: 0; border: none; background: none;">
+	       		<script type="text/javascript" src="'.plugins_url( 'js/jquery.cookie.js', __FILE__ ).'"></script>
+				<script type="text/javascript">		
+					(function($){
+						$(document).ready(function(){		
+							var hide_message = $.cookie("gllr_hide_banner_on_plugin_page");
+							if ( hide_message == "true") {
+								$(".gllr_message").css("display", "none");
+							};
+							$(".gllr_close_icon").click(function() {
+								$(".gllr_message").css("display", "none");
+								$.cookie( "gllr_hide_banner_on_plugin_page", "true", { expires: 32 } );
+							});	
+						});
+					})(jQuery);				
+				</script>					                      
+				<div class="gllr_message">
+					<a class="button gllr_button" target="_blank" href="http://bestwebsoft.com/plugin/gallery-pro/?k=' . md5('banner_wp_admin/plugins_gallery' ) . '">Learn More</a>				
+					<div class="gllr_text">
+						It’s time to upgrade your <strong>Gallery plugin</strong> to <strong>PRO</strong> version!<br />
+						<span>Extend standard plugin functionality with new great options.</span>
+					</div> 					
+					<img class="gllr_close_icon" title="" src="' . plugins_url( 'images/close_banner.png', __FILE__ ) . '" alt=""/>
+					<img class="gllr_icon" title="" src="' . plugins_url( 'images/banner.png', __FILE__ ) . '" alt=""/>	
+				</div>  
+			</div>';      
+		}
+	}
+}
+
 register_activation_hook( __FILE__, 'gllr_plugin_install' ); // activate plugin
 register_uninstall_hook( __FILE__, 'gllr_plugin_uninstall' ); // deactivate plugin
 
@@ -1491,4 +1544,6 @@ add_shortcode( 'print_gllr', 'gllr_shortcode' );
 add_action( 'wp_ajax_upload_gallery_image', 'upload_gallery_image' );
 
 add_action( 'wp_head', 'gllr_add_for_ios' );
+
+add_action('admin_notices', 'gllr_plugin_banner');
 ?>

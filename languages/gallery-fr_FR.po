@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gallery\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-28 16:01+0300\n"
-"PO-Revision-Date: 2013-05-28 16:01+0300\n"
+"POT-Creation-Date: 2013-07-02 16:13+0300\n"
+"PO-Revision-Date: 2013-07-02 16:13+0300\n"
 "Last-Translator: \n"
 "Language-Team: Didier, L Capronnier <lcapronnier@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: gallery-plugin.php:103
-#: gallery-plugin.php:845
+#: gallery-plugin.php:846
 msgid "The following files \"gallery-template.php\" and \"gallery-single-template.php\" were not found in the directory of your theme. Please copy them from the directory `/wp-content/plugins/gallery-plugin/template/` to the directory of your theme for the correct work of the Gallery plugin"
 msgstr "Les fichiers suivants \"gallery-template.php\" et \"gallery-single-template.php\" n'ont pas été trouvés dans le répertoire de votre thème. Merci de les copier depuis le répertoire `/wp-content/plugins/gallery-plugin/template/` dans le répertoire de votre thème pour le bon fonctionnement de l'extension Gallery"
 
@@ -28,7 +28,7 @@ msgid "Galleries"
 msgstr "Galeries"
 
 #: gallery-plugin.php:128
-#: gallery-plugin.php:712
+#: gallery-plugin.php:713
 msgid "Gallery"
 msgstr "Galerie"
 
@@ -93,7 +93,7 @@ msgid "Please make a choice"
 msgstr "Merci de faire un choix"
 
 #: gallery-plugin.php:228
-#: gallery-plugin.php:959
+#: gallery-plugin.php:960
 msgid "Sort images by"
 msgstr "Trier les images par"
 
@@ -158,296 +158,317 @@ msgid "Publishing"
 msgstr "Public"
 
 #: gallery-plugin.php:483
-#: gallery-plugin.php:963
+#: gallery-plugin.php:964
 msgid "Date"
 msgstr "Date"
 
-#: gallery-plugin.php:652
-#, fuzzy
+#: gallery-plugin.php:653
 msgid "Pro plugins"
-msgstr "Extensions recommandées"
+msgstr "Extensions Pro"
 
-#: gallery-plugin.php:655
-#: gallery-plugin.php:681
+#: gallery-plugin.php:656
+#: gallery-plugin.php:682
 msgid "Activated plugins"
 msgstr "Extensions activées"
 
-#: gallery-plugin.php:657
-#: gallery-plugin.php:665
-#: gallery-plugin.php:673
-#: gallery-plugin.php:683
-#: gallery-plugin.php:691
-#: gallery-plugin.php:699
+#: gallery-plugin.php:658
+#: gallery-plugin.php:666
+#: gallery-plugin.php:674
+#: gallery-plugin.php:684
+#: gallery-plugin.php:692
+#: gallery-plugin.php:700
 msgid "Read more"
 msgstr "Lire plus..."
 
-#: gallery-plugin.php:657
-#: gallery-plugin.php:683
-#: gallery-plugin.php:1028
-#: gallery-plugin.php:1043
+#: gallery-plugin.php:658
+#: gallery-plugin.php:684
+#: gallery-plugin.php:1047
+#: gallery-plugin.php:1062
 msgid "Settings"
 msgstr "Paramètres"
 
-#: gallery-plugin.php:663
-#: gallery-plugin.php:689
+#: gallery-plugin.php:664
+#: gallery-plugin.php:690
 msgid "Installed plugins"
 msgstr "Extensions installées"
 
-#: gallery-plugin.php:671
-#: gallery-plugin.php:697
+#: gallery-plugin.php:672
+#: gallery-plugin.php:698
 msgid "Recommended plugins"
 msgstr "Extensions recommandées"
 
-#: gallery-plugin.php:673
+#: gallery-plugin.php:674
 msgid "Purchase"
-msgstr ""
+msgstr "Acheter"
 
-#: gallery-plugin.php:678
-#, fuzzy
+#: gallery-plugin.php:679
 msgid "Free plugins"
-msgstr "Extensions recommandées"
+msgstr "Extensions gratuites"
 
-#: gallery-plugin.php:699
+#: gallery-plugin.php:700
 msgid "Download"
 msgstr "Télécharger"
 
-#: gallery-plugin.php:699
+#: gallery-plugin.php:700
 #, php-format
 msgid "Install %s"
 msgstr "Installation %s"
 
-#: gallery-plugin.php:699
+#: gallery-plugin.php:700
 msgid "Install now from wordpress.org"
 msgstr "Installation à partir de  wordpress.org"
 
-#: gallery-plugin.php:704
+#: gallery-plugin.php:705
 msgid "If you have any questions, please contact us via"
-msgstr "Si vous avez des questions, merci de nous contacter via"
+msgstr "Si vous avez des questions, merci de nous contacter via "
 
-#: gallery-plugin.php:739
+#: gallery-plugin.php:740
 msgid "See images &raquo;"
 msgstr "Voir les images &raquo;"
 
-#: gallery-plugin.php:838
+#: gallery-plugin.php:839
 msgid "Settings are saved"
 msgstr "Paramètres sauvegardés."
 
-#: gallery-plugin.php:852
+#: gallery-plugin.php:853
 msgid "Gallery Settings"
 msgstr "Paramètres de la galerie"
 
-#: gallery-plugin.php:855
+#: gallery-plugin.php:856
 msgid "If you would like to add a Single Gallery to your page or post, just copy and paste this shortcode into your post or page:"
 msgstr "Si vous voulez ajouter la galerie dans une page ou un article, copier le code court suivant dans le contenu de votre page ou de votre article:"
 
-#: gallery-plugin.php:859
+#: gallery-plugin.php:860
 msgid "Image size for the album cover"
 msgstr "Taille de la vignette de l'album"
 
-#: gallery-plugin.php:861
-#: gallery-plugin.php:869
-#: gallery-plugin.php:882
+#: gallery-plugin.php:862
+#: gallery-plugin.php:870
+#: gallery-plugin.php:883
 msgid "Image size"
 msgstr "Taille de l'image"
 
-#: gallery-plugin.php:862
-#: gallery-plugin.php:870
+#: gallery-plugin.php:863
+#: gallery-plugin.php:871
 msgid "Width (in px)"
 msgstr "Largeur (en pixels)"
 
-#: gallery-plugin.php:863
-#: gallery-plugin.php:871
+#: gallery-plugin.php:864
+#: gallery-plugin.php:872
 msgid "Height (in px)"
 msgstr "Hauteur (en pixels)"
 
-#: gallery-plugin.php:867
+#: gallery-plugin.php:868
 msgid "Gallery image size"
 msgstr "Taille de l'image de la galerie"
 
-#: gallery-plugin.php:875
+#: gallery-plugin.php:876
 msgid "WordPress will create a new thumbnail with the specified dimensions when you upload a new photo."
 msgstr "WordPress créera une copie de la miniature avec les dimensions spécifiées quand vous envoyez une nouvelle photo."
 
-#: gallery-plugin.php:880
+#: gallery-plugin.php:881
 msgid "Gallery image size in the lightbox"
 msgstr "Taille de l'image de la galerie"
 
-#: gallery-plugin.php:883
+#: gallery-plugin.php:884
 msgid "Max width (in px)"
 msgstr "Largeur maximum (en pixels)"
 
-#: gallery-plugin.php:884
+#: gallery-plugin.php:885
 msgid "Max height (in px)"
 msgstr "Hauteur maximum (en pixels)"
 
-#: gallery-plugin.php:885
+#: gallery-plugin.php:886
 msgid "Display a full size image in the lightbox"
 msgstr "Afficher une image en taille normale dans le boite"
 
-#: gallery-plugin.php:889
+#: gallery-plugin.php:890
 msgid "Crop position"
 msgstr "Point de base"
 
-#: gallery-plugin.php:891
+#: gallery-plugin.php:892
 msgid "Horizontal"
 msgstr "Horizontale"
 
-#: gallery-plugin.php:893
+#: gallery-plugin.php:894
 msgid "left"
 msgstr "gauche"
 
-#: gallery-plugin.php:894
-#: gallery-plugin.php:901
+#: gallery-plugin.php:895
+#: gallery-plugin.php:902
 msgid "center"
 msgstr "centré"
 
-#: gallery-plugin.php:895
+#: gallery-plugin.php:896
 msgid "right"
 msgstr "droite"
 
-#: gallery-plugin.php:898
+#: gallery-plugin.php:899
 msgid "Vertical"
 msgstr "Verticale"
 
-#: gallery-plugin.php:900
+#: gallery-plugin.php:901
 msgid "top"
 msgstr "haut"
 
-#: gallery-plugin.php:902
+#: gallery-plugin.php:903
 msgid "bottom"
 msgstr "bas"
 
-#: gallery-plugin.php:907
+#: gallery-plugin.php:908
 msgid "Lightbox background"
 msgstr "Fond de la boite"
 
-#: gallery-plugin.php:909
+#: gallery-plugin.php:910
 msgid "Default"
 msgstr "Défaut"
 
-#: gallery-plugin.php:910
+#: gallery-plugin.php:911
 msgid "Background transparency (from 0 to 1)"
 msgstr "Transparence du fond (de 0 à 1)"
 
-#: gallery-plugin.php:912
+#: gallery-plugin.php:913
 msgid "Select a background color"
 msgstr "Choisir une couleur pour le fond"
 
-#: gallery-plugin.php:914
+#: gallery-plugin.php:915
 msgid "Background color"
 msgstr "Couleur du fond"
 
-#: gallery-plugin.php:921
+#: gallery-plugin.php:922
+#: gallery-plugin.php:1027
 msgid "This functionality is available in the Pro version of the plugin. For more details, please follow the link"
 msgstr "Cette fonction est disponible dans le version pro de ce plugin. Pour plus de détails, suivre le lien"
 
-#: gallery-plugin.php:928
+#: gallery-plugin.php:929
 msgid "Images with border"
 msgstr "Image avec bordure"
 
-#: gallery-plugin.php:931
+#: gallery-plugin.php:932
 msgid "Border width in px, just numbers"
 msgstr "Taille de la bordure en pixel, juste le nombre"
 
-#: gallery-plugin.php:933
-#: gallery-plugin.php:935
+#: gallery-plugin.php:934
+#: gallery-plugin.php:936
 msgid "Select a border color"
 msgstr "Choisir une couleur pour la bordure"
 
-#: gallery-plugin.php:941
+#: gallery-plugin.php:942
 msgid "Number of images in the row"
 msgstr "Nombre d'images par ligne"
 
-#: gallery-plugin.php:947
+#: gallery-plugin.php:948
 msgid "Start slideshow"
 msgstr "Démarer le diaporama"
 
-#: gallery-plugin.php:953
+#: gallery-plugin.php:954
 msgid "Slideshow interval"
 msgstr "Interval de transition pour le diaporama"
 
-#: gallery-plugin.php:961
+#: gallery-plugin.php:962
 msgid "Attachment ID"
 msgstr "ID du fichier"
 
-#: gallery-plugin.php:962
+#: gallery-plugin.php:963
 msgid "Image Name"
 msgstr "Nom de l'image "
 
-#: gallery-plugin.php:964
+#: gallery-plugin.php:965
 msgid "Sorting order (the input field for sorting order in the Insert / Upload Media Gallery dialog)"
 msgstr "Ordre de tri (le nombre dans la fenêtre d'insertion / téléchargement de la galerie)"
 
-#: gallery-plugin.php:965
+#: gallery-plugin.php:966
 msgid "Random"
 msgstr "Aléatoire"
 
-#: gallery-plugin.php:969
+#: gallery-plugin.php:970
 msgid "Sort images"
 msgstr "Trier les images"
 
-#: gallery-plugin.php:971
+#: gallery-plugin.php:972
 msgid "ASC (ascending order from lowest to highest values - 1, 2, 3; a, b, c)"
 msgstr "ASC (ordre ascendant de la plus petite à la plus grande valeur - 1, 2, 3; a, b, c)"
 
-#: gallery-plugin.php:972
+#: gallery-plugin.php:973
 msgid "DESC (descending order from highest to lowest values - 3, 2, 1; c, b, a)"
 msgstr "DESC (ordre descendant de la plus grade à la plus petite - 3, 2, 1; c, b, a)"
 
-#: gallery-plugin.php:976
+#: gallery-plugin.php:977
 msgid "Display text above the image"
 msgstr "Aficher le texte au dessus de l'image"
 
-#: gallery-plugin.php:978
+#: gallery-plugin.php:979
 msgid "If you want to display text just in a lightbox"
 msgstr "Si vous voulez juste afficher du texte dans un boite"
 
-#: gallery-plugin.php:982
+#: gallery-plugin.php:983
 msgid "Display the Back link"
 msgstr "Afficher le lien de retour"
 
-#: gallery-plugin.php:988
+#: gallery-plugin.php:989
 msgid "Display the Back link in the shortcode"
 msgstr "Afficher le lien de retour dans le code court"
 
-#: gallery-plugin.php:994
+#: gallery-plugin.php:995
 msgid "The Back link text"
 msgstr "Le text pour le lien de retour"
 
-#: gallery-plugin.php:1000
+#: gallery-plugin.php:1001
 msgid "The Back link URL"
 msgstr "L'URL pour le lien de retour"
 
-#: gallery-plugin.php:1002
+#: gallery-plugin.php:1003
 msgid "Gallery page (Page with Gallery Template)"
 msgstr "Page de la galerie (Page avec le modèle de galerie)"
 
-#: gallery-plugin.php:1004
+#: gallery-plugin.php:1005
 msgid "(Full URL to custom page)"
 msgstr "(URL complète pour la page spécifique)"
 
-#: gallery-plugin.php:1008
+#: gallery-plugin.php:1009
 msgid "The Read More link text"
 msgstr "Texte pour le lien \"Read More\""
 
-#: gallery-plugin.php:1016
+#: gallery-plugin.php:1017
+#, fuzzy
+msgid "Display Like buttons in the lightbox"
+msgstr "Afficher une image en taille normale dans le boite"
+
+#: gallery-plugin.php:1019
+msgid "FaceBook"
+msgstr ""
+
+#: gallery-plugin.php:1020
+#, fuzzy
+msgid "Twitter"
+msgstr "Titre"
+
+#: gallery-plugin.php:1021
+msgid "Pinterest"
+msgstr ""
+
+#: gallery-plugin.php:1022
+msgid "Google +1"
+msgstr ""
+
+#: gallery-plugin.php:1035
 msgid "Save Changes"
 msgstr "Sauvegarder"
 
-#: gallery-plugin.php:1029
+#: gallery-plugin.php:1048
 msgid "FAQ"
 msgstr "FAQ"
 
-#: gallery-plugin.php:1030
+#: gallery-plugin.php:1049
 msgid "Support"
 msgstr "Soutien"
 
-#: gallery-plugin.php:1237
+#: gallery-plugin.php:1256
 #: template/gallery-single-template.php:76
 msgid "Sorry, nothing found."
 msgstr "Désolé, rien n'a été trouvé"
 
-#: gallery-plugin.php:1259
+#: gallery-plugin.php:1278
 #: template/gallery-single-template.php:101
 msgid "Download high resolution image"
 msgstr "Télécharger l'image en haute résolution"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gallery\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-28 16:03+0300\n"
-"PO-Revision-Date: 2013-05-28 16:03+0300\n"
+"POT-Creation-Date: 2013-07-02 16:17+0300\n"
+"PO-Revision-Date: 2013-07-02 16:17+0300\n"
 "Last-Translator: \n"
 "Language-Team: Xiaobo Chen <mibcxb@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: gallery-plugin.php:103
-#: gallery-plugin.php:845
+#: gallery-plugin.php:846
 msgid "The following files \"gallery-template.php\" and \"gallery-single-template.php\" were not found in the directory of your theme. Please copy them from the directory `/wp-content/plugins/gallery-plugin/template/` to the directory of your theme for the correct work of the Gallery plugin"
 msgstr "在您的主题目录中没有找到文件  \"gallery-template.php\" 和  \"gallery-single-template.php\"。为了图集插件的正常运行，请从目录 `/wp-content/plugins/gallery-plugin/template/` 中复制他们到您的主题目录中"
 
@@ -27,7 +27,7 @@ msgid "Galleries"
 msgstr "图库"
 
 #: gallery-plugin.php:128
-#: gallery-plugin.php:712
+#: gallery-plugin.php:713
 msgid "Gallery"
 msgstr "图集"
 
@@ -99,7 +99,7 @@ msgid "Please make a choice"
 msgstr ""
 
 #: gallery-plugin.php:228
-#: gallery-plugin.php:959
+#: gallery-plugin.php:960
 #, fuzzy
 msgid "Sort images by"
 msgstr "一行中图像的数目"
@@ -172,321 +172,343 @@ msgid "Publishing"
 msgstr "公共的"
 
 #: gallery-plugin.php:483
-#: gallery-plugin.php:963
+#: gallery-plugin.php:964
 msgid "Date"
 msgstr "日期"
 
-#: gallery-plugin.php:652
+#: gallery-plugin.php:653
 #, fuzzy
 msgid "Pro plugins"
 msgstr "推荐的插件"
 
-#: gallery-plugin.php:655
-#: gallery-plugin.php:681
+#: gallery-plugin.php:656
+#: gallery-plugin.php:682
 msgid "Activated plugins"
 msgstr "已激活的插件"
 
-#: gallery-plugin.php:657
-#: gallery-plugin.php:665
-#: gallery-plugin.php:673
-#: gallery-plugin.php:683
-#: gallery-plugin.php:691
-#: gallery-plugin.php:699
+#: gallery-plugin.php:658
+#: gallery-plugin.php:666
+#: gallery-plugin.php:674
+#: gallery-plugin.php:684
+#: gallery-plugin.php:692
+#: gallery-plugin.php:700
 msgid "Read more"
 msgstr "阅读更多"
 
-#: gallery-plugin.php:657
-#: gallery-plugin.php:683
-#: gallery-plugin.php:1028
-#: gallery-plugin.php:1043
+#: gallery-plugin.php:658
+#: gallery-plugin.php:684
+#: gallery-plugin.php:1047
+#: gallery-plugin.php:1062
 msgid "Settings"
 msgstr "设置"
 
-#: gallery-plugin.php:663
-#: gallery-plugin.php:689
+#: gallery-plugin.php:664
+#: gallery-plugin.php:690
 msgid "Installed plugins"
 msgstr "安装插件"
 
-#: gallery-plugin.php:671
-#: gallery-plugin.php:697
+#: gallery-plugin.php:672
+#: gallery-plugin.php:698
 msgid "Recommended plugins"
 msgstr "推荐的插件"
 
-#: gallery-plugin.php:673
+#: gallery-plugin.php:674
 msgid "Purchase"
 msgstr ""
 
-#: gallery-plugin.php:678
+#: gallery-plugin.php:679
 #, fuzzy
 msgid "Free plugins"
 msgstr "推荐的插件"
 
-#: gallery-plugin.php:699
+#: gallery-plugin.php:700
 msgid "Download"
 msgstr "下载"
 
-#: gallery-plugin.php:699
+#: gallery-plugin.php:700
 #, php-format
 msgid "Install %s"
 msgstr "安装 %s"
 
-#: gallery-plugin.php:699
+#: gallery-plugin.php:700
 msgid "Install now from wordpress.org"
 msgstr "现在从 wordpress.org 安装"
 
-#: gallery-plugin.php:704
+#: gallery-plugin.php:705
 #, fuzzy
 msgid "If you have any questions, please contact us via"
 msgstr "如果您有任何问题，请通过 plugin@bestwebsoft.com 或在我们的网站上填写联系表格来联系我们"
 
-#: gallery-plugin.php:739
+#: gallery-plugin.php:740
 #, fuzzy
 msgid "See images &raquo;"
 msgstr "查看照片 &raquo;"
 
-#: gallery-plugin.php:838
+#: gallery-plugin.php:839
 #, fuzzy
 msgid "Settings are saved"
 msgstr "选项已保存。"
 
-#: gallery-plugin.php:852
+#: gallery-plugin.php:853
 #, fuzzy
 msgid "Gallery Settings"
 msgstr "图集选项"
 
-#: gallery-plugin.php:855
+#: gallery-plugin.php:856
 #, fuzzy
 msgid "If you would like to add a Single Gallery to your page or post, just copy and paste this shortcode into your post or page:"
 msgstr "如果您想添加一个图集到页面或公告中，仅需要将图集简码放到页面或公告的内容中即可："
 
-#: gallery-plugin.php:859
+#: gallery-plugin.php:860
 #, fuzzy
 msgid "Image size for the album cover"
 msgstr "Размер для "
 
-#: gallery-plugin.php:861
-#: gallery-plugin.php:869
-#: gallery-plugin.php:882
+#: gallery-plugin.php:862
+#: gallery-plugin.php:870
+#: gallery-plugin.php:883
 #, fuzzy
 msgid "Image size"
 msgstr "图像尺寸名称"
 
-#: gallery-plugin.php:862
-#: gallery-plugin.php:870
+#: gallery-plugin.php:863
+#: gallery-plugin.php:871
 msgid "Width (in px)"
 msgstr "宽度（像素）"
 
-#: gallery-plugin.php:863
-#: gallery-plugin.php:871
+#: gallery-plugin.php:864
+#: gallery-plugin.php:872
 msgid "Height (in px)"
 msgstr "高度（像素）"
 
-#: gallery-plugin.php:867
+#: gallery-plugin.php:868
 #, fuzzy
 msgid "Gallery image size"
 msgstr "图库"
 
-#: gallery-plugin.php:875
+#: gallery-plugin.php:876
 #, fuzzy
 msgid "WordPress will create a new thumbnail with the specified dimensions when you upload a new photo."
 msgstr "当您上传一幅新的照片时，WordPress会创建一个特定尺寸的缩略图副本。"
 
-#: gallery-plugin.php:880
+#: gallery-plugin.php:881
 msgid "Gallery image size in the lightbox"
 msgstr ""
 
-#: gallery-plugin.php:883
+#: gallery-plugin.php:884
 #, fuzzy
 msgid "Max width (in px)"
 msgstr "宽度（像素）"
 
-#: gallery-plugin.php:884
+#: gallery-plugin.php:885
 #, fuzzy
 msgid "Max height (in px)"
 msgstr "高度（像素）"
 
-#: gallery-plugin.php:885
+#: gallery-plugin.php:886
 msgid "Display a full size image in the lightbox"
 msgstr ""
 
-#: gallery-plugin.php:889
+#: gallery-plugin.php:890
 msgid "Crop position"
 msgstr ""
 
-#: gallery-plugin.php:891
+#: gallery-plugin.php:892
 msgid "Horizontal"
 msgstr ""
 
-#: gallery-plugin.php:893
+#: gallery-plugin.php:894
 #, fuzzy
 msgid "left"
 msgstr "删除"
 
-#: gallery-plugin.php:894
-#: gallery-plugin.php:901
+#: gallery-plugin.php:895
+#: gallery-plugin.php:902
 msgid "center"
 msgstr ""
 
-#: gallery-plugin.php:895
+#: gallery-plugin.php:896
 msgid "right"
 msgstr ""
 
-#: gallery-plugin.php:898
+#: gallery-plugin.php:899
 msgid "Vertical"
 msgstr ""
 
-#: gallery-plugin.php:900
+#: gallery-plugin.php:901
 msgid "top"
 msgstr ""
 
-#: gallery-plugin.php:902
+#: gallery-plugin.php:903
 msgid "bottom"
 msgstr ""
 
-#: gallery-plugin.php:907
+#: gallery-plugin.php:908
 msgid "Lightbox background"
 msgstr ""
 
-#: gallery-plugin.php:909
+#: gallery-plugin.php:910
 #, fuzzy
 msgid "Default"
 msgstr "删除"
 
-#: gallery-plugin.php:910
+#: gallery-plugin.php:911
 msgid "Background transparency (from 0 to 1)"
 msgstr ""
 
-#: gallery-plugin.php:912
+#: gallery-plugin.php:913
 msgid "Select a background color"
 msgstr ""
 
-#: gallery-plugin.php:914
+#: gallery-plugin.php:915
 msgid "Background color"
 msgstr ""
 
-#: gallery-plugin.php:921
+#: gallery-plugin.php:922
+#: gallery-plugin.php:1027
 msgid "This functionality is available in the Pro version of the plugin. For more details, please follow the link"
 msgstr ""
 
-#: gallery-plugin.php:928
+#: gallery-plugin.php:929
 msgid "Images with border"
 msgstr "图像边缘"
 
-#: gallery-plugin.php:931
+#: gallery-plugin.php:932
 msgid "Border width in px, just numbers"
 msgstr "边缘宽度，以像素为单位，只能使用数字"
 
-#: gallery-plugin.php:933
-#: gallery-plugin.php:935
+#: gallery-plugin.php:934
+#: gallery-plugin.php:936
 #, fuzzy
 msgid "Select a border color"
 msgstr "为边缘选择颜色"
 
-#: gallery-plugin.php:941
+#: gallery-plugin.php:942
 #, fuzzy
 msgid "Number of images in the row"
 msgstr "一行中图像的数目"
 
-#: gallery-plugin.php:947
+#: gallery-plugin.php:948
 msgid "Start slideshow"
 msgstr "播放幻灯片"
 
-#: gallery-plugin.php:953
+#: gallery-plugin.php:954
 msgid "Slideshow interval"
 msgstr "幻灯片播放间隔"
 
-#: gallery-plugin.php:961
+#: gallery-plugin.php:962
 #, fuzzy
 msgid "Attachment ID"
 msgstr "附件ID"
 
-#: gallery-plugin.php:962
+#: gallery-plugin.php:963
 #, fuzzy
 msgid "Image Name"
 msgstr "图像"
 
-#: gallery-plugin.php:964
+#: gallery-plugin.php:965
 #, fuzzy
 msgid "Sorting order (the input field for sorting order in the Insert / Upload Media Gallery dialog)"
 msgstr "附件顺序（插入/上传媒体图集对话框中的整型字段）"
 
-#: gallery-plugin.php:965
+#: gallery-plugin.php:966
 #, fuzzy
 msgid "Random"
 msgstr "随机"
 
-#: gallery-plugin.php:969
+#: gallery-plugin.php:970
 #, fuzzy
 msgid "Sort images"
 msgstr "一行中图像的数目"
 
-#: gallery-plugin.php:971
+#: gallery-plugin.php:972
 msgid "ASC (ascending order from lowest to highest values - 1, 2, 3; a, b, c)"
 msgstr "升序（由低到高 -  1, 2, 3; a, b, c）"
 
-#: gallery-plugin.php:972
+#: gallery-plugin.php:973
 msgid "DESC (descending order from highest to lowest values - 3, 2, 1; c, b, a)"
 msgstr "降序（由高到低 - 3, 2, 1; c, b, a）"
 
-#: gallery-plugin.php:976
+#: gallery-plugin.php:977
 #, fuzzy
 msgid "Display text above the image"
 msgstr "在图像上方显示文本"
 
-#: gallery-plugin.php:978
+#: gallery-plugin.php:979
 msgid "If you want to display text just in a lightbox"
 msgstr "如果您仅想在收藏夹中显示文本"
 
-#: gallery-plugin.php:982
+#: gallery-plugin.php:983
 #, fuzzy
 msgid "Display the Back link"
 msgstr "显示返回链接"
 
-#: gallery-plugin.php:988
+#: gallery-plugin.php:989
 #, fuzzy
 msgid "Display the Back link in the shortcode"
 msgstr "以简码方式显示返回链接"
 
-#: gallery-plugin.php:994
+#: gallery-plugin.php:995
 msgid "The Back link text"
 msgstr ""
 
-#: gallery-plugin.php:1000
+#: gallery-plugin.php:1001
 msgid "The Back link URL"
 msgstr ""
 
-#: gallery-plugin.php:1002
+#: gallery-plugin.php:1003
 msgid "Gallery page (Page with Gallery Template)"
 msgstr "图集页面（具有图集模板的页面）"
 
-#: gallery-plugin.php:1004
+#: gallery-plugin.php:1005
 msgid "(Full URL to custom page)"
 msgstr "（到自定义页面的完整地址）"
 
-#: gallery-plugin.php:1008
+#: gallery-plugin.php:1009
 #, fuzzy
 msgid "The Read More link text"
 msgstr "阅读更多链接的标签"
 
-#: gallery-plugin.php:1016
+#: gallery-plugin.php:1017
+msgid "Display Like buttons in the lightbox"
+msgstr ""
+
+#: gallery-plugin.php:1019
+msgid "FaceBook"
+msgstr ""
+
+#: gallery-plugin.php:1020
+#, fuzzy
+msgid "Twitter"
+msgstr "标题"
+
+#: gallery-plugin.php:1021
+msgid "Pinterest"
+msgstr ""
+
+#: gallery-plugin.php:1022
+msgid "Google +1"
+msgstr ""
+
+#: gallery-plugin.php:1035
 msgid "Save Changes"
 msgstr "保存修改"
 
-#: gallery-plugin.php:1029
+#: gallery-plugin.php:1048
 msgid "FAQ"
 msgstr "常问问题"
 
-#: gallery-plugin.php:1030
+#: gallery-plugin.php:1049
 msgid "Support"
 msgstr "支持"
 
-#: gallery-plugin.php:1237
+#: gallery-plugin.php:1256
 #: template/gallery-single-template.php:76
 #, fuzzy
 msgid "Sorry, nothing found."
 msgstr "对不起 - 没有找到。"
 
-#: gallery-plugin.php:1259
+#: gallery-plugin.php:1278
 #: template/gallery-single-template.php:101
 #, fuzzy
 msgid "Download high resolution image"
