@@ -300,7 +300,7 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 
 == Upgrade Notice ==
 
-= V3.9.2 =
+= V3.9.2 = 
 The Chinese language file is updated. We updated all functionality for wordpress 3.5.2.
 
 = V3.9.1 =
