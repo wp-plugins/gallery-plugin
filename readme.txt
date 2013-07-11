@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
-Tested up to: 3.5.1
-Stable tag: 3.9.1
+Tested up to: 3.5.2
+Stable tag: 3.9.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -143,6 +143,10 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 5. PrettyPhoto pop-up window containing the album images.
 
 == Changelog ==
+
+= V3.9.2 - 11.07.2013 =
+* Update : The Chinese language file is updated.
+* Update : We updated all functionality for wordpress 3.5.2.
 
 = V3.9.1 - 02.07.2013 =
 * Update : The French language file is updated. 
@@ -295,6 +299,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.9.2 =
+The Chinese language file is updated. We updated all functionality for wordpress 3.5.2.
 
 = V3.9.1 =
 The French language file is updated.
