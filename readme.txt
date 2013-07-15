@@ -17,7 +17,7 @@ This plugin makes it possible to implement as many galleries as you want into yo
 <a href="http://wordpress.org/extend/plugins/gallery-plugin/faq/" target="_blank">FAQ</a>
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
 
-<a href="http://bestwebsoft.com/plugin/gallery-pro/" target="_blank">Upgrade to Pro Version</a>
+<a href="http://bestwebsoft.com/plugin/gallery-pro/?k=57ad5c0c7fe312e2a45ef9a76f47334c" target="_blank">Upgrade to Pro Version</a>
 
 = Features =
 
