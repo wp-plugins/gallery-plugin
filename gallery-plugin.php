@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 3.9.3
+Version: 3.9.4
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -143,7 +143,7 @@ if( ! function_exists( 'post_type_images' ) ) {
 			'capability_type' => 'post',
 			'has_archive' => false,
 			'hierarchical' => true,
-			'supports' => array( 'title', 'editor', 'thumbnail', 'author', 'page-attributes' ),
+			'supports' => array( 'title', 'editor', 'thumbnail', 'author', 'page-attributes', 'comments' ),
 			'register_meta_box_cb' => 'init_metaboxes_gallery'
 		));
 	}

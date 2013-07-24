@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-	<div id="container">
+	<div id="container" class="site-content">
 		<div role="main" id="content">
 			<?php 
 			global $post, $wp_query;
@@ -76,7 +76,7 @@
 					<p class="not_found"><?php _e('Sorry, nothing found.', 'gallery'); ?></p>
 				</div>
 				<?php endif; ?>
-				<?php if( 1 == $gllr_options['return_link'] ) {
+				<?php if ( 1 == $gllr_options['return_link'] ) {
 					if( 'gallery_template_url' == $gllr_options["return_link_page"] ){
 						global $wpdb;
 						$parent = $wpdb->get_var( "SELECT $wpdb->posts.ID FROM $wpdb->posts, $wpdb->postmeta WHERE meta_key = '_wp_page_template' AND meta_value = 'gallery-template.php' AND (post_status = 'publish' OR post_status = 'private') AND $wpdb->posts.ID = $wpdb->postmeta.post_id" );	?>
@@ -85,7 +85,8 @@
 						<div class="return_link"><a href="<?php echo $gllr_options["return_link_url"]; ?>"><?php echo $gllr_options['return_link_text']; ?></a></div>
 					<?php }
 				} ?>
-			</div>
+				<?php comments_template(); ?>
+			</div>			
 		</div>
 	<?php get_sidebar(); ?>
 	<script type="text/javascript">

@@ -5,7 +5,7 @@ Template Name: Gallery Template
 ?>
 
 <?php get_header(); ?>
-	<div id="container">
+	<div id="container" class="site-content">
 		<div role="main" id="content">
 			<h1 class="home_page_title"><?php the_title(); ?></h1>
 			<?php if ( function_exists( 'pdfprnt_show_buttons_for_custom_post_type' ) ) echo pdfprnt_show_buttons_for_custom_post_type( 'post_type=gallery&orderby=post_date' ); ?>
@@ -102,6 +102,7 @@ Template Name: Gallery Template
 					} else {?>
 						</div>
 					<?php } ?>
+			<?php comments_template(); ?>
 		</div>
 	</div>
 <?php get_sidebar(); ?>
