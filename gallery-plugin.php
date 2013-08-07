@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 3.9.4
+Version: 3.9.5
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -270,9 +270,9 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 			echo '<li id="'.$page->ID.'" class="gllr_image_block"><div class="gllr_drag">';
 				$image_attributes = wp_get_attachment_image_src( $page->ID, 'thumbnail' );
 				echo '<div class="gllr_border_image"><img src="'.$image_attributes[0].'" alt="'.$page->post_title.'" title="'.$page->post_title.'" height="'.get_option( 'thumbnail_size_h' ).'" width="'.get_option( 'thumbnail_size_w' ).'" /></div>';
-				echo '<input type="text" name="gllr_image_text['.$page->ID.']" value="'.get_post_meta( $page->ID, $key, TRUE ).'" class="gllr_image_text" />';
+				echo '<br />'.__( "Title", "gallery" ).'<br /><input type="text" name="gllr_image_text['.$page->ID.']" value="'.get_post_meta( $page->ID, $key, TRUE ).'" class="gllr_image_text" />';
 				echo '<input type="text" name="gllr_order_text['.$page->ID.']" value="'.$page->menu_order.'" class="gllr_order_text '.( $page->menu_order == 0 ? "hidden" : '' ).'" />';
-				echo '<br />'.__( "URL", "gallery" ).'<br /><input type="text" name="gllr_link_url['.$page->ID.']" value="'.get_post_meta( $page->ID, $link_key, TRUE ).'" class="gllr_link_text" /><br /><span class="small_text">'.__( "(by click on image <br /> opens a link in a new window)", "gallery" ).'</span>';
+				echo '<br />'.__( "URL", "gallery" ).'<br /><input type="text" name="gllr_link_url['.$page->ID.']" value="'.get_post_meta( $page->ID, $link_key, TRUE ).'" class="gllr_link_text" /><br /><span class="small_text">'.__( "(by click on image opens a link in a new window)", "gallery" ).'</span>';
 				echo '<a class="gllr_pro_version" href="http://bestwebsoft.com/plugin/gallery-pro/?k='.md5('banner_wp_admin/plugin_settings_gallery' ).'" target="_blank" title="'. __( 'This setting is available in Pro version', 'gallery' ).'"><br />'.
 					'<div class="gllr_pro_version">'.__( "Open the link", "gallery" ).'<br/><input disabled type="radio" value="_self" > '.__( "Current window", "gallery" ).'<br/><input disabled type="radio" value="_blank" > '.__( "New window", "gallery" ).'</div></a>';
 				echo '<div class="delete"><a href="javascript:void(0);" onclick="img_delete('.$page->ID.');">'.__( "Delete", "gallery" ).'</a><div/>';
@@ -1186,7 +1186,7 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 				<tr valign="top">
 					<th scope="row"><?php _e( 'Display text above the image', 'gallery' ); ?> </th>
 					<td>
-						<input type="checkbox" name="gllr_image_text" value="1" <?php if( $gllr_options["image_text"] == 1 ) echo 'checked="checked"'; ?> /> <?php _e( 'If you want to display text just in a lightbox', 'gallery' ); ?>
+						<input type="checkbox" name="gllr_image_text" value="1" <?php if( $gllr_options["image_text"] == 1 ) echo 'checked="checked"'; ?> /> <?php _e( 'Turn off the checkbox, if you want to display text just in a lightbox', 'gallery' ); ?>
 					</td>
 				</tr>
 				<tr valign="top">
@@ -1287,16 +1287,6 @@ if ( ! function_exists ( 'gllr_add_admin_script' ) ) {
 		<script type="text/javascript">
 		(function($) {
 			$(document).ready(function(){
-				if ( $('input[name="bwsmn_form_email"]').val() == '' )
-					$('.bws_system_info_mata_box .inside').css('display','none');
-
-				$('.bws_system_info_mata_box .handlediv').click( function(){
-					if ( $('.bws_system_info_mata_box .inside').is(":visible") ) {
-						$('.bws_system_info_mata_box .inside').css('display','none');
-					} else {
-						$('.bws_system_info_mata_box .inside').css('display','block');
-					}					
-				});	
 				$('.gllr_image_block img').css('cursor', 'all-scroll' );
 				$('.gllr_order_message').removeClass('hidden');
 				var d=false;
@@ -1351,6 +1341,9 @@ if ( ! function_exists ( 'gllr_admin_head' ) ) {
 		} 
 		wp_enqueue_script( 'jquery-ui-sortable' );	 
 		wp_enqueue_script( 'gllrFileuploaderJs', plugins_url( 'upload/fileuploader.js', __FILE__ ), array( 'jquery' ) );
+
+		if ( isset( $_GET['page'] ) && $_GET['page'] == "bws_plugins" )
+			wp_enqueue_script( 'bws_menu_script', plugins_url( 'js/bws_menu.js' , __FILE__ ) );
 	}
 }
 

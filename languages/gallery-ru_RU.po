@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gallery\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-18 11:38+0300\n"
-"PO-Revision-Date: 2013-07-18 11:38+0300\n"
+"POT-Creation-Date: 2013-08-07 11:08+0300\n"
+"PO-Revision-Date: 2013-08-07 11:09+0300\n"
 "Last-Translator: \n"
 "Language-Team: bestwebsoft.com <plugin@bestwebsoft.com>\n"
 "MIME-Version: 1.0\n"
@@ -104,13 +104,18 @@ msgstr "сортировать изображения"
 msgid "on the plugin settings page ("
 msgstr "на странице настроек плагина ("
 
+#: gallery-plugin.php:273
+#: gallery-plugin.php:479
+msgid "Title"
+msgstr "Название"
+
 #: gallery-plugin.php:275
 msgid "URL"
 msgstr "Ссылка"
 
 #: gallery-plugin.php:275
-msgid "(by click on image <br /> opens a link in a new window)"
-msgstr "(нажатие на изображение открывает <br /> данную ссылку в новом окне браузера)"
+msgid "(by click on image opens a link in a new window)"
+msgstr "(нажатие на изображение открывает данную ссылку в новом окне браузера)"
 
 #: gallery-plugin.php:276
 msgid "This setting is available in Pro version"
@@ -139,10 +144,6 @@ msgstr "Вы можете добавить Галерею на вашу стра
 #: gallery-plugin.php:294
 msgid "If you want to display a short description containing a screenshot and the link to the Single Gallery Page"
 msgstr "Если вы хотите вывести краткую форму галереи со ссылкой на Single Gallery Page"
-
-#: gallery-plugin.php:479
-msgid "Title"
-msgstr "Название"
 
 #: gallery-plugin.php:480
 msgid "Author"
@@ -562,8 +563,8 @@ msgid "Display text above the image"
 msgstr "Отображение текста над изображением"
 
 #: gallery-plugin.php:1189
-msgid "If you want to display text just in a lightbox"
-msgstr "Если вы хотите отображать текст только в лайтбоксе"
+msgid "Turn off the checkbox, if you want to display text just in a lightbox"
+msgstr "Отключите чекбокс, если вы хотите отображать текст только в лайтбоксе"
 
 #: gallery-plugin.php:1193
 msgid "Display the Back link"
@@ -625,17 +626,17 @@ msgstr "FAQ"
 msgid "Support"
 msgstr "Поддержка"
 
-#: gallery-plugin.php:1476
+#: gallery-plugin.php:1469
 #: template/gallery-single-template.php:76
 msgid "Sorry, nothing found."
 msgstr "Извините, ничего не найдено."
 
-#: gallery-plugin.php:1498
-#: template/gallery-single-template.php:101
+#: gallery-plugin.php:1491
+#: template/gallery-single-template.php:102
 msgid "Download high resolution image"
 msgstr "Скачать изображение в высоком разрешении"
 
-#: template/gallery-single-template.php:101
+#: template/gallery-single-template.php:102
 msgid "Image"
 msgstr "Изображение"
 

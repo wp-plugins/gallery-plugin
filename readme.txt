@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
-Tested up to: 3.5.2
-Stable tag: 3.9.4
+Tested up to: 3.6
+Stable tag: 3.9.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,7 +62,6 @@ Dear users, our plugins are available for free download. If you have any questio
 If you notice any bugs in the plugins, you can notify us about it and we'll investigate and fix the issue then. Your request should contain URL of the website, issues description and WordPress admin panel credentials.
 Moreover we can customize the plugin according to your requirements. It's a paid service (as a rule it costs $40, but the price can vary depending on the amount of the necessary changes and their complexity). Please note that we could also include this or that feature (developed for you) in the next release and share with the other users then. 
 We can fix some things for free for the users who provide translation of our plugin into their native language (this should be a new translation of a certain plugin, you can check available translations on the official plugin page).
-
 
 == Installation ==
 
@@ -144,6 +143,11 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 5. PrettyPhoto pop-up window containing the album images.
 
 == Changelog ==
+
+= V3.9.5 - 07.08.2013 =
+* Update : We updated all functionality for wordpress 3.6.
+* Bugfix : We fixed the bug of displaying images on the gallery edit page.
+* Update : The Turkish language file is updated.
 
 = V3.9.4 - 24.07.2013 =
 * NEW : Added an ability to display comments on the gallery template pages.
@@ -308,6 +312,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.9.5 =
+We updated all functionality for wordpress 3.6. We fixed the bug of displaying images on the gallery edit page. The Turkish language file is updated.
 
 = V3.9.4 =
 Added an ability to display comments on the gallery template pages. The Brazilian Portuguese language file is updated. The Turkish language file is added to the plugin.
