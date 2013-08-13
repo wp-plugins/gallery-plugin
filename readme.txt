@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.6
-Stable tag: 3.9.5
+Stable tag: 3.9.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -143,6 +143,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 5. PrettyPhoto pop-up window containing the album images.
 
 == Changelog ==
+
+= V3.9.6 - 13.08.2013 =
+* Update : The Serbian language file is updated.
 
 = V3.9.5 - 07.08.2013 =
 * Update : We updated all functionality for wordpress 3.6.
@@ -312,6 +315,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.9.6 =
+The Serbian language file is updated.
 
 = V3.9.5 =
 We updated all functionality for wordpress 3.6. We fixed the bug of displaying images on the gallery edit page. The Turkish language file is updated.
