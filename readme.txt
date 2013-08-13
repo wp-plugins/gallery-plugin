@@ -48,7 +48,7 @@ This plugin makes it possible to implement as many galleries as you want into yo
 * Persian (fa_IR) (thanks to Einolah Kiamehr and Meisam)
 * Polish (pl_PL) (thanks to Janusz Janczy, Bezcennyczas.pl)
 * Russian (ru_RU)
-* Serbian (sr_RS) (thanks to Radovan Georgijevich)
+* Serbian (sr_RS) (thanks to Radovan Georgijevich, <a href="mailto:andrijanan@webhostinggeeks.com">WebHostingGeeks</a>)
 * Spanish (es) (thanks to Victor Garcia)
 * Turkish (tr) (thanks to <a href="mailto:ce.demirbilek@gmail.com">Ismail Demirbilek</a>)
 * Ukrainian (uk_UA)(thanks to Ted Mosby)
