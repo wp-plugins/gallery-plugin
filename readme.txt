@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.6
-Stable tag: 3.9.6
+Stable tag: 3.9.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,6 +16,7 @@ This plugin makes it possible to implement as many galleries as you want into yo
 
 <a href="http://wordpress.org/extend/plugins/gallery-plugin/faq/" target="_blank">FAQ</a>
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
+<a href="https://bestwebsoft.zendesk.com/entries/25561503-Information-for-our-customers" target="_blank">Сonditions of support</a>
 
 <a href="http://bestwebsoft.com/plugin/gallery-pro/?k=57ad5c0c7fe312e2a45ef9a76f47334c" target="_blank">Upgrade to Pro Version</a>
 
@@ -48,7 +49,7 @@ This plugin makes it possible to implement as many galleries as you want into yo
 * Persian (fa_IR) (thanks to Einolah Kiamehr and Meisam)
 * Polish (pl_PL) (thanks to Janusz Janczy, Bezcennyczas.pl)
 * Russian (ru_RU)
-* Serbian (sr_RS) (thanks to Radovan Georgijevich, <a href="mailto:andrijanan@webhostinggeeks.com">WebHostingGeeks</a>)
+* Serbian (sr_RS) (thanks to <a href="mailto:andrijanan@webhostinggeeks.com">Andrijana Nikolic</a> www.webhostinggeeks.com )
 * Spanish (es) (thanks to Victor Garcia)
 * Turkish (tr) (thanks to <a href="mailto:ce.demirbilek@gmail.com">Ismail Demirbilek</a>)
 * Ukrainian (uk_UA)(thanks to Ted Mosby)
@@ -62,6 +63,8 @@ Dear users, our plugins are available for free download. If you have any questio
 If you notice any bugs in the plugins, you can notify us about it and we'll investigate and fix the issue then. Your request should contain URL of the website, issues description and WordPress admin panel credentials.
 Moreover we can customize the plugin according to your requirements. It's a paid service (as a rule it costs $40, but the price can vary depending on the amount of the necessary changes and their complexity). Please note that we could also include this or that feature (developed for you) in the next release and share with the other users then. 
 We can fix some things for free for the users who provide translation of our plugin into their native language (this should be a new translation of a certain plugin, you can check available translations on the official plugin page).
+
+For more details see <a href="https://bestwebsoft.zendesk.com/entries/25561503-Information-for-our-customers" target="_blank">Сonditions of support</a>.
 
 == Installation ==
 
@@ -143,6 +146,10 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 5. PrettyPhoto pop-up window containing the album images.
 
 == Changelog ==
+
+= V3.9.7 - 26.08.2013 =
+* Update : The French language file is updated. 
+* Bugfix : We added replacing spaces in the file name when uploading.
 
 = V3.9.6 - 13.08.2013 =
 * Update : The Serbian language file is updated.
@@ -315,6 +322,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.9.7 =
+The French language file is updated. We added replacing spaces in the file name when uploading.
 
 = V3.9.6 =
 The Serbian language file is updated.

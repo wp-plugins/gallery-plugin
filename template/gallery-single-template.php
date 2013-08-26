@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	<div id="container" class="site-content">
-		<div role="main" id="content" class="hentry">
+		<div id="content" class="hentry">
 			<?php 
 			global $post, $wp_query;
 			$args = array(

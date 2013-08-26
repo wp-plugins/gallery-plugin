@@ -4,7 +4,7 @@ Plugin Name: Gallery Plugin
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 3.9.6
+Version: 3.9.7
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -25,7 +25,7 @@ License: GPLv2 or later
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-if( ! function_exists( 'gllr_plugin_install' ) ) {
+if ( ! function_exists( 'gllr_plugin_install' ) ) {
 	function gllr_plugin_install() {
 		$filename_1 = WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-template.php';
 		$filename_2 = WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-single-template.php';
@@ -96,10 +96,10 @@ if( ! function_exists( 'gllr_admin_error' ) ) {
 	function gllr_admin_error() {
 		$post = isset( $_REQUEST['post'] ) ? $_REQUEST['post'] : "" ;
 		$post_type = isset( $_REQUEST['post_type'] ) ? $_REQUEST['post_type'] : "" ;
-		if ( ( 'gallery' == get_post_type( $post )  || 'gallery' == $post_type ) && ( ! file_exists( get_stylesheet_directory() .'/gallery-template.php' ) || ! file_exists( get_stylesheet_directory() .'/gallery-single-template.php' ) ) ) {
+		if ( ( 'gallery' == get_post_type( $post ) || 'gallery' == $post_type ) && ( ! file_exists( get_stylesheet_directory() .'/gallery-template.php' ) || ! file_exists( get_stylesheet_directory() .'/gallery-single-template.php' ) ) ) {
 				gllr_plugin_install();
 		}
-		if ( ( 'gallery' == get_post_type( $post )  || 'gallery' == $post_type ) && ( ! file_exists( get_stylesheet_directory() .'/gallery-template.php' ) || ! file_exists( get_stylesheet_directory() .'/gallery-single-template.php' ) ) ) {
+		if ( ( 'gallery' == get_post_type( $post ) || 'gallery' == $post_type ) && ( ! file_exists( get_stylesheet_directory() .'/gallery-template.php' ) || ! file_exists( get_stylesheet_directory() .'/gallery-single-template.php' ) ) ) {
 			echo '<div class="error"><p><strong>'.__( 'The following files "gallery-template.php" and "gallery-single-template.php" were not found in the directory of your theme. Please copy them from the directory `/wp-content/plugins/gallery-plugin/template/` to the directory of your theme for the correct work of the Gallery plugin', 'gallery' ).'</strong></p></div>';
 		}
 	}
@@ -149,7 +149,7 @@ if( ! function_exists( 'post_type_images' ) ) {
 	}
 }
 
-if( ! function_exists( 'addImageAncestorToMenu' ) ) {
+if ( ! function_exists( 'addImageAncestorToMenu' ) ) {
 	function addImageAncestorToMenu( $classes ) {
 		if ( is_singular( 'gallery' ) ) {
 			global $wpdb, $post;
@@ -167,8 +167,7 @@ if( ! function_exists( 'addImageAncestorToMenu' ) ) {
 				if( empty( $parent_id ) ) 
 					return $classes;
 				$post_ancestors = array( $parent_id );
-			}
-			else {
+			} else {
 				$post_ancestors = $post->ancestors;
 			}			
 			
@@ -188,9 +187,11 @@ if( ! function_exists( 'addImageAncestorToMenu' ) ) {
 	}
 }
 
-function init_metaboxes_gallery() {
-	add_meta_box( 'Upload-File', __( 'Upload File', 'gallery' ), 'gllr_post_custom_box', 'gallery', 'normal', 'high' ); 
-	add_meta_box( 'Gallery-Shortcode', __( 'Gallery Shortcode', 'gallery' ), 'gllr_post_shortcode_box', 'gallery', 'side', 'high' ); 
+if ( ! function_exists( 'init_metaboxes_gallery' ) ) {
+	function init_metaboxes_gallery() {
+		add_meta_box( 'Upload-File', __( 'Upload File', 'gallery' ), 'gllr_post_custom_box', 'gallery', 'normal', 'high' ); 
+		add_meta_box( 'Gallery-Shortcode', __( 'Gallery Shortcode', 'gallery' ), 'gllr_post_shortcode_box', 'gallery', 'side', 'high' ); 
+	}
 }
 
 // Create custom meta box for portfolio post type
@@ -205,7 +206,7 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 		$uploader = true;
 		
 		$post_types = get_post_types( array( '_builtin' => false ) );
-		if( ! is_writable ( plugin_dir_path( __FILE__ ) ."upload/files/" ) ) {
+		if ( ! is_writable ( plugin_dir_path( __FILE__ ) ."upload/files/" ) ) {
 			$error = __( "The gallery temp directory (gallery-plugin/upload/files) is not available for record on your webserver. Please use the standard WP functionality to upload images (media library)", 'gallery' );
 			$uploader = false;
 		}
@@ -235,10 +236,9 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 						action: '../wp-admin/admin-ajax.php?action=upload_gallery_image',
 						debug: false,
 						onComplete: function( id, fileName, result ) {
-							if(result.error) {
+							if ( result.error ) {
 								//
-							}
-							else {
+							} else {
 								jQuery('<li></li>').appendTo('#files').html('<img src="<?php echo plugins_url( "upload/files/" , __FILE__ ); ?>'+fileName+'" alt="" /><div style="width:200px">'+fileName+'<br />' +result.width+'x'+result.height+'</div>').addClass('success');
 								jQuery('<input type="hidden" name="undefined[]" id="undefined" value="'+fileName+'" />').appendTo('#hidden');
 							}
@@ -311,13 +311,13 @@ if ( ! function_exists ( 'gllr_save_postdata' ) ) {
 			$uploadDir =  wp_upload_dir( $time );
 
 			while( list( $key, $val ) = each( $array_file_name ) ) {
-				$imagename = $val;
+				$imagename = sanitize_file_name( $val );
 				$uploadFile[] = $uploadDir["path"] ."/" . $imagename;
 			}
 			reset( $array_file_name );
 			require_once( ABSPATH . 'wp-admin/includes/image.php' );
 			while( list( $key, $val ) = each( $array_file_name ) ) {
-				$file_name = $val;
+				$file_name = sanitize_file_name( $val );
 				if( file_exists( $uploadFile[$key] ) ){
 					$uploadFile[$key] = $uploadDir["path"] ."/" . pathinfo( $uploadFile[$key], PATHINFO_FILENAME ).uniqid().".".pathinfo( $uploadFile[$key], PATHINFO_EXTENSION );
 				}
@@ -354,21 +354,20 @@ if ( ! function_exists ( 'gllr_save_postdata' ) ) {
 		if( isset( $_REQUEST['gllr_image_text'] ) ) {
 			$posts = get_posts( array(
 				"showposts"			=> -1,
-				"what_to_show"	=> "posts",
+				"what_to_show"		=> "posts",
 				"post_status"		=> "inherit",
 				"post_type"			=> "attachment",
-				"orderby"				=> "menu_order",
-				"order"					=> "ASC",
-				"post_mime_type"=> "image/jpeg,image/gif,image/jpg,image/png",
+				"orderby"			=> "menu_order",
+				"order"				=> "ASC",
+				"post_mime_type"	=> "image/jpeg,image/gif,image/jpg,image/png",
 				"post_parent"		=> $post->ID ));
 			foreach ( $posts as $page ) {
 				if( isset( $_REQUEST['gllr_image_text'][$page->ID] ) ) {
 					$value = $_REQUEST['gllr_image_text'][$page->ID];
-					if( get_post_meta( $page->ID, $key, FALSE ) ) {
+					if ( get_post_meta( $page->ID, $key, FALSE ) ) {
 						// Custom field has a value and this custom field exists in database
 						update_post_meta( $page->ID, $key, $value );
-					} 
-					elseif( $value ) {
+					} elseif( $value ) {
 						// Custom field has a value, but this custom field does not exist in database
 						add_post_meta( $page->ID, $key, $value );
 					}
@@ -383,38 +382,35 @@ if ( ! function_exists ( 'gllr_save_postdata' ) ) {
 		if( isset( $_REQUEST['gllr_link_url'] ) ) {
 			$posts = get_posts( array(
 				"showposts"			=> -1,
-				"what_to_show"	=> "posts",
+				"what_to_show"		=> "posts",
 				"post_status"		=> "inherit",
 				"post_type"			=> "attachment",
-				"orderby"				=> "menu_order",
-				"order"					=> "ASC",
-				"post_mime_type"=> "image/jpeg,image/gif,image/jpg,image/png",
+				"orderby"			=> "menu_order",
+				"order"				=> "ASC",
+				"post_mime_type"	=> "image/jpeg,image/gif,image/jpg,image/png",
 				"post_parent"		=> $post->ID ));
 			foreach ( $posts as $page ) {
 				if( isset( $_REQUEST['gllr_link_url'][$page->ID] ) ) {
 					$value = $_REQUEST['gllr_link_url'][$page->ID];
-					if( get_post_meta( $page->ID, $link_key, FALSE ) ) {
+					if ( get_post_meta( $page->ID, $link_key, FALSE ) ) {
 						// Custom field has a value and this custom field exists in database
 						update_post_meta( $page->ID, $link_key, $value );
-					} 
-					elseif( $value ) {
+					} elseif( $value ) {
 						// Custom field has a value, but this custom field does not exist in database
 						add_post_meta( $page->ID, $link_key, $value );
 					}
 				}
 			}
 		}
-		if( isset( $_REQUEST['gllr_download_link'] ) ){
-			if( get_post_meta( $post_id, 'gllr_download_link', FALSE ) ) {
+		if ( isset( $_REQUEST['gllr_download_link'] ) ) {
+			if ( get_post_meta( $post_id, 'gllr_download_link', FALSE ) ) {
 				// Custom field has a value and this custom field exists in database
 				update_post_meta( $post_id, 'gllr_download_link', 1 );
-			} 
-			else {
+			} else {
 				// Custom field has a value, but this custom field does not exist in database
 				add_post_meta( $post_id, 'gllr_download_link', 1 );
 			}
-		}
-		else{
+		} else {
 			delete_post_meta( $post_id, 'gllr_download_link' );
 		}
 	}
@@ -422,12 +418,12 @@ if ( ! function_exists ( 'gllr_save_postdata' ) ) {
 
 if ( ! function_exists ( 'gllr_plugin_init' ) ) {
 	function gllr_plugin_init() {
-	// Internationalization, first(!)
+		// Internationalization, first(!)
 		load_plugin_textdomain( 'gallery', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
 	}
 }
 
-if( ! function_exists( 'gllr_custom_permalinks' ) ) {
+if ( ! function_exists( 'gllr_custom_permalinks' ) ) {
     function gllr_custom_permalinks( $rules ) {
         $newrules = array();
         if ( ! isset( $rules['(.+)/gallery/([^/]+)/?$'] ) || ! isset( $rules['/gallery/([^/]+)/?$'] ) ) {
@@ -452,19 +448,19 @@ if( ! function_exists( 'gllr_custom_permalinks' ) ) {
 
 // flush_rules() if our rules are not yet included
 if ( ! function_exists( 'gllr_flush_rules' ) ) {
-		function gllr_flush_rules(){
-				$rules = get_option( 'rewrite_rules' );
-				if ( ! isset( $rules['(.+)/gallery/([^/]+)/?$'] ) || ! isset( $rules['/gallery/([^/]+)/?$'] ) ) {
-						global $wp_rewrite;
-						$wp_rewrite->flush_rules();
-				}
+	function gllr_flush_rules(){
+		$rules = get_option( 'rewrite_rules' );
+		if ( ! isset( $rules['(.+)/gallery/([^/]+)/?$'] ) || ! isset( $rules['/gallery/([^/]+)/?$'] ) ) {
+			global $wp_rewrite;
+			$wp_rewrite->flush_rules();
 		}
+	}
 }
 
 if ( ! function_exists( 'gllr_template_redirect' ) ) {
 	function gllr_template_redirect() { 
 		global $wp_query, $post, $posts;
-		if( 'gallery' == get_post_type() && "" == $wp_query->query_vars["s"] ) {
+		if ( 'gallery' == get_post_type() && "" == $wp_query->query_vars["s"] ) {
 			include( STYLESHEETPATH . '/gallery-single-template.php' );
 			exit(); 
 		}
@@ -475,10 +471,10 @@ if ( ! function_exists( 'gllr_template_redirect' ) ) {
 if ( ! function_exists( 'gllr_change_columns' ) ) {
 	function gllr_change_columns( $cols ) {
 		$cols = array(
-			'cb'				=> '<input type="checkbox" />',
+			'cb'			=> '<input type="checkbox" />',
 			'title'			=> __( 'Title', 'gallery' ),
 			'autor'			=> __( 'Author', 'gallery' ),
-			'gallery'			=> __( 'Photo', 'gallery' ),
+			'gallery'		=> __( 'Photo', 'gallery' ),
 			'status'		=> __( 'Publishing', 'gallery' ),
 			'dates'			=> __( 'Date', 'gallery' )
 		);
@@ -522,21 +518,20 @@ if ( ! function_exists( 'gllr_custom_columns' ) ) {
 
 if ( ! function_exists( 'get_ID_by_slug' ) ) {
 	function get_ID_by_slug( $page_slug ) {
-			$page = get_page_by_path( $page_slug );
-			if ( $page ) {
-					return $page->ID;
-			} 
-			else {
-					return null;
-			}
+		$page = get_page_by_path( $page_slug );
+		if ( $page ) {
+			return $page->ID;
+		} else {
+			return null;
+		}
 	}
 }
 
-if( ! function_exists( 'the_excerpt_max_charlength' ) ) {
+if ( ! function_exists( 'the_excerpt_max_charlength' ) ) {
 	function the_excerpt_max_charlength( $charlength ) {
 		$excerpt = get_the_excerpt();
 		$charlength ++;
-		if( strlen( $excerpt ) > $charlength ) {
+		if ( strlen( $excerpt ) > $charlength ) {
 			$subex = substr( $excerpt, 0, $charlength-5 );
 			$exwords = explode( " ", $subex );
 			$excut = - ( strlen ( $exwords [ count( $exwords ) - 1 ] ) );
@@ -547,14 +542,13 @@ if( ! function_exists( 'the_excerpt_max_charlength' ) ) {
 				echo $subex;
 			}
 			echo "...";
-		} 
-		else {
+		} else {
 			echo $excerpt;
 		}
 	}
 }
 
-if( ! function_exists( 'gllr_page_css_class' ) ) {
+if ( ! function_exists( 'gllr_page_css_class' ) ) {
 	function gllr_page_css_class( $classes, $item ) {
 		global $wpdb;
 		$post_type = get_query_var( 'post_type' );
@@ -604,7 +598,7 @@ if ( ! function_exists( 'bws_add_menu_render' ) ) {
 			array( 'updater\/updater.php', 'Updater', 'http://bestwebsoft.com/plugin/updater-plugin/', 'http://bestwebsoft.com/plugin/updater-plugin/#download', '/wp-admin/plugin-install.php?tab=search&s=updater+bestwebsoft&plugin-search-input=Search+Plugins', 'admin.php?page=updater-options' )
 		);
 		foreach ( $array_plugins as $plugins ) {
-			if( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) ) {
+			if ( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) ) {
 				$array_activate[$count_activate]["title"] = $plugins[1];
 				$array_activate[$count_activate]["link"] = $plugins[2];
 				$array_activate[$count_activate]["href"] = $plugins[3];
@@ -629,10 +623,11 @@ if ( ! function_exists( 'bws_add_menu_render' ) ) {
 		$count_activate_pro = $count_install_pro = $count_recomend_pro = 0;
 		$array_plugins_pro	= array(
 			array( 'gallery-plugin-pro\/gallery-plugin-pro.php', 'Gallery Pro', 'http://bestwebsoft.com/plugin/gallery-pro/?k=382e5ce7c96a6391f5ffa5e116b37fe0', 'http://bestwebsoft.com/plugin/gallery-pro/?k=382e5ce7c96a6391f5ffa5e116b37fe0#purchase', 'admin.php?page=gallery-plugin-pro.php' ),
-			array( 'contact-form-pro\/contact_form_pro.php', 'Contact Form Pro', 'http://bestwebsoft.com/plugin/contact-form-pro/?k=773dc97bb3551975db0e32edca1a6d71', 'http://bestwebsoft.com/plugin/contact-form-pro/?k=773dc97bb3551975db0e32edca1a6d71#purchase', 'admin.php?page=contact_form_pro.php' )
+			array( 'contact-form-pro\/contact_form_pro.php', 'Contact Form Pro', 'http://bestwebsoft.com/plugin/contact-form-pro/?k=773dc97bb3551975db0e32edca1a6d71', 'http://bestwebsoft.com/plugin/contact-form-pro/?k=773dc97bb3551975db0e32edca1a6d71#purchase', 'admin.php?page=contact_form_pro.php' ),
+			array( 'captcha-pro\/captcha_pro.php', 'Captcha Pro', 'http://bestwebsoft.com/plugin/captcha-pro/?k=ff7d65e55e5e7f98f219be9ed711094e', 'http://bestwebsoft.com/plugin/captcha-pro/?k=ff7d65e55e5e7f98f219be9ed711094e#purchase', 'admin.php?page=captcha_pro.php' )
 		);
 		foreach ( $array_plugins_pro as $plugins ) {
-			if( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) ) {
+			if ( 0 < count( preg_grep( "/".$plugins[0]."/", $active_plugins ) ) ) {
 				$array_activate_pro[$count_activate_pro]["title"] = $plugins[1];
 				$array_activate_pro[$count_activate_pro]["link"] = $plugins[2];
 				$array_activate_pro[$count_activate_pro]["href"] = $plugins[3];
@@ -937,41 +932,40 @@ if( ! function_exists( 'register_gllr_settings' ) ) {
 		//var_dump($wp_filesystem);
 
 		$gllr_option_defaults = array(
-			'gllr_custom_size_name'		=> array( 'album-thumb', 'photo-thumb' ),
+			'gllr_custom_size_name'			=> array( 'album-thumb', 'photo-thumb' ),
 			'gllr_custom_size_px'			=> array( array( 120, 80 ), array( 160, 120 ) ),
-			'border_images'						=> 1,
+			'border_images'					=> 1,
 			'border_images_width'			=> 10,
 			'border_images_color'			=> '#F1F1F1',
-			'custom_image_row_count'	=> 3,
-			'start_slideshow'					=> 0,
+			'custom_image_row_count'		=> 3,
+			'start_slideshow'				=> 0,
 			'slideshow_interval'			=> 2000,
-			'order_by'								=> 'menu_order',
-			'order'										=> 'ASC',
+			'order_by'						=> 'menu_order',
+			'order'							=> 'ASC',
 			'read_more_link_text'			=> __( 'See images &raquo;', 'gallery' ),
-			'image_text'							=> 1,
-			'return_link'							=> 0,
+			'image_text'					=> 1,
+			'return_link'					=> 0,
 			'return_link_text'				=> 'Return to all albums',
 			'return_link_page'				=> 'gallery_template_url',
-			'return_link_url'					=> '',
-			'return_link_shortcode'		=> 0
+			'return_link_url'				=> '',
+			'return_link_shortcode'			=> 0
 		);
 
 		// install the option defaults
 		if ( 1 == $wpmu ) {
-			if( ! get_site_option( 'gllr_options' ) ) {
+			if ( ! get_site_option( 'gllr_options' ) ) {
 				add_site_option( 'gllr_options', $gllr_option_defaults, '', 'yes' );
 			}
-		} 
-		else {
-			if( ! get_option( 'gllr_options' ) )
+		} else {
+			if ( ! get_option( 'gllr_options' ) )
 				add_option( 'gllr_options', $gllr_option_defaults, '', 'yes' );
 		}
 
 		// get options from the database
 		if ( 1 == $wpmu )
-		 $gllr_options = get_site_option( 'gllr_options' ); // get options from the database
+			$gllr_options = get_site_option( 'gllr_options' ); // get options from the database
 		else
-		 $gllr_options = get_option( 'gllr_options' );// get options from the database
+			$gllr_options = get_option( 'gllr_options' );// get options from the database
 
 		// array merge incase this version has added new options
 		$gllr_options = array_merge( $gllr_option_defaults, $gllr_options );
@@ -1000,10 +994,7 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 				array( intval( trim( $_REQUEST['gllr_custom_image_size_w_photo'] ) ), intval( trim( $_REQUEST['gllr_custom_image_size_h_photo'] ) ) ) 
 			);
 
-			if( isset( $_REQUEST['gllr_border_images'] ) )
-				$gllr_request_options["border_images"] = 1;
-			else
-				$gllr_request_options["border_images"] = 0;
+			$gllr_request_options["border_images"] = ( isset( $_REQUEST['gllr_border_images'] ) ) ? 1 : 0;
 
 			$gllr_request_options["border_images_width"] = intval( trim( $_REQUEST['gllr_border_images_width'] ) );
 			$gllr_request_options["border_images_color"] = trim( $_REQUEST['gllr_border_images_color'] );
@@ -1012,31 +1003,19 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 			if( $gllr_request_options["custom_image_row_count"] == "" || $gllr_request_options["custom_image_row_count"] < 1 )
 				$gllr_request_options["custom_image_row_count"] = 1;
 
-			if( isset( $_REQUEST['gllr_start_slideshow'] ) )
-				$gllr_request_options["start_slideshow"] = 1;
-			else
-				$gllr_request_options["start_slideshow"] = 0;
+			$gllr_request_options["start_slideshow"] = ( isset( $_REQUEST['gllr_start_slideshow'] ) ) ? 1 : 0;
+
 			$gllr_request_options["slideshow_interval"] = $_REQUEST['gllr_slideshow_interval'];
 			$gllr_request_options["order_by"] = $_REQUEST['gllr_order_by'];
 			$gllr_request_options["order"] = $_REQUEST['gllr_order'];
 			
-			if( isset( $_REQUEST['gllr_image_text'] ) )
-				$gllr_request_options["image_text"] = 1;
-			else
-				$gllr_request_options["image_text"] = 0;
-
-			if( isset( $_REQUEST['gllr_return_link'] ) )
-				$gllr_request_options["return_link"] = 1;
-			else
-				$gllr_request_options["return_link"] = 0;
+			$gllr_request_options["image_text"] = ( isset( $_REQUEST['gllr_image_text'] ) ) ? 1 : 0;
+			$gllr_request_options["return_link"] = ( isset( $_REQUEST['gllr_return_link'] ) ) ? 1 : 0;
 
 			$gllr_request_options["return_link_page"] = $_REQUEST['gllr_return_link_page'];
 			$gllr_request_options["return_link_url"] = strpos( $_REQUEST['gllr_return_link_url'], "http:" ) !== false ? trim( $_REQUEST['gllr_return_link_url'] ) : 'http://'.trim( $_REQUEST['gllr_return_link_url'] );
 
-			if( isset( $_REQUEST['gllr_return_link_shortcode'] ) )
-				$gllr_request_options["return_link_shortcode"] = 1;
-			else
-				$gllr_request_options["return_link_shortcode"] = 0;
+			$gllr_request_options["return_link_shortcode"] = ( isset( $_REQUEST['gllr_return_link_shortcode'] ) ) ? 1 : 0;
 
 			$gllr_request_options["return_link_text"] = $_REQUEST['gllr_return_link_text'];
 			$gllr_request_options["read_more_link_text"] = $_REQUEST['gllr_read_more_link_text'];			
@@ -1050,7 +1029,7 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 		}
 
 		if ( ! file_exists( get_stylesheet_directory() .'/gallery-template.php' ) || ! file_exists( get_stylesheet_directory() .'/gallery-single-template.php' ) ) {
-				gllr_plugin_install();
+			gllr_plugin_install();
 		}
 		if ( ! file_exists( get_stylesheet_directory() .'/gallery-template.php' ) || ! file_exists( get_stylesheet_directory() .'/gallery-single-template.php' ) ) {
 			$error .= __( 'The following files "gallery-template.php" and "gallery-single-template.php" were not found in the directory of your theme. Please copy them from the directory `/wp-content/plugins/gallery-plugin/template/` to the directory of your theme for the correct work of the Gallery plugin', 'gallery' );
@@ -1250,7 +1229,7 @@ if( ! function_exists( 'gllr_settings_page' ) ) {
 	<?php } 
 }
 
-if( ! function_exists( 'gllr_register_plugin_links' ) ) {
+if ( ! function_exists( 'gllr_register_plugin_links' ) ) {
 	function gllr_register_plugin_links( $links, $file ) {
 		$base = plugin_basename( __FILE__ );
 		if ( $file == $base ) {
@@ -1262,7 +1241,7 @@ if( ! function_exists( 'gllr_register_plugin_links' ) ) {
 	}
 }
 
-if( ! function_exists( 'gllr_plugin_action_links' ) ) {
+if ( ! function_exists( 'gllr_plugin_action_links' ) ) {
 	function gllr_plugin_action_links( $links, $file ) {
 			//Static so we don't call plugin_basename on every plugin row.
 		static $this_plugin;
@@ -1280,7 +1259,7 @@ if ( ! function_exists ( 'gllr_add_admin_script' ) ) {
 	function gllr_add_admin_script() { 
 		global $wp_version;
 
-		if( $wp_version >= 3.5 && isset( $_REQUEST['page'] ) && $_REQUEST['page'] == 'gallery-plugin.php' ) { ?>
+		if ( $wp_version >= 3.5 && isset( $_REQUEST['page'] ) && $_REQUEST['page'] == 'gallery-plugin.php' ) { ?>
 			<link rel="stylesheet" media="screen" type="text/css" href="<?php echo plugins_url( 'minicolors/jquery.miniColors.css', __FILE__ ); ?>" />
 			<script type="text/javascript" src="<?php echo plugins_url( 'minicolors/jquery.miniColors.js', __FILE__ ); ?>"></script>
 		<?php } ?>
@@ -1336,7 +1315,7 @@ if ( ! function_exists ( 'gllr_admin_head' ) ) {
 		wp_enqueue_style( 'gllrFileuploaderCss', plugins_url( 'upload/fileuploader.css', __FILE__ ) );
 		wp_enqueue_style( 'farbtastic' );
 		wp_enqueue_script( 'jquery' );
-		if( $wp_version < 3.5 ) {
+		if ( $wp_version < 3.5 ) {
 			wp_enqueue_script( 'farbtastic' );
 		} 
 		wp_enqueue_script( 'jquery-ui-sortable' );	 
@@ -1505,168 +1484,168 @@ if ( ! function_exists ( 'gllr_shortcode' ) ) {
 	}
 }
 
-if( ! function_exists( 'upload_gallery_image' ) ){
-		function upload_gallery_image() {
-				class qqUploadedFileXhr {
-					/**
-					 * Save the file to the specified path
-					 * @return boolean TRUE on success
-					 */
-					function save( $path ) {
-							$input = fopen( "php://input", "r" );
-							$temp = tmpfile();
-							$realSize = stream_copy_to_stream( $input, $temp );
-							fclose( $input );
-						 
-							if ( $realSize != $this->getSize() ){            
-									return false;
-							}
-					
-							$target = fopen( $path, "w" );        
-							fseek( $temp, 0, SEEK_SET );
-							stream_copy_to_stream( $temp, $target );
-							fclose( $target );
-					
-							return true;
-					}
-					function getName() {
-							return $_GET['qqfile'];
-					}
-					function getSize() {
-							if ( isset( $_SERVER["CONTENT_LENGTH"] ) ){
-									return (int)$_SERVER["CONTENT_LENGTH"];            
-							} else {
-									throw new Exception( 'Getting content length is not supported.' );
-							}      
-					}   
-			}
-
-			/**
-			 * Handle file uploads via regular form post (uses the $_FILES array)
-			 */
-			class qqUploadedFileForm {  
-					/**
-					 * Save the file to the specified path
-					 * @return boolean TRUE on success
-					 */
-					function save($path) {
-							if( ! move_uploaded_file( $_FILES['qqfile']['tmp_name'], $path ) ){
-							    return false;
-							}
-							return true;
-					}
-					function getName() {
-							return $_FILES['qqfile']['name'];
-					}
-					function getSize() {
-							return $_FILES['qqfile']['size'];
-					}
-			}
-
-			class qqFileUploader {
-					private $allowedExtensions = array();
-					private $sizeLimit = 10485760;
-					private $file;
-
-					function __construct( array $allowedExtensions = array(), $sizeLimit = 10485760 ){        
-							$allowedExtensions = array_map( "strtolower", $allowedExtensions );
-							    
-							$this->allowedExtensions = $allowedExtensions;        
-							$this->sizeLimit = $sizeLimit;
-							
-							//$this->checkServerSettings();       
-
-							if ( isset( $_GET['qqfile'] ) ) {
-							    $this->file = new qqUploadedFileXhr();
-							} elseif ( isset( $_FILES['qqfile'] ) ) {
-							    $this->file = new qqUploadedFileForm();
-							} else {
-							    $this->file = false; 
-							}
+if ( ! function_exists( 'upload_gallery_image' ) ){
+	function upload_gallery_image() {
+			class qqUploadedFileXhr {
+				/**
+				 * Save the file to the specified path
+				 * @return boolean TRUE on success
+				 */
+				function save( $path ) {
+					$input = fopen( "php://input", "r" );
+					$temp = tmpfile();
+					$realSize = stream_copy_to_stream( $input, $temp );
+					fclose( $input );
+				 
+					if ( $realSize != $this->getSize() ){            
+						return false;
 					}
 			
-					private function checkServerSettings(){        
-							$postSize = $this->toBytes( ini_get( 'post_max_size' ) );
-							$uploadSize = $this->toBytes( ini_get( 'upload_max_filesize' ) );        
-							
-							if ($postSize < $this->sizeLimit || $uploadSize < $this->sizeLimit){
-							    $size = max( 1, $this->sizeLimit / 1024 / 1024 ) . 'M';             
-							    die( "{error:'increase post_max_size and upload_max_filesize to $size'}" );    
-							}        
-					}
+					$target = fopen( $path, "w" );        
+					fseek( $temp, 0, SEEK_SET );
+					stream_copy_to_stream( $temp, $target );
+					fclose( $target );
 			
-					private function toBytes( $str ){
-							$val = trim( $str );
-							$last = strtolower( $str[strlen( $str )-1] );
-							switch( $last ) {
-							    case 'g': $val *= 1024;
-							    case 'm': $val *= 1024;
-							    case 'k': $val *= 1024;        
-							}
-							return $val;
-					}
-			
-					/**
-					 * Returns array('success'=>true) or array('error'=>'error message')
-					 */
-					function handleUpload( $uploadDirectory, $replaceOldFile = FALSE ){
-							if ( ! is_writable( $uploadDirectory ) ){
-							    return "{error:'Server error. Upload directory isn't writable.'}";
-							}
-							
-							if ( ! $this->file ){
-							    return "{error:'No files were uploaded.'}";
-							}
-							
-							$size = $this->file->getSize();
-							
-							if ( $size == 0 ) {
-							    return "{error:'File is empty'}";
-							}
-							
-							if ( $size > $this->sizeLimit ) {
-							    return "{error:'File is too large'}";
-							}
-							
-							$pathinfo = pathinfo( $this->file->getName() );
-							$ext = $pathinfo['extension'];
-							$filename = str_replace( ".".$ext, "", $pathinfo['basename'] );
-							//$filename = md5(uniqid());
-
-							if( $this->allowedExtensions && ! in_array( strtolower( $ext ), $this->allowedExtensions ) ){
-							    $these = implode( ', ', $this->allowedExtensions );
-							    return "{error:'File has an invalid extension, it should be one of $these .'}";
-							}
-							
-							if( ! $replaceOldFile ){
-							    /// don't overwrite previous files that were uploaded
-							    while ( file_exists( $uploadDirectory . $filename . '.' . $ext ) ) {
-							        $filename .= rand( 10, 99 );
-							    }
-							}
-			
-							if ( $this->file->save( $uploadDirectory . $filename . '.' . $ext ) ){						 
-									list( $width, $height, $type, $attr ) = getimagesize( $uploadDirectory . $filename . '.' . $ext );
-							    return "{success:true,width:".$width.",height:".$height."}";
-							} else {
-							    return "{error:'Could not save uploaded file. The upload was cancelled, or server error encountered'}";
-							}
-							
-					}    
-			}
-
-			// list of valid extensions, ex. array("jpeg", "xml", "bmp")
-			$allowedExtensions = array( "jpeg", "jpg", "gif", "png" );
-			// max file size in bytes
-			$sizeLimit = 10 * 1024 * 1024;
-
-			$uploader = new qqFileUploader( $allowedExtensions, $sizeLimit );
-			$result = $uploader->handleUpload( plugin_dir_path( __FILE__ ).'upload/files/' );
-
-			// to pass data through iframe you will need to encode all html tags
-			echo $result;
-			die(); // this is required to return a proper result
+					return true;
+				}
+				function getName() {
+					return sanitize_file_name( $_GET['qqfile'] );
+				}
+				function getSize() {
+					if ( isset( $_SERVER["CONTENT_LENGTH"] ) ){
+						return (int)$_SERVER["CONTENT_LENGTH"];            
+					} else {
+						throw new Exception( 'Getting content length is not supported.' );
+					}      
+				}   
 		}
+
+		/**
+		 * Handle file uploads via regular form post (uses the $_FILES array)
+		 */
+		class qqUploadedFileForm {  
+			/**
+			 * Save the file to the specified path
+			 * @return boolean TRUE on success
+			 */
+			function save($path) {
+				if( ! move_uploaded_file( $_FILES['qqfile']['tmp_name'], $path ) ){
+				    return false;
+				}
+				return true;
+			}
+			function getName() {
+				return sanitize_file_name( $_FILES['qqfile']['name'] );
+			}
+			function getSize() {
+				return $_FILES['qqfile']['size'];
+			}
+		}
+
+		class qqFileUploader {
+			private $allowedExtensions = array();
+			private $sizeLimit = 10485760;
+			private $file;
+
+			function __construct( array $allowedExtensions = array(), $sizeLimit = 10485760 ){        
+				$allowedExtensions = array_map( "strtolower", $allowedExtensions );
+				    
+				$this->allowedExtensions = $allowedExtensions;        
+				$this->sizeLimit = $sizeLimit;
+				
+				//$this->checkServerSettings();       
+
+				if ( isset( $_GET['qqfile'] ) ) {
+				    $this->file = new qqUploadedFileXhr();
+				} elseif ( isset( $_FILES['qqfile'] ) ) {
+				    $this->file = new qqUploadedFileForm();
+				} else {
+				    $this->file = false; 
+				}
+			}
+	
+			private function checkServerSettings(){        
+				$postSize = $this->toBytes( ini_get( 'post_max_size' ) );
+				$uploadSize = $this->toBytes( ini_get( 'upload_max_filesize' ) );        
+				
+				if ( $postSize < $this->sizeLimit || $uploadSize < $this->sizeLimit ){
+				    $size = max( 1, $this->sizeLimit / 1024 / 1024 ) . 'M';             
+				    die( "{error:'increase post_max_size and upload_max_filesize to $size'}" );    
+				}        
+			}
+	
+			private function toBytes( $str ) {
+				$val = trim( $str );
+				$last = strtolower( $str[strlen( $str )-1] );
+				switch( $last ) {
+				    case 'g': $val *= 1024;
+				    case 'm': $val *= 1024;
+				    case 'k': $val *= 1024;        
+				}
+				return $val;
+			}
+	
+			/**
+			 * Returns array('success'=>true) or array('error'=>'error message')
+			 */
+			function handleUpload( $uploadDirectory, $replaceOldFile = FALSE ){
+				if ( ! is_writable( $uploadDirectory ) ){
+				    return "{error:'Server error. Upload directory isn't writable.'}";
+				}
+				
+				if ( ! $this->file ){
+				    return "{error:'No files were uploaded.'}";
+				}
+				
+				$size = $this->file->getSize();
+				
+				if ( $size == 0 ) {
+				    return "{error:'File is empty'}";
+				}
+				
+				if ( $size > $this->sizeLimit ) {
+				    return "{error:'File is too large'}";
+				}
+				
+				$pathinfo = pathinfo( $this->file->getName() );
+				$ext = $pathinfo['extension'];
+				$filename = str_replace( ".".$ext, "", $pathinfo['basename'] );
+				//$filename = md5(uniqid());
+
+				if( $this->allowedExtensions && ! in_array( strtolower( $ext ), $this->allowedExtensions ) ){
+				    $these = implode( ', ', $this->allowedExtensions );
+				    return "{error:'File has an invalid extension, it should be one of $these .'}";
+				}
+				
+				if( ! $replaceOldFile ){
+				    /// don't overwrite previous files that were uploaded
+				    while ( file_exists( $uploadDirectory . $filename . '.' . $ext ) ) {
+				        $filename .= rand( 10, 99 );
+				    }
+				}
+
+				if ( $this->file->save( $uploadDirectory . $filename . '.' . $ext ) ){						 
+						list( $width, $height, $type, $attr ) = getimagesize( $uploadDirectory . $filename . '.' . $ext );
+				    return "{success:true,width:".$width.",height:".$height."}";
+				} else {
+				    return "{error:'Could not save uploaded file. The upload was cancelled, or server error encountered'}";
+				}
+					
+			}
+		}
+
+		// list of valid extensions, ex. array("jpeg", "xml", "bmp")
+		$allowedExtensions = array( "jpeg", "jpg", "gif", "png" );
+		// max file size in bytes
+		$sizeLimit = 10 * 1024 * 1024;
+
+		$uploader = new qqFileUploader( $allowedExtensions, $sizeLimit );
+		$result = $uploader->handleUpload( plugin_dir_path( __FILE__ ) . 'upload/files/' );
+
+		// to pass data through iframe you will need to encode all html tags
+		echo $result;
+		die(); // this is required to return a proper result
+	}
 }
 
 if( ! function_exists( 'gllr_add_for_ios' ) ) {
@@ -1691,7 +1670,7 @@ if ( ! function_exists ( 'gllr_plugin_banner' ) ) {
 		global $hook_suffix;			
 		if ( $hook_suffix == 'plugins.php' ) {              
 	       	echo '<div class="updated" style="padding: 0; margin: 0; border: none; background: none;">
-	       		<script type="text/javascript" src="'.plugins_url( 'js/jquery.cookie.js', __FILE__ ).'"></script>
+	       		<script type="text/javascript" src="' . plugins_url( 'js/jquery.cookie.js', __FILE__ ).'"></script>
 				<script type="text/javascript">		
 					(function($){
 						$(document).ready(function(){		

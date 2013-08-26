@@ -6,7 +6,7 @@ Template Name: Gallery Template
 
 <?php get_header(); ?>
 	<div id="container" class="site-content">
-		<div role="main" id="content" class="hentry">
+		<div id="content" class="hentry">
 			<h1 class="home_page_title entry-header"><?php the_title(); ?></h1>
 			<?php if ( function_exists( 'pdfprnt_show_buttons_for_custom_post_type' ) ) echo pdfprnt_show_buttons_for_custom_post_type( 'post_type=gallery&orderby=post_date' ); ?>
 			<div class="gallery_box entry-content">
