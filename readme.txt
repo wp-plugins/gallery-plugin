@@ -144,7 +144,7 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 
 == Changelog ==
 
-= V3.9.8 - 04.09.2013 =
+= V3.9.8 - 04.09.2013 = 
 * Update : Function for displaying BWS plugins section placed in a separate file and has own language files.
 
 = V3.9.7 - 26.08.2013 =
