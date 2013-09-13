@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
-Tested up to: 3.6
-Stable tag: 3.9.8
+Tested up to: 3.6.1
+Stable tag: 3.9.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,8 @@ This plugin allows you to implement a gallery page into your website.
 
 == Description ==
 
-This plugin makes it possible to implement as many galleries as you want into your website. You can add multiple pictures and description for each gallery, show them all at one page, view each one separately. Moreover, you can upload HQ images.
+This plugin makes it possible to implement as many galleries as you want into your website. You can add multiple pictures and description for each gallery, show them all at one page, view each one separately. Moreover, you can upload HQ images. Regular updates and simplicity of usage along with efficient functionality make it a perfect choice for your site to have an appealing look. 
+There is also a premium version of the plugin with more useful features available.
 
 <a href="http://wordpress.org/extend/plugins/gallery-plugin/faq/" target="_blank">FAQ</a>
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
@@ -125,7 +126,7 @@ Just set an order and click the 'Save' button.
 <html <?php language_attributes(); ?>>
 with
 <html>
-2. Removed the "direction:rtl" from the css of the body, and moved it to the main wrapper. For example, in your theme CSS file (usually it's rtl.css) remove the following lines:
+2. Remove the "direction:rtl" from the css of the body, and move it to the main wrapper. For example, in your theme CSS file (usually it's rtl.css) remove the following lines:
 body {
     direction:rtl;
 }
@@ -144,7 +145,11 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 
 == Changelog ==
 
-= V3.9.8 - 04.09.2013 = 
+= V3.9.9 - 19.09.2013 =
+* Update : The French language file is updated. 
+* Update : We updated all functionality for wordpress 3.6.1.
+
+= V3.9.8 - 04.09.2013 =
 * Update : Function for displaying BWS plugins section placed in a separate file and has own language files.
 
 = V3.9.7 - 26.08.2013 =
@@ -322,6 +327,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V3.9.9 =
+The French language file is updated.  We updated all functionality for wordpress 3.6.1.
 
 = V3.9.8 =
 Function for displaying BWS plugins section placed in a separate file and has own language files.

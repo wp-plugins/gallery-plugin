@@ -198,15 +198,12 @@ div.gllr_pro_version {
     background: #FFFFFF;
 }
 .gllr_pro_version_tooltip:before {
-    content: "";
-    position: absolute;
     width: 0;
     height: 0;
-    border-width: 10px;
-    border-style: solid;
-    border-color: transparent #FFFFFF transparent transparent;
-   	top: 16px;
-    left: -18px;
+    content: url("../images/arrow.png");
+    left: -14px;
+    position: absolute;
+    top: 12px;
 }
 table.gllr_pro_version {
 	width: auto !important;
