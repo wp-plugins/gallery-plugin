@@ -145,7 +145,7 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 
 == Changelog ==
 
-= V3.9.9 - 19.09.2013 =
+= V3.9.9 - 13.09.2013 =
 * Update : The French language file is updated. 
 * Update : We updated all functionality for wordpress 3.6.1.
 
