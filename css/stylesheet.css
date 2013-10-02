@@ -37,6 +37,9 @@
 .bws_system_info_meta_box {
     width: 850px;
 }
+.bws_system_info_meta_box .hndle {
+    cursor: pointer !important;
+}
 .bws_system_info {
     float: left;
     margin-right: 10px;

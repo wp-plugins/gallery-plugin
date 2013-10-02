@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gallery\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-04 17:34+0300\n"
-"PO-Revision-Date: 2013-09-04 17:34+0300\n"
+"POT-Creation-Date: 2013-10-02 12:13+0300\n"
+"PO-Revision-Date: 2013-10-02 12:13+0300\n"
 "Last-Translator: \n"
 "Language-Team: Josef Sukdol <josef.sukdol@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: gallery-plugin.php:101
-#: gallery-plugin.php:695
+#: gallery-plugin.php:696
 msgid "The following files \"gallery-template.php\" and \"gallery-single-template.php\" were not found in the directory of your theme. Please copy them from the directory `/wp-content/plugins/gallery-plugin/template/` to the directory of your theme for the correct work of the Gallery plugin"
 msgstr ""
 
@@ -96,7 +96,7 @@ msgid "Please make a choice"
 msgstr ""
 
 #: gallery-plugin.php:227
-#: gallery-plugin.php:808
+#: gallery-plugin.php:809
 #, fuzzy
 msgid "Sort images by"
 msgstr "Počet náhledů zobrazených v jedné řádce"
@@ -166,7 +166,7 @@ msgid "Publishing"
 msgstr "Veřejné"
 
 #: gallery-plugin.php:479
-#: gallery-plugin.php:812
+#: gallery-plugin.php:813
 msgid "Date"
 msgstr "Datum"
 
@@ -175,274 +175,274 @@ msgstr "Datum"
 msgid "See images &raquo;"
 msgstr "Zobrazit obsah galerie &raquo;"
 
-#: gallery-plugin.php:688
+#: gallery-plugin.php:689
 #, fuzzy
 msgid "Settings are saved"
 msgstr "Nastavení uložena."
 
-#: gallery-plugin.php:701
+#: gallery-plugin.php:702
 #, fuzzy
 msgid "Gallery Settings"
 msgstr "Nastavení galerie"
 
-#: gallery-plugin.php:704
+#: gallery-plugin.php:705
 msgid "If you would like to add a Single Gallery to your page or post, just copy and paste this shortcode into your post or page:"
 msgstr ""
 
-#: gallery-plugin.php:708
+#: gallery-plugin.php:709
 #, fuzzy
 msgid "Image size for the album cover"
 msgstr "Размер для "
 
-#: gallery-plugin.php:710
-#: gallery-plugin.php:718
-#: gallery-plugin.php:731
+#: gallery-plugin.php:711
+#: gallery-plugin.php:719
+#: gallery-plugin.php:732
 #, fuzzy
 msgid "Image size"
 msgstr "Název rozměru"
 
-#: gallery-plugin.php:711
-#: gallery-plugin.php:719
+#: gallery-plugin.php:712
+#: gallery-plugin.php:720
 msgid "Width (in px)"
 msgstr "Šířka (v px)"
 
-#: gallery-plugin.php:712
-#: gallery-plugin.php:720
+#: gallery-plugin.php:713
+#: gallery-plugin.php:721
 msgid "Height (in px)"
 msgstr "Výška (v px)"
 
-#: gallery-plugin.php:716
+#: gallery-plugin.php:717
 #, fuzzy
 msgid "Gallery image size"
 msgstr "Galerie"
 
-#: gallery-plugin.php:724
+#: gallery-plugin.php:725
 #, fuzzy
 msgid "WordPress will create a new thumbnail with the specified dimensions when you upload a new photo."
 msgstr "WordPress vytvoří kopii náhledu obrázku v zadaných rozměrech při nahrání nového obrázku."
 
-#: gallery-plugin.php:729
+#: gallery-plugin.php:730
 msgid "Gallery image size in the lightbox"
 msgstr ""
 
-#: gallery-plugin.php:732
+#: gallery-plugin.php:733
 #, fuzzy
 msgid "Max width (in px)"
 msgstr "Šířka (v px)"
 
-#: gallery-plugin.php:733
+#: gallery-plugin.php:734
 #, fuzzy
 msgid "Max height (in px)"
 msgstr "Výška (v px)"
 
-#: gallery-plugin.php:734
+#: gallery-plugin.php:735
 msgid "Display a full size image in the lightbox"
 msgstr ""
 
-#: gallery-plugin.php:738
+#: gallery-plugin.php:739
 msgid "Crop position"
 msgstr ""
 
-#: gallery-plugin.php:740
+#: gallery-plugin.php:741
 msgid "Horizontal"
 msgstr ""
 
-#: gallery-plugin.php:742
+#: gallery-plugin.php:743
 msgid "left"
 msgstr ""
 
-#: gallery-plugin.php:743
-#: gallery-plugin.php:750
+#: gallery-plugin.php:744
+#: gallery-plugin.php:751
 msgid "center"
 msgstr ""
 
-#: gallery-plugin.php:744
+#: gallery-plugin.php:745
 msgid "right"
 msgstr ""
 
-#: gallery-plugin.php:747
+#: gallery-plugin.php:748
 msgid "Vertical"
 msgstr ""
 
-#: gallery-plugin.php:749
+#: gallery-plugin.php:750
 msgid "top"
 msgstr ""
 
-#: gallery-plugin.php:751
+#: gallery-plugin.php:752
 msgid "bottom"
 msgstr ""
 
-#: gallery-plugin.php:756
+#: gallery-plugin.php:757
 msgid "Lightbox background"
 msgstr ""
 
-#: gallery-plugin.php:758
+#: gallery-plugin.php:759
 msgid "Default"
 msgstr ""
 
-#: gallery-plugin.php:759
+#: gallery-plugin.php:760
 msgid "Background transparency (from 0 to 1)"
 msgstr ""
 
-#: gallery-plugin.php:761
+#: gallery-plugin.php:762
 msgid "Select a background color"
 msgstr ""
 
-#: gallery-plugin.php:763
+#: gallery-plugin.php:764
 msgid "Background color"
 msgstr ""
 
-#: gallery-plugin.php:770
-#: gallery-plugin.php:879
+#: gallery-plugin.php:771
+#: gallery-plugin.php:882
 msgid "This functionality is available in the Pro version of the plugin. For more details, please follow the link"
 msgstr ""
 
-#: gallery-plugin.php:777
+#: gallery-plugin.php:778
 msgid "Images with border"
 msgstr ""
 
-#: gallery-plugin.php:780
+#: gallery-plugin.php:781
 msgid "Border width in px, just numbers"
 msgstr ""
 
-#: gallery-plugin.php:782
-#: gallery-plugin.php:784
+#: gallery-plugin.php:783
+#: gallery-plugin.php:785
 msgid "Select a border color"
 msgstr ""
 
-#: gallery-plugin.php:790
+#: gallery-plugin.php:791
 #, fuzzy
 msgid "Number of images in the row"
 msgstr "Počet náhledů zobrazených v jedné řádce"
 
-#: gallery-plugin.php:796
+#: gallery-plugin.php:797
 msgid "Start slideshow"
 msgstr ""
 
-#: gallery-plugin.php:802
+#: gallery-plugin.php:803
 msgid "Slideshow interval"
 msgstr ""
 
-#: gallery-plugin.php:810
+#: gallery-plugin.php:811
 msgid "Attachment ID"
 msgstr ""
 
-#: gallery-plugin.php:811
+#: gallery-plugin.php:812
 #, fuzzy
 msgid "Image Name"
 msgstr "Název rozměru"
 
-#: gallery-plugin.php:813
+#: gallery-plugin.php:814
 msgid "Sorting order (the input field for sorting order in the Insert / Upload Media Gallery dialog)"
 msgstr ""
 
-#: gallery-plugin.php:814
+#: gallery-plugin.php:815
 msgid "Random"
 msgstr ""
 
-#: gallery-plugin.php:818
+#: gallery-plugin.php:819
 #, fuzzy
 msgid "Sort images"
 msgstr "Počet náhledů zobrazených v jedné řádce"
 
-#: gallery-plugin.php:820
+#: gallery-plugin.php:821
 msgid "ASC (ascending order from lowest to highest values - 1, 2, 3; a, b, c)"
 msgstr ""
 
-#: gallery-plugin.php:821
+#: gallery-plugin.php:822
 msgid "DESC (descending order from highest to lowest values - 3, 2, 1; c, b, a)"
 msgstr ""
 
-#: gallery-plugin.php:825
+#: gallery-plugin.php:826
 msgid "Display text above the image"
 msgstr ""
 
-#: gallery-plugin.php:827
+#: gallery-plugin.php:828
 msgid "Turn off the checkbox, if you want to display text just in a lightbox"
 msgstr ""
 
-#: gallery-plugin.php:831
+#: gallery-plugin.php:832
 msgid "Display the Back link"
 msgstr ""
 
-#: gallery-plugin.php:837
+#: gallery-plugin.php:838
 msgid "Display the Back link in the shortcode"
 msgstr ""
 
-#: gallery-plugin.php:843
+#: gallery-plugin.php:844
 msgid "The Back link text"
 msgstr ""
 
-#: gallery-plugin.php:849
+#: gallery-plugin.php:850
 msgid "The Back link URL"
 msgstr ""
 
-#: gallery-plugin.php:851
+#: gallery-plugin.php:852
 msgid "Gallery page (Page with Gallery Template)"
 msgstr ""
 
-#: gallery-plugin.php:853
+#: gallery-plugin.php:854
 msgid "(Full URL to custom page)"
 msgstr ""
 
-#: gallery-plugin.php:857
+#: gallery-plugin.php:858
 msgid "The Read More link text"
 msgstr ""
 
-#: gallery-plugin.php:865
+#: gallery-plugin.php:866
 msgid "Display Like buttons in the lightbox"
 msgstr ""
 
-#: gallery-plugin.php:867
+#: gallery-plugin.php:868
 msgid "FaceBook"
 msgstr ""
 
-#: gallery-plugin.php:868
+#: gallery-plugin.php:869
 #, fuzzy
 msgid "Twitter"
 msgstr "Název"
 
-#: gallery-plugin.php:869
+#: gallery-plugin.php:870
 msgid "Pinterest"
 msgstr ""
 
-#: gallery-plugin.php:870
+#: gallery-plugin.php:871
 msgid "Google +1"
 msgstr ""
 
-#: gallery-plugin.php:873
+#: gallery-plugin.php:875
 #, fuzzy
 msgid "Slug for gallery item"
 msgstr "Rozměry náhledu obrázku v albu"
 
-#: gallery-plugin.php:875
+#: gallery-plugin.php:877
 msgid "for any structure of permalinks except the default structure"
 msgstr ""
 
-#: gallery-plugin.php:887
+#: gallery-plugin.php:890
 msgid "Save Changes"
 msgstr "Uložit změny"
 
-#: gallery-plugin.php:899
-#: gallery-plugin.php:914
+#: gallery-plugin.php:902
+#: gallery-plugin.php:917
 msgid "Settings"
 msgstr "Nastavení"
 
-#: gallery-plugin.php:900
+#: gallery-plugin.php:903
 msgid "FAQ"
 msgstr "FAQ "
 
-#: gallery-plugin.php:901
+#: gallery-plugin.php:904
 msgid "Support"
 msgstr "Podpora"
 
-#: gallery-plugin.php:1111
+#: gallery-plugin.php:1114
 #: template/gallery-single-template.php:76
 #, fuzzy
 msgid "Sorry, nothing found."
 msgstr "Omlouvám se - nic nenalezeno."
 
-#: gallery-plugin.php:1133
+#: gallery-plugin.php:1136
 #: template/gallery-single-template.php:102
 msgid "Download high resolution image"
 msgstr ""
