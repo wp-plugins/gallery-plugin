@@ -87,10 +87,10 @@ ul.gallery {
 	clear:both;
 	height:0;
 }
-.gllr_image_text, .gllr_link_text {
+.gllr_image_text {
 	width:150px;
 }
-.gllr_link_text {
+.gllr_link_text, .gllr_image_alt_tag {
 	width:170px;
 }
 .gllr_order_text {

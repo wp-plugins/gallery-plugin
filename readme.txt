@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.6.1
-Stable tag: 4.0.1
+Stable tag: 4.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,10 +28,11 @@ There is also a premium version of the plugin with more useful features availabl
 * Actions: Upoad any number of photos to each album in the gallery.
 * Actions: Add Single Gallery to your page or post using a shortcode.
 * Actions: Attachment sorting settings in the admin panel.
-* Caption: Add a caption to each photo in the album.
+* Caption: Add a caption and alt tag to each photo in the album.
 * Display: Change the size of album cover thumbnails and photos in the album. 
 * Display: Choose a number of pictures to display in one row in the gallery album.
 * Slideshow: View pictures as a slide show and in a full size.
+* Ability: The ability to add comments to a Single Gallery.
 
 = Translation =
 
@@ -144,6 +145,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 5. PrettyPhoto pop-up window containing the album images.
 
 == Changelog ==
+
+= V4.0.2 - 11.10.2013 =
+* NEW : Added Alt tag field for each image in the gallery.
 
 = V4.0.1 - 02.10.2013 =
 * Update : The Brazilian Portuguese language file is updated.
@@ -333,6 +337,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V4.0.2 =
+Added Alt tag field for each image in the gallery.
 
 = V4.0.1 =
 The Brazilian Portuguese language file is updated.
