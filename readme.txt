@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.6.1
-Stable tag: 4.0.2
+Stable tag: 4.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,12 +37,13 @@ There is also a premium version of the plugin with more useful features availabl
 = Translation =
 
 * Brazilian Portuguese (pt_BR) (thanks to DJIO, www.djio.com.br)
+* Bulgarian (bg_BG) (thanks to <a href="mailto:p@pipermagus.com">Petya</a>)
 * Chinese (zh_CN) (thanks to <a href="mailto:mibcxb@gmail.com">Xiaobo Chen</a>)
 * Czech (cs_CZ) (thanks to Josef Sukdol)
 * Dutch (nl_NL) (thanks to <a href="mailto:ronald@hostingu.nl">HostingU, Ronald Verheul</a>)
 * French (fr_FR) (thanks to Didier, <a href="mailto:lcapronnier@yahoo.com">L Capronnier</a>)
 * Georgian (ka_GE) (thanks to Vako Patashuri)
-* German (de_DE) (thanks to Thomas Bludau)
+* German (de_DE) (thanks to Thomas Bludau, <a href="mailto:info@ahoidesign.de">Jonas Seemann</a>)
 * Hebrew (he_IL) (thanks to Sagive SEO)
 * Hungarian (hu_HU) (thanks to Mészöly Gábor) 
 * Italian (it_IT) (thanks to Stefano Ferruggiara)
@@ -53,7 +54,7 @@ There is also a premium version of the plugin with more useful features availabl
 * Serbian (sr_RS) (thanks to <a href="mailto:andrijanan@webhostinggeeks.com">Andrijana Nikolic</a> www.webhostinggeeks.com )
 * Spanish (es) (thanks to Victor Garcia)
 * Turkish (tr) (thanks to <a href="mailto:ce.demirbilek@gmail.com">Ismail Demirbilek</a>)
-* Ukrainian (uk_UA)
+* Ukrainian (uk)
 
 If you would like to create your own language pack or update the existing one, you can send <a href="http://codex.wordpress.org/Translating_WordPress" target="_blank">the text of PO and MO files</a> for <a href="http://support.bestwebsoft.com" target="_blank">BestWebSoft</a> and we'll add it to the plugin. You can download the latest version of the program for work with PO and MO files  <a href="http://www.poedit.net/download.php" target="_blank">Poedit</a>.
 
@@ -145,6 +146,10 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 5. PrettyPhoto pop-up window containing the album images.
 
 == Changelog ==
+
+= V4.0.3 - 18.10.2013 =
+* NEW : The Bulgarian language file is added to the plugin.
+* Update : The German language file is updated.
 
 = V4.0.2 - 11.10.2013 =
 * NEW : Added Alt tag field for each image in the gallery.
@@ -337,6 +342,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V4.0.3 =
+The Bulgarian language file is added to the plugin. The German language file is updated.
 
 = V4.0.2 =
 Added Alt tag field for each image in the gallery.
