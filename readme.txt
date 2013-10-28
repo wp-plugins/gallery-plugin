@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
-Tested up to: 3.6.1
-Stable tag: 4.0.3
+Tested up to: 3.7
+Stable tag: 4.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,6 +33,13 @@ There is also a premium version of the plugin with more useful features availabl
 * Display: Choose a number of pictures to display in one row in the gallery album.
 * Slideshow: View pictures as a slide show and in a full size.
 * Ability: The ability to add comments to a Single Gallery.
+
+= Recommended Plugins =
+
+The author of the Gallery also recommends the following plugins:
+
+* <a href="http://wordpress.org/plugins/updater/">Updater</a> - This plugin updates WordPress core and the plugins to the recent versions. You can also use the auto mode or manual mode for updating and set email notifications.
+There is also a premium version of the plugin <a href="http://bestwebsoft.com/plugin/updater-pro/?k=6ed3f1f40908b8eb7248953196a4753a">Updater Pro</a> with more useful features available. It allows to update plugins and WordPress core on several websites. It can make backup of all your files and database before updating.
 
 = Translation =
 
@@ -146,6 +153,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 5. PrettyPhoto pop-up window containing the album images.
 
 == Changelog ==
+
+= V4.0.4 - 28.10.2013 =
+* Update : We updated all functionality for wordpress 3.7.
 
 = V4.0.3 - 18.10.2013 =
 * NEW : The Bulgarian language file is added to the plugin.
@@ -342,6 +352,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V4.0.4 =
+We updated all functionality for wordpress 3.7.
 
 = V4.0.3 =
 The Bulgarian language file is added to the plugin. The German language file is updated.

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gallery\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-18 10:20+0300\n"
-"PO-Revision-Date: 2013-10-18 10:20+0300\n"
+"POT-Creation-Date: 2013-10-28 17:42+0300\n"
+"PO-Revision-Date: 2013-10-28 17:42+0300\n"
 "Last-Translator: \n"
 "Language-Team: Petya <p@pipermagus.com>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: gallery-plugin.php:101
-#: gallery-plugin.php:722
+#: gallery-plugin.php:754
 msgid "The following files \"gallery-template.php\" and \"gallery-single-template.php\" were not found in the directory of your theme. Please copy them from the directory `/wp-content/plugins/gallery-plugin/template/` to the directory of your theme for the correct work of the Gallery plugin"
 msgstr "Файловете \"gallery-template.php\" и \"gallery-single-template.php\" не бяха намерени в папката на вашата тема. Моля копирайте ги от папката `/wp-content/plugins/gallery-plugin/template/` в папката на вашата тема, за да работи правилно приставката Gallery."
 
@@ -92,7 +92,7 @@ msgid "Please make a choice"
 msgstr "Моля, изберете"
 
 #: gallery-plugin.php:228
-#: gallery-plugin.php:835
+#: gallery-plugin.php:867
 msgid "Sort images by"
 msgstr "Подреди изображенията по"
 
@@ -162,7 +162,7 @@ msgid "Publishing"
 msgstr "Публикация"
 
 #: gallery-plugin.php:505
-#: gallery-plugin.php:839
+#: gallery-plugin.php:871
 msgid "Date"
 msgstr "Дата "
 
@@ -170,260 +170,278 @@ msgstr "Дата "
 msgid "See images &raquo;"
 msgstr "Виж изображенията &raquo;"
 
-#: gallery-plugin.php:715
+#: gallery-plugin.php:747
 msgid "Settings are saved"
 msgstr "Настройките са съхранени"
 
-#: gallery-plugin.php:728
+#: gallery-plugin.php:760
 msgid "Gallery Settings"
 msgstr "Настройки на галерията"
 
-#: gallery-plugin.php:731
+#: gallery-plugin.php:763
 msgid "If you would like to add a Single Gallery to your page or post, just copy and paste this shortcode into your post or page:"
 msgstr "Ако искате да добавите галерия към ваша страница или пост, просто копирайте и поставете този шорткод в поста или страницата:"
 
-#: gallery-plugin.php:735
+#: gallery-plugin.php:767
 msgid "Image size for the album cover"
 msgstr "Размер на изображението за корица на албума"
 
-#: gallery-plugin.php:737
-#: gallery-plugin.php:745
-#: gallery-plugin.php:758
+#: gallery-plugin.php:769
+#: gallery-plugin.php:777
+#: gallery-plugin.php:790
 msgid "Image size"
 msgstr "Размер на изображението"
 
-#: gallery-plugin.php:738
-#: gallery-plugin.php:746
+#: gallery-plugin.php:770
+#: gallery-plugin.php:778
 msgid "Width (in px)"
 msgstr "Ширина (в px)"
 
-#: gallery-plugin.php:739
-#: gallery-plugin.php:747
+#: gallery-plugin.php:771
+#: gallery-plugin.php:779
 msgid "Height (in px)"
 msgstr "Височина (в px)"
 
-#: gallery-plugin.php:743
+#: gallery-plugin.php:775
 msgid "Gallery image size"
 msgstr "Размер на изображението в галерия"
 
-#: gallery-plugin.php:751
+#: gallery-plugin.php:783
 msgid "WordPress will create a new thumbnail with the specified dimensions when you upload a new photo."
 msgstr "WordPress ще създава thumbnail с указаните размери, когато качвате нова снимка."
 
-#: gallery-plugin.php:756
+#: gallery-plugin.php:788
 msgid "Gallery image size in the lightbox"
 msgstr "Размер на изображението за lightbox"
 
-#: gallery-plugin.php:759
+#: gallery-plugin.php:791
 msgid "Max width (in px)"
 msgstr "Макс. ширина (в px)"
 
-#: gallery-plugin.php:760
+#: gallery-plugin.php:792
 msgid "Max height (in px)"
 msgstr "Макс. височина (в px)"
 
-#: gallery-plugin.php:761
+#: gallery-plugin.php:793
 msgid "Display a full size image in the lightbox"
 msgstr "Показване на изображението в пълен размер в lightbox"
 
-#: gallery-plugin.php:765
+#: gallery-plugin.php:797
 msgid "Crop position"
 msgstr "Позиция за изрязване"
 
-#: gallery-plugin.php:767
+#: gallery-plugin.php:799
 msgid "Horizontal"
 msgstr "Хоризонтално"
 
-#: gallery-plugin.php:769
+#: gallery-plugin.php:801
 msgid "left"
 msgstr "ляво"
 
-#: gallery-plugin.php:770
-#: gallery-plugin.php:777
+#: gallery-plugin.php:802
+#: gallery-plugin.php:809
 msgid "center"
 msgstr "център"
 
-#: gallery-plugin.php:771
+#: gallery-plugin.php:803
 msgid "right"
 msgstr "дясно"
 
-#: gallery-plugin.php:774
+#: gallery-plugin.php:806
 msgid "Vertical"
 msgstr "Вертикално"
 
-#: gallery-plugin.php:776
+#: gallery-plugin.php:808
 msgid "top"
 msgstr "отгоре"
 
-#: gallery-plugin.php:778
+#: gallery-plugin.php:810
 msgid "bottom"
 msgstr "отдолу"
 
-#: gallery-plugin.php:783
+#: gallery-plugin.php:815
 msgid "Lightbox background"
 msgstr "Фон на lightbox"
 
-#: gallery-plugin.php:785
+#: gallery-plugin.php:817
 msgid "Default"
 msgstr "По подразбиране"
 
-#: gallery-plugin.php:786
+#: gallery-plugin.php:818
 msgid "Background transparency (from 0 to 1)"
 msgstr "Прозрачност на фона (от 0 до 1)"
 
-#: gallery-plugin.php:788
+#: gallery-plugin.php:820
 msgid "Select a background color"
 msgstr "Изберете цвят за фон"
 
-#: gallery-plugin.php:790
+#: gallery-plugin.php:822
 msgid "Background color"
 msgstr "Цвят на фона"
 
-#: gallery-plugin.php:797
-#: gallery-plugin.php:908
+#: gallery-plugin.php:829
+#: gallery-plugin.php:971
 msgid "This functionality is available in the Pro version of the plugin. For more details, please follow the link"
 msgstr "Тази опция е налична в Pro версията на плъгина. За повече подробности, моля отидете на "
 
-#: gallery-plugin.php:804
+#: gallery-plugin.php:836
 msgid "Images with border"
 msgstr "Изображения с рамка"
 
-#: gallery-plugin.php:807
+#: gallery-plugin.php:839
 msgid "Border width in px, just numbers"
 msgstr "Ширина на рамката в пиксели, само числа"
 
-#: gallery-plugin.php:809
-#: gallery-plugin.php:811
+#: gallery-plugin.php:841
+#: gallery-plugin.php:843
 msgid "Select a border color"
 msgstr "Изберете цвят за рамката"
 
-#: gallery-plugin.php:817
+#: gallery-plugin.php:849
 msgid "Number of images in the row"
 msgstr "Брой изображения на ред"
 
-#: gallery-plugin.php:823
+#: gallery-plugin.php:855
 msgid "Start slideshow"
 msgstr "Слайдшоу"
 
-#: gallery-plugin.php:829
+#: gallery-plugin.php:861
 msgid "Slideshow interval"
 msgstr "Интервал за слайдшоу"
 
-#: gallery-plugin.php:837
+#: gallery-plugin.php:869
 msgid "Attachment ID"
 msgstr "ID на изображението"
 
-#: gallery-plugin.php:838
+#: gallery-plugin.php:870
 msgid "Image Name"
 msgstr "Име на изображението"
 
-#: gallery-plugin.php:840
+#: gallery-plugin.php:872
 msgid "Sorting order (the input field for sorting order in the Insert / Upload Media Gallery dialog)"
 msgstr "Ред за сортиране (полето за въвеждане на ред за сортиране в Insert / Upload Media Gallery)"
 
-#: gallery-plugin.php:841
+#: gallery-plugin.php:873
 msgid "Random"
 msgstr "Произволен"
 
-#: gallery-plugin.php:845
+#: gallery-plugin.php:877
 msgid "Sort images"
 msgstr "Подреди изображенията"
 
-#: gallery-plugin.php:847
+#: gallery-plugin.php:879
 msgid "ASC (ascending order from lowest to highest values - 1, 2, 3; a, b, c)"
 msgstr "ASC (възходящ ред - 1, 2, 3, а, б, в)"
 
-#: gallery-plugin.php:848
+#: gallery-plugin.php:880
 msgid "DESC (descending order from highest to lowest values - 3, 2, 1; c, b, a)"
 msgstr "DESC (низходящ ред - 3, 2, 1, в, б, а)"
 
-#: gallery-plugin.php:852
+#: gallery-plugin.php:884
 msgid "Display text above the image"
 msgstr "Показване на текст над изображението"
 
-#: gallery-plugin.php:854
+#: gallery-plugin.php:886
 msgid "Turn off the checkbox, if you want to display text just in a lightbox"
 msgstr "Не отбелязвайте, ако искате текстът да се показва само в lightbox"
 
-#: gallery-plugin.php:858
+#: gallery-plugin.php:890
 msgid "Display the Back link"
 msgstr "Показване на линк 'Назад'"
 
-#: gallery-plugin.php:864
+#: gallery-plugin.php:896
 msgid "Display the Back link in the shortcode"
 msgstr "Показване на линк 'Назад' в шорткода"
 
-#: gallery-plugin.php:870
+#: gallery-plugin.php:902
 msgid "The Back link text"
 msgstr "Текст за линка 'Назад'"
 
-#: gallery-plugin.php:876
+#: gallery-plugin.php:908
 msgid "The Back link URL"
 msgstr "URL за линка 'Назад'"
 
-#: gallery-plugin.php:878
+#: gallery-plugin.php:910
 msgid "Gallery page (Page with Gallery Template)"
 msgstr "Страница с галерия (страница с шаблон 'Gallery Template')"
 
-#: gallery-plugin.php:880
+#: gallery-plugin.php:912
 msgid "(Full URL to custom page)"
 msgstr "(Пълно URL към произволна страница)"
 
-#: gallery-plugin.php:884
+#: gallery-plugin.php:916
 msgid "The Read More link text"
 msgstr "Текст за линка 'Прочети повече'"
 
-#: gallery-plugin.php:892
+#: gallery-plugin.php:922
+msgid "Add gallery to the search"
+msgstr ""
+
+#: gallery-plugin.php:941
+#: gallery-plugin.php:944
+#: gallery-plugin.php:948
+msgid "Using Custom Search powered by"
+msgstr ""
+
+#: gallery-plugin.php:944
+msgid "Activate Custom Search"
+msgstr ""
+
+#: gallery-plugin.php:948
+msgid "Download Custom Search"
+msgstr ""
+
+#: gallery-plugin.php:955
 msgid "Display Like buttons in the lightbox"
 msgstr "Показване на Like бутони в lightbox"
 
-#: gallery-plugin.php:894
+#: gallery-plugin.php:957
 msgid "FaceBook"
 msgstr "FaceBook"
 
-#: gallery-plugin.php:895
+#: gallery-plugin.php:958
 msgid "Twitter"
 msgstr "Twitter"
 
-#: gallery-plugin.php:896
+#: gallery-plugin.php:959
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: gallery-plugin.php:897
+#: gallery-plugin.php:960
 msgid "Google +1"
 msgstr "Google +1"
 
-#: gallery-plugin.php:901
+#: gallery-plugin.php:964
 msgid "Slug for gallery item"
 msgstr "Название на елемент от галерията"
 
-#: gallery-plugin.php:903
+#: gallery-plugin.php:966
 msgid "for any structure of permalinks except the default structure"
 msgstr "за всяка структура от пермалинковете, с изключение на структурата по подразбиране"
 
-#: gallery-plugin.php:916
+#: gallery-plugin.php:979
 msgid "Save Changes"
 msgstr "Съхрани промените"
 
-#: gallery-plugin.php:928
-#: gallery-plugin.php:943
+#: gallery-plugin.php:991
+#: gallery-plugin.php:1006
 msgid "Settings"
 msgstr "Настройки"
 
-#: gallery-plugin.php:929
+#: gallery-plugin.php:992
 msgid "FAQ"
 msgstr "Често задавани въпроси"
 
-#: gallery-plugin.php:930
+#: gallery-plugin.php:993
 msgid "Support"
 msgstr "Поддръжка"
 
-#: gallery-plugin.php:1140
+#: gallery-plugin.php:1203
 #: template/gallery-single-template.php:77
 msgid "Sorry, nothing found."
 msgstr "Съжалявам, нищо не е намерено."
 
-#: gallery-plugin.php:1162
+#: gallery-plugin.php:1225
 #: template/gallery-single-template.php:103
 msgid "Download high resolution image"
 msgstr "Свали изображението в цял размер"
