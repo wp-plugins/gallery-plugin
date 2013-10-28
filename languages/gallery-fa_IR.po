@@ -1,0 +1,539 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gallery\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-28 17:42+0300\n"
+"PO-Revision-Date: 2013-10-28 17:42+0300\n"
+"Last-Translator: \n"
+"Language-Team: Einolah Kiamehr <einkia@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_IR\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2;plural=n>1;\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: gallery-plugin.php:101
+#: gallery-plugin.php:754
+msgid "The following files \"gallery-template.php\" and \"gallery-single-template.php\" were not found in the directory of your theme. Please copy them from the directory `/wp-content/plugins/gallery-plugin/template/` to the directory of your theme for the correct work of the Gallery plugin"
+msgstr ""
+
+#: gallery-plugin.php:125
+#: gallery-plugin.php:135
+msgid "Galleries"
+msgstr "گالری ها"
+
+#: gallery-plugin.php:126
+#: gallery-plugin.php:605
+msgid "Gallery"
+msgstr "گالری"
+
+#: gallery-plugin.php:127
+#, fuzzy
+msgid "Add a Gallery"
+msgstr "اضافه کردن گالری"
+
+#: gallery-plugin.php:128
+msgid "Add New Gallery"
+msgstr "اضافه کردن گالری"
+
+#: gallery-plugin.php:129
+msgid "Edit Gallery"
+msgstr "ویرایش گالری"
+
+#: gallery-plugin.php:130
+msgid "New Gallery"
+msgstr "گالری جدید"
+
+#: gallery-plugin.php:131
+msgid "View Gallery"
+msgstr "مشاهده گالری"
+
+#: gallery-plugin.php:132
+#, fuzzy
+msgid "Find a Gallery"
+msgstr "ویرایش گالری"
+
+#: gallery-plugin.php:133
+#, fuzzy
+msgid "No Gallery found"
+msgstr "هیچ گالری پیدا نشد"
+
+#: gallery-plugin.php:190
+msgid "Upload File"
+msgstr "آپلود فایل"
+
+#: gallery-plugin.php:191
+msgid "Gallery Shortcode"
+msgstr "کد نمایش گالری"
+
+#: gallery-plugin.php:209
+msgid "The gallery temp directory (gallery-plugin/upload/files) is not available for record on your webserver. Please use the standard WP functionality to upload images (media library)"
+msgstr ""
+
+#: gallery-plugin.php:213
+#, fuzzy
+msgid "Choose an image for upload:"
+msgstr "انتخاب یک عکس برای آپلود "
+
+#: gallery-plugin.php:218
+msgid "Please enable JavaScript to use the file uploader."
+msgstr "برای استفاده از آپلودر فایل ، لطفا جاوا اسکریپت را فعال کنید."
+
+#: gallery-plugin.php:225
+msgid "Allow the download link for all images in this gallery"
+msgstr ""
+
+#: gallery-plugin.php:226
+#, fuzzy
+msgid "Please use the drag and drop function to change an order of the images displaying and do not forget to save the post."
+msgstr "لطفا از گرفتن و رها کردن توابع برای سفارشی ساختن عکسهای خروجی استفاده کنید و فراموش نکنید که پست را ذخیره کنید."
+
+#: gallery-plugin.php:228
+msgid "Please make a choice"
+msgstr ""
+
+#: gallery-plugin.php:228
+#: gallery-plugin.php:867
+#, fuzzy
+msgid "Sort images by"
+msgstr "تعداد عکسها در سطر"
+
+#: gallery-plugin.php:228
+#, fuzzy
+msgid "sort images"
+msgstr "تعداد عکسها در سطر"
+
+#: gallery-plugin.php:228
+#, fuzzy
+msgid "on the plugin settings page ("
+msgstr "صفحه تنظیمات افزونه"
+
+#: gallery-plugin.php:272
+#: gallery-plugin.php:501
+msgid "Title"
+msgstr "عنوان"
+
+#: gallery-plugin.php:274
+msgid "Alt tag"
+msgstr ""
+
+#: gallery-plugin.php:275
+msgid "URL"
+msgstr ""
+
+#: gallery-plugin.php:275
+msgid "(by click on image opens a link in a new window)"
+msgstr ""
+
+#: gallery-plugin.php:276
+msgid "This setting is available in Pro version"
+msgstr ""
+
+#: gallery-plugin.php:277
+msgid "Open the link"
+msgstr ""
+
+#: gallery-plugin.php:277
+msgid "Current window"
+msgstr ""
+
+#: gallery-plugin.php:277
+msgid "New window"
+msgstr ""
+
+#: gallery-plugin.php:278
+#, fuzzy
+msgid "Delete"
+msgstr "تاریخ"
+
+#: gallery-plugin.php:291
+#, fuzzy
+msgid "You can add a Single Gallery to the page or post by inserting this shortcode into the content"
+msgstr "شما میتوانید به برگه یا پست با افزودن shortcode  به محتوا  یک گالری اضافه کنید. "
+
+#: gallery-plugin.php:293
+msgid "If you want to display a short description containing a screenshot and the link to the Single Gallery Page"
+msgstr ""
+
+#: gallery-plugin.php:502
+msgid "Author"
+msgstr "سازنده"
+
+#: gallery-plugin.php:503
+#, fuzzy
+msgid "Photo"
+msgstr "عکسِ"
+
+#: gallery-plugin.php:504
+#, fuzzy
+msgid "Publishing"
+msgstr "عمومی"
+
+#: gallery-plugin.php:505
+#: gallery-plugin.php:871
+msgid "Date"
+msgstr "تاریخ"
+
+#: gallery-plugin.php:631
+#, fuzzy
+msgid "See images &raquo;"
+msgstr "&raquoدیدن عکس;"
+
+#: gallery-plugin.php:747
+#, fuzzy
+msgid "Settings are saved"
+msgstr "تنظیمات ذخیره شد."
+
+#: gallery-plugin.php:760
+#, fuzzy
+msgid "Gallery Settings"
+msgstr "تنظیمات گالری"
+
+#: gallery-plugin.php:763
+#, fuzzy
+msgid "If you would like to add a Single Gallery to your page or post, just copy and paste this shortcode into your post or page:"
+msgstr "اگر میخواهید یک گالری جدید اضافه کنید ، کافیه shortcode را در نوشته یا برگه خود کپی کنید"
+
+#: gallery-plugin.php:767
+#, fuzzy
+msgid "Image size for the album cover"
+msgstr "اندازه دوره آلبوم گالری"
+
+#: gallery-plugin.php:769
+#: gallery-plugin.php:777
+#: gallery-plugin.php:790
+#, fuzzy
+msgid "Image size"
+msgstr " اندازه عکس"
+
+#: gallery-plugin.php:770
+#: gallery-plugin.php:778
+msgid "Width (in px)"
+msgstr "عرض (به pixels)"
+
+#: gallery-plugin.php:771
+#: gallery-plugin.php:779
+msgid "Height (in px)"
+msgstr "ارتفاع (به pixels)"
+
+#: gallery-plugin.php:775
+#, fuzzy
+msgid "Gallery image size"
+msgstr "گالری ها"
+
+#: gallery-plugin.php:783
+#, fuzzy
+msgid "WordPress will create a new thumbnail with the specified dimensions when you upload a new photo."
+msgstr "وردپرس میتواند یک کپی از عکسهای بند انگشتی نوشته ها را با اندازه دلخواه بسازد وقتی شما یک عکس جدید را بار گذاری میکنید."
+
+#: gallery-plugin.php:788
+msgid "Gallery image size in the lightbox"
+msgstr ""
+
+#: gallery-plugin.php:791
+#, fuzzy
+msgid "Max width (in px)"
+msgstr "عرض (به pixels)"
+
+#: gallery-plugin.php:792
+#, fuzzy
+msgid "Max height (in px)"
+msgstr "ارتفاع (به pixels)"
+
+#: gallery-plugin.php:793
+msgid "Display a full size image in the lightbox"
+msgstr ""
+
+#: gallery-plugin.php:797
+msgid "Crop position"
+msgstr ""
+
+#: gallery-plugin.php:799
+msgid "Horizontal"
+msgstr ""
+
+#: gallery-plugin.php:801
+msgid "left"
+msgstr ""
+
+#: gallery-plugin.php:802
+#: gallery-plugin.php:809
+msgid "center"
+msgstr ""
+
+#: gallery-plugin.php:803
+msgid "right"
+msgstr ""
+
+#: gallery-plugin.php:806
+msgid "Vertical"
+msgstr ""
+
+#: gallery-plugin.php:808
+msgid "top"
+msgstr ""
+
+#: gallery-plugin.php:810
+msgid "bottom"
+msgstr ""
+
+#: gallery-plugin.php:815
+msgid "Lightbox background"
+msgstr ""
+
+#: gallery-plugin.php:817
+msgid "Default"
+msgstr ""
+
+#: gallery-plugin.php:818
+msgid "Background transparency (from 0 to 1)"
+msgstr ""
+
+#: gallery-plugin.php:820
+msgid "Select a background color"
+msgstr ""
+
+#: gallery-plugin.php:822
+msgid "Background color"
+msgstr ""
+
+#: gallery-plugin.php:829
+#: gallery-plugin.php:971
+msgid "This functionality is available in the Pro version of the plugin. For more details, please follow the link"
+msgstr ""
+
+#: gallery-plugin.php:836
+msgid "Images with border"
+msgstr ""
+
+#: gallery-plugin.php:839
+msgid "Border width in px, just numbers"
+msgstr ""
+
+#: gallery-plugin.php:841
+#: gallery-plugin.php:843
+msgid "Select a border color"
+msgstr ""
+
+#: gallery-plugin.php:849
+#, fuzzy
+msgid "Number of images in the row"
+msgstr "تعداد عکسها در سطر"
+
+#: gallery-plugin.php:855
+msgid "Start slideshow"
+msgstr "نمایش اسلایدشو"
+
+#: gallery-plugin.php:861
+msgid "Slideshow interval"
+msgstr "فاصله بین اسلایدشو"
+
+#: gallery-plugin.php:869
+#, fuzzy
+msgid "Attachment ID"
+msgstr "ای دی سنجاق شده "
+
+#: gallery-plugin.php:870
+#, fuzzy
+msgid "Image Name"
+msgstr "عکس "
+
+#: gallery-plugin.php:872
+msgid "Sorting order (the input field for sorting order in the Insert / Upload Media Gallery dialog)"
+msgstr ""
+
+#: gallery-plugin.php:873
+#, fuzzy
+msgid "Random"
+msgstr "تصادفی"
+
+#: gallery-plugin.php:877
+#, fuzzy
+msgid "Sort images"
+msgstr "تعداد عکسها در سطر"
+
+#: gallery-plugin.php:879
+msgid "ASC (ascending order from lowest to highest values - 1, 2, 3; a, b, c)"
+msgstr ""
+
+#: gallery-plugin.php:880
+msgid "DESC (descending order from highest to lowest values - 3, 2, 1; c, b, a)"
+msgstr ""
+
+#: gallery-plugin.php:884
+msgid "Display text above the image"
+msgstr ""
+
+#: gallery-plugin.php:886
+msgid "Turn off the checkbox, if you want to display text just in a lightbox"
+msgstr ""
+
+#: gallery-plugin.php:890
+#, fuzzy
+msgid "Display the Back link"
+msgstr "نشان دادن لینک برگشت"
+
+#: gallery-plugin.php:896
+#, fuzzy
+msgid "Display the Back link in the shortcode"
+msgstr "نشان دادن لینک برگشت در شرت کد"
+
+#: gallery-plugin.php:902
+msgid "The Back link text"
+msgstr ""
+
+#: gallery-plugin.php:908
+msgid "The Back link URL"
+msgstr ""
+
+#: gallery-plugin.php:910
+msgid "Gallery page (Page with Gallery Template)"
+msgstr ""
+
+#: gallery-plugin.php:912
+msgid "(Full URL to custom page)"
+msgstr ""
+
+#: gallery-plugin.php:916
+#, fuzzy
+msgid "The Read More link text"
+msgstr "برچسب برای لینک بیشتر..."
+
+#: gallery-plugin.php:922
+msgid "Add gallery to the search"
+msgstr ""
+
+#: gallery-plugin.php:941
+#: gallery-plugin.php:944
+#: gallery-plugin.php:948
+msgid "Using Custom Search powered by"
+msgstr ""
+
+#: gallery-plugin.php:944
+msgid "Activate Custom Search"
+msgstr ""
+
+#: gallery-plugin.php:948
+msgid "Download Custom Search"
+msgstr ""
+
+#: gallery-plugin.php:955
+msgid "Display Like buttons in the lightbox"
+msgstr ""
+
+#: gallery-plugin.php:957
+msgid "FaceBook"
+msgstr ""
+
+#: gallery-plugin.php:958
+#, fuzzy
+msgid "Twitter"
+msgstr "عنوان"
+
+#: gallery-plugin.php:959
+msgid "Pinterest"
+msgstr ""
+
+#: gallery-plugin.php:960
+msgid "Google +1"
+msgstr ""
+
+#: gallery-plugin.php:964
+#, fuzzy
+msgid "Slug for gallery item"
+msgstr "اندازه عکسهای گالری"
+
+#: gallery-plugin.php:966
+msgid "for any structure of permalinks except the default structure"
+msgstr ""
+
+#: gallery-plugin.php:979
+msgid "Save Changes"
+msgstr "ذخیره تنظیمات"
+
+#: gallery-plugin.php:991
+#: gallery-plugin.php:1006
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: gallery-plugin.php:992
+msgid "FAQ"
+msgstr "FAQ"
+
+#: gallery-plugin.php:993
+msgid "Support"
+msgstr "پشتیبانی"
+
+#: gallery-plugin.php:1203
+#: template/gallery-single-template.php:77
+#, fuzzy
+msgid "Sorry, nothing found."
+msgstr "متاسفم؛چیزی یافت نشد"
+
+#: gallery-plugin.php:1225
+#: template/gallery-single-template.php:103
+msgid "Download high resolution image"
+msgstr ""
+
+#: template/gallery-single-template.php:103
+#, fuzzy
+msgid "Image"
+msgstr "عکس "
+
+#, fuzzy
+#~ msgid "PHP Max Upload Size"
+#~ msgstr "آپلود فایل"
+#~ msgid "Activated plugins"
+#~ msgstr "فعالسازی افزونه"
+#~ msgid "Read more"
+#~ msgstr "بیشتر..."
+#~ msgid "Installed plugins"
+#~ msgstr "نصب افزونه"
+
+#, fuzzy
+#~ msgid "Free plugins"
+#~ msgstr "فعالسازی افزونه"
+#~ msgid "Download"
+#~ msgstr "دانلود"
+#~ msgid "Install %s"
+#~ msgstr "نصب %s"
+#~ msgid "Install now from wordpress.org"
+#~ msgstr "در حال نصب از سایت وردپرس"
+
+#, fuzzy
+#~ msgid "If you have any questions, please contact us via"
+#~ msgstr ""
+#~ "اگر شما سوالی دارید؛لطفا با ما با آدرس  plugin@bestwebsoft.com تماس "
+#~ "بگیرید یا فرم تماس مارا در سایتمان پر کنید و سوال خود را آنجا بنویسید."
+
+#, fuzzy
+#~ msgid "Active Plugins"
+#~ msgstr "فعالسازی افزونه"
+
+#, fuzzy
+#~ msgid "Inactive Plugins"
+#~ msgstr "فعالسازی افزونه"
+
+#, fuzzy
+#~ msgid "Send to support"
+#~ msgstr "پشتیبانی"
+#~ msgid "Add New"
+#~ msgstr "اضافه کردن"
+#~ msgid "Search Galleries"
+#~ msgstr "جستجودر گالریها"
+#~ msgid "Please do not forget to select "
+#~ msgstr "لطفا انتخاب را فراموش نکنید."
+#~ msgid "Attachments order by"
+#~ msgstr "الصاق(Attachments ) به سفارش"
+#~ msgid "attachment title"
+#~ msgstr "عنوان سنجاق شده"
+#~ msgid "date"
+#~ msgstr "تاریخ"
+#~ msgid "Label for Return link"
+#~ msgstr "برپسبهای لینگ برگشتی"
+
