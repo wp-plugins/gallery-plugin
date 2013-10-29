@@ -44,7 +44,7 @@ There is also a premium version of the plugin <a href="http://bestwebsoft.com/pl
 = Translation =
 
 * Brazilian Portuguese (pt_BR) (thanks to DJIO, www.djio.com.br)
-* Bulgarian (bg_BG) (thanks to <a href="mailto:p@pipermagus.com">Petya</a>)
+* Bulgarian (bg_BG) (thanks to Petya)
 * Chinese (zh_CN) (thanks to <a href="mailto:mibcxb@gmail.com">Xiaobo Chen</a>)
 * Czech (cs_CZ) (thanks to Josef Sukdol)
 * Dutch (nl_NL) (thanks to <a href="mailto:ronald@hostingu.nl">HostingU, Ronald Verheul</a>)
@@ -121,6 +121,7 @@ After that your theme will support thumbnail option and the error will disappear
 1. Please open the menu "Galleries" and choose random gallery from the list. It will take you to the gallery editing page. 
 Please use the drag and drop function to change the order of the images and do not forget to save the post.
 Please do not forget to select `Sort images by` -> `sort images` in the plugin settings (http://your_domain/wp-admin/admin.php?page=gallery-plugin.php) 
+
 
 2. Please go to the "Galleries" menu and select random gallery in the list. It will take you to the gallery editing page. 
 There will be one or several media upload icons between the title and the content blocks. Please choose any icon. 
