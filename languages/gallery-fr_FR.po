@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gallery\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-01 13:09+0300\n"
-"PO-Revision-Date: 2013-11-01 13:09+0300\n"
+"POT-Creation-Date: 2013-11-08 11:17+0300\n"
+"PO-Revision-Date: 2013-11-08 11:17+0300\n"
 "Last-Translator: \n"
 "Language-Team: Didier, L Capronnier <lcapronnier@yahoo.com>\n"
 "MIME-Version: 1.0\n"
@@ -112,7 +112,7 @@ msgstr "Titre"
 
 #: gallery-plugin.php:275
 msgid "Alt tag"
-msgstr ""
+msgstr "Tag Alt"
 
 #: gallery-plugin.php:276
 msgid "URL"
@@ -173,20 +173,19 @@ msgstr "Voir les images &raquo;"
 
 #: gallery-plugin.php:679
 msgid "requires"
-msgstr ""
+msgstr "requis"
 
 #: gallery-plugin.php:679
 msgid "or higher, that is why it has been deactivated! Please upgrade WordPress and try again."
-msgstr ""
+msgstr "ou supérieure, c'est pourquoi il a été désactive! Merci de faire la mise à jour de WordPress et de ré-essayer!"
 
 #: gallery-plugin.php:679
 msgid "Back to the WordPress"
-msgstr ""
+msgstr "Retour à WordPress"
 
 #: gallery-plugin.php:679
-#, fuzzy
 msgid "Plugins page"
-msgstr "Extensions Pro"
+msgstr "Page du plugins"
 
 #: gallery-plugin.php:764
 msgid "Settings are saved"
@@ -393,21 +392,21 @@ msgstr "Texte pour le lien \"Read More\""
 
 #: gallery-plugin.php:939
 msgid "Add gallery to the search"
-msgstr ""
+msgstr "Ajouter les galeries à la recherche"
 
 #: gallery-plugin.php:955
 #: gallery-plugin.php:958
 #: gallery-plugin.php:962
 msgid "Using Custom Search powered by"
-msgstr ""
+msgstr "Utiliser les recherche personalisées fournies par"
 
 #: gallery-plugin.php:958
 msgid "Activate Custom Search"
-msgstr ""
+msgstr "Activer les recherche personalisées"
 
 #: gallery-plugin.php:962
 msgid "Download Custom Search"
-msgstr ""
+msgstr "Télécharger les recherches personalisées"
 
 #: gallery-plugin.php:969
 msgid "Display Like buttons in the lightbox"
@@ -532,6 +531,8 @@ msgstr "Image "
 #~ msgstr "Merci d'avoir pris contact avec nous."
 #~ msgid "Sorry, email message could not be delivered."
 #~ msgstr "Désoler, l'e-mail n'a pas pu être envoyé."
+#~ msgid "Pro plugins"
+#~ msgstr "Extensions Pro"
 #~ msgid "Activated plugins"
 #~ msgstr "Extensions activées"
 #~ msgid "Read more"
