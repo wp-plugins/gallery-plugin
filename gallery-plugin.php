@@ -4,7 +4,7 @@ Plugin Name: Gallery
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 4.0.6
+Version: 4.0.7
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -27,8 +27,8 @@ License: GPLv2 or later
 
 if ( ! function_exists( 'gllr_plugin_install' ) ) {
 	function gllr_plugin_install() {
-		$filename_1 = WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-template.php';
-		$filename_2 = WP_PLUGIN_DIR .'/gallery-plugin/template/gallery-single-template.php';
+		$filename_1 = WP_PLUGIN_DIR . '/gallery-plugin/template/gallery-template.php';
+		$filename_2 = WP_PLUGIN_DIR . '/gallery-plugin/template/gallery-single-template.php';
 
 		$filename_theme_1 = get_stylesheet_directory() .'/gallery-template.php';
 		$filename_theme_2 = get_stylesheet_directory() .'/gallery-single-template.php';
@@ -270,12 +270,12 @@ if ( ! function_exists( 'gllr_post_custom_box' ) ) {
 			echo '<li id="'.$page->ID.'" class="gllr_image_block"><div class="gllr_drag">';
 				$image_attributes = wp_get_attachment_image_src( $page->ID, 'thumbnail' );
 				echo '<div class="gllr_border_image"><img src="'.$image_attributes[0].'" alt="'.$page->post_title.'" title="'.$page->post_title.'" height="'.get_option( 'thumbnail_size_h' ).'" width="'.get_option( 'thumbnail_size_w' ).'" /></div>';
-				echo '<br />'.__( "Title", "gallery" ).'<br /><input type="text" name="gllr_image_text['.$page->ID.']" value="'.get_post_meta( $page->ID, $key, TRUE ).'" class="gllr_image_text" />';
+				echo '<br />' . __( "Title", "gallery" ) . '<br /><input type="text" name="gllr_image_text['.$page->ID.']" value="'.get_post_meta( $page->ID, $key, TRUE ).'" class="gllr_image_text" />';
 				echo '<input type="text" name="gllr_order_text['.$page->ID.']" value="'.$page->menu_order.'" class="gllr_order_text '.( $page->menu_order == 0 ? "hidden" : '' ).'" />';
-				echo '<br />'.__( "Alt tag", "gallery" ).'<br /><input type="text" name="gllr_image_alt_tag['.$page->ID.']" value="'.get_post_meta( $page->ID, $alt_tag_key, TRUE ).'" class="gllr_image_alt_tag" />';
-				echo '<br />'.__( "URL", "gallery" ).'<br /><input type="text" name="gllr_link_url['.$page->ID.']" value="'.get_post_meta( $page->ID, $link_key, TRUE ).'" class="gllr_link_text" /><br /><span class="small_text">'.__( "(by click on image opens a link in a new window)", "gallery" ).'</span>';
+				echo '<br />' . __( "Alt tag", "gallery" ) . '<br /><input type="text" name="gllr_image_alt_tag['.$page->ID.']" value="'.get_post_meta( $page->ID, $alt_tag_key, TRUE ).'" class="gllr_image_alt_tag" />';
+				echo '<br />' . __( "URL", "gallery" ) . '<br /><input type="text" name="gllr_link_url['.$page->ID.']" value="'.get_post_meta( $page->ID, $link_key, TRUE ).'" class="gllr_link_text" /><br /><span class="small_text">'.__( "(by click on image opens a link in a new window)", "gallery" ).'</span>';
 				echo '<a class="gllr_pro_version" href="http://bestwebsoft.com/plugin/gallery-pro/?k=63a36f6bf5de0726ad6a43a165f38fe5&pn=79&v='.$plugin_info["Version"].'" target="_blank" title="'. __( 'This setting is available in Pro version', 'gallery' ).'"><br />'.
-					'<div class="gllr_pro_version">'.__( "Open the link", "gallery" ).'<br/><input disabled type="radio" value="_self" > '.__( "Current window", "gallery" ).'<br/><input disabled type="radio" value="_blank" > '.__( "New window", "gallery" ).'</div></a>';
+					'<div class="gllr_pro_version">' . __( "Open the link", "gallery" ).'<br/><input disabled type="radio" value="_self" > '.__( "Current window", "gallery" ).'<br/><input disabled type="radio" value="_blank" > '.__( "New window", "gallery" ).'</div></a>';
 				echo '<div class="delete"><a href="javascript:void(0);" onclick="img_delete('.$page->ID.');">'.__( "Delete", "gallery" ).'</a><div/>';
 			echo '</div></li>';
     endforeach; ?>
@@ -1195,7 +1195,7 @@ if ( ! function_exists ( 'gllr_shortcode' ) ) {
 														<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]; ?>px;height:<?php echo $gllr_options['gllr_custom_size_px'][1][1]; ?>px; <?php echo $gllr_border; ?>" alt="<?php echo get_post_meta( $attachment->ID, $alt_tag_key, true ); ?>" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>" src="<?php echo $image_attributes[0]; ?>" />
 													</a>
 												<?php } else { ?>
-											<a rel="gallery_fancybox" href="<?php echo $image_attributes_large[0]; ?>" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>">
+											<a rel="gallery_fancybox_<?php echo $post->ID; ?>" href="<?php echo $image_attributes_large[0]; ?>" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>">
 												<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]; ?>px;height:<?php echo $gllr_options['gllr_custom_size_px'][1][1]; ?>px; <?php echo $gllr_border; ?>" alt="<?php echo get_post_meta( $attachment->ID, $alt_tag_key, true ); ?>" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>" src="<?php echo $image_attributes[0]; ?>" rel="<?php echo $image_attributes_full[0]; ?>" />
 											</a>
 												<?php } ?>
@@ -1232,7 +1232,7 @@ if ( ! function_exists ( 'gllr_shortcode' ) ) {
 		<script type="text/javascript">
 		(function($) {
 			$(document).ready( function() {
-				$( "a[rel=gallery_fancybox]" ).fancybox( {
+				$( "a[rel=gallery_fancybox_<?php echo $post->ID; ?>]" ).fancybox( {
 					'transitionIn'		: 'elastic',
 					'transitionOut'		: 'elastic',
 					'titlePosition' 	: 'inside',

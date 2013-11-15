@@ -53,7 +53,7 @@
 													<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]; ?>px;height:<?php echo $gllr_options['gllr_custom_size_px'][1][1]; ?>px; <?php echo $gllr_border; ?>" alt="<?php echo get_post_meta( $attachment->ID, $alt_tag_key, true ); ?>" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>" src="<?php echo $image_attributes[0]; ?>" />
 												</a>
 											<?php } else { ?>
-											<a rel="gallery_fancybox" href="<?php echo $image_attributes_large[0]; ?>" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>" >
+											<a rel="gallery_fancybox_<?php echo $post->ID; ?>" href="<?php echo $image_attributes_large[0]; ?>" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>" >
 												<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][1][0]; ?>px;height:<?php echo $gllr_options['gllr_custom_size_px'][1][1]; ?>px; <?php echo $gllr_border; ?>" alt="<?php echo get_post_meta( $attachment->ID, $alt_tag_key, true ); ?>" title="<?php echo get_post_meta( $attachment->ID, $key, true ); ?>" src="<?php echo $image_attributes[0]; ?>" rel="<?php echo $image_attributes_full[0]; ?>" />
 											</a>
 											<?php } ?>											
@@ -93,7 +93,7 @@
 	<script type="text/javascript">
 		(function($){
 			$(document).ready(function(){
-				$("a[rel=gallery_fancybox]").fancybox({
+				$("a[rel=gallery_fancybox_<?php echo $post->ID; ?>]").fancybox({
 					'transitionIn'		: 'elastic',
 					'transitionOut'		: 'elastic',
 					'titlePosition' 	: 'inside',
