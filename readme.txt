@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.7.1
-Stable tag: 4.0.7
+Stable tag: 4.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -46,20 +46,10 @@ There is also a premium version of the plugin <a href="http://bestwebsoft.com/pl
 * Brazilian Portuguese (pt_BR) (thanks to DJIO, www.djio.com.br)
 * Bulgarian (bg_BG) (thanks to Petya)
 * Chinese (zh_CN) (thanks to <a href="mailto:mibcxb@gmail.com">Xiaobo Chen</a>)
-* Czech (cs_CZ) (thanks to Josef Sukdol)
-* Dutch (nl_NL) (thanks to <a href="mailto:ronald@hostingu.nl">HostingU, Ronald Verheul</a>)
 * French (fr_FR) (thanks to Didier, <a href="mailto:lcapronnier@yahoo.com">L Capronnier</a>)
-* Georgian (ka_GE) (thanks to Vako Patashuri)
 * German (de_DE) (thanks to Thomas Bludau, <a href="mailto:info@ahoidesign.de">Jonas Seemann</a>)
-* Hebrew (he_IL) (thanks to Sagive SEO)
-* Hungarian (hu_HU) (thanks to Mészöly Gábor) 
-* Italian (it_IT) (thanks to Stefano Ferruggiara)
-* Lituanian (lt_LT) (thanks to Naglis Jonaitis)
-* Persian (fa_IR) (thanks to Einolah Kiamehr and Meisam)
-* Polish (pl_PL) (thanks to Janusz Janczy, Bezcennyczas.pl)
 * Russian (ru_RU)
 * Serbian (sr_RS) (thanks to <a href="mailto:andrijanan@webhostinggeeks.com">Andrijana Nikolic</a> www.webhostinggeeks.com )
-* Spanish (es) (thanks to Victor Garcia)
 * Turkish (tr) (thanks to <a href="mailto:ce.demirbilek@gmail.com">Ismail Demirbilek</a>)
 * Ukrainian (uk)
 
@@ -154,6 +144,10 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 5. PrettyPhoto pop-up window containing the album images.
 
 == Changelog ==
+
+= V4.0.8 - 22.11.2013 =
+* NEW : Ability to turn on/off using single lightbox for all galleries on the one page.
+* Update : BWS plugins section is updated.
 
 = V4.0.7 - 15.11.2013 =
 * Bugfix : We fixed the bug of image count for lightbox when added multiple galleries on the one page. 
@@ -364,6 +358,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V4.0.8 =
+Ability to turn on/off using single lightbox for all galleries on the one page. BWS plugins section is updated.
 
 = V4.0.7 =
 We fixed the bug of image count for lightbox when added multiple galleries on the one page.
