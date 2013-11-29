@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.7.1
-Stable tag: 4.0.8
+Stable tag: 4.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,7 +18,7 @@ There is also a premium version of the plugin with more useful features availabl
 <a href="http://wordpress.org/plugins/gallery-plugin/faq/" target="_blank">FAQ</a>
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
 
-<a href="http://bestwebsoft.com/plugin/gallery-pro/?k=57ad5c0c7fe312e2a45ef9a76f47334c" target="_blank">Upgrade to Pro Version</a>
+<a href="http://bestwebsoft.com/plugin/gallery-pro/?k=57ad5c0c7fe312e2a45ef9a76f47334c" target="_blank">Upgrade to Pro Version</a>, <a href="http://bestwebsoft.com/demo-for-gallery-pro/" target="_blank">View Demo of Pro Version</a>
 
 = Features =
 
@@ -144,6 +144,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 5. PrettyPhoto pop-up window containing the album images.
 
 == Changelog ==
+
+= V4.0.9 - 29.11.2013 =
+* Update : The Ukrainian language file is updated.
 
 = V4.0.8 - 22.11.2013 =
 * NEW : Ability to turn on/off using single lightbox for all galleries on the one page.
@@ -358,6 +361,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V4.0.9 =
+The Ukrainian language file is updated
 
 = V4.0.8 =
 Ability to turn on/off using single lightbox for all galleries on the one page. BWS plugins section is updated.
