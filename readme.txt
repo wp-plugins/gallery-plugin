@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.7.1
-Stable tag: 4.0.9
+Stable tag: 4.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +69,8 @@ We can fix some things for free for the users who provide translation of our plu
 2. Activate the plugin using the 'Plugins' menu in WordPress.
 3. Please check if you have the template file `gallery-template.php` as well as the template `gallery-single-template.php` in the templates directory. If you can't find these files, then just copy them from the directory  `/wp-content/plugins/gallery/template/` to your templates directory.
 
+<a href="http://bestwebsoft.com/wp-content/uploads/manual/wp_plugin/gallery/Gallery_Installation_step-by-step_instruction.pdf" target="_blank">View a PDF version of Step-by-step Instruction on Gallery Installation</a>.
+
 == Frequently Asked Questions ==
 
 = I cannot view my Gallery page =
@@ -112,7 +114,6 @@ After that your theme will support thumbnail option and the error will disappear
 Please use the drag and drop function to change the order of the images and do not forget to save the post.
 Please do not forget to select `Sort images by` -> `sort images` in the plugin settings (http://your_domain/wp-admin/admin.php?page=gallery-plugin.php) 
 
-
 2. Please go to the "Galleries" menu and select random gallery in the list. It will take you to the gallery editing page. 
 There will be one or several media upload icons between the title and the content blocks. Please choose any icon. 
 After that you'll see a popup window containing three or four tabs. 
@@ -144,6 +145,11 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 5. PrettyPhoto pop-up window containing the album images.
 
 == Changelog ==
+
+= V4.1.0 - 6.12.2013 =
+* NEW : A notice when changing settings on the plugin's settings page was added. 
+* NEW : Ability to use shortcode in a text-widget. 
+* Bugfix : We fixed the bug of adding gallery to the search.
 
 = V4.0.9 - 29.11.2013 =
 * Update : The Ukrainian language file is updated.
@@ -361,6 +367,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V4.1.0 =
+A notice when changing settings on the plugin's settings page was added. Ability to use shortcode in a text-widget. We fixed the bug of adding gallery to the search.
 
 = V4.0.9 =
 The Ukrainian language file is updated

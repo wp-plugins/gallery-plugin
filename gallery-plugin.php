@@ -4,7 +4,7 @@ Plugin Name: Gallery
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 4.0.9
+Version: 4.1.0
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -691,6 +691,18 @@ if ( ! function_exists( 'gllr_settings_page' ) ) {
 		global $gllr_options, $wp_version, $wpmu;
 		$error = "";
 		$plugin_info = get_plugin_data( __FILE__ );
+
+		if ( 1 == $wpmu ) {
+			if ( get_site_option( 'cstmsrch_options' ) )
+				$cstmsrch_options = get_site_option( 'cstmsrch_options' );
+			elseif ( get_site_option( 'bws_custom_search' ) )
+				$cstmsrch_options = get_site_option( 'bws_custom_search' ); 
+		} else {
+			if ( get_option( 'cstmsrch_options' ) )
+				$cstmsrch_options = get_option( 'cstmsrch_options' );
+			elseif ( get_option( 'bws_custom_search' ) )
+				$cstmsrch_options = get_option( 'bws_custom_search' );
+		}
 		
 		/* Save data for settings page */
 		if ( isset( $_REQUEST['gllr_form_submit'] ) && check_admin_referer( plugin_basename( __FILE__ ), 'gllr_nonce_name' ) ) {
@@ -728,36 +740,30 @@ if ( ! function_exists( 'gllr_settings_page' ) ) {
 			$gllr_request_options["read_more_link_text"] = $_REQUEST['gllr_read_more_link_text'];	
 
 			if ( isset( $_REQUEST['gllr_add_to_search'] ) ) {
-				if ( 0 == $wpmu && get_option( 'bws_custom_search' ) ) {
-					$cstmsrch_options = get_option( 'bws_custom_search' );
-					if ( ! in_array( 'gallery', $cstmsrch_options ) ) {
+				if ( 0 == $wpmu && isset( $cstmsrch_options ) ) {
+					if ( ! in_array( 'gallery', $cstmsrch_options ) )
 						array_push( $cstmsrch_options, 'gallery' );
-						update_option( 'bws_custom_search', $cstmsrch_options, '', 'yes' );
-					}
-				} elseif ( 1 == $wpmu && get_site_option( 'bws_custom_search' ) ) {
-					$cstmsrch_options = get_site_option( 'bws_custom_search' );
-					if ( ! in_array( 'gallery', $cstmsrch_options ) ) {
+				} elseif ( 1 == $wpmu && isset( $cstmsrch_options ) ) {
+					if ( ! in_array( 'gallery', $cstmsrch_options ) )
 						array_push( $cstmsrch_options, 'gallery' );
-						update_option( 'bws_custom_search', $cstmsrch_options, '', 'yes' );
-					}
 				}
 			} else {
-				if ( 0 == $wpmu && get_option( 'bws_custom_search' ) ) {
-					$cstmsrch_options = get_option( 'bws_custom_search' );
+				if ( 0 == $wpmu && isset( $cstmsrch_options ) ) {
 					if ( in_array( 'gallery', $cstmsrch_options ) ) {
 						$key = array_search( 'gallery', $cstmsrch_options );
 						unset( $cstmsrch_options[ $key ] );
-						update_option( 'bws_custom_search', $cstmsrch_options, '', 'yes' );
 					}
-				} elseif ( 1 == $wpmu && get_site_option( 'bws_custom_search' ) ) {
-					$cstmsrch_options = get_site_option( 'bws_custom_search' );
+				} elseif ( 1 == $wpmu && isset( $cstmsrch_options ) ) {
 					if ( ! in_array( 'gallery', $cstmsrch_options ) ) {
 						$key = array_search( 'gallery', $cstmsrch_options );
 						unset( $cstmsrch_options[ $key ] );
-						update_option( 'bws_custom_search', $cstmsrch_options, '', 'yes' );
 					}
 				}
-			}		
+			}
+			if ( get_option( 'cstmsrch_options' ) )
+				update_option( 'cstmsrch_options', $cstmsrch_options, '', 'yes' );		
+			elseif ( get_option( 'bws_custom_search' ) )
+				update_option( 'bws_custom_search', $cstmsrch_options, '', 'yes' );
 
 			// array merge incase this version has added new options
 			$gllr_options = array_merge( $gllr_options, $gllr_request_options );
@@ -780,8 +786,9 @@ if ( ! function_exists( 'gllr_settings_page' ) ) {
 		<h2><?php _e( 'Gallery Settings', 'gallery' ); ?></h2>
 		<div class="updated fade" <?php if( ! isset( $_REQUEST['gllr_form_submit'] ) || $error != "" ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
 		<div class="error" <?php if( "" == $error ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
+		<div id="gllr_settings_notice" class="updated fade" style="display:none"><p><strong><?php _e( "Notice:", 'gallery' ); ?></strong> <?php _e( "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button.", 'gallery' ); ?></p></div>
 		<p><?php _e( "If you would like to add a Single Gallery to your page or post, just copy and paste this shortcode into your post or page:", 'gallery' ); ?> [print_gllr id=Your_gallery_post_id]</p>
-		<form method="post" action="admin.php?page=gallery-plugin.php" id="gllr_form_image_size">
+		<form id="gllr_settings_form" method="post" action="admin.php?page=gallery-plugin.php">
 			<table class="form-table">
 				<tr valign="top" class="gllr_width_labels">
 					<th scope="row"><?php _e( 'Image size for the album cover', 'gallery' ); ?> </th>
@@ -950,14 +957,7 @@ if ( ! function_exists( 'gllr_settings_page' ) ) {
 						<?php $all_plugins = get_plugins();
 						$active_plugins = get_option( 'active_plugins' );
 						if ( ! function_exists( 'is_plugin_active_for_network' ) )
-							require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
-						if ( 1 == $wpmu ) {
-							if ( get_site_option( 'bws_custom_search' ) )
-								$cstmsrch_options = get_site_option( 'bws_custom_search' ); 
-						} else {
-							if ( get_option( 'bws_custom_search' ) )
-								$cstmsrch_options = get_option( 'bws_custom_search' );
-						}
+							require_once( ABSPATH . '/wp-admin/includes/plugin.php' );						
 						if ( array_key_exists( 'custom-search-plugin/custom-search-plugin.php', $all_plugins ) ) {
 							if ( 0 < count( preg_grep( '/custom-search-plugin\/custom-search-plugin.php/', $active_plugins ) ) || is_plugin_active_for_network( 'custom-search-plugin/custom-search-plugin.php' ) ) { ?>
 								<input type="checkbox" name="gllr_add_to_search" value="1" <?php if ( isset( $cstmsrch_options ) && in_array( 'gallery', $cstmsrch_options ) ) echo "checked=\"checked\""; ?> />
@@ -1064,25 +1064,32 @@ if ( ! function_exists ( 'gllr_add_admin_script' ) ) {
 					});
 				}
 				<?php if ( $wp_version < 3.5 && $_REQUEST['page'] == 'gallery-plugin.php' ) { ?>
-				var gllr_farbtastic = $.farbtastic( '#colorPickerDiv', function( color ) {
-					gllr_farbtastic.setColor( color );
-					$( '#gllr_border_images_color' ).val( color );
-					$( '#gllr_border_images_color_small' ).css( 'background-color', color );
-				});
-				$( '#gllr_border_images_color' ).click( function() {
-					$( '#colorPickerDiv' ).show();				
-				});
-				$( '#gllr_border_images_color_small' ).click( function() {
-					$( '#colorPickerDiv' ).show();				
-				});
-				$(document).mousedown( function() {
-					$( '#colorPickerDiv' ).each( function() {
-						var display = $( this ).css( 'display' );
-						if ( display == 'block' )
-							jQuery(this).fadeOut(2);
+					var gllr_farbtastic = $.farbtastic( '#colorPickerDiv', function( color ) {
+						gllr_farbtastic.setColor( color );
+						$( '#gllr_border_images_color' ).val( color );
+						$( '#gllr_border_images_color_small' ).css( 'background-color', color );
 					});
-				});
+					$( '#gllr_border_images_color' ).click( function() {
+						$( '#colorPickerDiv' ).show();				
+					});
+					$( '#gllr_border_images_color_small' ).click( function() {
+						$( '#colorPickerDiv' ).show();				
+					});
+					$(document).mousedown( function() {
+						$( '#colorPickerDiv' ).each( function() {
+							var display = $( this ).css( 'display' );
+							if ( display == 'block' )
+								jQuery(this).fadeOut(2);
+						});
+					});
 				<?php } ?>
+				/* add notice about changing in the settings page */
+				$( '#gllr_settings_form input' ).bind( "change click select", function() {
+					if ( $( this ).attr( 'type' ) != 'submit' ) {
+						$( '.updated.fade' ).css( 'display', 'none' );
+						$( '#gllr_settings_notice' ).css( 'display', 'block' );
+					};
+				});
 			});
 		})(jQuery);
 		</script>
@@ -1538,6 +1545,7 @@ add_action( 'admin_enqueue_scripts', 'gllr_admin_head' );
 add_action( 'wp_enqueue_scripts', 'gllr_wp_head' );
 
 add_shortcode( 'print_gllr', 'gllr_shortcode' );
+add_filter( 'widget_text', 'do_shortcode' );
 
 add_action( 'wp_ajax_upload_gallery_image', 'upload_gallery_image' );
 
