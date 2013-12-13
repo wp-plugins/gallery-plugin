@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
-Tested up to: 3.7.1
-Stable tag: 4.1.0
+Tested up to: 3.8
+Stable tag: 4.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,7 +15,14 @@ This plugin allows you to implement a gallery page into your website.
 This plugin makes it possible to implement as many galleries as you want into your website. You can add multiple pictures and description for each gallery, show them all at one page, view each one separately. Moreover, you can upload HQ images. Regular updates and simplicity of usage along with efficient functionality make it a perfect choice for your site to have an appealing look. 
 There is also a premium version of the plugin with more useful features available.
 
+https://www.youtube.com/watch?v=3NXb9ExQ3QE
+
+<a href="https://www.youtube.com/watch?v=Qr5DD0qKqA4" target="_blank">Video instruction on Installation</a>
+
+<a href="https://www.youtube.com/watch?v=z95ql-M2JTc" target="_blank">Video instruction "How to add a gallery"</a>
+
 <a href="http://wordpress.org/plugins/gallery-plugin/faq/" target="_blank">FAQ</a>
+
 <a href="http://support.bestwebsoft.com" target="_blank">Support</a>
 
 <a href="http://bestwebsoft.com/plugin/gallery-pro/?k=57ad5c0c7fe312e2a45ef9a76f47334c" target="_blank">Upgrade to Pro Version</a>, <a href="http://bestwebsoft.com/demo-for-gallery-pro/" target="_blank">View Demo of Pro Version</a>
@@ -70,6 +77,12 @@ We can fix some things for free for the users who provide translation of our plu
 3. Please check if you have the template file `gallery-template.php` as well as the template `gallery-single-template.php` in the templates directory. If you can't find these files, then just copy them from the directory  `/wp-content/plugins/gallery/template/` to your templates directory.
 
 <a href="http://bestwebsoft.com/wp-content/uploads/manual/wp_plugin/gallery/Gallery_Installation_step-by-step_instruction.pdf" target="_blank">View a PDF version of Step-by-step Instruction on Gallery Installation</a>.
+
+https://www.youtube.com/watch?v=Qr5DD0qKqA4
+
+<a href="http://bestwebsoft.com/wp-content/uploads/manual/wp_plugin/gallery/How_to_add_a_Gallery.pdf" target="_blank">View a PDF version of Step-by-step Instruction "How to add a Gallery"</a>.
+
+https://www.youtube.com/watch?v=z95ql-M2JTc
 
 == Frequently Asked Questions ==
 
@@ -140,11 +153,16 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 
 1. Gallery Admin page.
 2. Gallery albums page in the front-end.
-3. Gallery Options page in the admin panel.
+3. Gallery Settings page in the admin panel.
 4. Single Gallery page.
 5. PrettyPhoto pop-up window containing the album images.
 
 == Changelog ==
+
+= V4.1.1 - 13.12.2013 =
+* Update : We updated all functionality for wordpress 3.8.
+* Update : Screenshots are updated.
+* NEW : Ability to update images after changing gallery image size.
 
 = V4.1.0 - 6.12.2013 =
 * NEW : A notice when changing settings on the plugin's settings page was added. 
@@ -367,6 +385,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V4.1.1 =
+We updated all functionality for wordpress 3.8. Screenshots are updated. Ability to update images after changing gallery image size.
 
 = V4.1.0 =
 A notice when changing settings on the plugin's settings page was added. Ability to use shortcode in a text-widget. We fixed the bug of adding gallery to the search.
