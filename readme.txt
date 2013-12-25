@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.8
-Stable tag: 4.1.1
+Stable tag: 4.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -158,6 +158,11 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 5. PrettyPhoto pop-up window containing the album images.
 
 == Changelog ==
+
+= V4.1.2 - 25.12.2013 =
+* Update : The French language file is updated.
+* Update : The Chinese language file is updated.
+* Bugfix : We fixed the bug of download link title.
 
 = V4.1.1 - 13.12.2013 =
 * Update : We updated all functionality for wordpress 3.8.
@@ -385,6 +390,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V4.1.2 =
+The French language file is updated. The Chinese language file is updated. We fixed the bug of download link title.
 
 = V4.1.1 =
 We updated all functionality for wordpress 3.8. Screenshots are updated. Ability to update images after changing gallery image size.

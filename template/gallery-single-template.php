@@ -11,6 +11,7 @@
 			);	
 			$second_query = new WP_Query( $args ); 
 			$gllr_options = get_option( 'gllr_options' );
+			$gllr_download_link_title = addslashes( __( 'Download high resolution image', 'gallery' ) );
 			if ( $second_query->have_posts() ) : while ( $second_query->have_posts() ) : $second_query->the_post(); ?>
 				<h1 class="home_page_title entry-header"><?php the_title(); ?></h1>
 				<div class="gallery_box_single entry-content">
@@ -99,7 +100,7 @@
 					'speedIn'				:	500, 
 					'speedOut'				:	300,
 					'titleFormat'			: function(title, currentArray, currentIndex, currentOpts) {
-						return '<span id="fancybox-title-inside">' + ( title.length ? title + '<br />' : '' ) + '<?php _e( "Image", "gallery"); ?> ' + ( currentIndex + 1 ) + ' / ' + currentArray.length + '</span><?php if( get_post_meta( $post->ID, 'gllr_download_link', true ) != '' ){?><br /><a href="' + $( currentOpts.orig ).attr('rel') + '" target="_blank"><?php echo __( 'Download high resolution image', 'gallery' ); ?> </a><?php } ?>';
+						return '<span id="fancybox-title-inside">' + ( title.length ? title + '<br />' : '' ) + '<?php _e( "Image", "gallery"); ?> ' + ( currentIndex + 1 ) + ' / ' + currentArray.length + '</span><?php if( get_post_meta( $post->ID, 'gllr_download_link', true ) != '' ){?><br /><a href="' + $( currentOpts.orig ).attr('rel') + '" target="_blank"><?php echo $gllr_download_link_title; ?> </a><?php } ?>';
 					}<?php if ( $gllr_options['start_slideshow'] == 1 ) { ?>,
 					'onComplete':	function() {
 						clearTimeout( jQuery.fancybox.slider );
