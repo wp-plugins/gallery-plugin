@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.8
-Stable tag: 4.1.2
+Stable tag: 4.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,7 @@ We can fix some things for free for the users who provide translation of our plu
 1. Upload the `Gallery` folder to the directory `/wp-content/plugins/`.
 2. Activate the plugin using the 'Plugins' menu in WordPress.
 3. Please check if you have the template file `gallery-template.php` as well as the template `gallery-single-template.php` in the templates directory. If you can't find these files, then just copy them from the directory  `/wp-content/plugins/gallery/template/` to your templates directory.
+4. You can adjust the necessary settings using your WordPress admin panel in "BWS Plugins" > "Gallery".
 
 <a href="http://bestwebsoft.com/wp-content/uploads/manual/wp_plugin/gallery/Gallery_Installation_step-by-step_instruction.pdf" target="_blank">View a PDF version of Step-by-step Instruction on Gallery Installation</a>.
 
@@ -158,6 +159,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 5. PrettyPhoto pop-up window containing the album images.
 
 == Changelog ==
+
+= V4.1.3 - 15.01.2014 =
+* Update : BWS plugins section is updated.
 
 = V4.1.2 - 25.12.2013 =
 * Update : The French language file is updated.
@@ -390,6 +394,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V4.1.3 =
+BWS plugins section is updated.
 
 = V4.1.2 =
 The French language file is updated. The Chinese language file is updated. We fixed the bug of download link title.
