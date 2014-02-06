@@ -3,8 +3,8 @@ Contributors: bestwebsoft
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
-Tested up to: 3.8
-Stable tag: 4.1.3
+Tested up to: 3.8.1
+Stable tag: 4.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,8 @@ There is also a premium version of the plugin <a href="http://bestwebsoft.com/pl
 * Brazilian Portuguese (pt_BR) (thanks to DJIO, www.djio.com.br)
 * Bulgarian (bg_BG) (thanks to Petya)
 * Chinese (zh_CN) (thanks to <a href="mailto:mibcxb@gmail.com">Xiaobo Chen</a>)
+* Czech (cs_CZ) (thanks to <a href="mailto:lagya@me.com">Lagya</a>)
+* Dutch (nl_NL) (thanks to <a href="mailto:j.goessens@gmail.com">J Goessens</a>)
 * French (fr_FR) (thanks to Didier, <a href="mailto:lcapronnier@yahoo.com">L Capronnier</a>)
 * German (de_DE) (thanks to Thomas Bludau, <a href="mailto:info@ahoidesign.de">Jonas Seemann</a>)
 * Russian (ru_RU)
@@ -150,6 +152,14 @@ and add (for the themes Twenty Eleven or Twenty Ten):
     direction:rtl;
 }
 
+= I have some problems with the plugin's work. What Information should I provide to receive proper support? =
+
+Please make sure that the problem hasn't been discussed yet on our forum (<a href="http://support.bestwebsoft.com" target="_blank">http://support.bestwebsoft.com</a>). If no, please provide the following data along with your problem's description:
+1. the link to the page where the problem occurs
+2. the name of the plugin and its version. If you are using a pro version - your order number.
+3. the version of your WordPress installation
+4. copy and paste into the message your system status report. Please read more here: <a href="http://bestwebsoft.com/wp-content/uploads/manual/wp_plugin/general/System_Status.pdf" target="_blank">System_Status.pdf</a>
+
 == Screenshots ==
 
 1. Gallery Admin page.
@@ -159,6 +169,11 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 5. PrettyPhoto pop-up window containing the album images.
 
 == Changelog ==
+
+= V4.1.4 - 06.02.2014 =
+* Update : We updated all functionality for wordpress 3.8.1.
+* NEW : The Dutch language file is added.
+* NEW : The Czech language file is added.
 
 = V4.1.3 - 15.01.2014 =
 * Update : BWS plugins section is updated.
@@ -394,6 +409,9 @@ and add (for the themes Twenty Eleven or Twenty Ten):
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V4.1.4 =
+We updated all functionality for wordpress 3.8.1. The Dutch language file is added. The Czech language file is added.
 
 = V4.1.3 =
 BWS plugins section is updated.

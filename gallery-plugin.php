@@ -4,7 +4,7 @@ Plugin Name: Gallery
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 4.1.3
+Version: 4.1.4
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -776,273 +776,447 @@ if ( ! function_exists( 'gllr_settings_page' ) ) {
 		if ( ! file_exists( get_stylesheet_directory() . '/gallery-template.php' ) || ! file_exists( get_stylesheet_directory() . '/gallery-single-template.php' ) ) {
 			$error .= __( 'The following files "gallery-template.php" and "gallery-single-template.php" were not found in the directory of your theme. Please copy them from the directory `/wp-content/plugins/gallery-plugin/template/` to the directory of your theme for the correct work of the Gallery plugin', 'gallery' );
 		}
+
+		/* GO PRO */
+		if ( isset( $_GET['action'] ) && 'go_pro' == $_GET['action'] ) {
+			global $wpmu;
+
+			$bws_license_key = ( isset( $_POST['bws_license_key'] ) ) ? trim( $_POST['bws_license_key'] ) : "";
+			$bstwbsftwppdtplgns_options_defaults = array();
+			if ( 1 == $wpmu ) {
+				if ( !get_site_option( 'bstwbsftwppdtplgns_options' ) )
+					add_site_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options_defaults, '', 'yes' );
+				$bstwbsftwppdtplgns_options = get_site_option( 'bstwbsftwppdtplgns_options' );
+			} else {
+				if ( !get_option( 'bstwbsftwppdtplgns_options' ) )
+					add_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options_defaults, '', 'yes' );
+				$bstwbsftwppdtplgns_options = get_option( 'bstwbsftwppdtplgns_options' );
+			}
+
+			if ( isset( $_POST['bws_license_submit'] ) && check_admin_referer( plugin_basename( __FILE__ ), 'bws_license_nonce_name' ) ) {
+				if ( '' != $bws_license_key ) { 
+					if ( strlen( $bws_license_key ) != 18 ) {
+						$error = __( "Wrong license key", 'gallery' );
+					} else {
+						$bws_license_plugin = trim( $_POST['bws_license_plugin'] );	
+						if ( isset( $bstwbsftwppdtplgns_options['go_pro'][ $bws_license_plugin ]['count'] ) && $bstwbsftwppdtplgns_options['go_pro'][ $bws_license_plugin ]['time'] < ( time() + (24 * 60 * 60) ) ) {
+							$bstwbsftwppdtplgns_options['go_pro'][ $bws_license_plugin ]['count'] = $bstwbsftwppdtplgns_options['go_pro'][ $bws_license_plugin ]['count'] + 1;
+						} else {
+							$bstwbsftwppdtplgns_options['go_pro'][ $bws_license_plugin ]['count'] = 1;
+							$bstwbsftwppdtplgns_options['go_pro'][ $bws_license_plugin ]['time'] = time();
+						}	
+
+						/* download Pro */
+						if ( !function_exists( 'get_plugins' ) )
+							require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+						if ( ! function_exists( 'is_plugin_active_for_network' ) )
+							require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+						$all_plugins = get_plugins();
+						$active_plugins = get_option( 'active_plugins' );
+						
+						if ( ! array_key_exists( $bws_license_plugin, $all_plugins ) ) {
+							$current = get_site_transient( 'update_plugins' );
+							if ( is_array( $all_plugins ) && !empty( $all_plugins ) && isset( $current ) && is_array( $current->response ) ) {
+								$to_send = array();
+								$to_send["plugins"][ $bws_license_plugin ] = array();
+								$to_send["plugins"][ $bws_license_plugin ]["bws_license_key"] = $bws_license_key;
+								$to_send["plugins"][ $bws_license_plugin ]["bws_illegal_client"] = true;
+								$options = array(
+									'timeout' => ( ( defined('DOING_CRON') && DOING_CRON ) ? 30 : 3 ),
+									'body' => array( 'plugins' => serialize( $to_send ) ),
+									'user-agent' => 'WordPress/' . $wp_version . '; ' . get_bloginfo( 'url' ) );
+								$raw_response = wp_remote_post( 'http://bestwebsoft.com/wp-content/plugins/paid-products/plugins/update-check/1.0/', $options );
+
+								if ( is_wp_error( $raw_response ) || 200 != wp_remote_retrieve_response_code( $raw_response ) ) {
+									$error = __( "Something went wrong. Try again later. If the error will appear again, please, contact us <a href=http://support.bestwebsoft.com>BestWebSoft</a>. We are sorry for inconvenience.", 'gallery' );
+								} else {
+									$response = maybe_unserialize( wp_remote_retrieve_body( $raw_response ) );
+									
+									if ( is_array( $response ) && !empty( $response ) ) {
+										foreach ( $response as $key => $value ) {
+											if ( "wrong_license_key" == $value->package ) {
+												$error = __( "Wrong license key", 'gallery' ); 
+											} elseif ( "wrong_domain" == $value->package ) {
+												$error = __( "This license key is bind to another site", 'gallery' );
+											} elseif ( "you_are_banned" == $value->package ) {
+												$error = __( "Unfortunately, you have exceeded the number of available tries per day. Please, upload the plugin manually.", 'gallery' );
+											}
+										}
+										if ( '' == $error ) {
+											global $wpmu;																					
+											$bstwbsftwppdtplgns_options[ $bws_license_plugin ] = $bws_license_key;
+
+											$url = 'http://bestwebsoft.com/wp-content/plugins/paid-products/plugins/downloads/?bws_first_download=' . $bws_license_plugin . '&bws_license_key=' . $bws_license_key . '&download_from=5';
+											$uploadDir = wp_upload_dir();
+											$zip_name = explode( '/', $bws_license_plugin );
+										    if ( file_put_contents( $uploadDir["path"] . "/" . $zip_name[0] . ".zip", file_get_contents( $url ) ) ) {
+										    	@chmod( $uploadDir["path"] . "/" . $zip_name[0] . ".zip", octdec( 755 ) );
+										    	if ( class_exists( 'ZipArchive' ) ) {
+													$zip = new ZipArchive();
+													if ( $zip->open( $uploadDir["path"] . "/" . $zip_name[0] . ".zip" ) === TRUE ) {
+														$zip->extractTo( WP_PLUGIN_DIR );
+														$zip->close();
+													} else {
+														$error = __( "Failed to open the zip archive. Please, upload the plugin manually", 'gallery' );
+													}								
+												} elseif ( class_exists( 'Phar' ) ) {
+													$phar = new PharData( $uploadDir["path"] . "/" . $zip_name[0] . ".zip" );
+													$phar->extractTo( WP_PLUGIN_DIR );
+												} else {
+													$error = __( "Your server does not support either ZipArchive or Phar. Please, upload the plugin manually", 'gallery' );
+												}
+												@unlink( $uploadDir["path"] . "/" . $zip_name[0] . ".zip" );										    
+											} else {
+												$error = __( "Failed to download the zip archive. Please, upload the plugin manually", 'gallery' );
+											}
+
+											/* activate Pro */
+											if ( file_exists( WP_PLUGIN_DIR . '/' . $zip_name[0] ) ) {			
+												array_push( $active_plugins, $bws_license_plugin );
+												update_option( 'active_plugins', $active_plugins );
+												$pro_plugin_is_activated = true;
+											} elseif ( '' == $error ) {
+												$error = __( "Failed to download the zip archive. Please, upload the plugin manually", 'gallery' );
+											}																				
+										}
+									} else {
+										$error = __( "Something went wrong. Try again later or upload the plugin manually. We are sorry for inconvienience.", 'gallery' ); 
+					 				}
+					 			}
+				 			}
+						} else {
+							/* activate Pro */
+							if ( ! ( in_array( $bws_license_plugin, $active_plugins ) || is_plugin_active_for_network( $bws_license_plugin ) ) ) {			
+								array_push( $active_plugins, $bws_license_plugin );
+								update_option( 'active_plugins', $active_plugins );
+								$pro_plugin_is_activated = true;
+							}						
+						}
+						update_option( 'bstwbsftwppdtplgns_options', $bstwbsftwppdtplgns_options, '', 'yes' );
+			 		}
+			 	} else {
+		 			$error = __( "Please, enter Your license key", 'gallery' );
+		 		}
+		 	}
+		}
 		/* Display form on the setting page */
 	?>
 	<div class="wrap">
 		<div class="icon32 icon32-bws" id="icon-options-general"></div>
 		<h2><?php _e( 'Gallery Settings', 'gallery' ); ?></h2>
+		<h2 class="nav-tab-wrapper">
+			<a class="nav-tab<?php if ( ! isset( $_GET['action'] ) ) echo ' nav-tab-active'; ?>"  href="admin.php?page=gallery-plugin.php"><?php _e( 'Settings', 'gallery' ); ?></a>
+			<a class="nav-tab bws_go_pro_tab<?php if ( isset( $_GET['action'] ) && 'go_pro' == $_GET['action'] ) echo ' nav-tab-active'; ?>" href="admin.php?page=gallery-plugin.php&amp;action=go_pro"><?php _e( 'Go PRO', 'gallery' ); ?></a>
+		</h2>
 		<div id="gllr_settings_message" class="updated fade" <?php if ( ! isset( $_REQUEST['gllr_form_submit'] ) || "" != $error ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
 		<div class="error" <?php if ( "" == $error ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
-		<div id="gllr_settings_notice" class="updated fade" style="display:none"><p><strong><?php _e( "Notice:", 'gallery' ); ?></strong> <?php _e( "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button.", 'gallery' ); ?></p></div>
-		<p><?php _e( "If you would like to add a Single Gallery to your page or post, just copy and paste this shortcode into your post or page:", 'gallery' ); ?> [print_gllr id=Your_gallery_post_id]</p>
-		<noscript>			
-			<p><?php echo __( 'Please enable JavaScript to use the option to renew images.', 'gallery' ); ?></p>
-		</noscript> 
-		<table class="form-table">
-			<tr valign="top">
-				<th scope="row"><?php _e( 'Update images for gallery', 'gallery' ); ?> </th>
-				<td style="position:relative">
-					<input type="button" value="<?php _e( 'Update images' ); ?>" id="ajax_update_images" name="ajax_update_images" class="button" onclick="javascript:gllr_update_images();"> <div id="gllr_img_loader"><img src="<?php echo plugins_url( 'images/ajax-loader.gif', __FILE__ ); ?>" alt="loader" /></div>
-				</td>
-			</tr>
-		</table>
-		<script type="text/javascript">
-			var update_img_message	=	"<?php _e( 'Updating images...', 'gallery' ) ?>",
-				not_found_img_info	=	"<?php _e( 'No image found', 'gallery'); ?>",
-				img_success			=	"<?php _e( 'All images are updated', 'gallery' ); ?>",
-				img_error			=	"<?php _e( 'Error.', 'gallery' ); ?>";
-		</script>
-		<br/>
-		<form id="gllr_settings_form" method="post" action="admin.php?page=gallery-plugin.php">
+		<?php if ( ! isset( $_GET['action'] ) ) { ?>
+			<div id="gllr_settings_notice" class="updated fade" style="display:none"><p><strong><?php _e( "Notice:", 'gallery' ); ?></strong> <?php _e( "The plugin's settings have been changed. In order to save them please don't forget to click the 'Save Changes' button.", 'gallery' ); ?></p></div>
+			<p><?php _e( "If you would like to add a Single Gallery to your page or post, just copy and paste this shortcode into your post or page:", 'gallery' ); ?> [print_gllr id=Your_gallery_post_id]</p>
+			<noscript>			
+				<p><?php echo __( 'Please enable JavaScript to use the option to renew images.', 'gallery' ); ?></p>
+			</noscript> 
 			<table class="form-table">
-				<tr valign="top" class="gllr_width_labels">
-					<th scope="row"><?php _e( 'Image size for the album cover', 'gallery' ); ?> </th>
-					<td>
-						<label for="custom_image_size_name"><?php _e( 'Image size', 'gallery' ); ?></label> <?php echo $gllr_options["gllr_custom_size_name"][0]; ?><br />
-						<label for="custom_image_size_w"><?php _e( 'Width (in px)', 'gallery' ); ?></label> <input type="text" name="gllr_custom_image_size_w_album" value="<?php echo $gllr_options["gllr_custom_size_px"][0][0]; ?>" /><br />
-						<label for="custom_image_size_h"><?php _e( 'Height (in px)', 'gallery' ); ?></label> <input type="text" name="gllr_custom_image_size_h_album" value="<?php echo $gllr_options["gllr_custom_size_px"][0][1]; ?>" />
-					</td>
-				</tr>
-				<tr valign="top" class="gllr_width_labels">
-					<th scope="row"><?php _e( 'Gallery image size', 'gallery' ); ?> </th>
-					<td>
-						<label for="custom_image_size_name"><?php _e( 'Image size', 'gallery' ); ?></label> <?php echo $gllr_options["gllr_custom_size_name"][1]; ?><br />
-						<label for="custom_image_size_w"><?php _e( 'Width (in px)', 'gallery' ); ?></label> <input type="text" name="gllr_custom_image_size_w_photo" value="<?php echo $gllr_options["gllr_custom_size_px"][1][0]; ?>" /><br />
-						<label for="custom_image_size_h"><?php _e( 'Height (in px)', 'gallery' ); ?></label> <input type="text" name="gllr_custom_image_size_h_photo" value="<?php echo $gllr_options["gllr_custom_size_px"][1][1]; ?>" />
-					</td>
-				</tr>
 				<tr valign="top">
-					<td colspan="2"><span style="color: #888888;font-size: 10px;"><?php _e( 'WordPress will create a new thumbnail with the specified dimensions when you upload a new photo.', 'gallery' ); ?></span></td>
+					<th scope="row"><?php _e( 'Update images for gallery', 'gallery' ); ?> </th>
+					<td style="position:relative">
+						<input type="button" value="<?php _e( 'Update images' ); ?>" id="ajax_update_images" name="ajax_update_images" class="button" onclick="javascript:gllr_update_images();"> <div id="gllr_img_loader"><img src="<?php echo plugins_url( 'images/ajax-loader.gif', __FILE__ ); ?>" alt="loader" /></div>
+					</td>
 				</tr>
 			</table>
-			<table class="form-table bws_pro_version">
-				<tr valign="top" class="gllr_width_labels">
-					<th scope="row"><?php _e( 'Gallery image size in the lightbox', 'gallery' ); ?> </th>
-					<td>
-						<label for="custom_image_size_name"><?php _e( 'Image size', 'gallery' ); ?></label> full-photo<br />
-						<label for="custom_image_size_w"><?php _e( 'Max width (in px)', 'gallery' ); ?></label> <input disabled class="gllrprfssnl_size_photo_full" type="text" name="gllrprfssnl_custom_image_size_w_full" value="1024"/><br />
-						<label for="custom_image_size_h"><?php _e( 'Max height (in px)', 'gallery' ); ?></label> <input disabled class="gllrprfssnl_size_photo_full" type="text" name="gllrprfssnl_custom_image_size_h_full" value="1024"/><br />
-						<input disabled type="checkbox" name="gllrprfssnl_size_photo_full" value="1" /> <?php _e( 'Display a full size image in the lightbox', 'gallery' ); ?>
-					</td>
-				</tr>
-				<tr valign="top" class="gllr_width_labels">
-					<th scope="row"><?php _e( 'Crop position', 'gallery' ); ?></th>
-					<td>
-						<label><?php _e( 'Horizontal', 'gallery' ); ?></label> 
-						<select>
-							<option value="left"><?php _e( 'left', 'gallery' ); ?></option>
-							<option value="center"><?php _e( 'center', 'gallery' ); ?></option>
-							<option value="right"><?php _e( 'right', 'gallery' ); ?></option>
-						</select>
-						<br />
-						<label><?php _e( 'Vertical', 'gallery' ); ?></label> 
-						<select>							
-							<option value="top"><?php _e( 'top', 'gallery' ); ?></option>
-							<option value="center"><?php _e( 'center', 'gallery' ); ?></option>
-							<option value="bottom"><?php _e( 'bottom', 'gallery' ); ?></option>
-						</select>
-					</td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e( 'Lightbox background', 'gallery' ); ?> </th>	
-					<td>					
-						<input disabled class="button button-small gllrprfssnl_lightbox_default" type="button" value="<?php _e( 'Default', 'gallery' ); ?>"> <br />
-						<input disabled type="text" size="8" value="0.7" name="gllrprfssnl_background_lightbox_opacity" /> <?php _e( 'Background transparency (from 0 to 1)', 'gallery' ); ?><br />
-						<?php if ( 3.5 <= $wp_version ) { ?>
-							<input disabled id="gllrprfssnl_background_lightbox_color" type="minicolors" name="gllrprfssnl_background_lightbox_color" value="#777777" id="gllrprfssnl_background_lightbox_color" /> <?php _e( 'Select a background color', 'gallery' ); ?>
-						<?php } else { ?>
-							<input disabled id="gllrprfssnl_background_lightbox_color" type="text" name="gllrprfssnl_background_lightbox_color" value="#777777" id="gllrprfssnl_background_lightbox_color" /><span id="gllrprfssnl_background_lightbox_color_small" style="background-color:#777777"></span> <?php _e( 'Background color', 'gallery' ); ?>
-							<div id="colorPickerDiv_backgraund" style="z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;"></div>
-						<?php } ?>
-					</td>
-				</tr>	
-				<tr valign="top">
-					<th scope="row" colspan="2">
-						* <?php _e( 'If you upgrade to Pro version all your settings and galleries will be saved.', 'gallery' ); ?>
-					</th>
-				</tr>
-				<tr class="bws_pro_version_tooltip">
-					<th scope="row" colspan="2">
-						<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'gallery' ); ?> 
-						<a href="http://bestwebsoft.com/plugin/gallery-pro/?k=63a36f6bf5de0726ad6a43a165f38fe5&pn=79&v=<?php echo $plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="Gallery Pro Plugin">
-							Gallery Pro Plugin
-						</a>
-					</th>
-				</tr>
-			</table> 					
-			<table class="form-table">
-				<tr valign="top">
-					<th scope="row"><?php _e( 'Images with border', 'gallery' ); ?></th>
-					<td>
-						<input type="checkbox" name="gllr_border_images" value="1" <?php if ( 1 == $gllr_options["border_images"] ) echo 'checked="checked"'; ?> /><br />
-						<input type="text" value="<?php echo $gllr_options["border_images_width"]; ?>" name="gllr_border_images_width" /> <?php _e( 'Border width in px, just numbers', 'gallery' ); ?><br />
-						<?php if ( 3.5 <= $wp_version ) { ?>
-							<input type="minicolors" name="gllr_border_images_color" value="<?php echo $gllr_options["border_images_color"]; ?>" id="gllr_border_images_color" /> <?php _e( 'Select a border color', 'gallery' ); ?>
-						<?php } else { ?>
-							<input type="text" name="gllr_border_images_color" value="<?php echo $gllr_options["border_images_color"]; ?>" id="gllr_border_images_color" /><span id="gllr_border_images_color_small" style="background-color:<?php echo $gllr_options["border_images_color"]; ?>"></span> <?php _e( 'Select a border color', 'gallery' ); ?>
-							<div id="colorPickerDiv" style="z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;"></div>
-						<?php } ?>
-					</td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e( 'Number of images in the row', 'gallery' ); ?> </th>
-					<td>
-						<input type="text" name="gllr_custom_image_row_count" value="<?php echo $gllr_options["custom_image_row_count"]; ?>" />
-					</td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e( 'Start slideshow', 'gallery' ); ?> </th>
-					<td>
-						<input type="checkbox" name="gllr_start_slideshow" value="1" <?php if ( 1 == $gllr_options["start_slideshow"] ) echo 'checked="checked"'; ?> />
-					</td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e( 'Slideshow interval', 'gallery' ); ?> </th>
-					<td>
-						<input type="text" name="gllr_slideshow_interval" value="<?php echo $gllr_options["slideshow_interval"]; ?>" />
-					</td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e( 'Use single lightbox for multiple galleries on one page', 'gallery' ); ?> </th>
-					<td>
-						<input type="checkbox" name="gllr_single_lightbox_for_multiple_galleries" value="1" <?php if ( 1 == $gllr_options["single_lightbox_for_multiple_galleries"] ) echo 'checked="checked"'; ?> />
-					</td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e( 'Sort images by', 'gallery' ); ?></th>
-					<td>
-						<label class="label_radio"><input type="radio" name="gllr_order_by" value="ID" <?php if ( 'ID' == $gllr_options["order_by"] ) echo 'checked="checked"'; ?> /> <?php _e( 'Attachment ID', 'gallery' ); ?></label><br />
-						<label class="label_radio"><input type="radio" name="gllr_order_by" value="title" <?php if ( 'title' == $gllr_options["order_by"] ) echo 'checked="checked"'; ?> /> <?php _e( 'Image Name', 'gallery' ); ?></label><br />
-						<label class="label_radio"><input type="radio" name="gllr_order_by" value="date" <?php if ( 'date' == $gllr_options["order_by"] ) echo 'checked="checked"'; ?> /> <?php _e( 'Date', 'gallery' ); ?></label><br />
-						<label class="label_radio"><input type="radio" name="gllr_order_by" value="menu_order" <?php if ( 'menu_order' == $gllr_options["order_by"] ) echo 'checked="checked"'; ?> /> <?php _e( 'Sorting order (the input field for sorting order in the Insert / Upload Media Gallery dialog)', 'gallery' ); ?></label><br />
-						<label class="label_radio"><input type="radio" name="gllr_order_by" value="rand" <?php if ( 'rand' == $gllr_options["order_by"] ) echo 'checked="checked"'; ?> /> <?php _e( 'Random', 'gallery' ); ?></label>
-					</td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e( 'Sort images', 'gallery' ); ?></th>
-					<td>
-						<label class="label_radio"><input type="radio" name="gllr_order" value="ASC" <?php if ( 'ASC' == $gllr_options["order"] ) echo 'checked="checked"'; ?> /> <?php _e( 'ASC (ascending order from lowest to highest values - 1, 2, 3; a, b, c)', 'gallery' ); ?></label><br />
-						<label class="label_radio"><input type="radio" name="gllr_order" value="DESC" <?php if ( 'DESC' == $gllr_options["order"] ) echo 'checked="checked"'; ?> /> <?php _e( 'DESC (descending order from highest to lowest values - 3, 2, 1; c, b, a)', 'gallery' ); ?></label>
-					</td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e( 'Display text above the image', 'gallery' ); ?></th>
-					<td>
-						<label><input type="checkbox" name="gllr_image_text" value="1" <?php if ( 1 == $gllr_options["image_text"] ) echo 'checked="checked"'; ?> /> <?php _e( 'Turn off the checkbox, if you want to display text just in a lightbox', 'gallery' ); ?></label>
-					</td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e( 'Display the Back link', 'gallery' ); ?></th>
-					<td>
-						<input type="checkbox" name="gllr_return_link" value="1" <?php if ( 1 == $gllr_options["return_link"] ) echo 'checked="checked"'; ?> />
-					</td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e( 'Display the Back link in the shortcode', 'gallery' ); ?> </th>
-					<td>
-						<input type="checkbox" name="gllr_return_link_shortcode" value="1" <?php if ( 1 == $gllr_options["return_link_shortcode"] ) echo 'checked="checked"'; ?> />
-					</td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e( 'The Back link text', 'gallery' ); ?> </th>
-					<td>
-						<input type="text" name="gllr_return_link_text" value="<?php echo $gllr_options["return_link_text"]; ?>" style="width:200px;" />
-					</td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e( 'The Back link URL', 'gallery' ); ?></th>
-					<td>
-						<label><input type="radio" value="gallery_template_url" name="gllr_return_link_page" <?php if ( 'gallery_template_url' == $gllr_options["return_link_page"] ) echo 'checked="checked"'; ?> /><?php _e( 'Gallery page (Page with Gallery Template)', 'gallery'); ?></label><br />
-						<input type="radio" value="custom_url" name="gllr_return_link_page" id="gllr_return_link_url" <?php if ( 'custom_url' == $gllr_options["return_link_page"] ) echo 'checked="checked"'; ?> /> <input type="text" onfocus="document.getElementById('gllr_return_link_url').checked = true;" value="<?php echo $gllr_options["return_link_url"]; ?>" name="gllr_return_link_url">
-						<?php _e( '(Full URL to custom page)' , 'gallery'); ?>
-					</td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e( 'The Read More link text', 'gallery' ); ?></th>
-					<td>
-						<input type="text" name="gllr_read_more_link_text" value="<?php echo $gllr_options["read_more_link_text"]; ?>" style="width:200px;" />
-					</td>
-				</tr>
-				<tr valign="top">
-					<th scope="row"><?php _e( 'Add gallery to the search', 'gallery' ); ?></th>
-					<td>
-						<?php 
-						$all_plugins	=	get_plugins();
-						$active_plugins	=	get_option( 'active_plugins' );
-						if ( ! function_exists( 'is_plugin_active_for_network' ) )
-							require_once( ABSPATH . '/wp-admin/includes/plugin.php' );						
-						if ( array_key_exists( 'custom-search-plugin/custom-search-plugin.php', $all_plugins ) ) {
-							if ( 0 < count( preg_grep( '/custom-search-plugin\/custom-search-plugin.php/', $active_plugins ) ) || is_plugin_active_for_network( 'custom-search-plugin/custom-search-plugin.php' ) ) { ?>
-								<input type="checkbox" name="gllr_add_to_search" value="1" <?php if ( isset( $cstmsrch_options ) && in_array( 'gallery', $cstmsrch_options ) ) echo "checked=\"checked\""; ?> />
-								<span style="color: #888888;font-size: 10px;"> (<?php _e( 'Using Custom Search powered by', 'gallery' ); ?> <a href="http://bestwebsoft.com/plugin/">bestwebsoft.com</a>)</span>
+			<script type="text/javascript">
+				var update_img_message	=	"<?php _e( 'Updating images...', 'gallery' ) ?>",
+					not_found_img_info	=	"<?php _e( 'No image found', 'gallery'); ?>",
+					img_success			=	"<?php _e( 'All images are updated', 'gallery' ); ?>",
+					img_error			=	"<?php _e( 'Error.', 'gallery' ); ?>";
+			</script>
+			<br/>
+			<form id="gllr_settings_form" method="post" action="admin.php?page=gallery-plugin.php">
+				<table class="form-table">
+					<tr valign="top" class="gllr_width_labels">
+						<th scope="row"><?php _e( 'Image size for the album cover', 'gallery' ); ?> </th>
+						<td>
+							<label for="custom_image_size_name"><?php _e( 'Image size', 'gallery' ); ?></label> <?php echo $gllr_options["gllr_custom_size_name"][0]; ?><br />
+							<label for="custom_image_size_w"><?php _e( 'Width (in px)', 'gallery' ); ?></label> <input type="text" name="gllr_custom_image_size_w_album" value="<?php echo $gllr_options["gllr_custom_size_px"][0][0]; ?>" /><br />
+							<label for="custom_image_size_h"><?php _e( 'Height (in px)', 'gallery' ); ?></label> <input type="text" name="gllr_custom_image_size_h_album" value="<?php echo $gllr_options["gllr_custom_size_px"][0][1]; ?>" />
+						</td>
+					</tr>
+					<tr valign="top" class="gllr_width_labels">
+						<th scope="row"><?php _e( 'Gallery image size', 'gallery' ); ?> </th>
+						<td>
+							<label for="custom_image_size_name"><?php _e( 'Image size', 'gallery' ); ?></label> <?php echo $gllr_options["gllr_custom_size_name"][1]; ?><br />
+							<label for="custom_image_size_w"><?php _e( 'Width (in px)', 'gallery' ); ?></label> <input type="text" name="gllr_custom_image_size_w_photo" value="<?php echo $gllr_options["gllr_custom_size_px"][1][0]; ?>" /><br />
+							<label for="custom_image_size_h"><?php _e( 'Height (in px)', 'gallery' ); ?></label> <input type="text" name="gllr_custom_image_size_h_photo" value="<?php echo $gllr_options["gllr_custom_size_px"][1][1]; ?>" />
+						</td>
+					</tr>
+					<tr valign="top">
+						<td colspan="2"><span style="color: #888888;font-size: 10px;"><?php _e( 'WordPress will create a new thumbnail with the specified dimensions when you upload a new photo.', 'gallery' ); ?></span></td>
+					</tr>
+				</table>
+				<table class="form-table bws_pro_version">
+					<tr valign="top" class="gllr_width_labels">
+						<th scope="row"><?php _e( 'Gallery image size in the lightbox', 'gallery' ); ?> </th>
+						<td>
+							<label for="custom_image_size_name"><?php _e( 'Image size', 'gallery' ); ?></label> full-photo<br />
+							<label for="custom_image_size_w"><?php _e( 'Max width (in px)', 'gallery' ); ?></label> <input disabled class="gllrprfssnl_size_photo_full" type="text" name="gllrprfssnl_custom_image_size_w_full" value="1024"/><br />
+							<label for="custom_image_size_h"><?php _e( 'Max height (in px)', 'gallery' ); ?></label> <input disabled class="gllrprfssnl_size_photo_full" type="text" name="gllrprfssnl_custom_image_size_h_full" value="1024"/><br />
+							<input disabled type="checkbox" name="gllrprfssnl_size_photo_full" value="1" /> <?php _e( 'Display a full size image in the lightbox', 'gallery' ); ?>
+						</td>
+					</tr>
+					<tr valign="top" class="gllr_width_labels">
+						<th scope="row"><?php _e( 'Crop position', 'gallery' ); ?></th>
+						<td>
+							<label><?php _e( 'Horizontal', 'gallery' ); ?></label> 
+							<select>
+								<option value="left"><?php _e( 'left', 'gallery' ); ?></option>
+								<option value="center"><?php _e( 'center', 'gallery' ); ?></option>
+								<option value="right"><?php _e( 'right', 'gallery' ); ?></option>
+							</select>
+							<br />
+							<label><?php _e( 'Vertical', 'gallery' ); ?></label> 
+							<select>							
+								<option value="top"><?php _e( 'top', 'gallery' ); ?></option>
+								<option value="center"><?php _e( 'center', 'gallery' ); ?></option>
+								<option value="bottom"><?php _e( 'bottom', 'gallery' ); ?></option>
+							</select>
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><?php _e( 'Lightbox background', 'gallery' ); ?> </th>	
+						<td>					
+							<input disabled class="button button-small gllrprfssnl_lightbox_default" type="button" value="<?php _e( 'Default', 'gallery' ); ?>"> <br />
+							<input disabled type="text" size="8" value="0.7" name="gllrprfssnl_background_lightbox_opacity" /> <?php _e( 'Background transparency (from 0 to 1)', 'gallery' ); ?><br />
+							<?php if ( 3.5 <= $wp_version ) { ?>
+								<input disabled id="gllrprfssnl_background_lightbox_color" type="minicolors" name="gllrprfssnl_background_lightbox_color" value="#777777" id="gllrprfssnl_background_lightbox_color" /> <?php _e( 'Select a background color', 'gallery' ); ?>
 							<?php } else { ?>
-								<input disabled="disabled" type="checkbox" name="gllr_add_to_search" value="1" <?php if ( isset( $cstmsrch_options ) && in_array( 'gallery', $cstmsrch_options ) ) echo "checked=\"checked\""; ?> /> 
-								<span style="color: #888888;font-size: 10px;">(<?php _e( 'Using Custom Search powered by', 'gallery' ); ?> <a href="http://bestwebsoft.com/plugin/">bestwebsoft.com</a>) <a href="<?php echo bloginfo("url"); ?>/wp-admin/plugins.php"><?php _e( 'Activate Custom Search', 'gallery' ); ?></a></span>
-							<?php }
-						} else { ?>
-							<input disabled="disabled" type="checkbox" name="gllr_add_to_search" value="1" />  
-							<span style="color: #888888;font-size: 10px;">(<?php _e( 'Using Custom Search powered by', 'gallery' ); ?> <a href="http://bestwebsoft.com/plugin/">bestwebsoft.com</a>) <a href="http://bestwebsoft.com/plugin/custom-search-plugin/"><?php _e( 'Download Custom Search', 'gallery' ); ?></a></span>
-						<?php } ?>
-					</td>
-				</tr>				
-			</table> 
-			<table class="form-table bws_pro_version">
-				<tr valign="top" class="gllr_width_labels">
-					<th scope="row"><?php _e( 'Display Like buttons in the lightbox', 'gallery' ); ?></th>
-					<td>
-						<input disabled type="checkbox" name="gllrprfssnl_like_button_fb" value="1" /> <?php _e( 'FaceBook', 'gallery' ); ?><br />
-						<input disabled type="checkbox" name="gllrprfssnl_like_button_twit" value="1" /> <?php _e( 'Twitter', 'gallery' ); ?><br />
-						<input disabled type="checkbox" name="gllrprfssnl_like_button_pint" value="1" /> <?php _e( 'Pinterest', 'gallery' ); ?><br />
-						<input disabled type="checkbox" name="gllrprfssnl_like_button_g_plusone" value="1" /> <?php _e( 'Google +1', 'gallery' ); ?>		
-					</td>
-				</tr>
-				<tr valign="top" class="gllr_width_labels">
-					<th scope="row"><?php _e( 'Slug for gallery item', 'gallery' ); ?></th>
-					<td>
-						<input type="text" name="gllrprfssnl_slug" value="gallery" disabled /> <span style="color: #888888;font-size: 10px;"><?php _e( 'for any structure of permalinks except the default structure', 'gallery' ); ?></span>
-					</td>	
-				</tr>
-				<tr valign="top">
-					<th scope="row" colspan="2">
-						* <?php _e( 'If you upgrade to Pro version all your settings and galleries will be saved.', 'gallery' ); ?>
-					</th>
-				</tr>
-				<tr class="bws_pro_version_tooltip">
-					<th scope="row" colspan="2">
-						<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'gallery' ); ?> 
-						<a href="http://bestwebsoft.com/plugin/gallery-pro/?k=63a36f6bf5de0726ad6a43a165f38fe5&pn=79&v=<?php echo $plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="Gallery Pro Plugin">
-							Gallery Pro Plugin
-						</a>
-					</th>
-				</tr>				
-			</table>					
-			<div style="clear:both;"></div>
-			<input type="hidden" name="gllr_form_submit" value="submit" />
-			<p class="submit">
-				<input type="submit" class="button-primary" value="<?php _e( 'Save Changes' ) ?>" />
-			</p>
-			<?php wp_nonce_field( plugin_basename( __FILE__ ), 'gllr_nonce_name' ); ?>
-		</form>
-		<div class="bws-plugin-reviews">
-			<div class="bws-plugin-reviews-rate">
-			<?php _e( 'If you enjoy our plugin, please give it 5 stars on WordPress', 'gallery' ); ?>: 
-			<a href="http://wordpress.org/support/view/plugin-reviews/gallery-plugin/" target="_blank" title="Gallery reviews"><?php _e( 'Rate the plugin', 'gallery' ); ?></a><br/>
+								<input disabled id="gllrprfssnl_background_lightbox_color" type="text" name="gllrprfssnl_background_lightbox_color" value="#777777" id="gllrprfssnl_background_lightbox_color" /><span id="gllrprfssnl_background_lightbox_color_small" style="background-color:#777777"></span> <?php _e( 'Background color', 'gallery' ); ?>
+								<div id="colorPickerDiv_backgraund" style="z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;"></div>
+							<?php } ?>
+						</td>
+					</tr>	
+					<tr valign="top">
+						<th scope="row" colspan="2">
+							* <?php _e( 'If you upgrade to Pro version all your settings and galleries will be saved.', 'gallery' ); ?>
+						</th>
+					</tr>
+					<tr class="bws_pro_version_tooltip">
+						<th scope="row" colspan="2">
+							<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'gallery' ); ?> 
+							<a href="http://bestwebsoft.com/plugin/gallery-pro/?k=63a36f6bf5de0726ad6a43a165f38fe5&pn=79&v=<?php echo $plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="Gallery Pro Plugin">
+								Gallery Pro Plugin
+							</a>
+						</th>
+					</tr>
+				</table> 					
+				<table class="form-table">
+					<tr valign="top">
+						<th scope="row"><?php _e( 'Images with border', 'gallery' ); ?></th>
+						<td>
+							<input type="checkbox" name="gllr_border_images" value="1" <?php if ( 1 == $gllr_options["border_images"] ) echo 'checked="checked"'; ?> /><br />
+							<input type="text" value="<?php echo $gllr_options["border_images_width"]; ?>" name="gllr_border_images_width" /> <?php _e( 'Border width in px, just numbers', 'gallery' ); ?><br />
+							<?php if ( 3.5 <= $wp_version ) { ?>
+								<input type="minicolors" name="gllr_border_images_color" value="<?php echo $gllr_options["border_images_color"]; ?>" id="gllr_border_images_color" /> <?php _e( 'Select a border color', 'gallery' ); ?>
+							<?php } else { ?>
+								<input type="text" name="gllr_border_images_color" value="<?php echo $gllr_options["border_images_color"]; ?>" id="gllr_border_images_color" /><span id="gllr_border_images_color_small" style="background-color:<?php echo $gllr_options["border_images_color"]; ?>"></span> <?php _e( 'Select a border color', 'gallery' ); ?>
+								<div id="colorPickerDiv" style="z-index: 100; background:#eee; border:1px solid #ccc; position:absolute; display:none;"></div>
+							<?php } ?>
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><?php _e( 'Number of images in the row', 'gallery' ); ?> </th>
+						<td>
+							<input type="text" name="gllr_custom_image_row_count" value="<?php echo $gllr_options["custom_image_row_count"]; ?>" />
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><?php _e( 'Start slideshow', 'gallery' ); ?> </th>
+						<td>
+							<input type="checkbox" name="gllr_start_slideshow" value="1" <?php if ( 1 == $gllr_options["start_slideshow"] ) echo 'checked="checked"'; ?> />
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><?php _e( 'Slideshow interval', 'gallery' ); ?> </th>
+						<td>
+							<input type="text" name="gllr_slideshow_interval" value="<?php echo $gllr_options["slideshow_interval"]; ?>" />
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><?php _e( 'Use single lightbox for multiple galleries on one page', 'gallery' ); ?> </th>
+						<td>
+							<input type="checkbox" name="gllr_single_lightbox_for_multiple_galleries" value="1" <?php if ( 1 == $gllr_options["single_lightbox_for_multiple_galleries"] ) echo 'checked="checked"'; ?> />
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><?php _e( 'Sort images by', 'gallery' ); ?></th>
+						<td>
+							<label class="label_radio"><input type="radio" name="gllr_order_by" value="ID" <?php if ( 'ID' == $gllr_options["order_by"] ) echo 'checked="checked"'; ?> /> <?php _e( 'Attachment ID', 'gallery' ); ?></label><br />
+							<label class="label_radio"><input type="radio" name="gllr_order_by" value="title" <?php if ( 'title' == $gllr_options["order_by"] ) echo 'checked="checked"'; ?> /> <?php _e( 'Image Name', 'gallery' ); ?></label><br />
+							<label class="label_radio"><input type="radio" name="gllr_order_by" value="date" <?php if ( 'date' == $gllr_options["order_by"] ) echo 'checked="checked"'; ?> /> <?php _e( 'Date', 'gallery' ); ?></label><br />
+							<label class="label_radio"><input type="radio" name="gllr_order_by" value="menu_order" <?php if ( 'menu_order' == $gllr_options["order_by"] ) echo 'checked="checked"'; ?> /> <?php _e( 'Sorting order (the input field for sorting order in the Insert / Upload Media Gallery dialog)', 'gallery' ); ?></label><br />
+							<label class="label_radio"><input type="radio" name="gllr_order_by" value="rand" <?php if ( 'rand' == $gllr_options["order_by"] ) echo 'checked="checked"'; ?> /> <?php _e( 'Random', 'gallery' ); ?></label>
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><?php _e( 'Sort images', 'gallery' ); ?></th>
+						<td>
+							<label class="label_radio"><input type="radio" name="gllr_order" value="ASC" <?php if ( 'ASC' == $gllr_options["order"] ) echo 'checked="checked"'; ?> /> <?php _e( 'ASC (ascending order from lowest to highest values - 1, 2, 3; a, b, c)', 'gallery' ); ?></label><br />
+							<label class="label_radio"><input type="radio" name="gllr_order" value="DESC" <?php if ( 'DESC' == $gllr_options["order"] ) echo 'checked="checked"'; ?> /> <?php _e( 'DESC (descending order from highest to lowest values - 3, 2, 1; c, b, a)', 'gallery' ); ?></label>
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><?php _e( 'Display text above the image', 'gallery' ); ?></th>
+						<td>
+							<label><input type="checkbox" name="gllr_image_text" value="1" <?php if ( 1 == $gllr_options["image_text"] ) echo 'checked="checked"'; ?> /> <?php _e( 'Turn off the checkbox, if you want to display text just in a lightbox', 'gallery' ); ?></label>
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><?php _e( 'Display the Back link', 'gallery' ); ?></th>
+						<td>
+							<input type="checkbox" name="gllr_return_link" value="1" <?php if ( 1 == $gllr_options["return_link"] ) echo 'checked="checked"'; ?> />
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><?php _e( 'Display the Back link in the shortcode', 'gallery' ); ?> </th>
+						<td>
+							<input type="checkbox" name="gllr_return_link_shortcode" value="1" <?php if ( 1 == $gllr_options["return_link_shortcode"] ) echo 'checked="checked"'; ?> />
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><?php _e( 'The Back link text', 'gallery' ); ?> </th>
+						<td>
+							<input type="text" name="gllr_return_link_text" value="<?php echo $gllr_options["return_link_text"]; ?>" style="width:200px;" />
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><?php _e( 'The Back link URL', 'gallery' ); ?></th>
+						<td>
+							<label><input type="radio" value="gallery_template_url" name="gllr_return_link_page" <?php if ( 'gallery_template_url' == $gllr_options["return_link_page"] ) echo 'checked="checked"'; ?> /><?php _e( 'Gallery page (Page with Gallery Template)', 'gallery'); ?></label><br />
+							<input type="radio" value="custom_url" name="gllr_return_link_page" id="gllr_return_link_url" <?php if ( 'custom_url' == $gllr_options["return_link_page"] ) echo 'checked="checked"'; ?> /> <input type="text" onfocus="document.getElementById('gllr_return_link_url').checked = true;" value="<?php echo $gllr_options["return_link_url"]; ?>" name="gllr_return_link_url">
+							<?php _e( '(Full URL to custom page)' , 'gallery'); ?>
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><?php _e( 'The Read More link text', 'gallery' ); ?></th>
+						<td>
+							<input type="text" name="gllr_read_more_link_text" value="<?php echo $gllr_options["read_more_link_text"]; ?>" style="width:200px;" />
+						</td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><?php _e( 'Add gallery to the search', 'gallery' ); ?></th>
+						<td>
+							<?php 
+							$all_plugins	=	get_plugins();
+							$active_plugins	=	get_option( 'active_plugins' );
+							if ( ! function_exists( 'is_plugin_active_for_network' ) )
+								require_once( ABSPATH . '/wp-admin/includes/plugin.php' );						
+							if ( array_key_exists( 'custom-search-plugin/custom-search-plugin.php', $all_plugins ) ) {
+								if ( 0 < count( preg_grep( '/custom-search-plugin\/custom-search-plugin.php/', $active_plugins ) ) || is_plugin_active_for_network( 'custom-search-plugin/custom-search-plugin.php' ) ) { ?>
+									<input type="checkbox" name="gllr_add_to_search" value="1" <?php if ( isset( $cstmsrch_options ) && in_array( 'gallery', $cstmsrch_options ) ) echo "checked=\"checked\""; ?> />
+									<span style="color: #888888;font-size: 10px;"> (<?php _e( 'Using', 'gallery' ); ?> <a href="admin.php?page=custom_search.php">Custom Search</a> <?php _e( 'powered by', 'gallery' ); ?> <a href="http://bestwebsoft.com/plugin/">bestwebsoft.com</a>)</span>
+								<?php } else { ?>
+									<input disabled="disabled" type="checkbox" name="gllr_add_to_search" value="1" <?php if ( isset( $cstmsrch_options ) && in_array( 'gallery', $cstmsrch_options ) ) echo "checked=\"checked\""; ?> /> 
+									<span style="color: #888888;font-size: 10px;">(<?php _e( 'Using Custom Search powered by', 'gallery' ); ?> <a href="http://bestwebsoft.com/plugin/">bestwebsoft.com</a>) <a href="<?php echo bloginfo("url"); ?>/wp-admin/plugins.php"><?php _e( 'Activate Custom Search', 'gallery' ); ?></a></span>
+								<?php }
+							} else { ?>
+								<input disabled="disabled" type="checkbox" name="gllr_add_to_search" value="1" />  
+								<span style="color: #888888;font-size: 10px;">(<?php _e( 'Using Custom Search powered by', 'gallery' ); ?> <a href="http://bestwebsoft.com/plugin/">bestwebsoft.com</a>) <a href="http://bestwebsoft.com/plugin/custom-search-plugin/"><?php _e( 'Download Custom Search', 'gallery' ); ?></a></span>
+							<?php } ?>
+						</td>
+					</tr>				
+				</table> 
+				<table class="form-table bws_pro_version">
+					<tr valign="top" class="gllr_width_labels">
+						<th scope="row"><?php _e( 'Display Like buttons in the lightbox', 'gallery' ); ?></th>
+						<td>
+							<input disabled type="checkbox" name="gllrprfssnl_like_button_fb" value="1" /> <?php _e( 'FaceBook', 'gallery' ); ?><br />
+							<input disabled type="checkbox" name="gllrprfssnl_like_button_twit" value="1" /> <?php _e( 'Twitter', 'gallery' ); ?><br />
+							<input disabled type="checkbox" name="gllrprfssnl_like_button_pint" value="1" /> <?php _e( 'Pinterest', 'gallery' ); ?><br />
+							<input disabled type="checkbox" name="gllrprfssnl_like_button_g_plusone" value="1" /> <?php _e( 'Google +1', 'gallery' ); ?>		
+						</td>
+					</tr>
+					<tr valign="top" class="gllr_width_labels">
+						<th scope="row"><?php _e( 'Slug for gallery item', 'gallery' ); ?></th>
+						<td>
+							<input type="text" name="gllrprfssnl_slug" value="gallery" disabled /> <span style="color: #888888;font-size: 10px;"><?php _e( 'for any structure of permalinks except the default structure', 'gallery' ); ?></span>
+						</td>	
+					</tr>
+					<tr valign="top">
+						<th scope="row" colspan="2">
+							* <?php _e( 'If you upgrade to Pro version all your settings and galleries will be saved.', 'gallery' ); ?>
+						</th>
+					</tr>
+					<tr class="bws_pro_version_tooltip">
+						<th scope="row" colspan="2">
+							<?php _e( 'This functionality is available in the Pro version of the plugin. For more details, please follow the link', 'gallery' ); ?> 
+							<a href="http://bestwebsoft.com/plugin/gallery-pro/?k=63a36f6bf5de0726ad6a43a165f38fe5&pn=79&v=<?php echo $plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="Gallery Pro Plugin">
+								Gallery Pro Plugin
+							</a>
+						</th>
+					</tr>				
+				</table>					
+				<div style="clear:both;"></div>
+				<input type="hidden" name="gllr_form_submit" value="submit" />
+				<p class="submit">
+					<input type="submit" class="button-primary" value="<?php _e( 'Save Changes' ) ?>" />
+				</p>
+				<?php wp_nonce_field( plugin_basename( __FILE__ ), 'gllr_nonce_name' ); ?>
+			</form>
+			<div class="bws-plugin-reviews">
+				<div class="bws-plugin-reviews-rate">
+					<?php _e( 'If you enjoy our plugin, please give it 5 stars on WordPress', 'gallery' ); ?>: 
+					<a href="http://wordpress.org/support/view/plugin-reviews/gallery-plugin/" target="_blank" title="Gallery reviews"><?php _e( 'Rate the plugin', 'gallery' ); ?></a>
+				</div>
+				<div class="bws-plugin-reviews-support">
+					<?php _e( 'If there is something wrong about it, please contact us', 'gallery' ); ?>: 
+					<a href="http://support.bestwebsoft.com">http://support.bestwebsoft.com</a>
+				</div>
 			</div>
-			<div class="bws-plugin-reviews-support">
-			<?php _e( 'If there is something wrong about it, please contact us', 'gallery' ); ?>: 
-			<a href="http://support.bestwebsoft.com">http://support.bestwebsoft.com</a>
-			</div>
-		</div>
+		<?php } elseif ( 'go_pro' == $_GET['action'] ) { ?>
+			<?php if ( isset( $pro_plugin_is_activated ) && true === $pro_plugin_is_activated ) { ?>
+				<script type="text/javascript">
+					window.setTimeout( function() {
+					    window.location.href = 'admin.php?page=gallery-plugin-pro.php';
+					}, 5000 );
+				</script>				
+				<p><?php _e( "Congratulations! The PRO version of the plugin is successfully download and activated.", 'gallery' ); ?></p>
+				<p>
+					<?php _e( "Please, go to", 'gallery' ); ?> <a href="admin.php?page=gallery-plugin-pro.php"><?php _e( 'the setting page', 'gallery' ); ?></a> 
+					(<?php _e( "You will be redirected automatically in 5 seconds.", 'gallery' ); ?>)
+				</p>
+			<?php } else { ?>
+				<form method="post" action="admin.php?page=gallery-plugin.php&amp;action=go_pro">
+					<p>
+						<?php _e( 'You can download and activate', 'gallery' ); ?> 
+						<a href="http://bestwebsoft.com/plugin/gallery-pro/?k=63a36f6bf5de0726ad6a43a165f38fe5&pn=79&v=<?php echo $plugin_info["Version"]; ?>&wp_v=<?php echo $wp_version; ?>" target="_blank" title="Gallery Pro">PRO</a> 
+						<?php _e( 'version of this plugin by entering Your license key.', 'gallery' ); ?><br />
+						<span style="color: #888888;font-size: 10px;">
+							<?php _e( 'You can find your license key on your personal page Client area, by clicking on the link', 'gallery' ); ?> 
+							<a href="http://bestwebsoft.com/wp-login.php">http://bestwebsoft.com/wp-login.php</a> 
+							<?php _e( '(your username is the email you specify when purchasing the product).', 'gallery' ); ?>
+						</span>
+					</p>
+					<?php if ( isset( $bstwbsftwppdtplgns_options['go_pro']['gallery-plugin-pro/gallery-plugin-pro.php']['count'] ) &&
+						'5' < $bstwbsftwppdtplgns_options['go_pro']['gallery-plugin-pro/gallery-plugin-pro.php']['count'] &&
+						$bstwbsftwppdtplgns_options['go_pro']['gallery-plugin-pro/gallery-plugin-pro.php']['time'] < ( time() + ( 24 * 60 * 60 ) ) ) { ?>
+						<p>
+							<input disabled="disabled" type="text" name="bws_license_key" value="<?php echo $bws_license_key; ?>" />
+							<input disabled="disabled" type="submit" class="button-primary" value="<?php _e( 'Go!', 'gallery' ); ?>" />
+						</p>
+						<p>
+							<?php _e( "Unfortunately, you have exceeded the number of available tries per day. Please, upload the plugin manually.", 'gallery' ); ?>
+						</p>
+					<?php } else { ?>
+						<p>
+							<input type="text" name="bws_license_key" value="<?php echo $bws_license_key; ?>" />
+							<input type="hidden" name="bws_license_plugin" value="gallery-plugin-pro/gallery-plugin-pro.php" />
+							<input type="hidden" name="bws_license_submit" value="submit" />
+							<input type="submit" class="button-primary" value="<?php _e( 'Go!', 'gallery' ); ?>" />
+							<?php wp_nonce_field( plugin_basename(__FILE__), 'bws_license_nonce_name' ); ?>
+						</p>
+					<?php } ?>
+				</form>
+			<?php }
+		} ?>
 	</div>
 	<?php } 
 }
@@ -1195,7 +1369,9 @@ if ( ! function_exists ( 'gllr_shortcode' ) ) {
 							}
 							?>
 							<li>
-								<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][0][0]; ?>px;" alt="<?php echo $post->post_title; ?>" title="<?php echo $post->post_title; ?>" src="<?php echo $image_attributes[0]; ?>" />
+								<a rel="bookmark" href="<?php echo get_permalink(); ?>" title="<?php echo $post->post_title; ?>">
+									<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][0][0]; ?>px;" alt="<?php echo $post->post_title; ?>" title="<?php echo $post->post_title; ?>" src="<?php echo $image_attributes[0]; ?>" />
+								</a>
 								<div class="gallery_detail_box">
 									<div><?php echo $post->post_title; ?></div>
 									<div><?php echo the_excerpt_max_charlength( 100 ); ?></div>
@@ -1294,7 +1470,7 @@ if ( ! function_exists ( 'gllr_shortcode' ) ) {
 					'speedIn'			:	500, 
 					'speedOut'			:	300,
 					'titleFormat'		:	function( title, currentArray, currentIndex, currentOpts ) {
-						return '<span id="fancybox-title-inside">' + ( title.length ? title + '<br />' : '' ) + 'Image ' + ( currentIndex + 1 ) + ' / ' + currentArray.length + '</span><?php if( get_post_meta( $post->ID, 'gllr_download_link', true ) != '' ){?><br /><a href="' + $( currentOpts.orig ).attr( 'rel' ) + '" target="_blank"><?php echo $gllr_download_link_title; ?> </a><?php } ?>';
+						return '<div id="fancybox-title-inside">' + ( title.length ? '<span id="bws_gallery_image_title">' + title + '</span><br />' : '' ) + '<span id="bws_gallery_image_counter"><?php _e( "Image", "gallery"); ?> ' + ( currentIndex + 1 ) + ' / ' + currentArray.length + '</span></div><?php if( get_post_meta( $post->ID, 'gllr_download_link', true ) != '' ){?><a id="bws_gallery_download_link" href="' + $( currentOpts.orig ).attr( 'rel' ) + '" target="_blank"><?php echo $gllr_download_link_title; ?> </a><?php } ?>';
 					}<?php if ( 1 == $gllr_options['start_slideshow'] ) { ?>,
 					'onComplete':	function() {
 						clearTimeout( jQuery.fancybox.slider );
