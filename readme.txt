@@ -4,7 +4,7 @@ Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.8.1
-Stable tag: 4.1.4
+Stable tag: 4.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,7 @@ There is also a premium version of the plugin <a href="http://bestwebsoft.com/pl
 * German (de_DE) (thanks to Thomas Bludau, <a href="mailto:info@ahoidesign.de">Jonas Seemann</a>)
 * Russian (ru_RU)
 * Serbian (sr_RS) (thanks to <a href="mailto:andrijanan@webhostinggeeks.com">Andrijana Nikolic</a> www.webhostinggeeks.com )
+* Slovak (sk_SK) (thanks to <a href="mailto:ja@michalkralik.sk">Michal Kralik</a>)
 * Turkish (tr) (thanks to <a href="mailto:ce.demirbilek@gmail.com">Ismail Demirbilek</a>)
 * Ukrainian (uk)
 
@@ -169,6 +170,10 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 5. PrettyPhoto pop-up window containing the album images.
 
 == Changelog ==
+
+= V4.1.5 - 12.02.2014 =
+* Bugfix : We fixed the bug post title with htmlspecialchars.
+* NEW : The Slovak language file is added.
 
 = V4.1.4 - 06.02.2014 =
 * Update : We updated all functionality for wordpress 3.8.1.
@@ -409,6 +414,9 @@ Please make sure that the problem hasn't been discussed yet on our forum (<a hre
 *The file uploader is added to the Galleries page in admin section. 
 
 == Upgrade Notice ==
+
+= V4.1.5 =
+We fixed the bug post title with htmlspecialchars. The Slovak language file is added.
 
 = V4.1.4 =
 We updated all functionality for wordpress 3.8.1. The Dutch language file is added. The Czech language file is added.

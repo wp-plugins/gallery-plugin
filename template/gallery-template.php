@@ -64,11 +64,11 @@ Template Name: Gallery Template
 					$count++;
 					?>
 					<li>
-						<a rel="bookmark" href="<?php echo get_permalink(); ?>" title="<?php echo $post->post_title; ?>">
-							<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][0][0]; ?>px; <?php echo $gllr_border; ?>" alt="<?php echo $post->post_title; ?>" title="<?php echo $post->post_title; ?>" src="<?php echo $image_attributes[0]; ?>" />
+						<a rel="bookmark" href="<?php echo get_permalink(); ?>" title="<?php echo htmlspecialchars( $post->post_title ); ?>">
+							<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][0][0]; ?>px; <?php echo $gllr_border; ?>" alt="<?php echo htmlspecialchars( $post->post_title ); ?>" title="<?php echo htmlspecialchars( $post->post_title ); ?>" src="<?php echo $image_attributes[0]; ?>" />
 						</a>
 						<div class="gallery_detail_box">
-							<div><?php echo $post->post_title; ?></div>
+							<div><?php echo htmlspecialchars( $post->post_title ); ?></div>
 							<div><?php echo the_excerpt_max_charlength(100); ?></div>
 							<a href="<?php echo $permalink; echo basename( get_permalink( $post->ID ) ); ?>"><?php echo $gllr_options["read_more_link_text"]; ?></a>
 						</div>
@@ -77,13 +77,13 @@ Template Name: Gallery Template
 				<?php endwhile; endif; wp_reset_query(); ?>
 				</ul>
 				<?php
-					if( $paged == 0 )
-							$paged = 1;
+					if ( $paged == 0 )
+						$paged = 1;
 					$pages = intval ( $count_all_albums/$per_page );
-					if( $count_all_albums % $per_page > 0 )
+					if ( $count_all_albums % $per_page > 0 )
 						$pages +=1;
 					$range = 100;
-					if( ! $pages ) {
+					if ( ! $pages ) {
 						$pages = 1;
 					}
 					if ( 1 != $pages ) {
@@ -94,7 +94,7 @@ Template Name: Gallery Template
 							}
 						}
 						echo "<div class='clear'></div></div>\n";
-					} else {?>
+					} else { ?>
 						</div>
 					<?php } ?>
 			<?php comments_template(); ?>

@@ -4,7 +4,7 @@ Plugin Name: Gallery
 Plugin URI:  http://bestwebsoft.com/plugin/
 Description: This plugin allows you to implement gallery page into web site.
 Author: BestWebSoft
-Version: 4.1.4
+Version: 4.1.5
 Author URI: http://bestwebsoft.com/
 License: GPLv2 or later
 */
@@ -1369,11 +1369,11 @@ if ( ! function_exists ( 'gllr_shortcode' ) ) {
 							}
 							?>
 							<li>
-								<a rel="bookmark" href="<?php echo get_permalink(); ?>" title="<?php echo $post->post_title; ?>">
-									<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][0][0]; ?>px;" alt="<?php echo $post->post_title; ?>" title="<?php echo $post->post_title; ?>" src="<?php echo $image_attributes[0]; ?>" />
+								<a rel="bookmark" href="<?php echo get_permalink(); ?>" title="<?php echo htmlspecialchars( $post->post_title ); ?>">
+									<img style="width:<?php echo $gllr_options['gllr_custom_size_px'][0][0]; ?>px;" alt="<?php echo htmlspecialchars( $post->post_title ); ?>" title="<?php echo htmlspecialchars( $post->post_title ); ?>" src="<?php echo $image_attributes[0]; ?>" />
 								</a>
 								<div class="gallery_detail_box">
-									<div><?php echo $post->post_title; ?></div>
+									<div><?php echo htmlspecialchars( $post->post_title ); ?></div>
 									<div><?php echo the_excerpt_max_charlength( 100 ); ?></div>
 									<a href="<?php echo get_permalink( $post->ID ); ?>"><?php echo $gllr_options["read_more_link_text"]; ?></a>
 								</div>

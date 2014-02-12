@@ -4,9 +4,9 @@
 			<?php 
 			global $post, $wp_query;
 			$args = array(
-				'post_type'					=> 'gallery',
-				'post_status'				=> 'publish',
-				'name'							=> $wp_query->query_vars['name'],
+				'post_type'				=> 'gallery',
+				'post_status'			=> 'publish',
+				'name'					=> $wp_query->query_vars['name'],
 				'posts_per_page'		=> 1
 			);	
 			$second_query = new WP_Query( $args ); 
