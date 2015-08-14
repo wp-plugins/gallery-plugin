@@ -1,7 +1,7 @@
 === Gallery by BestWebSoft ===
 Contributors: bestwebsoft
 Donate link: http://bestwebsoft.com/donate/
-Tags: add album, add gallery, add picture, add pictures, album, foto, fotoalbum, gallery, galery, galary, gallary, gellery, gellary, gelary, gallerie, gallery decription, gallery image, image, multiple pictures, photo, photoalbum, photogallery, pictures, slide show, slideshow, upload images, upload photos, view images, view pictures, website gallery
+Tags: add image, add images, add photo, add album, add gallery, add galleries, add picture, add pictures, album, albums, art gallery, best gallery, best gallery plugin, best image slider, best portfolio, best portfolio plugin, content gallery, content slider, easy media gallery, easy gallery, fancybox, fancy gallery, free photo gallery, free gallery, free images, free slider, filterable, filterable gallery, filterable portfolio, foto, fotoalbum, fotogalerie, fullscreen, fullscreen gallery, fullscreen photo, fullscreen slider, gallery, galery, galeri, galerie, galleries, galary, galeria, gallary, gellery, gellary, gelary, gallerie, galerij, Galleria, gallery decription, gallery image, gallery lightbox, Gallery Plugin, gallery shortcode, gallery slider, gallery wordpress, grid, grid gallery, image, image album, image description, image display, image gallery, image gallery plugin, image lightbox, image slider, image slideshow, images, images gallery, jquery, jquery gallery, lightbox, lightbox gallery, lightbox photo, media, media gallery, multi categories galleries, multi categories gallery, multiple pictures, multiply images upload, pagination gallery, pagination portfolio, panorama, panorama views, photo, photo album, photo albums, photo gallery, photoalbum, photographs, photogallery, photographer, photography, photos, photoset, picture, pictures, Picture Gallery, plugin for gallery, plugin gallery, portfolio, portfolio gallery, portfolio plugin, responsive, responsive galleries, responsive gallery, responsive image gallery, responsive slider, responsive slideshow, responsive wordpress photo gallery, shortcode, sidebar, shortcode gallery, Simple gallery, slide, slide show, slideshow, slideshow galleries, slideshow gallery, slideshows, sortable galleries, sortable gallery, thumbnail, thumbnail view, thumb view, thumbnail galleries, thumbnail gallery, thumbnails, thumbs, upload images, upload photos, view images, view pictures, website gallery, widget gallery, wordpress gallery, wordpress gallery plugin, wordpress photo gallery plugin, wordpress responsive gallery, wp gallery, wp gallery plugin, wp gallery plugins
 Requires at least: 3.2
 Tested up to: 4.2.4
 Stable tag: 4.3.5
@@ -12,20 +12,20 @@ This plugin allows you to implement a gallery page into your website.
 
 == Description ==
 
-This plugin makes it possible to implement as many galleries as you want into your website. You can add multiple pictures and description for each gallery, show them all at one page, view each one separately. Moreover, you can upload HQ images. Regular updates and simplicity of usage along with efficient functionality make it a perfect choice for your site to have an appealing look. 
+Gallery by BestWebSoft makes it possible to implement as many galleries as you want into your website. You can add multiple pictures and description for each gallery, show them all at one page, view each one separately. Moreover, you can upload HQ images. Regular updates and simplicity of usage along with efficient functionality make it a perfect choice for your site to have an appealing look. 
 There is also a premium version of the plugin with more useful features available.
 
 http://www.youtube.com/watch?v=kzC11CMmwbI
 
-<a href="http://www.youtube.com/watch?v=mivcWwfRVmI" target="_blank">Video instruction on Installation</a>
+<a href="http://www.youtube.com/watch?v=mivcWwfRVmI" target="_blank">Gallery by BestWebSoft Video instruction on Installation</a>
 
-<a href="http://www.youtube.com/watch?v=z95ql-M2JTc" target="_blank">Video instruction "How to add a gallery"</a>
+<a href="http://www.youtube.com/watch?v=z95ql-M2JTc" target="_blank">Gallery by BestWebSoft Video instruction "How to add a gallery"</a>
 
-<a href="http://wordpress.org/plugins/gallery-plugin/faq/" target="_blank">FAQ</a>
+<a href="http://wordpress.org/plugins/gallery-plugin/faq/" target="_blank">Gallery by BestWebSoft FAQ</a>
 
-<a href="http://support.bestwebsoft.com" target="_blank">Support</a>
+<a href="http://support.bestwebsoft.com" target="_blank">Gallery by BestWebSoft Support</a>
 
-<a href="http://bestwebsoft.com/products/gallery/?k=57ad5c0c7fe312e2a45ef9a76f47334c" target="_blank">Upgrade to Pro Version</a>, <a href="http://bestwebsoft.com/demo-for-gallery-pro/" target="_blank">View Demo of Pro Version</a>
+<a href="http://bestwebsoft.com/products/gallery/?k=57ad5c0c7fe312e2a45ef9a76f47334c" target="_blank">Upgrade to Gallery Pro by BestWebSoft</a>, <a href="http://bestwebsoft.com/demo-for-gallery-pro/" target="_blank">View Demo of Gallery Pro by BestWebSoft</a>
 
 = Features =
 
@@ -86,7 +86,7 @@ We can fix some things for free for the users who provide translation of our plu
 3. Please check if you have the template file `gallery-template.php` as well as the template `gallery-single-template.php` in the templates directory. If you can't find these files, then just copy them from the directory  `/wp-content/plugins/gallery/template/` to your templates directory.
 4. You can adjust the necessary settings using your WordPress admin panel in "BWS Plugins" > "Gallery".
 
-<a href="https://docs.google.com/document/d/1CSkuhf_NrjWlODijrXwyx2lZ_1q5uRw0exTZqz-5fCI/edit?pli=1" target="_blank">View a Step-by-step Instruction on Gallery Installation</a>.
+<a href="https://docs.google.com/document/d/1CSkuhf_NrjWlODijrXwyx2lZ_1q5uRw0exTZqz-5fCI/edit?pli=1" target="_blank">View a Step-by-step Instruction on Gallery by BestWebSoft Installation</a>.
 
 http://www.youtube.com/watch?v=mivcWwfRVmI
 
